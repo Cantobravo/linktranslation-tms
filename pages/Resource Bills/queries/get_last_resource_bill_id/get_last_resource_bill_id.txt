@@ -1,0 +1,1 @@
+SELECT MAX(resource_bill_id) AS last_id FROM resource_bills;

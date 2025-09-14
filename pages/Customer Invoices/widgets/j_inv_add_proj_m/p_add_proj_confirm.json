@@ -1,0 +1,54 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 44,
+  "boxShadow": "none",
+  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "buttonStyle": "PRIMARY_BUTTON",
+  "buttonVariant": "PRIMARY",
+  "disabledWhenInvalid": false,
+  "dynamicBindingPathList": [
+    {
+      "key": "buttonColor"
+    },
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "isDefaultClickDisabled": true,
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "5uy8acrq26",
+  "leftColumn": 15,
+  "minWidth": 120,
+  "mobileBottomRow": 22,
+  "mobileLeftColumn": 47,
+  "mobileRightColumn": 63,
+  "mobileTopRow": 18,
+  "needsErrorInfo": false,
+  "onClick": "{{\n  (async () => {\n    if (!p_uninv_proj_table.selectedRows.length) {\n      showAlert('Select at least one project', 'warning'); return;\n    }\n    try {\n      await ins_inv_links_json.run();         // link projects\n      await upd_proj_set_invoiced_json.run(); // set Invoiced\n\n      // Refresh Update modal table (linked)\n      await get_inv_projects.run();\n\n      // Refresh \"uninv by invoice\" list (if modal stays open later)\n      await get_uninv_proj_by_inv.run();\n\n      // Refresh global \"all not invoiced\" side preview\n      await get_uninv_proj_all.run();\n\n      // Refresh side invoice preview if it shows this same invoice\n      if (appsmith.store.invPrevId === appsmith.store.invId) {\n        await get_inv_proj_prev.run();\n      }\n\n      closeModal('j_inv_add_proj_m');\n      showModal('j_inv_upd_m');\n      showAlert('Projects added to invoice.', 'success');\n    } catch (e) {\n      showAlert('Add projects error: ' + (e?.message || e), 'error');\n    }\n  })()\n}}\n",
+  "parentId": "fv1f14time",
+  "placement": "CENTER",
+  "recaptchaType": "V3",
+  "renderMode": "CANVAS",
+  "resetFormOnClick": false,
+  "responsiveBehavior": "hug",
+  "rightColumn": 31,
+  "text": "Confirm",
+  "topRow": 40,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "iebqz0iul1",
+  "widgetName": "p_add_proj_confirm"
+}

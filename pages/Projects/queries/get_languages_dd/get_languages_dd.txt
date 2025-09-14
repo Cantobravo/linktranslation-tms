@@ -1,0 +1,7 @@
+SELECT
+  l.language_id AS value,
+  IF(IFNULL(l.language_acronym, '') = '', l.language_name,
+     CONCAT(l.language_name, ' (', l.language_acronym, ')')) AS label
+FROM languages l
+WHERE IFNULL(l.language_is_active, 1) = 1
+ORDER BY l.language_name;

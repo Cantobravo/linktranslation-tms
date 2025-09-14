@@ -1,0 +1,6 @@
+SELECT
+  snippet_id,
+  snippet_title,
+  full_text
+FROM iso_texts
+WHERE snippet_id = {{ appsmith.store.isoSearch?.ids?.[appsmith.store.isoSearch?.idx || 0] || null }};

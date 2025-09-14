@@ -1,0 +1,9 @@
+INSERT INTO customer_invoices
+  (customer_id, currency_id, customer_invoice_date, customer_invoice_due_date)
+VALUES
+  (
+    {{ i_cust_id.selectedOptionValue }},
+    {{ i_curr_id.selectedOptionValue }},
+    {{ i_inv_date.selectedDate ? moment(i_inv_date.selectedDate).format('YYYY-MM-DD HH:mm:ss') : null }},
+    {{ i_due_date.selectedDate ? moment(i_due_date.selectedDate).format('YYYY-MM-DD HH:mm:ss') : null }}
+  );

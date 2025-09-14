@@ -1,0 +1,3 @@
+DELETE
+FROM resource_purchase_orders
+WHERE purchase_order_id = {{ appsmith.store.poId }};

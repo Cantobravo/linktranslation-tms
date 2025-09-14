@@ -1,0 +1,12 @@
+INSERT INTO services (
+  service_name,
+  service_status,
+  updated_at
+) VALUES (
+  NULLIF({{ j_serv_ins_form.formData.service_name }}, ''),
+  {{
+    (j_serv_ins_form.formData?.service_is_active ? 'Active' : 'Inactive')
+    || 'Active'
+  }},
+  NOW()
+);

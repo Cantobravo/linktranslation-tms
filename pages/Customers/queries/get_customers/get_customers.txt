@@ -1,0 +1,4 @@
+SELECT *
+FROM customers
+WHERE {{ toggle_show_inactive_customers.isSwitchedOn ? '1=1' : 'COALESCE(customer_is_active,1)=1' }}
+ORDER BY customer_name;

@@ -1,0 +1,3 @@
+UPDATE resources
+SET role_id = {{ roles_table.selectedRow.role_id }}
+WHERE resource_id = {{ users_table.triggeredRow.resource_id }};

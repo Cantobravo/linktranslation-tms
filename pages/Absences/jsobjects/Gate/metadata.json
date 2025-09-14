@@ -1,0 +1,16 @@
+{
+  "gitSyncId": "6840b6d2ece888096e42342a_a78103f9-b2e0-4abf-aa1e-eae099ac60d9",
+  "id": "Absences_Gate",
+  "unpublishedCollection": {
+    "name": "Gate",
+    "pageId": "Absences",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "required",
+        "value": "['VIEW_ABSENCES']"
+      }
+    ]
+  }
+}

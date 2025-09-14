@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "6840b6d2ece888096e42342a_34dd5f41-dc08-4a03-9eee-f86a8f69aa3c",
+  "id": "Messages_NotesHandlers",
+  "unpublishedCollection": {
+    "name": "NotesHandlers",
+    "pageId": "Messages",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

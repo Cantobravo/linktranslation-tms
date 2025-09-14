@@ -1,0 +1,6 @@
+DELETE FROM work_team_member_credentials
+WHERE work_team_member_id IN (
+  SELECT work_team_member_id
+  FROM work_team_members
+  WHERE work_team_id = {{ appsmith.store.wtRow.work_team_id }}
+);

@@ -1,0 +1,4 @@
+DELETE l
+FROM invoice_project_link l
+WHERE l.customer_invoice_id = {{ appsmith.store.invId }}
+  AND l.project_id = {{ appsmith.store.projRow.project_id }};

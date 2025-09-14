@@ -1,0 +1,1 @@
+SELECT COUNT(*) from notes WHERE created_by_name LIKE '%{{notes_due_this_week_table.searchText}}%';

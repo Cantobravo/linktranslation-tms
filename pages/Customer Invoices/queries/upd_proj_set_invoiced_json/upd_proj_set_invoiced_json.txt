@@ -1,0 +1,6 @@
+UPDATE projects p
+JOIN JSON_TABLE(
+  {{ JSON.stringify(p_uninv_proj_table.selectedRows.map(x => x.project_id)) }},
+  '$[*]' COLUMNS (proj_id INT PATH '$')
+) jt ON jt.proj_id = p.project_id
+SET p.project_status = 'Invoiced';

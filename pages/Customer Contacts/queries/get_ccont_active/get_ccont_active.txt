@@ -1,0 +1,22 @@
+SELECT
+  cc.customer_contact_id,
+  cc.customer_id,
+  c.customer_name,
+  cc.customer_contact_name,
+  cc.customer_contact_email,
+  cc.customer_contact_status,
+  cc.customer_contact_industry,
+  cc.customer_contact_website,
+  cc.customer_contact_linkedin,
+  cc.customer_contact_first_contact,
+  cc.customer_contact_last_contact,
+  cc.customer_contact_next_contact,
+  cc.customer_contact_contact_method,
+  cc.customer_contact_test,
+  cc.customer_contact_notes,
+  cc.created_at,
+  cc.updated_at
+FROM customer_contacts cc
+JOIN customers c ON c.customer_id = cc.customer_id
+WHERE COALESCE(cc.customer_contact_status,'Active') = 'Active'
+ORDER BY cc.customer_contact_id DESC;

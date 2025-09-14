@@ -1,0 +1,6 @@
+UPDATE iso_texts
+SET
+  snippet_title = {{ j_iso_upd_form.formData.snippet_title || null }},
+  tags = {{ j_iso_upd_form.formData.tags || null }},
+  full_text = {{ j_iso_upd_form.formData.full_text || null }}
+WHERE snippet_id = {{ appsmith.store.isoRowId }};

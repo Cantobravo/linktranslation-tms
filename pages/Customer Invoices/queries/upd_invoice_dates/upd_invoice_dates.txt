@@ -1,0 +1,4 @@
+UPDATE customer_invoices
+SET customer_invoice_date     = {{ u_inv_date.selectedDate ? moment(u_inv_date.selectedDate).format('YYYY-MM-DD HH:mm:ss') : null }},
+    customer_invoice_due_date = {{ u_due_date.selectedDate ? moment(u_due_date.selectedDate).format('YYYY-MM-DD HH:mm:ss') : null }}
+WHERE customer_invoice_id = {{ appsmith.store.invId }};

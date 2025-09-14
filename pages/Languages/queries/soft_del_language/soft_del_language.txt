@@ -1,0 +1,5 @@
+UPDATE linktranslation.languages
+SET
+  language_status = 'Inactive',
+  updated_at      = NOW()
+WHERE language_id = {{ Number(appsmith.store.languageRow?.language_id) }};

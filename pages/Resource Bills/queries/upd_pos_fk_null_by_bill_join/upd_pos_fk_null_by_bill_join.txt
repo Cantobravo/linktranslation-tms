@@ -1,0 +1,5 @@
+UPDATE resource_purchase_orders po
+JOIN resource_bill_po_link l
+  ON l.purchase_order_id = po.purchase_order_id
+SET po.resource_po_resource_bill_id = NULL
+WHERE l.resource_bill_id = {{ appsmith.store.billRow.resource_bill_id }};

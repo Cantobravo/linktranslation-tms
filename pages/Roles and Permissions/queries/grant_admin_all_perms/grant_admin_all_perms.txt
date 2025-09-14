@@ -1,0 +1,5 @@
+INSERT IGNORE INTO role_permissions (role_id, permission_id)
+SELECT r.role_id, p.permission_id
+FROM roles r
+JOIN permissions p
+WHERE r.role_name = 'Admin';

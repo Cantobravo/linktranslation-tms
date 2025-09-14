@@ -1,0 +1,20 @@
+INSERT INTO customer_accounts (
+    customer_account_name,
+    customer_id,
+    customer_account_industry,
+    customer_account_tools,
+    work_team_id,
+    resource_id,
+    created_at,
+    updated_at
+)
+VALUES (
+    {{ JSON_Insert_form.formData.customer_account_name || null }},
+    {{ JSON_Insert_form.formData.customer_id || null }},
+    {{ JSON_Insert_form.formData.customer_account_industry || null }},
+    {{ JSON_Insert_form.formData.customer_account_tools || null }},
+    {{ JSON_Insert_form.formData.work_team_id || null }},
+    {{ JSON_Insert_form.formData.resource_id || null }},
+    {{ JSON_Insert_form.formData.created_at || null }},
+    {{ JSON_Insert_form.formData.updated_at || null }}
+);

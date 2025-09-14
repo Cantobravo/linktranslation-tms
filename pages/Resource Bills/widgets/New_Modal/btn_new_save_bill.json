@@ -1,0 +1,55 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 37,
+  "boxShadow": "none",
+  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "buttonVariant": "SECONDARY",
+  "disabledWhenInvalid": false,
+  "dynamicBindingPathList": [
+    {
+      "key": "buttonColor"
+    },
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "isDefaultClickDisabled": true,
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "v8lv50sdo0",
+  "leftColumn": 2,
+  "minWidth": 120,
+  "mobileBottomRow": 37,
+  "mobileLeftColumn": 44,
+  "mobileRightColumn": 60,
+  "mobileTopRow": 33,
+  "needsErrorInfo": false,
+  "onClick": "{{\n  (async () => {\n    if (!new_resource_id.selectedOptionValue) { showAlert('Choose a resource', 'warning'); return; }\n    if (!new_bill_date.selectedDate) { showAlert('Choose bill date', 'warning'); return; }\n    if (!new_due_date.selectedDate) { showAlert('Choose due date', 'warning'); return; }\n\n    await insert_resource_bill.run();\n\n    await get_last_resource_bill_id.run();\n    const newId = get_last_resource_bill_id.data[0]?.last_id;\n    if (!newId) { showAlert('Could not get new bill id', 'error'); return; }\n\n    const billRow = {\n      resource_bill_id: newId,\n      resource_id: new_resource_id.selectedOptionValue,\n      resource_email: new_resource_email.text || '',\n      resource_bill_date: new_bill_date.selectedDate ? moment(new_bill_date.selectedDate).format('YYYY-MM-DD') : null,\n      resource_bill_due_date: new_due_date.selectedDate ? moment(new_due_date.selectedDate).format('YYYY-MM-DD') : null\n    };\n    await storeValue('billRow', billRow);\n\n    await get_resource_bills.run();\n    closeModal('New_Modal');\n    showModal('Update_Modal');\n\n    const r = (get_resources_dd.data || []).find(x => x.resource_id == billRow.resource_id);\n    upd__resource_id.setSelectedOption({ label: r ? r.resource_full_name : '', value: billRow.resource_id });\n    upd_resource_email.setValue(r ? (r.resource_email || '') : '');\n    upd_bill_date.setValue(billRow.resource_bill_date || '');\n    upd_due_date.setValue(billRow.resource_bill_due_date || '');\n\n    await storeValue('updPOs', []);\n  })()\n}}\n",
+  "parentColumnSpace": 10.375,
+  "parentId": "4slqbyhynh",
+  "parentRowSpace": 10,
+  "placement": "CENTER",
+  "recaptchaType": "V3",
+  "renderMode": "CANVAS",
+  "resetFormOnClick": false,
+  "responsiveBehavior": "hug",
+  "rightColumn": 18,
+  "text": "Save Bill",
+  "topRow": 33,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "lspmqs9nfx",
+  "widgetName": "btn_new_save_bill"
+}

@@ -1,0 +1,13 @@
+SELECT
+  a.absence_id,
+  a.resource_id,
+  r.resource_full_name,
+  a.absence_name,
+  a.absence_start_date,
+  a.absence_end_date,
+  a.absence_note,
+  a.created_at,
+  a.updated_at
+FROM absences a
+LEFT JOIN resources r ON r.resource_id = a.resource_id
+ORDER BY a.absence_start_date DESC, a.absence_id DESC;

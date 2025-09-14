@@ -1,0 +1,1 @@
+SELECT service_id AS value, service_name AS label FROM services ORDER BY service_name;

@@ -1,0 +1,3 @@
+UPDATE customers
+SET customer_status = 'Active'
+WHERE customer_id = {{ triggeredRow.customer_id }};

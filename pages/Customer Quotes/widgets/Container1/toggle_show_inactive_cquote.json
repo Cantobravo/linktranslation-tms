@@ -1,0 +1,49 @@
+{
+  "accentColor": "#93c5fd",
+  "alignWidget": "LEFT",
+  "animateLoading": true,
+  "bottomRow": 29,
+  "boxShadow": "none",
+  "defaultSwitchState": false,
+  "dynamicBindingPathList": [],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [
+    {
+      "key": "onChange"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onChange"
+    }
+  ],
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "44kwsb0v57",
+  "label": "Show Inactive",
+  "labelPosition": "Left",
+  "labelTextSize": "1rem",
+  "leftColumn": 14,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "mobileBottomRow": 29,
+  "mobileLeftColumn": 14,
+  "mobileRightColumn": 26,
+  "mobileTopRow": 25,
+  "needsErrorInfo": false,
+  "onChange": "{{\n  toggle_show_inactive_cquote.isSwitchedOn ? get_cquote_all.run() : get_cquote_active.run()\n}}\n",
+  "originalBottomRow": 29,
+  "originalTopRow": 25,
+  "parentColumnSpace": 21.466796875,
+  "parentId": "59rw5mx0bq",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 26,
+  "topRow": 25,
+  "type": "SWITCH_WIDGET",
+  "version": 1,
+  "widgetId": "dn2hv9giu4",
+  "widgetName": "toggle_show_inactive_cquote"
+}

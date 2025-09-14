@@ -1,0 +1,4 @@
+UPDATE services
+SET service_is_active = 1,
+    updated_at        = NOW()
+WHERE service_id = {{ this.params.service_id }};

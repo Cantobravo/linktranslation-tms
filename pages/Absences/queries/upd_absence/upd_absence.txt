@@ -1,0 +1,9 @@
+UPDATE absences
+SET
+  resource_id         = {{ Number(ddl_u_resource_id.selectedOptionValue) || null }},
+  absence_name        = {{ u_absence_name.text }},
+  absence_start_date  = {{ dp_u_start_date.selectedDate ? moment(dp_u_start_date.selectedDate).format('YYYY-MM-DD') : null }},
+  absence_end_date    = {{ dp_u_end_date.selectedDate ? moment(dp_u_end_date.selectedDate).format('YYYY-MM-DD') : null }},
+  absence_note        = {{ u_absence_note.text }},
+  updated_at          = NOW()
+WHERE absence_id = {{ appsmith.store.absenceRow.absence_id }};

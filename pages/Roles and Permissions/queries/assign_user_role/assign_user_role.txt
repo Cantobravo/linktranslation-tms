@@ -1,0 +1,5 @@
+UPDATE resources
+SET role_id = {{ Number(Role_DD.selectedOptionValue) }}
+WHERE resource_id IN (
+  {{ (Resource_MS.selectedOptionValues || []).map(id => Number(id)).join(',') || 'NULL' }}
+);

@@ -1,0 +1,4 @@
+UPDATE resource_purchase_orders
+SET is_billed = 'Yes'
+WHERE FIND_IN_SET(purchase_order_id, '{{ unbilled_po_table_new.selectedRows.map(x => x.purchase_order_id).join(",") }}');
+

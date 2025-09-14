@@ -1,0 +1,20 @@
+{
+  "gitSyncId": "6840b6d2ece888096e42342a_3a7e3d0b-12c4-4413-b83e-b24d61c28e3f",
+  "id": "Resource Banking_InsertBankingHandler",
+  "unpublishedCollection": {
+    "name": "InsertBankingHandler",
+    "pageId": "Resource Banking",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "busy",
+        "value": "false"
+      },
+      {
+        "name": "payload",
+        "value": "{}"
+      }
+    ]
+  }
+}

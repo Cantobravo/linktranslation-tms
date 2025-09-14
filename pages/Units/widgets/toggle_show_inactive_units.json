@@ -1,0 +1,49 @@
+{
+  "accentColor": "#93c5fd",
+  "alignWidget": "LEFT",
+  "animateLoading": true,
+  "bottomRow": 25,
+  "boxShadow": "none",
+  "defaultSwitchState": true,
+  "dynamicBindingPathList": [],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [
+    {
+      "key": "onChange"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onChange"
+    }
+  ],
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "44kwsb0v57",
+  "label": "Show Inactive",
+  "labelPosition": "Left",
+  "labelTextSize": "1rem",
+  "leftColumn": 12,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "mobileBottomRow": 25,
+  "mobileLeftColumn": 12,
+  "mobileRightColumn": 24,
+  "mobileTopRow": 21,
+  "needsErrorInfo": false,
+  "onChange": "{{\n  toggle_show_inactive_units.isSwitchedOn\n    ? get_units_all.run()\n    : get_units.run()\n}}\n",
+  "originalBottomRow": 25,
+  "originalTopRow": 21,
+  "parentColumnSpace": 22.125,
+  "parentId": "0",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 24,
+  "topRow": 21,
+  "type": "SWITCH_WIDGET",
+  "version": 1,
+  "widgetId": "avm183newe",
+  "widgetName": "toggle_show_inactive_units"
+}

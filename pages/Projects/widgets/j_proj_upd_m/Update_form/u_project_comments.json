@@ -1,0 +1,65 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "autoFocus": false,
+  "borderRadius": "0.375rem",
+  "bottomRow": 52,
+  "boxShadow": "none",
+  "defaultText": "{{ get_proj_by_id.data[0]?.project_comments ?? '' }}",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "defaultText"
+    },
+    {
+      "key": "isDisabled"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [
+    {
+      "key": "isDisabled"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "iconAlign": "left",
+  "inputType": "MULTI_LINE_TEXT",
+  "isDisabled": "{{ !appsmith.store.updateMode }}",
+  "isLoading": false,
+  "isRequired": false,
+  "isVisible": true,
+  "key": "ua1vedhdlf",
+  "label": "Comments",
+  "labelAlignment": "left",
+  "labelPosition": "Top",
+  "labelStyle": "",
+  "labelTextSize": "0.875rem",
+  "labelWidth": 5,
+  "leftColumn": 0,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 65,
+  "mobileLeftColumn": 1,
+  "mobileRightColumn": 21,
+  "mobileTopRow": 58,
+  "needsErrorInfo": false,
+  "originalBottomRow": 52,
+  "originalTopRow": 42,
+  "parentColumnSpace": 7.2021484375,
+  "parentId": "3qpss534aq",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "resetOnSubmit": true,
+  "responsiveBehavior": "fill",
+  "rightColumn": 31,
+  "shouldAllowAutofill": false,
+  "showStepArrows": false,
+  "topRow": 42,
+  "type": "INPUT_WIDGET_V2",
+  "version": 2,
+  "widgetId": "91w4q9gnv7",
+  "widgetName": "u_project_comments"
+}

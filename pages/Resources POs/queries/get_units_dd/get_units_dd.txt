@@ -1,0 +1,3 @@
+SELECT unit_id, unit_name
+FROM units
+ORDER BY unit_name;

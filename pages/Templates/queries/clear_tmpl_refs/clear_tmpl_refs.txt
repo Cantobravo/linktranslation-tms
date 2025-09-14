@@ -1,0 +1,4 @@
+UPDATE resource_purchase_orders
+SET template_id = NULL,
+    updated_at  = CURRENT_TIMESTAMP
+WHERE template_id = {{ this.params.template_id }};

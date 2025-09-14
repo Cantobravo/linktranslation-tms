@@ -1,0 +1,34 @@
+SELECT
+  r.resource_id,
+  r.resource_full_name,
+  r.resource_email,
+  r.resource_country,
+  r.resource_status,
+  r.resource_phone,
+  r.resource_documentation,
+  GROUP_CONCAT(
+    DISTINCT CONCAT(sl.language_name, ' → ', tl.language_name)
+    ORDER BY sl.language_name, tl.language_name
+    SEPARATOR ' | '
+  ) AS language_pairs,
+  GROUP_CONCAT(
+    DISTINCT wt.work_team_name
+    ORDER BY wt.work_team_name
+    SEPARATOR ' | '
+  ) AS teams_list,
+  r.resource_is_active
+FROM resources r
+LEFT JOIN resource_language_pairs rlp
+  ON rlp.resource_id = r.resource_id
+ AND COALESCE(rlp.is_active, 1) = 1
+LEFT JOIN languages sl ON sl.language_id = rlp.source_language_id
+LEFT JOIN languages tl ON tl.language_id = rlp.target_language_id
+LEFT JOIN work_team_members wtm
+  ON wtm.resource_id = r.resource_id
+ AND COALESCE(wtm.is_active, 1) = 1
+LEFT JOIN work_teams wt
+  ON wt.work_team_id = wtm.work_team_id
+ AND COALESCE(wt.is_active, 1) = 1
+/* NOTE: no WHERE resource_is_active filter here */
+GROUP BY r.resource_id
+ORDER BY r.resource_status, r.resource_full_name;

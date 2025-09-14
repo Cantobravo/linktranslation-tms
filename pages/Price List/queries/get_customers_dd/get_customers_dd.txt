@@ -1,0 +1,4 @@
+SELECT customer_id AS value, customer_name AS label
+FROM customers
+WHERE COALESCE(customer_status,'Active')='Active'
+ORDER BY customer_name;

@@ -1,0 +1,7 @@
+SELECT
+  rb.resource_bill_id,
+  rb.resource_id,
+  rb.resource_bill_date,
+  rb.resource_bill_due_date
+FROM resource_bills rb
+WHERE rb.resource_bill_id = {{ appsmith.store.billId }};

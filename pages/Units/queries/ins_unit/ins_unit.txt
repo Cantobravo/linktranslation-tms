@@ -1,0 +1,6 @@
+INSERT INTO units (unit_name, unit_status, updated_at)
+VALUES (
+  {{ JSON_Unit_Insert.formData.unit_name }},
+  {{ JSON_Unit_Insert.formData.unit_status || 'Active' }},
+  NOW()
+);

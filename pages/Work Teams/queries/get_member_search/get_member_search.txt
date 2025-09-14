@@ -1,0 +1,46 @@
+SELECT
+  wtm.work_team_member_id,
+  wtm.work_team_id,
+  wtm.resource_id,
+  r.resource_full_name,
+  r.resource_email,
+  wtm.`is_available`,
+  wtm.certification_status,
+  wtm.daily_capacity_words,
+  wtm.po_status,
+  wtm.rates_text,
+  wtm.note,
+  COALESCE(wtmc.alias_email, '') AS alias_email,
+  COALESCE(wtmc.username, '')    AS username,
+  COALESCE(NULLIF(wtmc.alias_email,''), r.resource_email) AS email_to
+FROM work_team_members wtm
+JOIN resources r ON r.resource_id = wtm.resource_id
+LEFT JOIN work_team_member_credentials wtmc
+  ON wtmc.work_team_member_id = wtm.work_team_member_id
+ AND COALESCE(wtmc.is_active,1) = 1
+ AND wtmc.wtm_cred_id = (
+    SELECT MIN(wtmc2.wtm_cred_id)
+    FROM work_team_member_credentials wtmc2
+    WHERE wtmc2.work_team_member_id = wtm.work_team_member_id
+      AND COALESCE(wtmc2.is_active,1) = 1
+ )
+WHERE
+  COALESCE(wtm.is_active,1) = 1
+  AND wtm.work_team_id = {{ appsmith.store.wtRow?.work_team_id || 0 }}
+
+  AND ( {{ member_cert.selectedOptionValue || '' }} = ''
+        OR wtm.certification_status = {{ member_cert.selectedOptionValue }} )
+
+  AND ( {{ member_avail.selectedOptionValue || '' }} = ''
+        OR wtm.`is_available` = {{ member_avail.selectedOptionValue }} )
+
+  AND (
+        {{ member_q.text && member_q.text !== '' ? 1 : 0 }} = 0
+        OR (
+             r.resource_full_name LIKE CONCAT('%', {{ member_q.text }}, '%')
+          OR r.resource_email      LIKE CONCAT('%', {{ member_q.text }}, '%')
+          OR COALESCE(wtmc.alias_email,'') LIKE CONCAT('%', {{ member_q.text }}, '%')
+          OR COALESCE(wtmc.username,'')    LIKE CONCAT('%', {{ member_q.text }}, '%')
+        )
+      )
+ORDER BY r.resource_full_name;

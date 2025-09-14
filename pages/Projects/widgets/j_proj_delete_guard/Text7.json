@@ -1,0 +1,53 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 25,
+  "dynamicBindingPathList": [
+    {
+      "key": "truncateButtonColor"
+    },
+    {
+      "key": "fontFamily"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "text"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicTriggerPathList": [],
+  "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
+  "fontSize": "1.25rem",
+  "fontStyle": "BOLD",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "pq71hspv3g",
+  "leftColumn": 0,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 5,
+  "mobileLeftColumn": 1,
+  "mobileRightColumn": 41,
+  "mobileTopRow": 1,
+  "needsErrorInfo": false,
+  "originalBottomRow": 25,
+  "originalTopRow": 9,
+  "overflow": "NONE",
+  "parentId": "zwyzhc3nwi",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 61,
+  "shouldTruncate": false,
+  "text": "{{\n  (function(){\n    const r = get_proj_guard.data?.[0] || {};\n    const p = appsmith.store.projDel || {};\n\n    const poTotal     = Number(r.po_count || 0);\n    const billedPOs   = Number(r.billed_po_count || 0);\n    const linkPOs     = Number(r.bill_link_count || 0);\n    const billedOrLinked = billedPOs + linkPOs;\n\n    const billIds = (r.bill_ids && r.bill_ids.length) ? r.bill_ids : '(none)';\n\n    const invCount = Number(r.invoice_link_count || 0);\n    const invIds   = (r.invoice_ids && r.invoice_ids.length) ? r.invoice_ids : '(none)';\n    const invFlag  = invCount > 0 ? 'Yes' : 'No';\n\n    return `• Project: ${p.name || ''} (ID ${p.project_id || ''})\n• Purchase Orders: total ${poTotal}\n• Billed/linked POs: ${billedOrLinked} (billed ${billedPOs}, linked ${linkPOs})\n• Bill IDs: ${billIds}\n• Invoiced: ${invFlag}  (Invoice IDs: ${invIds})\n\n`;\n  })()\n}}\n",
+  "textAlign": "LEFT",
+  "textColor": "#231F20",
+  "topRow": 9,
+  "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "i06o4eq8v1",
+  "widgetName": "Text7"
+}

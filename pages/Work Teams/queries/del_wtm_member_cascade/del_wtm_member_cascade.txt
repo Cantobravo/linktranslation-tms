@@ -1,0 +1,8 @@
+DELETE FROM work_team_member_links
+WHERE work_team_member_id = {{ tbl_team_members.triggeredRow?.work_team_member_id }};
+
+DELETE FROM work_team_member_credentials
+WHERE work_team_member_id = {{ tbl_team_members.triggeredRow?.work_team_member_id }};
+
+DELETE FROM work_team_members
+WHERE work_team_member_id = {{ tbl_team_members.triggeredRow?.work_team_member_id }};

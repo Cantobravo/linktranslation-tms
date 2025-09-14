@@ -1,0 +1,2 @@
+INSERT IGNORE INTO role_permissions (role_id, permission_id)
+VALUES ({{ roles_table.selectedRow.role_id }}, {{ this.params.permission_id }});

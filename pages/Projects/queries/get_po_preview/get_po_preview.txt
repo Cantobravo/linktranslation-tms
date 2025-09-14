@@ -1,0 +1,44 @@
+SELECT 
+  po.purchase_order_id,
+  po.project_id,
+  p.project_name,
+
+  po.resource_id,
+  /* readable name, never blank */
+  COALESCE(
+    NULLIF(TRIM(r.resource_full_name), ''),
+    NULLIF(TRIM(CONCAT_WS(' ', r.resource_first_name, r.resource_last_name)), ''),
+    CONCAT('Resource #', r.resource_id)
+  ) AS resource_name,
+  r.resource_email,
+
+  po.service_id,
+  s.service_name,
+
+  po.unit_id,
+  u.unit_name,
+
+  po.source_language_id,
+  sl.language_name AS source_language_name,
+  po.target_language_id,
+  tl.language_name AS target_language_name,
+
+  po.volume,
+  po.rate,
+  po.total,
+  po.date,
+  po.due_date,
+  po.note
+FROM resource_purchase_orders po
+LEFT JOIN projects   p  ON p.project_id   = po.project_id
+LEFT JOIN resources  r  ON r.resource_id  = po.resource_id
+LEFT JOIN services   s  ON s.service_id   = po.service_id
+LEFT JOIN units      u  ON u.unit_id      = po.unit_id
+LEFT JOIN languages  sl ON sl.language_id = po.source_language_id
+LEFT JOIN languages  tl ON tl.language_id = po.target_language_id
+WHERE po.project_id = {{
+  appsmith.store.selectedProjectData?.project_id 
+  || Projects_Table?.selectedRow?.project_id 
+  || null
+}}
+ORDER BY COALESCE(po.due_date, po.date) ASC, po.purchase_order_id DESC;

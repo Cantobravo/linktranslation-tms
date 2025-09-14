@@ -1,0 +1,49 @@
+{
+  "accentColor": "#93c5fd",
+  "alignWidget": "LEFT",
+  "animateLoading": true,
+  "bottomRow": 33,
+  "boxShadow": "none",
+  "defaultSwitchState": false,
+  "dynamicBindingPathList": [],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [
+    {
+      "key": "onChange"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onChange"
+    }
+  ],
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "44kwsb0v57",
+  "label": "Show Inactive",
+  "labelPosition": "Left",
+  "labelTextSize": "1rem",
+  "leftColumn": 21,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "mobileBottomRow": 33,
+  "mobileLeftColumn": 21,
+  "mobileRightColumn": 33,
+  "mobileTopRow": 29,
+  "needsErrorInfo": false,
+  "onChange": "{{\n  toggle_show_inactive_ccont.isSwitchedOn\n    ? get_ccont_all.run()\n    : get_ccont_active.run()\n}}\n",
+  "originalBottomRow": 33,
+  "originalTopRow": 29,
+  "parentColumnSpace": 21.466796875,
+  "parentId": "59rw5mx0bq",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 33,
+  "topRow": 29,
+  "type": "SWITCH_WIDGET",
+  "version": 1,
+  "widgetId": "t716atqq1v",
+  "widgetName": "toggle_show_inactive_ccont"
+}

@@ -1,0 +1,53 @@
+{
+  "animateLoading": true,
+  "borderRadius": "0.375rem",
+  "bottomRow": 60,
+  "boxShadow": "none",
+  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "buttonStyle": "PRIMARY_BUTTON",
+  "buttonVariant": "PRIMARY",
+  "disabledWhenInvalid": false,
+  "dynamicBindingPathList": [
+    {
+      "key": "buttonColor"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "isDefaultClickDisabled": true,
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "tpnydvivzh",
+  "leftColumn": 39,
+  "minWidth": 120,
+  "mobileBottomRow": 22,
+  "mobileLeftColumn": 47,
+  "mobileRightColumn": 63,
+  "mobileTopRow": 18,
+  "needsErrorInfo": false,
+  "onClick": "{{\n  (async () => {\n    // ---- Guards: don't run without context/selection\n    const billId = appsmith.store.billRow?.resource_bill_id;\n    const sel = unbilled_po_table_new.selectedRows || [];\n    if (!billId) { showAlert('Missing bill context. Reopen the Update modal or pick a bill again.', 'warning'); return; }\n    if (!sel.length) { showAlert('Select at least one PO.', 'warning'); return; }\n\n    // Optional: ensure we actually have numeric PO IDs\n    const ids = sel.map(r => Number(r.purchase_order_id)).filter(Boolean);\n    if (!ids.length) { showAlert('No valid PO ids in selection.', 'warning'); return; }\n\n    // ---- Do the work, step by step, and stop exactly where it fails\n    try {\n      // 1) Link POs to the bill\n      try { await ins_bill_links_json.run(); }\n      catch (e) { showAlert('Linking POs failed (ins_bill_links_json): ' + (e?.message || e), 'error'); return; }\n\n      // 2) Mark POs as billed (if you still use this; keep, since it exists on your page)\n      try { await upd_pos_set_billed_json.run(); }\n      catch (e) { showAlert('Marking POs billed failed (upd_pos_set_billed_json): ' + (e?.message || e), 'error'); return; }\n\n      // 3) Update the bill's PO list string\n      try { await upd_bill_po_list.run(); }\n      catch (e) { showAlert('Updating bill PO list failed (upd_bill_po_list): ' + (e?.message || e), 'error'); return; }\n\n      // 4) Refresh both tables\n      try { await get_bill_purchase_orders.run(); } catch (e) { /* not fatal */ }\n      try { await get_unb_pos_by_res.run(); } catch (e) { /* not fatal */ }\n\n      // 5) Close and return to Update modal\n      closeModal('Add_Purchase_Order_Modal');\n      showModal('Update_Modal');\n      showAlert('POs linked to bill.', 'success');\n    } catch (e) {\n      showAlert('Add POs failed: ' + (e?.message || e), 'error');\n    }\n  })()\n}}\n",
+  "originalBottomRow": 85,
+  "originalTopRow": 81,
+  "parentId": "ktrjiqp85q",
+  "placement": "CENTER",
+  "recaptchaType": "V3",
+  "renderMode": "CANVAS",
+  "resetFormOnClick": false,
+  "responsiveBehavior": "hug",
+  "rightColumn": 49,
+  "text": "Add PO",
+  "topRow": 56,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "iszcpwk1sq",
+  "widgetName": "add_po_confirm_button_new"
+}

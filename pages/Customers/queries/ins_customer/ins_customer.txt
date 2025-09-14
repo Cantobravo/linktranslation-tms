@@ -1,0 +1,23 @@
+INSERT INTO customers (
+  customer_name, customer_type, customer_address, customer_country, customer_phone,
+  customer_industry, customer_note, customer_invoice_procedure, customer_payment_term,
+  customer_tax_vat_number, currency_id, customer_receivable_bank_name, customer_linkedIn,
+  customer_bank_fee, customer_status, customer_documentation
+) VALUES (
+  {{ j_customer_insert_json.formData.customer_name ?? null }},
+  {{ j_customer_insert_json.formData.customer_type ?? null }},
+  {{ j_customer_insert_json.formData.customer_address ?? null }},
+  {{ j_customer_insert_json.formData.customer_country ?? null }},
+  {{ j_customer_insert_json.formData.customer_phone ?? null }},
+  {{ j_customer_insert_json.formData.customer_industry ?? null }},
+  {{ j_customer_insert_json.formData.customer_note ?? null }},
+  {{ j_customer_insert_json.formData.customer_invoice_procedure ?? null }},
+  {{ j_customer_insert_json.formData.customer_payment_term ?? null }},
+  {{ j_customer_insert_json.formData.customer_tax_vat_number ?? null }},
+  {{ j_customer_insert_json.formData.currency_id ?? null }},
+  {{ j_customer_insert_json.formData.customer_receivable_bank_name ?? null }},
+  {{ j_customer_insert_json.formData.customer_linkedIn ?? null }},
+  {{ j_customer_insert_json.formData.customer_bank_fee ?? null }},
+  {{ j_customer_insert_json.formData.customer_status ?? null }},
+  {{ j_customer_insert_json.formData.customer_documentation ?? null }}
+);

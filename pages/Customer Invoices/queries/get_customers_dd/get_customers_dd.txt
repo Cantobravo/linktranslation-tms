@@ -1,0 +1,9 @@
+SELECT
+  c.customer_id         AS value,
+  c.customer_name       AS label,
+  c.currency_id,
+  cur.currency_acronym
+FROM customers c
+LEFT JOIN currencies cur ON cur.currency_id = c.currency_id
+WHERE COALESCE(c.customer_status, 'Active') <> 'Inactive'
+ORDER BY c.customer_name;

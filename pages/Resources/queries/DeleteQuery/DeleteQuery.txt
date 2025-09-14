@@ -1,0 +1,2 @@
+DELETE FROM resources
+  WHERE resource_id = {{data_table.triggeredRow.resource_id}};

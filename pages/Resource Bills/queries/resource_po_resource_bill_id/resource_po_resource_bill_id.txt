@@ -1,0 +1,4 @@
+UPDATE resource_purchase_orders
+SET is_billed = 'No',
+    resource_bill_id = NULL
+WHERE resource_bill_id = {{ appsmith.store.billRow.resource_bill_id }};

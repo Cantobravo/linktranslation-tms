@@ -1,0 +1,16 @@
+{
+  "gitSyncId": "6840b6d2ece888096e42342a_f1b62025-61d2-4d9c-8ed3-517fc42f97ad",
+  "id": "Customers_SubmitGate",
+  "unpublishedCollection": {
+    "name": "SubmitGate",
+    "pageId": "Customers",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "busyKey",
+        "value": "\"__submit_busy\""
+      }
+    ]
+  }
+}

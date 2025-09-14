@@ -1,0 +1,7 @@
+SELECT
+  currency_id,
+  currency_name,
+  currency_acronym,
+  currency_symbol
+FROM `currencies`
+ORDER BY currency_name;

@@ -1,0 +1,5 @@
+SELECT
+  r.resource_id AS value,
+  CONCAT(r.resource_full_name, ' — ', COALESCE(r.resource_email,'')) AS label
+FROM resources r
+ORDER BY r.resource_full_name;

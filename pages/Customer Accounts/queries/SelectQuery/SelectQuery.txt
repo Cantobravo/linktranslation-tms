@@ -1,0 +1,16 @@
+SELECT 
+    ca.customer_account_id,
+    ca.customer_account_name,
+    ca.customer_account_industry,
+    ca.customer_account_tools,
+    ca.customer_id,
+		c.customer_name AS customer_account_customer_name,
+    ca.resource_id,
+		r.resource_full_name AS customer_account_resource_name,
+    ca.created_at,
+    ca.updated_at
+FROM customer_accounts ca
+LEFT JOIN customers c ON ca.customer_id = c.customer_id
+LEFT JOIN resources r ON ca.resource_id = r.resource_id
+ORDER BY 
+    ca.customer_id ASC;

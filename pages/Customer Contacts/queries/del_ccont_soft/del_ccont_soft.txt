@@ -1,0 +1,3 @@
+UPDATE customer_contacts
+SET customer_contact_status = 'Inactive'
+WHERE customer_contact_id = {{ appsmith.store.ccontRow?.customer_contact_id }};

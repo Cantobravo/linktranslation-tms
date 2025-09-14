@@ -1,0 +1,13 @@
+INSERT INTO invoice_project_link (customer_invoice_id, project_id)
+SELECT
+  {{ appsmith.store.invId }} AS customer_invoice_id,
+  jt.proj_id
+FROM JSON_TABLE(
+  {{ JSON.stringify(p_uninv_proj_table.selectedRows.map(x => x.project_id)) }},
+  '$[*]' COLUMNS (proj_id INT PATH '$')
+) jt
+WHERE NOT EXISTS (
+  SELECT 1 FROM invoice_project_link l
+  WHERE l.customer_invoice_id = {{ appsmith.store.invId }}
+    AND l.project_id = jt.proj_id
+);

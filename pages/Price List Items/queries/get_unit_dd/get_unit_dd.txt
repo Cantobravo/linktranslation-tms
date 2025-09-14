@@ -1,0 +1,5 @@
+SELECT
+  u.unit_id   AS value,
+  u.unit_name AS label
+FROM units u
+ORDER BY u.unit_name;

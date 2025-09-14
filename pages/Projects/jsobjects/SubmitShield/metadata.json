@@ -1,0 +1,16 @@
+{
+  "gitSyncId": "6840b6d2ece888096e42342a_85fd56e5-a249-4931-bf08-8d8041eb6fd8",
+  "id": "Projects_SubmitShield",
+  "unpublishedCollection": {
+    "name": "SubmitShield",
+    "pageId": "Projects",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "lastRun",
+        "value": "0"
+      }
+    ]
+  }
+}

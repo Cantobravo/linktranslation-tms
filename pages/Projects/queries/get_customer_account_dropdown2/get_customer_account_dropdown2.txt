@@ -1,0 +1,6 @@
+SELECT 
+    customer_account_id AS value,
+    customer_account_name AS label
+FROM customer_accounts
+WHERE customer_id = {{ u_customer_id.selectedOptionValue }}
+ORDER BY customer_account_name;

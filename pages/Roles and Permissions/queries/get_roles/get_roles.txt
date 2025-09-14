@@ -1,0 +1,3 @@
+SELECT role_id, role_name, created_at, updated_at
+FROM roles
+ORDER BY role_name;

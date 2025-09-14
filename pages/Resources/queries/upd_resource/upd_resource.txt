@@ -1,0 +1,18 @@
+UPDATE resources
+SET
+  -- Force USD always
+  currency_id            = 1,
+
+  -- Other fields
+  resource_email         = NULLIF('{{ j_res_upd_form.formData.resource_email }}',''),
+  resource_username      = NULLIF('{{ j_res_upd_form.formData.resource_username }}',''),
+  resource_is_active     = {{ j_res_upd_form.formData.resource_is_active ? 1 : 0 }},
+  resource_status        = NULLIF('{{ j_res_upd_form.formData.resource_status }}',''),
+  resource_first_name    = NULLIF('{{ j_res_upd_form.formData.resource_first_name }}',''),
+  resource_last_name     = NULLIF('{{ j_res_upd_form.formData.resource_last_name }}',''),
+  resource_full_name     = NULLIF('{{ j_res_upd_form.formData.resource_full_name }}',''),
+  resource_payment_term  = NULLIF('{{ j_res_upd_form.formData.resource_payment_term }}',''),
+  resource_address       = NULLIF('{{ j_res_upd_form.formData.resource_address }}',''),
+  updated_at             = NOW()
+WHERE resource_id = {{ appsmith.store.resRow?.resource_id || tbl_resources.selectedRow?.resource_id }}
+LIMIT 1;

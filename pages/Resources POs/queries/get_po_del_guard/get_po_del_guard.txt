@@ -1,0 +1,14 @@
+SELECT
+  po.purchase_order_id,
+  po.project_id,
+  p.project_name,
+  CASE WHEN COALESCE(po.is_billed,'No') = 'Yes' THEN 1 ELSE 0 END AS in_bill_status,
+  EXISTS(
+    SELECT 1
+    FROM resource_bill_po_link l
+    WHERE l.purchase_order_id = po.purchase_order_id
+  ) AS in_bill_link,
+  CASE WHEN COALESCE(po.project_id, 0) <> 0 THEN 1 ELSE 0 END AS in_project
+FROM resource_purchase_orders po
+LEFT JOIN projects p ON p.project_id = po.project_id
+WHERE po.purchase_order_id = {{ appsmith.store.poId }};

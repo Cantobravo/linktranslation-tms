@@ -1,0 +1,10 @@
+SELECT
+  language_id,
+  language_name,
+  language_acronym,
+  language_status,
+  created_at,
+  updated_at
+FROM linktranslation.languages
+WHERE COALESCE(language_status, 'Active') = 'Active'
+ORDER BY language_name;

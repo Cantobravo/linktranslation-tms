@@ -1,0 +1,13 @@
+SELECT
+    po.purchase_order_id,
+    po.project_id,
+    po.volume,
+    po.rate,
+    po.total,
+    po.due_date
+FROM
+    resource_purchase_orders po
+LEFT JOIN
+    resource_bill_po_link l ON po.purchase_order_id = l.purchase_order_id
+WHERE
+    l.bill_po_link_id <=> NULL;

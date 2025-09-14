@@ -1,0 +1,16 @@
+{
+  "gitSyncId": "6840b6d2ece888096e42342a_eb78d129-2906-4c88-8a11-700e42b5cd21",
+  "id": "Languages_Gate",
+  "unpublishedCollection": {
+    "name": "Gate",
+    "pageId": "Languages",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "required",
+        "value": "['VIEW_LANGUAGES']"
+      }
+    ]
+  }
+}

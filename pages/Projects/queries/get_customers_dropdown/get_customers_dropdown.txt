@@ -1,0 +1,1 @@
+SELECT customer_id AS value, customer_name AS label FROM customers ORDER BY customer_name;

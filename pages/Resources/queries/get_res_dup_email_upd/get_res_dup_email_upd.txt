@@ -1,0 +1,5 @@
+SELECT resource_id
+FROM resources
+WHERE LOWER(resource_email) = LOWER({{ j_res_upd_form.formData.resource_email }})
+  AND resource_id <> {{ appsmith.store.resRow?.resource_id || tbl_resources.selectedRow?.resource_id }}
+LIMIT 1;

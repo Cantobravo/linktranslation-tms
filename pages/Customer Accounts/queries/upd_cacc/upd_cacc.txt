@@ -1,0 +1,7 @@
+UPDATE customer_accounts
+SET
+  customer_id               = COALESCE({{ j_cacc_upd_jsn.formData.customer_id }},               customer_id),
+  customer_account_name     = COALESCE({{ j_cacc_upd_jsn.formData.customer_account_name }},     customer_account_name),
+  customer_account_industry = COALESCE({{ j_cacc_upd_jsn.formData.customer_account_industry }}, customer_account_industry),
+  customer_account_tools    = COALESCE({{ j_cacc_upd_jsn.formData.customer_account_tools }},    customer_account_tools)
+WHERE customer_account_id = {{ appsmith.store.caccRow?.customer_account_id }};

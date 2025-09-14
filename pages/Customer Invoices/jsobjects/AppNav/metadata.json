@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "6840b6d2ece888096e42342a_17cb99e7-d163-4e6f-83fe-5990b6c5562e",
+  "id": "Customer Invoices_AppNav",
+  "unpublishedCollection": {
+    "name": "AppNav",
+    "pageId": "Customer Invoices",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

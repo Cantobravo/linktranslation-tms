@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "6840b6d2ece888096e42342a_61397ca6-c908-4f34-af9f-6e6ff0ff21a0",
+  "id": "Resource Bills_ResourceBillingHandler",
+  "unpublishedCollection": {
+    "name": "ResourceBillingHandler",
+    "pageId": "Resource Bills",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 131,
+  "boxShadow": "none",
+  "defaultImage": "\n",
+  "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "image"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "enableDownload": false,
+  "enableRotation": false,
+  "flexVerticalAlignment": "start",
+  "image": "{{ j_edit_company.formData.logo || get_company.data[0]?.logo }}\n",
+  "imageShape": "RECTANGLE",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "lwaulvddvw",
+  "leftColumn": 3,
+  "maxZoomLevel": 1,
+  "mobileBottomRow": 55,
+  "mobileLeftColumn": 49,
+  "mobileRightColumn": 61,
+  "mobileTopRow": 43,
+  "needsErrorInfo": false,
+  "objectFit": "cover",
+  "originalBottomRow": 131,
+  "originalTopRow": 116,
+  "parentColumnSpace": 9.5625,
+  "parentId": "0",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "rightColumn": 11,
+  "topRow": 116,
+  "type": "IMAGE_WIDGET",
+  "version": 1,
+  "widgetId": "942nzh5aij",
+  "widgetName": "img_logo_preview"
+}

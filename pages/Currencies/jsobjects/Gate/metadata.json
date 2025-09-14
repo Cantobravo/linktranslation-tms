@@ -1,0 +1,16 @@
+{
+  "gitSyncId": "6840b6d2ece888096e42342a_9d935c56-8edf-4bdf-9387-5643944e6850",
+  "id": "Currencies_Gate",
+  "unpublishedCollection": {
+    "name": "Gate",
+    "pageId": "Currencies",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "required",
+        "value": "['VIEW_CURRENCIES']"
+      }
+    ]
+  }
+}

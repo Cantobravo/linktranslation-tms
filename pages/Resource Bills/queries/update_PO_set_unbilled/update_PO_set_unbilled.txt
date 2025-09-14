@@ -1,0 +1,3 @@
+UPDATE resource_purchase_orders
+SET is_billed = 'No'
+WHERE purchase_order_id = {{ New_Purchase_Order_Table.triggeredRow.purchase_order_id }};

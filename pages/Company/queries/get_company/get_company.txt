@@ -1,0 +1,6 @@
+SELECT
+  c.*,
+  cur.currency_name
+FROM `company` AS c
+LEFT JOIN `currencies` AS cur ON cur.currency_id = c.currency_id
+LIMIT 1;

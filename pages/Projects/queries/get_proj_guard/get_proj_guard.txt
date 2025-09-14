@@ -1,0 +1,45 @@
+-- get_proj_guard
+-- params: project_id
+SELECT
+  /* total POs for this project */
+  COUNT(*) AS po_count,
+
+  /* POs flagged billed/paid or holding a bill_id */
+  SUM(
+    CASE
+      WHEN COALESCE(rpo.is_billed,'') IN ('Yes','Paid')
+           OR COALESCE(rpo.resource_bill_id,0) <> 0
+      THEN 1 ELSE 0 END
+  ) AS billed_po_count,
+
+  /* POs that appear in the bill<->PO link table */
+  SUM(
+    CASE
+      WHEN EXISTS (
+        SELECT 1 FROM resource_bill_po_link l
+        WHERE l.purchase_order_id = rpo.purchase_order_id
+      )
+      THEN 1 ELSE 0 END
+  ) AS bill_link_count,
+
+  /* Bill IDs (from direct bill_id column OR link table) */
+  TRIM(BOTH '|' FROM CONCAT_WS('|',
+    (SELECT GROUP_CONCAT(DISTINCT r2.resource_bill_id ORDER BY r2.resource_bill_id SEPARATOR ',')
+       FROM resource_purchase_orders r2
+      WHERE r2.project_id = {{ this.params.project_id }}
+        AND COALESCE(r2.resource_bill_id,0) <> 0),
+    (SELECT GROUP_CONCAT(DISTINCT l2.resource_bill_id ORDER BY l2.resource_bill_id SEPARATOR ',')
+       FROM resource_bill_po_link l2
+       JOIN resource_purchase_orders r3 ON r3.purchase_order_id = l2.purchase_order_id
+      WHERE r3.project_id = {{ this.params.project_id }})
+  )) AS bill_ids,
+
+  /* Invoice links for this project */
+  (SELECT COUNT(*) FROM invoice_project_link ipl
+    WHERE ipl.project_id = {{ this.params.project_id }}) AS invoice_link_count,
+
+  (SELECT GROUP_CONCAT(DISTINCT ipl.customer_invoice_id ORDER BY ipl.customer_invoice_id SEPARATOR ',')
+     FROM invoice_project_link ipl
+    WHERE ipl.project_id = {{ this.params.project_id }}) AS invoice_ids
+FROM resource_purchase_orders rpo
+WHERE rpo.project_id = {{ this.params.project_id }};

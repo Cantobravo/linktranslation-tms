@@ -1,0 +1,12 @@
+SELECT 
+  po.purchase_order_id,
+  po.project_id,
+  p.project_name,
+  po.date,
+  po.total,
+  po.is_billed
+FROM resource_purchase_orders po
+LEFT JOIN projects p ON po.project_id = p.project_id
+WHERE po.resource_id = {{ appsmith.store.new_selected_resource }}
+AND po.is_billed = 'No'
+ORDER BY po.date DESC;

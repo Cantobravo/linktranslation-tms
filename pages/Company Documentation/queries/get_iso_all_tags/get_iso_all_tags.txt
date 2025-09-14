@@ -1,0 +1,3 @@
+SELECT tags
+FROM iso_texts
+WHERE COALESCE(tags,'') <> '';

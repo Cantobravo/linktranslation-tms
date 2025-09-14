@@ -1,0 +1,49 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 5,
+  "boxShadow": "none",
+  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "buttonVariant": "TERTIARY",
+  "dynamicBindingPathList": [
+    {
+      "key": "buttonColor"
+    },
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "iconName": "cross",
+  "iconSize": 24,
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "rxxdqa1je2",
+  "leftColumn": 57,
+  "minWidth": 50,
+  "mobileBottomRow": 4,
+  "mobileLeftColumn": 58,
+  "mobileRightColumn": 64,
+  "mobileTopRow": 0,
+  "needsErrorInfo": false,
+  "onClick": "{{\n  (async () => {\n    await get_resource_bills.run();      // refresh billing_table\n    closeModal('Update_Modal');\n    // refresh preview for whatever is currently selected\n    if (billing_table.selectedRow?.resource_bill_id) {\n      await storeValue('billId', billing_table.selectedRow.resource_bill_id);\n      await get_bill_pos_preview.run();\n    }\n    await storeValue('billRow', undefined);\n    await storeValue('billId', undefined); // remove this line if you prefer to keep preview after close\n  })()\n}}\n",
+  "parentId": "r1oo1nhb82",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "hug",
+  "rightColumn": 63,
+  "topRow": 1,
+  "type": "ICON_BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "pvbzo9r4mc",
+  "widgetName": "IconButton2Copy"
+}

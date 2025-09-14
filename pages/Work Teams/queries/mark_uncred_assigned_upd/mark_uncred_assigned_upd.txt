@@ -1,0 +1,8 @@
+UPDATE work_team_un_credentials
+SET
+  is_assigned = 1,
+  assigned_to_work_team_member_id = {{ appsmith.store.wtmRow?.work_team_member_id || 0 }},
+  assigned_at = NOW(),
+  updated_at = NOW()
+WHERE wtu_cred_id = {{ i_uncred_pick_upd.selectedOptionValue }}
+  AND is_assigned = 0;

@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "6840b6d2ece888096e42342a_16dc351f-d84b-4d40-8491-4cda54508b40",
+  "id": "Messages_NotesSanitizer",
+  "unpublishedCollection": {
+    "name": "NotesSanitizer",
+    "pageId": "Messages",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

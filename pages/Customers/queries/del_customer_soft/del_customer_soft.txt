@@ -1,0 +1,4 @@
+UPDATE customers
+SET customer_status = 'Inactive',
+    updated_at = NOW()
+WHERE customer_id = {{ this.params.customer_id }};

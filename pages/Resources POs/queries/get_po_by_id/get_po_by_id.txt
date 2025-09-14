@@ -1,0 +1,4 @@
+SELECT
+  po.*
+FROM resource_purchase_orders po
+WHERE po.purchase_order_id = {{ appsmith.store.poId }};

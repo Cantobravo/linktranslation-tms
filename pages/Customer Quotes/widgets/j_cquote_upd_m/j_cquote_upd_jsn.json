@@ -1,0 +1,634 @@
+{
+  "animateLoading": true,
+  "autoGenerateForm": true,
+  "backgroundColor": "#fff",
+  "borderColor": "{{appsmith.theme.colors.primaryColor}}",
+  "borderRadius": "1.5rem",
+  "borderWidth": "1",
+  "bottomRow": 107,
+  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+  "childStylesheet": {
+    "ARRAY": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none",
+      "cellBorderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "cellBoxShadow": "none"
+    },
+    "CHECKBOX": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}"
+    },
+    "CURRENCY_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "DATEPICKER": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "EMAIL_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "MULTILINE_TEXT_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "MULTISELECT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "NUMBER_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "OBJECT": {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none",
+      "cellBorderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "cellBoxShadow": "none"
+    },
+    "PASSWORD_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "PHONE_NUMBER_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "RADIO_GROUP": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "boxShadow": "none"
+    },
+    "SELECT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "SWITCH": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "boxShadow": "none"
+    },
+    "TEXT_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    }
+  },
+  "disabledWhenInvalid": true,
+  "dynamicBindingPathList": [
+    {
+      "key": "boxShadow"
+    },
+    {
+      "key": "submitButtonStyles.buttonColor"
+    },
+    {
+      "key": "resetButtonStyles.buttonColor"
+    },
+    {
+      "key": "resetButtonStyles.borderRadius"
+    },
+    {
+      "key": "sourceData"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_quote_name.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_quote_name.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_quote_name.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_id.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_id.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_id.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_contact_id.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_contact_id.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_contact_id.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.currency_id.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.currency_id.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.currency_id.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.quote_amount.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.quote_amount.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.quote_amount.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_quote_start_date.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_quote_start_date.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_quote_start_date.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_quote_last_contact_date.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_quote_last_contact_date.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_quote_last_contact_date.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_quote_next_contact_date.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_quote_next_contact_date.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_quote_next_contact_date.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.quote_notes.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.quote_notes.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.quote_notes.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.cellBorderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_contact_id.options"
+    },
+    {
+      "key": "schema.__root_schema__.children.currency_id.options"
+    },
+    {
+      "key": "borderColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_quote_status.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_quote_status.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_quote_status.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_id.options"
+    },
+    {
+      "key": "schema.__root_schema__.children.customField1.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.customField1.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.customField1.options"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_quote_id.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_quote_id.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_quote_id.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_quote_status.options"
+    },
+    {
+      "key": "schema.__root_schema__.children.customField1.defaultValue"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [
+    {
+      "key": "schema.__root_schema__.children.customer_quote_start_date.defaultValue"
+    },
+    {
+      "key": "sourceData"
+    },
+    {
+      "key": "onSubmit"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_id.onOptionChange"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onSubmit"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_id.onOptionChange"
+    }
+  ],
+  "fieldLimitExceeded": false,
+  "fixedFooter": true,
+  "flexVerticalAlignment": "start",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "sxaxq5vhp1",
+  "leftColumn": 2,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 44,
+  "mobileLeftColumn": 2,
+  "mobileRightColumn": 27,
+  "mobileTopRow": 3,
+  "needsErrorInfo": false,
+  "onSubmit": "{{\n  SubmitShield.runOnce(async () => {\n    await upd_cquote.run();\n    if (toggle_show_inactive_cquote.isSwitchedOn) {\n      await get_cquote_all.run();\n    } else {\n      await get_cquote_active.run();\n    }\n    closeModal('j_cquote_upd_m');\n    showAlert('Quote updated','success');\n  })\n}}\n\n",
+  "originalBottomRow": 129,
+  "originalTopRow": 0,
+  "parentColumnSpace": 6.9375,
+  "parentId": "26rl7zxfz7",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "resetButtonLabel": "Reset",
+  "resetButtonStyles": {
+    "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+    "boxShadow": "none",
+    "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+    "buttonVariant": "SECONDARY"
+  },
+  "responsiveBehavior": "fill",
+  "rightColumn": 60,
+  "schema": {
+    "__root_schema__": {
+      "accessor": "__root_schema__",
+      "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_cquote_upd_jsn.sourceData, j_cquote_upd_jsn.formData, j_cquote_upd_jsn.fieldState)}}",
+      "boxShadow": "none",
+      "cellBorderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_cquote_upd_jsn.sourceData, j_cquote_upd_jsn.formData, j_cquote_upd_jsn.fieldState)}}",
+      "cellBoxShadow": "none",
+      "children": {
+        "currency_id": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_cquote_upd_jsn.sourceData, j_cquote_upd_jsn.formData, j_cquote_upd_jsn.fieldState)}}",
+          "accessor": "currency_id",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_cquote_upd_jsn.sourceData, j_cquote_upd_jsn.formData, j_cquote_upd_jsn.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "number",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.currency_id))(j_cquote_upd_jsn.sourceData, j_cquote_upd_jsn.formData, j_cquote_upd_jsn.fieldState)}}",
+          "fieldType": "Select",
+          "identifier": "currency_id",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isFilterable": false,
+          "isRequired": false,
+          "isVisible": true,
+          "label": "Currency",
+          "labelTextSize": "0.875rem",
+          "options": "{{ get_curr_dd.data }}",
+          "originalIdentifier": "currency_id",
+          "position": 4,
+          "serverSideFiltering": false,
+          "sourceData": 1
+        },
+        "customField1": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_cquote_upd_jsn.sourceData, j_cquote_upd_jsn.formData, j_cquote_upd_jsn.fieldState)}}",
+          "accessor": "quote_is_active",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_cquote_upd_jsn.sourceData, j_cquote_upd_jsn.formData, j_cquote_upd_jsn.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "{{((sourceData, formData, fieldState) => ( Number(j_cquote_upd_jsn.formData.quote_is_active ?? 1) ))(j_cquote_upd_jsn.sourceData, j_cquote_upd_jsn.formData, j_cquote_upd_jsn.fieldState)}}",
+          "fieldType": "Select",
+          "identifier": "customField1",
+          "isCustomField": true,
+          "isDisabled": false,
+          "isFilterable": false,
+          "isRequired": false,
+          "isVisible": true,
+          "label": "Is Active",
+          "labelTextSize": "0.875rem",
+          "options": "{{[{\"label\":\"Active\",\"value\":1},{\"label\":\"Inactive\",\"value\":0}]}}",
+          "originalIdentifier": "customField1",
+          "position": 11,
+          "serverSideFiltering": false,
+          "sourceData": ""
+        },
+        "customer_contact_id": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_cquote_upd_jsn.sourceData, j_cquote_upd_jsn.formData, j_cquote_upd_jsn.fieldState)}}",
+          "accessor": "customer_contact_id",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_cquote_upd_jsn.sourceData, j_cquote_upd_jsn.formData, j_cquote_upd_jsn.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "number",
+          "defaultValue": "{{((sourceData, formData, fieldState) => ( j_cquote_upd_jsn.sourceData?.customer_contact_id ))(j_cquote_upd_jsn.sourceData, j_cquote_upd_jsn.formData, j_cquote_upd_jsn.fieldState)}}",
+          "fieldType": "Select",
+          "identifier": "customer_contact_id",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isFilterable": false,
+          "isRequired": false,
+          "isVisible": true,
+          "label": "Customer Contact",
+          "labelTextSize": "0.875rem",
+          "options": "{{\n  (get_ccont_active_dd_cq_up.data || [])\n    .filter(o => !j_cquote_upd_jsn.formData?.customer_id || o.customer_id === j_cquote_upd_jsn.formData.customer_id)\n    .map(o => ({ label: o.label, value: o.value }))\n}}\n\n",
+          "originalIdentifier": "customer_contact_id",
+          "position": 3,
+          "serverSideFiltering": false,
+          "sourceData": 3
+        },
+        "customer_id": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_cquote_upd_jsn.sourceData, j_cquote_upd_jsn.formData, j_cquote_upd_jsn.fieldState)}}",
+          "accessor": "customer_id",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_cquote_upd_jsn.sourceData, j_cquote_upd_jsn.formData, j_cquote_upd_jsn.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "number",
+          "defaultValue": "{{((sourceData, formData, fieldState) => ( j_cquote_upd_jsn.sourceData?.customer_id ))(j_cquote_upd_jsn.sourceData, j_cquote_upd_jsn.formData, j_cquote_upd_jsn.fieldState)}}",
+          "fieldType": "Select",
+          "identifier": "customer_id",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isFilterable": false,
+          "isRequired": false,
+          "isVisible": true,
+          "label": "Customer",
+          "labelTextSize": "0.875rem",
+          "onOptionChange": "{{\n  (async () => {\n    await get_ccont_active_dd_cq.run();\n    j_cquote_ins_jsn.updateField('customer_contact_id', null); // clears contact safely\n  })()\n}}\n\n",
+          "options": "{{ get_cust_active_dd.data }}",
+          "originalIdentifier": "customer_id",
+          "position": 2,
+          "serverSideFiltering": false,
+          "sourceData": 1
+        },
+        "customer_quote_id": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_cquote_upd_jsn.sourceData, j_cquote_upd_jsn.formData, j_cquote_upd_jsn.fieldState)}}",
+          "accessor": "customer_quote_id",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_cquote_upd_jsn.sourceData, j_cquote_upd_jsn.formData, j_cquote_upd_jsn.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "number",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.customer_quote_id))(j_cquote_upd_jsn.sourceData, j_cquote_upd_jsn.formData, j_cquote_upd_jsn.fieldState)}}",
+          "fieldType": "Number Input",
+          "iconAlign": "left",
+          "identifier": "customer_quote_id",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": false,
+          "label": "Customer Quote Id",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "customer_quote_id",
+          "position": 8,
+          "sourceData": 3
+        },
+        "customer_quote_last_contact_date": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_cquote_upd_jsn.sourceData, j_cquote_upd_jsn.formData, j_cquote_upd_jsn.fieldState)}}",
+          "accessor": "customer_quote_last_contact_date",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_cquote_upd_jsn.sourceData, j_cquote_upd_jsn.formData, j_cquote_upd_jsn.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "closeOnSelection": false,
+          "convertToISO": false,
+          "dataType": "null",
+          "dateFormat": "YYYY-MM-DD",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.customer_quote_last_contact_date))(j_cquote_upd_jsn.sourceData, j_cquote_upd_jsn.formData, j_cquote_upd_jsn.fieldState)}}",
+          "fieldType": "Datepicker",
+          "identifier": "customer_quote_last_contact_date",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isVisible": true,
+          "label": "Last Contact Date",
+          "labelTextSize": "0.875rem",
+          "maxDate": "2121-12-31T18:29:00.000Z",
+          "minDate": "1920-12-31T18:30:00.000Z",
+          "originalIdentifier": "customer_quote_last_contact_date",
+          "position": 7,
+          "shortcuts": false,
+          "timePrecision": "minute"
+        },
+        "customer_quote_name": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_cquote_upd_jsn.sourceData, j_cquote_upd_jsn.formData, j_cquote_upd_jsn.fieldState)}}",
+          "accessor": "customer_quote_name",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_cquote_upd_jsn.sourceData, j_cquote_upd_jsn.formData, j_cquote_upd_jsn.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.customer_quote_name))(j_cquote_upd_jsn.sourceData, j_cquote_upd_jsn.formData, j_cquote_upd_jsn.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "customer_quote_name",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": true,
+          "label": "Quote Name",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "customer_quote_name",
+          "position": 0,
+          "sourceData": "Jax"
+        },
+        "customer_quote_next_contact_date": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_cquote_upd_jsn.sourceData, j_cquote_upd_jsn.formData, j_cquote_upd_jsn.fieldState)}}",
+          "accessor": "customer_quote_next_contact_date",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_cquote_upd_jsn.sourceData, j_cquote_upd_jsn.formData, j_cquote_upd_jsn.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "closeOnSelection": false,
+          "convertToISO": false,
+          "dataType": "null",
+          "dateFormat": "YYYY-MM-DD",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.customer_quote_next_contact_date))(j_cquote_upd_jsn.sourceData, j_cquote_upd_jsn.formData, j_cquote_upd_jsn.fieldState)}}",
+          "fieldType": "Datepicker",
+          "identifier": "customer_quote_next_contact_date",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isVisible": true,
+          "label": "Next Contact Date",
+          "labelTextSize": "0.875rem",
+          "maxDate": "2121-12-31T18:29:00.000Z",
+          "minDate": "1920-12-31T18:30:00.000Z",
+          "originalIdentifier": "customer_quote_next_contact_date",
+          "position": 9,
+          "shortcuts": false,
+          "timePrecision": "minute"
+        },
+        "customer_quote_start_date": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_cquote_upd_jsn.sourceData, j_cquote_upd_jsn.formData, j_cquote_upd_jsn.fieldState)}}",
+          "accessor": "customer_quote_start_date",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_cquote_upd_jsn.sourceData, j_cquote_upd_jsn.formData, j_cquote_upd_jsn.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "closeOnSelection": false,
+          "convertToISO": false,
+          "dataType": "string",
+          "dateFormat": "YYYY-MM-DD",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (moment(sourceData.customer_quote_start_date, \"YYYY-MM-DD\").format(\"YYYY-MM-DDTHH:mm:ss.sssZ\")))(j_cquote_upd_jsn.sourceData, j_cquote_upd_jsn.formData, j_cquote_upd_jsn.fieldState)}}",
+          "fieldType": "Datepicker",
+          "identifier": "customer_quote_start_date",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isVisible": true,
+          "label": "Quote Date",
+          "labelTextSize": "0.875rem",
+          "maxDate": "2121-12-31T18:29:00.000Z",
+          "minDate": "1920-12-31T18:30:00.000Z",
+          "originalIdentifier": "customer_quote_start_date",
+          "position": 6,
+          "shortcuts": false,
+          "sourceData": "2025-06-02",
+          "timePrecision": "minute"
+        },
+        "customer_quote_status": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_cquote_upd_jsn.sourceData, j_cquote_upd_jsn.formData, j_cquote_upd_jsn.fieldState)}}",
+          "accessor": "customer_quote_status",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_cquote_upd_jsn.sourceData, j_cquote_upd_jsn.formData, j_cquote_upd_jsn.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.customer_quote_status))(j_cquote_upd_jsn.sourceData, j_cquote_upd_jsn.formData, j_cquote_upd_jsn.fieldState)}}",
+          "fieldType": "Select",
+          "identifier": "customer_quote_status",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isFilterable": false,
+          "isRequired": false,
+          "isVisible": true,
+          "label": "Quote Status",
+          "labelTextSize": "0.875rem",
+          "options": "{{\n  [\n{ label: \"Open\",  value: \"open\" },    \n{ label: \"Under review\", value: \"under_review\" },\n    { label: \"Lost\",    value: \"lost\" },\n    { label: \"Won\", value: \"won\" }\n  ]\n}}",
+          "originalIdentifier": "customer_quote_status",
+          "position": 1,
+          "serverSideFiltering": false,
+          "sourceData": "Inactive"
+        },
+        "quote_amount": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_cquote_upd_jsn.sourceData, j_cquote_upd_jsn.formData, j_cquote_upd_jsn.fieldState)}}",
+          "accessor": "quote_amount",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_cquote_upd_jsn.sourceData, j_cquote_upd_jsn.formData, j_cquote_upd_jsn.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.quote_amount))(j_cquote_upd_jsn.sourceData, j_cquote_upd_jsn.formData, j_cquote_upd_jsn.fieldState)}}",
+          "fieldType": "Number Input",
+          "iconAlign": "left",
+          "identifier": "quote_amount",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": true,
+          "label": "Quote Amount",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "quote_amount",
+          "position": 5,
+          "sourceData": "5000"
+        },
+        "quote_notes": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_cquote_upd_jsn.sourceData, j_cquote_upd_jsn.formData, j_cquote_upd_jsn.fieldState)}}",
+          "accessor": "quote_notes",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_cquote_upd_jsn.sourceData, j_cquote_upd_jsn.formData, j_cquote_upd_jsn.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "null",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.quote_notes))(j_cquote_upd_jsn.sourceData, j_cquote_upd_jsn.formData, j_cquote_upd_jsn.fieldState)}}",
+          "fieldType": "Multiline Text Input",
+          "iconAlign": "left",
+          "identifier": "quote_notes",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": true,
+          "label": "Quote Notes",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "quote_notes",
+          "position": 10
+        }
+      },
+      "dataType": "object",
+      "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData))(j_cquote_upd_jsn.sourceData, j_cquote_upd_jsn.formData, j_cquote_upd_jsn.fieldState)}}",
+      "fieldType": "Object",
+      "identifier": "__root_schema__",
+      "isCustomField": false,
+      "isDisabled": false,
+      "isRequired": false,
+      "isVisible": true,
+      "label": "",
+      "labelTextSize": "0.875rem",
+      "originalIdentifier": "__root_schema__",
+      "position": -1,
+      "sourceData": {
+        "created_at": "2025-06-14T13:54:20Z",
+        "currency_id": 1,
+        "currency_name": "US Dollar",
+        "customer_contact_id": 3,
+        "customer_contact_name": "Daniel",
+        "customer_id": 1,
+        "customer_name": "Acolad",
+        "customer_quote_id": 2,
+        "customer_quote_name": "Jax",
+        "customer_quote_start_date": "2025-06-02",
+        "customer_quote_status": "Pending",
+        "quote_amount": "5000",
+        "updated_at": "2025-06-16T16:53:47Z"
+      }
+    }
+  },
+  "scrollContents": true,
+  "showReset": false,
+  "sourceData": "{\n  \"customer_quote_id\": \"{{ get_cquote_by_id.data[0]?.customer_quote_id }}\",\n  \"customer_quote_name\": \"{{ get_cquote_by_id.data[0]?.customer_quote_name }}\",\n  \"customer_id\": \"{{ get_cquote_by_id.data[0]?.customer_id }}\",\n  \"customer_contact_id\": \"{{ get_cquote_by_id.data[0]?.customer_contact_id }}\",\n  \"currency_id\": \"{{ get_cquote_by_id.data[0]?.currency_id }}\",\n  \"quote_amount\": \"{{ get_cquote_by_id.data[0]?.quote_amount }}\",\n  \"customer_quote_start_date\": \"{{ get_cquote_by_id.data[0]?.customer_quote_start_date }}\",\n  \"customer_quote_last_contact_date\": \"{{ get_cquote_by_id.data[0]?.customer_quote_last_contact_date }}\",\n  \"customer_quote_next_contact_date\": \"{{ get_cquote_by_id.data[0]?.customer_quote_next_contact_date }}\",\n  \"quote_notes\": \"{{ get_cquote_by_id.data[0]?.quote_notes }}\",\n  \"customer_quote_status\": \"{{ get_cquote_by_id.data[0]?.customer_quote_status }}\",\n  \"quote_is_active\": \"{{ get_cquote_by_id.data[0]?.quote_is_active }}\"\n}\n",
+  "submitButtonLabel": "Submit",
+  "submitButtonStyles": {
+    "borderRadius": "0.375rem",
+    "boxShadow": "none",
+    "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+    "buttonVariant": "PRIMARY",
+    "iconAlign": "left",
+    "iconName": "add",
+    "placement": "START"
+  },
+  "title": "Update Quote",
+  "topRow": 0,
+  "type": "JSON_FORM_WIDGET",
+  "useSourceData": false,
+  "version": 1,
+  "widgetId": "cxm9pyqawu",
+  "widgetName": "j_cquote_upd_jsn"
+}

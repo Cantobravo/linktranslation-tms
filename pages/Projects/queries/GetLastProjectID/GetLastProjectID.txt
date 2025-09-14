@@ -1,0 +1,1 @@
+SELECT project_id FROM projects ORDER BY project_id DESC LIMIT 1;

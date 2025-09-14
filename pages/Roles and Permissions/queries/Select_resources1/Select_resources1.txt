@@ -1,0 +1,10 @@
+SELECT
+  *
+FROM
+  resources
+ORDER BY
+  {{tbl_staff_resources.sortOrder.column || 'resource_id'}} {{tbl_staff_resources.sortOrder.order !== "desc" ? "" : "DESC"}}
+LIMIT
+  {{tbl_staff_resources.pageSize}}
+OFFSET
+  {{tbl_staff_resources.pageOffset}}

@@ -1,0 +1,3 @@
+SELECT COUNT(*) AS total_rows
+FROM projects p
+WHERE COALESCE(p.project_status, 'Not Invoiced') = 'Not Invoiced';

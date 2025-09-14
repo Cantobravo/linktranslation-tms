@@ -1,0 +1,1 @@
+SELECT LAST_INSERT_ID() AS last_bill_id;

@@ -1,0 +1,16 @@
+{
+  "gitSyncId": "6840b6d2ece888096e42342a_4aadcbe9-5eac-4791-b471-ff0142333be1",
+  "id": "Projects_JS_Projects",
+  "unpublishedCollection": {
+    "name": "JS_Projects",
+    "pageId": "Projects",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "selectedProject",
+        "value": "{}"
+      }
+    ]
+  }
+}

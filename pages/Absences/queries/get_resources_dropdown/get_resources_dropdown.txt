@@ -1,0 +1,6 @@
+SELECT
+  resource_id,
+  resource_full_name
+FROM resources
+WHERE COALESCE(resource_is_active, 1) = 1
+ORDER BY resource_full_name;

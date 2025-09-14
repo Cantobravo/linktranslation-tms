@@ -1,0 +1,19 @@
+SELECT
+  pli.price_list_item_id,
+  pli.price_list_id,
+  s.service_name,
+  sl.language_name  AS source_language,
+  tl.language_name  AS target_language,
+  u.unit_name,
+  pli.rate,
+  pli.effective_start_date,
+  COALESCE(pli.effective_end_date, '9999-12-31') AS effective_end_date,
+  COALESCE(pli.item_is_active, 1) AS item_is_active
+FROM price_list_items pli
+LEFT JOIN services  s  ON s.service_id = pli.service_id
+LEFT JOIN languages sl ON sl.language_id = pli.source_language_id
+LEFT JOIN languages tl ON tl.language_id = pli.target_language_id
+LEFT JOIN units     u  ON u.unit_id     = pli.unit_id
+WHERE pli.price_list_id = {{ Number(tbl_pl_home.selectedRow?.price_list_id || 0) }}
+  AND COALESCE(pli.item_is_active,1) = 1
+ORDER BY s.service_name, sl.language_name, tl.language_name, u.unit_name;

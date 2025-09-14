@@ -1,0 +1,28 @@
+SELECT
+  p.portfolio_id,
+  c.customer_name AS customer,         -- readable name
+  p.company_description,
+  p.documents_translated,
+  p.industry
+FROM portfolio p
+LEFT JOIN customers c ON c.customer_id = p.customer_id
+WHERE
+  (
+    {{ i_search.text || '' }} = '' OR
+    (
+      (c.customer_name LIKE CONCAT('%', {{ i_search.text }}, '%')) OR
+      (p.company_description LIKE CONCAT('%', {{ i_search.text }}, '%')) OR
+      (p.documents_translated LIKE CONCAT('%', {{ i_search.text }}, '%')) OR
+      (p.industry LIKE CONCAT('%', {{ i_search.text }}, '%'))
+    )
+  )
+  AND ({{ i_search_customer.text || '' }} = '' OR c.customer_name LIKE CONCAT('%', {{ i_search_customer.text }}, '%'))
+  AND ({{ i_search_desc.text || '' }} = '' OR p.company_description LIKE CONCAT('%', {{ i_search_desc.text }}, '%'))
+  AND ({{ i_search_docs.text || '' }} = '' OR p.documents_translated LIKE CONCAT('%', {{ i_search_docs.text }}, '%'))
+  AND ({{ i_search_industry.text || '' }} = '' OR p.industry LIKE CONCAT('%', {{ i_search_industry.text }}, '%'))
+  AND (
+    {{ dd_industry.selectedOptionValue || '' }} = '' OR
+    p.industry = {{ dd_industry.selectedOptionValue }}
+  )
+ORDER BY p.updated_at DESC, p.portfolio_id DESC
+LIMIT {{ (tbl_portfolio.pageNo - 1) * tbl_portfolio.pageSize }}, {{ tbl_portfolio.pageSize }};

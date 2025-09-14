@@ -1,0 +1,12 @@
+SELECT
+  r.resource_id,
+  r.resource_full_name,
+  COUNT(po.purchase_order_id) AS po_count
+FROM resources r
+LEFT JOIN resource_purchase_orders po
+  ON po.resource_id = r.resource_id
+WHERE COALESCE(r.resource_is_active, 1) = 1
+GROUP BY r.resource_id, r.resource_full_name
+HAVING COUNT(po.purchase_order_id) > 0
+ORDER BY po_count DESC, r.resource_full_name
+LIMIT 10;

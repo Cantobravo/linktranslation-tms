@@ -1,0 +1,27 @@
+INSERT INTO price_lists
+  (price_list_type, price_list_name, currency_id, customer_id, resource_id, is_active)
+VALUES
+  (
+    {{ j_pl_ins_form.formData?.price_list_type }},
+    {{ j_pl_ins_form.formData?.price_list_name }},
+    {{ Number(j_pl_ins_form.formData?.currency_id) }},
+    {{
+      j_pl_ins_form.formData?.price_list_type === 'CUSTOMER'
+        ? (
+            j_pl_ins_form.formData?.customer_id === '' || j_pl_ins_form.formData?.customer_id == null
+              ? null
+              : Number(j_pl_ins_form.formData.customer_id)
+          )
+        : null
+    }},
+    {{
+      j_pl_ins_form.formData?.price_list_type === 'RESOURCE'
+        ? (
+            j_pl_ins_form.formData?.resource_id === '' || j_pl_ins_form.formData?.resource_id == null
+              ? null
+              : Number(j_pl_ins_form.formData.resource_id)
+          )
+        : null
+    }},
+    1
+  );

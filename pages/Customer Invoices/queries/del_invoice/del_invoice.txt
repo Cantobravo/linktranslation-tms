@@ -1,0 +1,2 @@
+DELETE FROM customer_invoices
+WHERE customer_invoice_id = {{ appsmith.store.invId }};

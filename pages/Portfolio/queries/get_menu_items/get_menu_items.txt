@@ -1,0 +1,4 @@
+SELECT item_id, col_id, label, page_value
+FROM app_menu_items
+WHERE is_active = 1
+ORDER BY sort_order, label;

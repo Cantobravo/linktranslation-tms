@@ -1,0 +1,3 @@
+SELECT DISTINCT project_id
+FROM invoice_project_link
+WHERE customer_invoice_id = {{ appsmith.store.invId }};

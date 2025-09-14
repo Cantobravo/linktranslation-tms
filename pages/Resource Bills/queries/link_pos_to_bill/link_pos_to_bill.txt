@@ -1,0 +1,3 @@
+INSERT INTO resource_bill_po_link (resource_bill_id, purchase_order_id)
+VALUES
+{{ unassigned_PO_table.selectedRows.map(row => `(${billing_table.selectedRow.resource_bill_id}, ${row.purchase_order_id})`).join(',') }};

@@ -1,0 +1,13 @@
+UPDATE roles
+SET
+  role_name  = TRIM({{ (typeof JSON_Role_Update !== 'undefined' ? JSON_Role_Update.formData.role_name : j_role.formData.role_name) }}),
+  updated_at = NOW()
+WHERE role_id = {{
+  (()=>{
+    const f = (typeof JSON_Role_Update !== 'undefined') ? JSON_Role_Update : j_role;
+    const id1 = f.formData?.role_id;
+    const id2 = appsmith.store.roleRow?.role_id;
+    const id3 = roles_table.selectedRow?.role_id;
+    return Number(id1 || id2 || id3);
+  })()
+}};

@@ -1,0 +1,7 @@
+-- get_currency_quote (single action used by both insert & update)
+SELECT
+  currency_quote
+FROM currencies
+WHERE currency_id = {{ i_currency_id.selectedOptionValue
+                       || u_currency_id.selectedOptionValue
+                       || null }};

@@ -1,0 +1,3 @@
+UPDATE resources
+SET role_id = :role_id
+WHERE resource_id = :resource_id;

@@ -1,0 +1,76 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "borderRadius": "0.375rem",
+  "bottomRow": 18,
+  "boxShadow": "none",
+  "defaultOptionValue": "{{ ((options, serverSideFiltering) => (  get_proj_by_id.data[0]?.customer_id || '' ))(u_customer_id.options, u_customer_id.serverSideFiltering) }}",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "defaultOptionValue"
+    },
+    {
+      "key": "isDisabled"
+    },
+    {
+      "key": "sourceData"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "sourceData"
+    },
+    {
+      "key": "onOptionChange"
+    },
+    {
+      "key": "isDisabled"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onOptionChange"
+    }
+  ],
+  "isDisabled": "{{ !appsmith.store.updateMode }}",
+  "isFilterable": true,
+  "isLoading": false,
+  "isRequired": false,
+  "isVisible": true,
+  "key": "76tjhkt24b",
+  "labelAlignment": "left",
+  "labelPosition": "Top",
+  "labelText": "Customer",
+  "labelTextSize": "0.875rem",
+  "labelWidth": 5,
+  "leftColumn": 0,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 17,
+  "mobileLeftColumn": 2,
+  "mobileRightColumn": 22,
+  "mobileTopRow": 10,
+  "needsErrorInfo": false,
+  "onOptionChange": "{{\n  resetWidget('u_customer_account_id');\n  get_customer_account_dropdown2.run()\n    .then(() => get_cust_curr_upd.run())\n    .then(() => {\n      const row = (get_cust_curr_upd.data && get_cust_curr_upd.data[0]) || {};\n      if (row.value) {\n        u_currency_id.setSelectedOption(row.value, row.label);\n        const q = (get_currencies_dropdown.data || []).find(c => c.value == row.value);\n        storeValue('selected_currency_quote', q ? q.currency_quote : 1);\n      }\n    });\n}}\n",
+  "optionLabel": "label",
+  "optionValue": "value",
+  "parentColumnSpace": 7.2021484375,
+  "parentId": "3qpss534aq",
+  "parentRowSpace": 10,
+  "placeholderText": "Select option",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 31,
+  "serverSideFiltering": false,
+  "sourceData": "{{get_customers_dropdown.data}}",
+  "topRow": 11,
+  "type": "SELECT_WIDGET",
+  "version": 1,
+  "widgetId": "nxvr66owkp",
+  "widgetName": "u_customer_id"
+}

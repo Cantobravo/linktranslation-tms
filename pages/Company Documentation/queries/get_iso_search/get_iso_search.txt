@@ -1,0 +1,12 @@
+SELECT
+  snippet_id,
+  snippet_title,
+  tags
+FROM iso_texts
+WHERE
+  CASE
+    WHEN {{(i_iso_query.text || '') === ''}} THEN 1=0
+    ELSE MATCH(snippet_title, tags, full_text) AGAINST({{ i_iso_query.text }} IN BOOLEAN MODE)
+  END
+ORDER BY snippet_id DESC
+LIMIT 200;

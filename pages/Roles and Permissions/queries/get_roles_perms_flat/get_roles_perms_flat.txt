@@ -1,0 +1,10 @@
+SELECT
+  r.role_id,
+  r.role_name,
+  p.permission_id,
+  p.permission_key,
+  p.permission_name
+FROM roles r
+LEFT JOIN role_permissions rp  ON rp.role_id = r.role_id
+LEFT JOIN permissions p        ON p.permission_id = rp.permission_id
+ORDER BY r.role_name, p.permission_name;

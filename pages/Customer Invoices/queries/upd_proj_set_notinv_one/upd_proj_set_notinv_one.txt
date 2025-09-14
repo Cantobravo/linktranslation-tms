@@ -1,0 +1,3 @@
+UPDATE projects
+SET project_status = 'Not Invoiced'
+WHERE project_id = {{ appsmith.store.projRow.project_id }};

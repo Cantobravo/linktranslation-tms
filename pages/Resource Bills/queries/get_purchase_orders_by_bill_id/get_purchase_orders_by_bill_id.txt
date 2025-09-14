@@ -1,0 +1,11 @@
+SELECT
+    po.purchase_order_id,
+    po.project_id,
+    po.volume,
+    po.rate,
+    po.total,
+    po.due_date
+FROM
+    resource_purchase_orders po
+WHERE
+    po.resource_bill_id = {{currentRow.resource_bill_id}};

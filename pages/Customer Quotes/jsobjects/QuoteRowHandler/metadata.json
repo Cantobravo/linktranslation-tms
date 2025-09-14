@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "6840b6d2ece888096e42342a_c194e767-80dd-42fc-bcdf-20a34d9d64b1",
+  "id": "Customer Quotes_QuoteRowHandler",
+  "unpublishedCollection": {
+    "name": "QuoteRowHandler",
+    "pageId": "Customer Quotes",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

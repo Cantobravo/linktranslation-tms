@@ -1,0 +1,2 @@
+DELETE FROM role_permissions
+WHERE role_id = {{ Number(appsmith.store.roleRow?.role_id) }};

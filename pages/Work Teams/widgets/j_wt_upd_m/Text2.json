@@ -1,0 +1,53 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 7,
+  "dynamicBindingPathList": [
+    {
+      "key": "truncateButtonColor"
+    },
+    {
+      "key": "fontFamily"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "text"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicTriggerPathList": [],
+  "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
+  "fontSize": "1.25rem",
+  "fontStyle": "BOLD",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "6kont808ww",
+  "leftColumn": 1,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 5,
+  "mobileLeftColumn": 1,
+  "mobileRightColumn": 41,
+  "mobileTopRow": 1,
+  "needsErrorInfo": false,
+  "originalBottomRow": 7,
+  "originalTopRow": 3,
+  "overflow": "NONE",
+  "parentId": "ewk6ycpl9o",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 52,
+  "shouldTruncate": false,
+  "text": "{{\n(() => {\n  // Helper to resolve labels from dropdown datasets\n  const pick = (arr, val) => (arr || []).find(o => String(o.value) === String(val))?.label || '';\n\n  const fd  = j_wt_upd_form.formData || {};\n  const det = get_work_team_detail.data?.[0] || {};\n\n  const accId = fd.customer_account_id ?? det.customer_account_id;\n  const srvId = fd.service_id          ?? det.service_id;\n  const uniId = fd.unit_id             ?? det.unit_id;\n  const srcId = fd.source_language_id  ?? det.source_language_id;\n  const tgtId = fd.target_language_id  ?? det.target_language_id;\n\n  const acc = pick(get_cust_acc_dd_upd.data, accId);\n  const srv = pick(get_services_dd.data,     srvId);\n  const uni = pick(get_units_dd.data,        uniId);\n  const src = pick(get_languages_dd.data,    srcId);\n  const tgt = pick(get_languages_dd.data,    tgtId);\n\n  const parts = [acc, srv, uni, (src && tgt) ? `${src} → ${tgt}` : ''].filter(Boolean);\n  return parts.length ? parts.join(' · ') : (det.work_team_name || '—');\n})()\n}}\n",
+  "textAlign": "LEFT",
+  "textColor": "#231F20",
+  "topRow": 3,
+  "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "0yc99vri5v",
+  "widgetName": "Text2"
+}

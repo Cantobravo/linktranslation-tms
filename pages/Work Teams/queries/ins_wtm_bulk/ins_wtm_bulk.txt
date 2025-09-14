@@ -1,0 +1,13 @@
+INSERT IGNORE INTO work_team_members
+  (work_team_id, resource_id, is_available, certification_status, daily_capacity_words, po_status, rates_text, note)
+SELECT
+  {{ appsmith.store.wtRow?.work_team_id || 0 }} AS work_team_id,
+  r.resource_id,
+  'Unknown' AS is_available,
+  'None'    AS certification_status,
+  NULL      AS daily_capacity_words,
+  NULL      AS po_status,
+  NULL      AS rates_text,
+  NULL      AS note
+FROM resources r
+WHERE r.resource_id IN ( {{ (ms_add_resources.selectedOptionValues || []).join(',') || '0' }} );

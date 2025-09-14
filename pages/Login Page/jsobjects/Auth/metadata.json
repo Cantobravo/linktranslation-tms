@@ -1,0 +1,16 @@
+{
+  "gitSyncId": "6840b6d2ece888096e42342a_09e5a412-86e9-44e2-b357-c2b26b3b4158",
+  "id": "Login Page_Auth",
+  "unpublishedCollection": {
+    "name": "Auth",
+    "pageId": "Login Page",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "errMsg",
+        "value": "\"\""
+      }
+    ]
+  }
+}

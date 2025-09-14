@@ -1,0 +1,3 @@
+UPDATE price_lists
+SET is_active = 0
+WHERE price_list_id = {{ Number(this.params.id) }};

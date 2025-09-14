@@ -1,0 +1,10 @@
+SELECT
+  currency_id,
+  currency_acronym,
+  currency_name,
+  currency_symbol,
+  currency_quote,
+  created_at,
+  updated_at
+FROM currencies
+ORDER BY currency_name;

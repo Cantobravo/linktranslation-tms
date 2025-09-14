@@ -1,0 +1,53 @@
+{
+  "animateLoading": true,
+  "borderRadius": "0.375rem",
+  "bottomRow": 22,
+  "boxShadow": "none",
+  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "buttonStyle": "PRIMARY_BUTTON",
+  "buttonVariant": "PRIMARY",
+  "disabledWhenInvalid": false,
+  "dynamicBindingPathList": [
+    {
+      "key": "buttonColor"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "isDefaultClickDisabled": true,
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "898yu2qfac",
+  "leftColumn": 45,
+  "minWidth": 120,
+  "mobileBottomRow": 22,
+  "mobileLeftColumn": 47,
+  "mobileRightColumn": 63,
+  "mobileTopRow": 18,
+  "needsErrorInfo": false,
+  "onClick": "{{\n(async () => {\n  const id =\n    appsmith.store.projDelId\n    || appsmith.store.projDelRow?.project_id\n    || appsmith.store.selectedProjectData?.project_id;\n\n  if (!id) { showAlert('Missing project id', 'error'); return; }\n  if (appsmith.store.proj_del_busy) return;\n\n  await storeValue('projDelId', id);\n  await storeValue('proj_del_busy', true);\n\n  try {\n    const res = await del_project_pos.run();   // single source of truth\n    const row = Array.isArray(res) ? res[0] : res;\n\n    if (row?.action === 'SOFT_DELETE') {\n      showAlert(\n        `Project soft-deleted (linked in ${row.invoice_links} invoice(s) and ${row.billed_po_links} billed PO link(s)). Remove links first to hard delete.`,\n        'warning'\n      );\n    } else {\n      showAlert('Project and related POs deleted', 'success');\n    }\n\n    if (String(appsmith.store.selectedProjectData?.project_id) === String(id)) {\n      await storeValue('selectedProjectData', null);\n      await storeValue('proj_id', null);\n    }\n\n    await get_projects.run();\n    closeModal('j_proj_del_m');\n    closeModal('j_proj_upd_m');\n  } catch (e) {\n    showAlert('Delete failed: ' + (e?.message || e), 'error');\n  } finally {\n    await storeValue('proj_del_busy', false);\n    await storeValue('projDelRow', null);\n    await storeValue('projDelId', null);\n  }\n})()\n}}\n",
+  "originalBottomRow": 22,
+  "originalTopRow": 18,
+  "parentId": "ddsb5z29om",
+  "placement": "CENTER",
+  "recaptchaType": "V3",
+  "renderMode": "CANVAS",
+  "resetFormOnClick": false,
+  "responsiveBehavior": "hug",
+  "rightColumn": 61,
+  "text": "Confirm",
+  "topRow": 18,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "woqbpc4nmf",
+  "widgetName": "btn_proj_del_confirm"
+}

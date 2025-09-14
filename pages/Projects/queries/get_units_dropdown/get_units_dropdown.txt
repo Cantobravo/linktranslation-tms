@@ -1,0 +1,1 @@
+SELECT unit_id AS value, unit_name AS label FROM units ORDER BY unit_name;

@@ -1,0 +1,1 @@
+SELECT resource_id AS value, resource_full_name AS label FROM resources ORDER BY resource_full_name;

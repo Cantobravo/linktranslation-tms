@@ -1,0 +1,12 @@
+SELECT
+  pli.*,
+  s.service_name,
+  sl.language_name  AS source_language,
+  tl.language_name  AS target_language,
+  u.unit_name
+FROM price_list_items pli
+LEFT JOIN services  s  ON s.service_id = pli.service_id
+LEFT JOIN languages sl ON sl.language_id = pli.source_language_id
+LEFT JOIN languages tl ON tl.language_id = pli.target_language_id
+LEFT JOIN units     u  ON u.unit_id     = pli.unit_id
+WHERE pli.price_list_item_id = {{ Number(appsmith.URL.queryParams.item_id) }};

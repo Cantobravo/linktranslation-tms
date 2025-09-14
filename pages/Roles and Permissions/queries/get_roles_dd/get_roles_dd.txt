@@ -1,0 +1,4 @@
+SELECT role_id   AS value,
+       role_name AS label
+FROM roles
+ORDER BY role_name;

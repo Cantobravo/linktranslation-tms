@@ -1,0 +1,6 @@
+SELECT
+  currency_id   AS value,
+  currency_name AS label,
+  currency_quote
+FROM currencies
+ORDER BY currency_name;

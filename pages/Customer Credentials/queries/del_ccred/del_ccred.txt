@@ -1,0 +1,2 @@
+DELETE FROM customer_credentials
+WHERE customer_credential_id = {{ appsmith.store.ccredRow?.customer_credential_id }};

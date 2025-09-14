@@ -1,0 +1,43 @@
+SELECT
+  n.note_id,
+  n.note_date,
+  n.note_text,
+  n.priority,
+  n.status,
+  n.created_by_name,
+  n.created_by_email,
+  n.created_at,
+  n.updated_at
+FROM linktranslation.notes n
+WHERE 1=1
+  -- Status filter (disabled if empty or All)
+  AND (
+    {{ !filter_status.selectedOptionValue || filter_status.selectedOptionValue === 'All' ? 1 : 0 }} = 1
+    OR n.status = {{ filter_status.selectedOptionValue }}
+  )
+  -- Priority filter (disabled if empty or All)
+  AND (
+    {{ !filter_priority.selectedOptionValue || filter_priority.selectedOptionValue === 'All' ? 1 : 0 }} = 1
+    OR n.priority = {{ filter_priority.selectedOptionValue }}
+  )
+  -- Date range
+  AND (
+    {{ !!filter_start_date.selectedDate ? 1 : 0 }} = 0
+    OR n.note_date >= {{ filter_start_date.selectedDate ? moment(filter_start_date.selectedDate).format('YYYY-MM-DD') : null }}
+  )
+  AND (
+    {{ !!filter_end_date.selectedDate ? 1 : 0 }} = 0
+    OR n.note_date <= {{ filter_end_date.selectedDate ? moment(filter_end_date.selectedDate).format('YYYY-MM-DD') : null }}
+  )
+  -- Search (disabled if empty)
+  AND (
+    {{ !!search_text.text ? 1 : 0 }} = 0
+    OR (n.note_text LIKE CONCAT('%', {{ search_text.text }}, '%')
+        OR n.created_by_name LIKE CONCAT('%', {{ search_text.text }}, '%'))
+  )
+ORDER BY
+  (n.status = 'Completed') ASC,
+  n.note_date ASC,
+  n.priority DESC
+LIMIT {{ notes_table.pageSize || 10 }}
+OFFSET {{ ((notes_table.pageNo || 1) - 1) * (notes_table.pageSize || 10) }};

@@ -1,0 +1,6 @@
+SELECT
+  template_id   AS value,
+  template_name AS label,
+  template_type
+FROM templates
+ORDER BY template_name;

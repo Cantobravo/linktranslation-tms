@@ -1,0 +1,2 @@
+DELETE FROM resource_bills
+WHERE resource_bill_id = {{ appsmith.store.billRow.resource_bill_id }};

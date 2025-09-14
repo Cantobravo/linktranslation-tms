@@ -1,0 +1,2 @@
+DELETE FROM resource_banking
+WHERE resource_banking_id = {{ tbl_resource_banking.selectedRow.resource_banking_id }};

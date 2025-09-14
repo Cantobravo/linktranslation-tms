@@ -1,0 +1,3 @@
+SELECT currency_id, currency_acronym
+FROM currencies
+ORDER BY currency_id;

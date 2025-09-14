@@ -1,0 +1,12 @@
+SET @pid = CAST({{ params.project_id || appsmith.store.selectedProjectData?.project_id }} AS UNSIGNED);
+
+UPDATE projects p
+LEFT JOIN (
+  SELECT project_id, COUNT(*) AS cnt
+  FROM invoice_project_link
+  WHERE project_id = @pid
+  GROUP BY project_id
+) x ON x.project_id = p.project_id
+SET p.project_status = CASE WHEN COALESCE(x.cnt, 0) > 0 THEN 'Invoiced' ELSE 'Not Invoiced' END,
+    p.updated_at = NOW()
+WHERE p.project_id = @pid;

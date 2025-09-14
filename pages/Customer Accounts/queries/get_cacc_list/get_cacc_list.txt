@@ -1,0 +1,13 @@
+SELECT
+  ca.customer_account_id,
+  ca.customer_id,
+  c.customer_name,
+  ca.customer_account_name,
+  ca.customer_account_industry,
+  ca.customer_account_tools,
+  ca.created_at,
+  ca.updated_at
+FROM customer_accounts ca
+JOIN customers c ON c.customer_id = ca.customer_id
+WHERE COALESCE(ca.customer_account_is_active, 1) = 1
+ORDER BY ca.customer_account_id DESC;

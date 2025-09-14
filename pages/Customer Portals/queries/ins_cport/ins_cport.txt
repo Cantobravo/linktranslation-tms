@@ -1,0 +1,27 @@
+INSERT INTO customer_portals (
+  customer_portal_name,
+  customer_id,
+  customer_contact_id,
+  customer_portal_credentials,
+  customer_portal_website,
+  customer_portal_notes,
+  customer_portal_first_update,
+  customer_portal_last_update,
+  customer_portal_next_update,
+  customer_portal_status,
+  created_at,
+  updated_at
+) VALUES (
+  {{ j_cport_ins_jsn.formData.customer_portal_name ?? null }},
+  {{ j_cport_ins_jsn.formData.customer_id ?? null }},
+  {{ j_cport_ins_jsn.formData.customer_contact_id ?? null }},
+  {{ j_cport_ins_jsn.formData.customer_portal_credentials ?? null }},
+  {{ j_cport_ins_jsn.formData.customer_portal_website ?? null }},
+  {{ j_cport_ins_jsn.formData.customer_portal_notes ?? null }},
+  {{ j_cport_ins_jsn.formData.customer_portal_first_update ? moment(j_cport_ins_jsn.formData.customer_portal_first_update).format('YYYY-MM-DD') : null }},
+  {{ j_cport_ins_jsn.formData.customer_portal_last_update  ? moment(j_cport_ins_jsn.formData.customer_portal_last_update ).format('YYYY-MM-DD') : null }},
+  {{ j_cport_ins_jsn.formData.customer_portal_next_update  ? moment(j_cport_ins_jsn.formData.customer_portal_next_update ).format('YYYY-MM-DD') : null }},
+  {{ j_cport_ins_jsn.formData.customer_portal_status || 'Active' }},
+  NOW(),
+  NOW()
+);

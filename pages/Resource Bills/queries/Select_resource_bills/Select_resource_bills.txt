@@ -1,0 +1,10 @@
+SELECT
+  rb.resource_bill_id,
+  rb.resource_bill_date,
+  rb.resource_bill_due_date,
+  r.resource_full_name,
+  r.resource_email,
+  rb.is_billed
+FROM resource_bills rb
+LEFT JOIN resources r ON rb.resource_id = r.resource_id
+ORDER BY rb.resource_bill_id DESC;

@@ -1,0 +1,4 @@
+DELETE l
+FROM resource_bill_po_link l
+WHERE l.resource_bill_id = {{ appsmith.store.billRow.resource_bill_id }}
+  AND l.purchase_order_id = {{ appsmith.store.poRow.purchase_order_id }};

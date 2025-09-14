@@ -1,0 +1,16 @@
+{
+  "gitSyncId": "6840b6d2ece888096e42342a_0c7267c3-3995-44e1-a020-4f8280205b48",
+  "id": "Customer Contacts_SubmitShield",
+  "unpublishedCollection": {
+    "name": "SubmitShield",
+    "pageId": "Customer Contacts",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "busyKey",
+        "value": "\"__submit_busy\""
+      }
+    ]
+  }
+}

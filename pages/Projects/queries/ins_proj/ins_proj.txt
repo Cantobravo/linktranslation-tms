@@ -1,0 +1,38 @@
+INSERT INTO projects
+(
+  project_name,
+  customer_id,
+  currency_id,
+  customer_account_id,
+  service_id,
+  unit_id,
+  source_language_id,
+  target_language_id,
+  pricing_mode,
+  project_volume,
+  project_rate,
+  project_total,
+  project_start_date,
+  project_end_date,
+  customer_reference_number,
+  project_comments
+)
+VALUES
+(
+  {{ i_project_name.text || null }},
+  {{ i_customer_name.selectedOptionValue || null }},
+  {{ i_currency_id.selectedOptionValue || null }},
+  {{ i_customer_account_id.selectedOptionValue || null }},
+  {{ i_service_id.selectedOptionValue || null }},
+  {{ i_unit_id.selectedOptionValue || null }},
+  {{ i_source_language_id.selectedOptionValue || null }},
+  {{ i_target_language_id.selectedOptionValue || null }},
+  {{ i_pricing_mode.selectedOptionValue || 'PER_UNIT' }},
+  {{ i_project_volume.text ? i_project_volume.text : null }},
+  {{ i_project_rate.text ? i_project_rate.text : null }},
+  {{ i_project_total.text ? i_project_total.text : null }},
+  {{ i_project_start_date.selectedDate ? moment(i_project_start_date.selectedDate).format('YYYY-MM-DD') : null }},
+  {{ i_project_end_date.selectedDate ? moment(i_project_end_date.selectedDate).format('YYYY-MM-DD') : null }},
+  {{ i_customer_reference_number.text ? i_customer_reference_number.text : null }},
+  {{ i_project_comments.text || null }}
+);

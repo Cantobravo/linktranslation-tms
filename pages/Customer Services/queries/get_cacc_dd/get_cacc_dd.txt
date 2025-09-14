@@ -1,0 +1,3 @@
+SELECT customer_account_id AS value, customer_account_name AS label, customer_id
+FROM customer_accounts
+ORDER BY customer_account_name;

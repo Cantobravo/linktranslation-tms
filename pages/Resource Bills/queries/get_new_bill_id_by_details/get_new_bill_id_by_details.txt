@@ -1,0 +1,7 @@
+SELECT resource_bill_id
+FROM resource_bills
+WHERE resource_id = {{ new_resource_id.selectedOptionValue }}
+  AND DATE(resource_bill_date) = {{ moment(new_bill_date.selectedDate).format('YYYY-MM-DD') }}
+  AND DATE(resource_bill_due_date) = {{ moment(new_due_date.selectedDate).format('YYYY-MM-DD') }}
+ORDER BY resource_bill_id DESC
+LIMIT 1;

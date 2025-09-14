@@ -1,0 +1,69 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "borderRadius": "0.375rem",
+  "bottomRow": 9,
+  "boxShadow": "none",
+  "defaultOptionValue": "",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "sourceData"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "sourceData"
+    },
+    {
+      "key": "onOptionChange"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onOptionChange"
+    }
+  ],
+  "isDisabled": false,
+  "isFilterable": true,
+  "isLoading": false,
+  "isRequired": false,
+  "isVisible": true,
+  "key": "m61nyzb1t7",
+  "labelAlignment": "left",
+  "labelPosition": "Top",
+  "labelText": "Filter",
+  "labelTextSize": "0.875rem",
+  "labelWidth": 5,
+  "leftColumn": 1,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 15,
+  "mobileLeftColumn": 16,
+  "mobileRightColumn": 36,
+  "mobileTopRow": 8,
+  "needsErrorInfo": false,
+  "onOptionChange": "{{ storeValue('f_field', proj_filter_field.selectedOptionValue || '') }}\n",
+  "optionLabel": "label",
+  "optionValue": "value",
+  "originalBottomRow": 27,
+  "originalTopRow": 20,
+  "parentColumnSpace": 22.125,
+  "parentId": "n7gp4ek6zv",
+  "parentRowSpace": 10,
+  "placeholderText": "Select option",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 30,
+  "serverSideFiltering": false,
+  "sourceData": "{{ [\n  { label: \"Project #\",         value: \"project_id\" },\n  { label: \"Project name\",      value: \"project_name\" },\n  { label: \"Customer\",          value: \"customer_name\" },\n  { label: \"Customer account\",  value: \"customer_account_name\" },\n  { label: \"Resource (any PO)\", value: \"resource_name\" }\n] }}\n",
+  "topRow": 2,
+  "type": "SELECT_WIDGET",
+  "version": 1,
+  "widgetId": "dv8hebjoxd",
+  "widgetName": "proj_filter_field"
+}

@@ -1,0 +1,5 @@
+UPDATE currencies
+SET
+  currency_quote = ROUND({{ Number(i_currency_quote.text) }}, 6),
+  updated_at     = NOW()
+WHERE currency_id = {{ appsmith.store.currencyRow.currency_id }};

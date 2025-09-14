@@ -1,0 +1,21 @@
+UPDATE projects
+SET
+    project_name = {{ u_project_name.text || null }},
+    customer_id = {{ u_customer_id.selectedOptionValue || null }},
+    currency_id = {{ u_currency_id.selectedOptionValue || null }},
+    customer_account_id = {{ u_customer_account_id.selectedOptionValue || null }},
+    project_status = {{ u_project_status.selectedOptionValue || null }},
+    service_id = {{ u_service_id.selectedOptionValue || null }},
+    unit_id = {{ u_unit_id.selectedOptionValue || null }},
+    source_language_id = {{ u_source_language_id.selectedOptionValue || null }},
+    target_language_id = {{ u_target_language_id.selectedOptionValue || null }},
+    project_volume = {{ u_project_volume.text || null }},
+    project_rate = {{ u_project_rate.text || null }},
+    project_total = {{ u_project_total.text || null }},
+    project_start_date = {{ u_project_start_date.selectedDate ? moment(u_project_start_date.selectedDate).format("YYYY-MM-DD") : null }},
+    project_end_date = {{ u_project_end_date.selectedDate ? moment(u_project_end_date.selectedDate).format("YYYY-MM-DD") : null }},
+    customer_reference_number = {{ u_customer_reference_number.text || null }},
+    project_comments = {{ u_project_comments.text || null }},
+    updated_at = NOW()
+WHERE
+    project_id = {{ appsmith.store.selectedProjectData.project_id }};

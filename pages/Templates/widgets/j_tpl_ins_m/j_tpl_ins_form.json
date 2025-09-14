@@ -1,0 +1,814 @@
+{
+  "animateLoading": true,
+  "autoGenerateForm": true,
+  "backgroundColor": "#fff",
+  "borderColor": "{{appsmith.theme.colors.primaryColor}}",
+  "borderRadius": "1.5rem",
+  "borderWidth": "1",
+  "bottomRow": 186,
+  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+  "childStylesheet": {
+    "ARRAY": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none",
+      "cellBorderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "cellBoxShadow": "none"
+    },
+    "CHECKBOX": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}"
+    },
+    "CURRENCY_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "DATEPICKER": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "EMAIL_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "MULTILINE_TEXT_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "MULTISELECT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "NUMBER_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "OBJECT": {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none",
+      "cellBorderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "cellBoxShadow": "none"
+    },
+    "PASSWORD_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "PHONE_NUMBER_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "RADIO_GROUP": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "boxShadow": "none"
+    },
+    "SELECT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "SWITCH": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "boxShadow": "none"
+    },
+    "TEXT_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    }
+  },
+  "disabledWhenInvalid": true,
+  "dynamicBindingPathList": [
+    {
+      "key": "boxShadow"
+    },
+    {
+      "key": "submitButtonStyles.buttonColor"
+    },
+    {
+      "key": "resetButtonStyles.buttonColor"
+    },
+    {
+      "key": "resetButtonStyles.borderRadius"
+    },
+    {
+      "key": "sourceData"
+    },
+    {
+      "key": "schema.__root_schema__.children.template_name.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.template_name.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.template_name.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.template_type.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.template_type.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.template_type.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.template_description.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.template_description.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.template_description.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.template_is_active.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.template_is_active.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.template_version.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.template_version.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.template_version.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.template_from_field.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.template_from_field.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.template_from_field.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.template_email_to_field.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.template_email_to_field.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.template_email_to_field.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.template_email_bcc_field.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.template_email_bcc_field.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.template_email_bcc_field.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.template_email_subject.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.template_email_subject.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.template_email_subject.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.template_email_body_html.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.template_email_body_html.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.template_email_body_html.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.template_signature_field.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.template_signature_field.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.template_signature_field.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.template_header_html.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.template_header_html.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.template_header_html.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.template_footer_html.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.template_footer_html.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.template_footer_html.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.template_vars.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.template_vars.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.template_vars.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.cellBorderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.template_type.options"
+    },
+    {
+      "key": "schema.__root_schema__.children.template_email_bcc_field.isVisible"
+    },
+    {
+      "key": "schema.__root_schema__.children.template_email_subject.isVisible"
+    },
+    {
+      "key": "schema.__root_schema__.children.template_signature_field.isVisible"
+    },
+    {
+      "key": "schema.__root_schema__.children.template_header_html.isVisible"
+    },
+    {
+      "key": "schema.__root_schema__.children.template_footer_html.isVisible"
+    },
+    {
+      "key": "schema.__root_schema__.children.template_vars.options"
+    },
+    {
+      "key": "schema.__root_schema__.children.customField1.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.customField1.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.customField1.options"
+    },
+    {
+      "key": "schema.__root_schema__.children.template_email_to_field.isVisible"
+    },
+    {
+      "key": "schema.__root_schema__.children.template_from_field.isVisible"
+    },
+    {
+      "key": "schema.__root_schema__.children.customField2.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.customField2.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.customField2.accessor"
+    },
+    {
+      "key": "schema.__root_schema__.children.customField2.isVisible"
+    },
+    {
+      "key": "schema.__root_schema__.children.template_pdf_body.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.template_pdf_body.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.template_pdf_body.borderRadius"
+    },
+    {
+      "key": "borderColor"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [
+    {
+      "key": "sourceData"
+    },
+    {
+      "key": "schema.__root_schema__.children.template_is_active.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.template_from_field.isVisible"
+    },
+    {
+      "key": "schema.__root_schema__.children.template_email_bcc_field.isVisible"
+    },
+    {
+      "key": "schema.__root_schema__.children.template_email_subject.isVisible"
+    },
+    {
+      "key": "schema.__root_schema__.children.template_email_body_html.isVisible"
+    },
+    {
+      "key": "schema.__root_schema__.children.template_signature_field.isVisible"
+    },
+    {
+      "key": "schema.__root_schema__.children.template_header_html.isVisible"
+    },
+    {
+      "key": "schema.__root_schema__.children.template_footer_html.isVisible"
+    },
+    {
+      "key": "onSubmit"
+    },
+    {
+      "key": "schema.__root_schema__.children.template_email_to_field.isVisible"
+    },
+    {
+      "key": "schema.__root_schema__.children.template_type.onOptionChange"
+    },
+    {
+      "key": "schema.__root_schema__.children.customField2.isVisible"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onSubmit"
+    },
+    {
+      "key": "schema.__root_schema__.children.template_type.onOptionChange"
+    }
+  ],
+  "fieldLimitExceeded": false,
+  "fixedFooter": true,
+  "flexVerticalAlignment": "start",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "8708l2c375",
+  "leftColumn": 2,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 44,
+  "mobileLeftColumn": 2,
+  "mobileRightColumn": 27,
+  "mobileTopRow": 3,
+  "needsErrorInfo": false,
+  "onSubmit": "{{\n  (async () => {\n    // simple submit guard\n    if (appsmith.store.tpl_ins_busy) return;\n    await storeValue('tpl_ins_busy', true);\n\n    try {\n      const fd = j_tpl_ins_form.formData || {};\n      if (!fd.template_name || !fd.template_type) {\n        showAlert(\"Please fill Template Name and Type.\", \"warning\");\n        return;\n      }\n\n      // run insert\n      await ins_template.run();\n\n      // success UX\n      showAlert(\"Template created successfully.\", \"success\");\n\n      // refresh main list\n      await get_templates_list.run();\n\n      // close modal, clean form state\n      closeModal('j_tpl_ins_m');\n      resetWidget('j_tpl_ins_form', true);\n      await storeValue('tpl_ins_data', {\n        template_name: \"\",\n        template_type: \"\",\n        template_description: \"\",\n        template_is_active: true,\n        template_version: 1,\n        template_from_field: \"\",\n        template_email_to_field: \"\",\n        template_email_bcc_field: \"\",\n        template_email_subject: \"\",\n        template_email_body_html: \"\",\n        template_signature_field: \"\",\n        template_header_html: \"\",\n        template_footer_html: \"\",\n        template_pdf_body: \"\",\n        template_vars: []\n      });\n    } catch (e) {\n      showAlert(\"Insert failed: \" + (e?.message || e), \"error\");\n    } finally {\n      await storeValue('tpl_ins_busy', false);\n    }\n  })()\n}}\n",
+  "originalBottomRow": 185,
+  "originalTopRow": 9,
+  "parentColumnSpace": 6.9375,
+  "parentId": "xnmd22jdpq",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "resetButtonLabel": "Reset",
+  "resetButtonStyles": {
+    "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+    "boxShadow": "none",
+    "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+    "buttonVariant": "SECONDARY"
+  },
+  "responsiveBehavior": "fill",
+  "rightColumn": 60,
+  "schema": {
+    "__root_schema__": {
+      "accessor": "__root_schema__",
+      "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_tpl_ins_form.sourceData, j_tpl_ins_form.formData, j_tpl_ins_form.fieldState)}}",
+      "boxShadow": "none",
+      "cellBorderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_tpl_ins_form.sourceData, j_tpl_ins_form.formData, j_tpl_ins_form.fieldState)}}",
+      "cellBoxShadow": "none",
+      "children": {
+        "customField1": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_tpl_ins_form.sourceData, j_tpl_ins_form.formData, j_tpl_ins_form.fieldState)}}",
+          "accessor": "customField1",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_tpl_ins_form.sourceData, j_tpl_ins_form.formData, j_tpl_ins_form.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "",
+          "fieldType": "Select",
+          "identifier": "customField1",
+          "isCustomField": true,
+          "isDisabled": false,
+          "isFilterable": false,
+          "isRequired": false,
+          "isVisible": true,
+          "label": "Var Picker",
+          "labelTextSize": "0.875rem",
+          "options": "{{ TemplateVarsHelper.commonVars.map(v => ({label:v, value:v})) }}",
+          "originalIdentifier": "customField1",
+          "position": 14,
+          "serverSideFiltering": false,
+          "sourceData": ""
+        },
+        "customField2": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_tpl_ins_form.sourceData, j_tpl_ins_form.formData, j_tpl_ins_form.fieldState)}}",
+          "accessor": "{{ !/pdf/i.test(j_tpl_ins_form.formData.template_type || '') }}\n",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_tpl_ins_form.sourceData, j_tpl_ins_form.formData, j_tpl_ins_form.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "",
+          "fieldType": "Multiline Text Input",
+          "iconAlign": "left",
+          "identifier": "customField2",
+          "isCustomField": true,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": "{{((sourceData, formData, fieldState) => ( !/email/i.test(j_tpl_ins_form.formData.template_type || '') ))(j_tpl_ins_form.sourceData, j_tpl_ins_form.formData, j_tpl_ins_form.fieldState)}}",
+          "label": "template_pdf_body",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "customField2",
+          "position": 12,
+          "sourceData": ""
+        },
+        "template_description": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_tpl_ins_form.sourceData, j_tpl_ins_form.formData, j_tpl_ins_form.fieldState)}}",
+          "accessor": "template_description",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_tpl_ins_form.sourceData, j_tpl_ins_form.formData, j_tpl_ins_form.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.template_description))(j_tpl_ins_form.sourceData, j_tpl_ins_form.formData, j_tpl_ins_form.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "template_description",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": true,
+          "label": "Template Description",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "template_description",
+          "position": 2,
+          "sourceData": ""
+        },
+        "template_email_bcc_field": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_tpl_ins_form.sourceData, j_tpl_ins_form.formData, j_tpl_ins_form.fieldState)}}",
+          "accessor": "template_email_bcc_field",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_tpl_ins_form.sourceData, j_tpl_ins_form.formData, j_tpl_ins_form.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.template_email_bcc_field))(j_tpl_ins_form.sourceData, j_tpl_ins_form.formData, j_tpl_ins_form.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "template_email_bcc_field",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": "{{((sourceData, formData, fieldState) => ( !/pdf/i.test(j_tpl_ins_form.formData.template_type || '') ))(j_tpl_ins_form.sourceData, j_tpl_ins_form.formData, j_tpl_ins_form.fieldState)}}",
+          "label": "Template Email Bcc Field",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "template_email_bcc_field",
+          "position": 6,
+          "sourceData": ""
+        },
+        "template_email_body_html": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_tpl_ins_form.sourceData, j_tpl_ins_form.formData, j_tpl_ins_form.fieldState)}}",
+          "accessor": "template_email_body_html",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_tpl_ins_form.sourceData, j_tpl_ins_form.formData, j_tpl_ins_form.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.template_email_body_html))(j_tpl_ins_form.sourceData, j_tpl_ins_form.formData, j_tpl_ins_form.fieldState)}}",
+          "fieldType": "Multiline Text Input",
+          "iconAlign": "left",
+          "identifier": "template_email_body_html",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": "true",
+          "label": "Template Email Body Html",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "template_email_body_html",
+          "position": 9,
+          "sourceData": ""
+        },
+        "template_email_subject": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_tpl_ins_form.sourceData, j_tpl_ins_form.formData, j_tpl_ins_form.fieldState)}}",
+          "accessor": "template_email_subject",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_tpl_ins_form.sourceData, j_tpl_ins_form.formData, j_tpl_ins_form.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.template_email_subject))(j_tpl_ins_form.sourceData, j_tpl_ins_form.formData, j_tpl_ins_form.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "template_email_subject",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": "{{((sourceData, formData, fieldState) => ( !/pdf/i.test(j_tpl_ins_form.formData.template_type || '') ))(j_tpl_ins_form.sourceData, j_tpl_ins_form.formData, j_tpl_ins_form.fieldState)}}",
+          "label": "Template Email Subject",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "template_email_subject",
+          "position": 8,
+          "sourceData": ""
+        },
+        "template_email_to_field": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_tpl_ins_form.sourceData, j_tpl_ins_form.formData, j_tpl_ins_form.fieldState)}}",
+          "accessor": "template_email_to_field",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_tpl_ins_form.sourceData, j_tpl_ins_form.formData, j_tpl_ins_form.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.template_email_to_field))(j_tpl_ins_form.sourceData, j_tpl_ins_form.formData, j_tpl_ins_form.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "template_email_to_field",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": "{{((sourceData, formData, fieldState) => ( !/pdf/i.test(j_tpl_ins_form.formData.template_type || '') ))(j_tpl_ins_form.sourceData, j_tpl_ins_form.formData, j_tpl_ins_form.fieldState)}}",
+          "label": "Template Email To Field",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "template_email_to_field",
+          "position": 7,
+          "sourceData": ""
+        },
+        "template_footer_html": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_tpl_ins_form.sourceData, j_tpl_ins_form.formData, j_tpl_ins_form.fieldState)}}",
+          "accessor": "template_footer_html",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_tpl_ins_form.sourceData, j_tpl_ins_form.formData, j_tpl_ins_form.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.template_footer_html))(j_tpl_ins_form.sourceData, j_tpl_ins_form.formData, j_tpl_ins_form.fieldState)}}",
+          "fieldType": "Multiline Text Input",
+          "iconAlign": "left",
+          "identifier": "template_footer_html",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": "{{((sourceData, formData, fieldState) => ( !/email/i.test(j_tpl_ins_form.formData.template_type || '') ))(j_tpl_ins_form.sourceData, j_tpl_ins_form.formData, j_tpl_ins_form.fieldState)}}",
+          "label": "Template Footer Html",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "template_footer_html",
+          "position": 13,
+          "sourceData": ""
+        },
+        "template_from_field": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_tpl_ins_form.sourceData, j_tpl_ins_form.formData, j_tpl_ins_form.fieldState)}}",
+          "accessor": "template_from_field",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_tpl_ins_form.sourceData, j_tpl_ins_form.formData, j_tpl_ins_form.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.template_from_field))(j_tpl_ins_form.sourceData, j_tpl_ins_form.formData, j_tpl_ins_form.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "template_from_field",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": "{{((sourceData, formData, fieldState) => ( !/pdf/i.test(j_tpl_ins_form.formData.template_type || '') ))(j_tpl_ins_form.sourceData, j_tpl_ins_form.formData, j_tpl_ins_form.fieldState)}}",
+          "label": "Template Email From Field",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "template_from_field",
+          "position": 5,
+          "sourceData": ""
+        },
+        "template_header_html": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_tpl_ins_form.sourceData, j_tpl_ins_form.formData, j_tpl_ins_form.fieldState)}}",
+          "accessor": "template_header_html",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_tpl_ins_form.sourceData, j_tpl_ins_form.formData, j_tpl_ins_form.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.template_header_html))(j_tpl_ins_form.sourceData, j_tpl_ins_form.formData, j_tpl_ins_form.fieldState)}}",
+          "fieldType": "Multiline Text Input",
+          "iconAlign": "left",
+          "identifier": "template_header_html",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": "{{((sourceData, formData, fieldState) => ( !/email/i.test(j_tpl_ins_form.formData.template_type || '') ))(j_tpl_ins_form.sourceData, j_tpl_ins_form.formData, j_tpl_ins_form.fieldState)}}",
+          "label": "Template Header Html",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "template_header_html",
+          "position": 11,
+          "sourceData": ""
+        },
+        "template_is_active": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_tpl_ins_form.sourceData, j_tpl_ins_form.formData, j_tpl_ins_form.fieldState)}}",
+          "accessor": "template_is_active",
+          "alignWidget": "LEFT",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "boolean",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.template_is_active))(j_tpl_ins_form.sourceData, j_tpl_ins_form.formData, j_tpl_ins_form.fieldState)}}",
+          "fieldType": "Switch",
+          "identifier": "template_is_active",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isVisible": true,
+          "label": "Template Is Active",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "template_is_active",
+          "position": 3,
+          "sourceData": true
+        },
+        "template_name": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_tpl_ins_form.sourceData, j_tpl_ins_form.formData, j_tpl_ins_form.fieldState)}}",
+          "accessor": "template_name",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_tpl_ins_form.sourceData, j_tpl_ins_form.formData, j_tpl_ins_form.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.template_name))(j_tpl_ins_form.sourceData, j_tpl_ins_form.formData, j_tpl_ins_form.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "template_name",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": true,
+          "label": "Template Name",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "template_name",
+          "position": 0,
+          "sourceData": ""
+        },
+        "template_pdf_body": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_tpl_ins_form.sourceData, j_tpl_ins_form.formData, j_tpl_ins_form.fieldState)}}",
+          "accessor": "template_pdf_body",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_tpl_ins_form.sourceData, j_tpl_ins_form.formData, j_tpl_ins_form.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.template_pdf_body))(j_tpl_ins_form.sourceData, j_tpl_ins_form.formData, j_tpl_ins_form.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "template_pdf_body",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": true,
+          "label": "Template Pdf Body",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "template_pdf_body",
+          "position": 16,
+          "sourceData": ""
+        },
+        "template_signature_field": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_tpl_ins_form.sourceData, j_tpl_ins_form.formData, j_tpl_ins_form.fieldState)}}",
+          "accessor": "template_signature_field",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_tpl_ins_form.sourceData, j_tpl_ins_form.formData, j_tpl_ins_form.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.template_signature_field))(j_tpl_ins_form.sourceData, j_tpl_ins_form.formData, j_tpl_ins_form.fieldState)}}",
+          "fieldType": "Multiline Text Input",
+          "iconAlign": "left",
+          "identifier": "template_signature_field",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": "{{((sourceData, formData, fieldState) => ( !/pdf/i.test(j_tpl_ins_form.formData.template_type || '') ))(j_tpl_ins_form.sourceData, j_tpl_ins_form.formData, j_tpl_ins_form.fieldState)}}",
+          "label": "Template Signature Field",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "template_signature_field",
+          "position": 10,
+          "sourceData": ""
+        },
+        "template_type": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_tpl_ins_form.sourceData, j_tpl_ins_form.formData, j_tpl_ins_form.fieldState)}}",
+          "accessor": "template_type",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_tpl_ins_form.sourceData, j_tpl_ins_form.formData, j_tpl_ins_form.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.template_type))(j_tpl_ins_form.sourceData, j_tpl_ins_form.formData, j_tpl_ins_form.fieldState)}}",
+          "fieldType": "Select",
+          "identifier": "template_type",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isFilterable": false,
+          "isRequired": false,
+          "isVisible": true,
+          "label": "Template Type",
+          "labelTextSize": "0.875rem",
+          "onOptionChange": "{{\n  storeValue('tpl_ins_data', {\n    ...(appsmith.store.tpl_ins_data || {}),\n    template_type: j_tpl_ins_form.formData.template_type\n  });\n  TemplateTypeHandler.applyIns();\n}}\n",
+          "options": "{{\n  [\n{ label: \"Projects Email\",  value: \"projects_email\" },    \n{ label: \"Accounting Email\", value: \"accounting_email\" },\n    { label: \"Sales Email\",    value: \"sales_email\" },\n    { label: \"HR Email\", value: \"hr_email\" },\n    { label: \"PO PDF\",           value: \"po_pdf\" },\n    { label: \"Invoice PDF\",      value: \"invoice_pdf\" },\n    { label: \"PO Email\",           value: \"po_email\" }\n  ]\n}}",
+          "originalIdentifier": "template_type",
+          "position": 1,
+          "serverSideFiltering": false,
+          "sourceData": ""
+        },
+        "template_vars": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_tpl_ins_form.sourceData, j_tpl_ins_form.formData, j_tpl_ins_form.fieldState)}}",
+          "accessor": "template_vars",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_tpl_ins_form.sourceData, j_tpl_ins_form.formData, j_tpl_ins_form.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "array",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.template_vars))(j_tpl_ins_form.sourceData, j_tpl_ins_form.formData, j_tpl_ins_form.fieldState)}}",
+          "fieldType": "Multiselect",
+          "identifier": "template_vars",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isFilterable": false,
+          "isRequired": false,
+          "isVisible": true,
+          "label": "Template Vars",
+          "labelTextSize": "0.875rem",
+          "options": "{{\n  TemplateVarsHelper.commonVars.map(v => ({ label: v, value: v }))\n}}\n",
+          "originalIdentifier": "template_vars",
+          "position": 15,
+          "serverSideFiltering": false,
+          "sourceData": []
+        },
+        "template_version": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_tpl_ins_form.sourceData, j_tpl_ins_form.formData, j_tpl_ins_form.fieldState)}}",
+          "accessor": "template_version",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_tpl_ins_form.sourceData, j_tpl_ins_form.formData, j_tpl_ins_form.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "number",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.template_version))(j_tpl_ins_form.sourceData, j_tpl_ins_form.formData, j_tpl_ins_form.fieldState)}}",
+          "fieldType": "Number Input",
+          "iconAlign": "left",
+          "identifier": "template_version",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": true,
+          "label": "Template Version",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "template_version",
+          "position": 4,
+          "sourceData": 1
+        }
+      },
+      "dataType": "object",
+      "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData))(j_tpl_ins_form.sourceData, j_tpl_ins_form.formData, j_tpl_ins_form.fieldState)}}",
+      "fieldType": "Object",
+      "identifier": "__root_schema__",
+      "isCustomField": false,
+      "isDisabled": false,
+      "isRequired": false,
+      "isVisible": true,
+      "label": "",
+      "labelTextSize": "0.875rem",
+      "originalIdentifier": "__root_schema__",
+      "position": -1,
+      "sourceData": {
+        "template_description": "",
+        "template_email_bcc_field": "",
+        "template_email_body_html": "",
+        "template_email_subject": "",
+        "template_email_to_field": "",
+        "template_footer_html": "",
+        "template_from_field": "",
+        "template_header_html": "",
+        "template_is_active": true,
+        "template_name": "",
+        "template_signature_field": "",
+        "template_type": "",
+        "template_vars": [],
+        "template_version": 1
+      }
+    }
+  },
+  "scrollContents": true,
+  "shouldScrollContents": true,
+  "showReset": false,
+  "sourceData": "{{ appsmith.store.tpl_ins_data || {\n  template_name: \"\",\n  template_type: \"\",\n  template_description: \"\",\n  template_is_active: true,\n  template_version: 1,\n  template_from_field: \"\",\n  template_email_to_field: \"\",\n  template_email_bcc_field: \"\",\n  template_email_subject: \"\",\n  template_email_body_html: \"\",\n  template_signature_field: \"\",\n  template_header_html: \"\",\n  template_footer_html: \"\",\n  template_vars: []\n} }}\n\n",
+  "submitButtonLabel": "Submit",
+  "submitButtonStyles": {
+    "borderRadius": "0.375rem",
+    "boxShadow": "none",
+    "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+    "buttonVariant": "PRIMARY",
+    "iconAlign": "left",
+    "iconName": "add",
+    "placement": "START"
+  },
+  "title": "New Template",
+  "topRow": 10,
+  "type": "JSON_FORM_WIDGET",
+  "useSourceData": false,
+  "version": 1,
+  "widgetId": "7krg8fu9ry",
+  "widgetName": "j_tpl_ins_form"
+}

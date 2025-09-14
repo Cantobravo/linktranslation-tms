@@ -1,0 +1,10 @@
+SELECT
+  *
+FROM
+  resource_purchase_orders
+ORDER BY
+  {{bill_PO_table.sortOrder.column || 'purchase_order_id'}} {{bill_PO_table.sortOrder.order !== "desc" ? "" : "DESC"}}
+LIMIT
+  {{bill_PO_table.pageSize}}
+OFFSET
+  {{bill_PO_table.pageOffset}}

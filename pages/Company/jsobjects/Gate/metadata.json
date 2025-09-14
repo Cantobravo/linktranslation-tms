@@ -1,0 +1,16 @@
+{
+  "gitSyncId": "6840b6d2ece888096e42342a_edb03d14-b5c8-4467-a2fa-1155da6a8a95",
+  "id": "Company_Gate",
+  "unpublishedCollection": {
+    "name": "Gate",
+    "pageId": "Company",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "required",
+        "value": "['VIEW_COMPANY']"
+      }
+    ]
+  }
+}

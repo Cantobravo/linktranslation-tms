@@ -1,0 +1,8 @@
+SELECT
+  service_id,
+  service_name,
+  service_status,
+  created_at,
+  updated_at
+FROM services
+WHERE service_id = {{ service_id }};

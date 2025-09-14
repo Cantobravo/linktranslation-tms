@@ -1,0 +1,4 @@
+SELECT note_id, note_date, note_text, priority, status, created_by_name
+FROM linktranslation.notes
+WHERE note_date = DATE_ADD(CURDATE(), INTERVAL 1 DAY)
+ORDER BY FIELD(priority,'High','Medium','Low'), note_id ASC;

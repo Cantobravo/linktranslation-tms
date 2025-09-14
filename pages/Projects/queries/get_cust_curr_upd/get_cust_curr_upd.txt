@@ -1,0 +1,8 @@
+SELECT
+  c.currency_id AS value,
+  cur.currency_name AS label,
+  cur.currency_quote
+FROM customers c
+LEFT JOIN currencies cur ON cur.currency_id = c.currency_id
+WHERE c.customer_id = {{ u_customer_id.selectedOptionValue }}
+LIMIT 1;

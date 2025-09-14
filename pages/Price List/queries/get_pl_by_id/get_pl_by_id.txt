@@ -1,0 +1,10 @@
+SELECT
+  pl.price_list_id,
+  pl.price_list_type,
+  pl.price_list_name,
+  pl.currency_id,
+  pl.customer_id,
+  pl.resource_id,
+  pl.is_active
+FROM price_lists pl
+WHERE pl.price_list_id = {{ appsmith.store.pl_id || tbl_pl.triggeredRow?.price_list_id || null }};

@@ -1,0 +1,2 @@
+DELETE FROM resource_banking
+WHERE resource_banking_id = {{ Number(appsmith.store.resourceBankingRow?.resource_banking_id) }}

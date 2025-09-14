@@ -1,0 +1,9 @@
+-- get_units (Active only)
+SELECT
+  unit_id,
+  unit_name,
+  unit_status,
+  updated_at
+FROM units
+WHERE COALESCE(unit_status, 'Active') = 'Active'
+ORDER BY unit_name;

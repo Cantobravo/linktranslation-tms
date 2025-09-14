@@ -1,0 +1,9 @@
+SELECT
+  snippet_id,
+  snippet_title,
+  tags,
+  LEFT(full_text, 200) AS preview,
+  created_at,
+  updated_at
+FROM iso_texts
+ORDER BY updated_at DESC;

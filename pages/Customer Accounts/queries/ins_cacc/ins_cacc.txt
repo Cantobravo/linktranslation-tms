@@ -1,0 +1,11 @@
+INSERT INTO customer_accounts (
+  customer_id,
+  customer_account_name,
+  customer_account_industry,
+  customer_account_tools
+) VALUES (
+  {{ j_cacc_ins_jsn.formData.customer_id ?? null }},
+  {{ j_cacc_ins_jsn.formData.customer_account_name ?? null }},
+  {{ j_cacc_ins_jsn.formData.customer_account_industry ?? null }},
+  {{ j_cacc_ins_jsn.formData.customer_account_tools ?? null }}
+);

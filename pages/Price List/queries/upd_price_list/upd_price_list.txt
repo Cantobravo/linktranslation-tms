@@ -1,0 +1,27 @@
+UPDATE price_lists
+SET
+  price_list_type = {{ j_pl_upd_form.formData?.price_list_type ?? appsmith.store.plRow?.price_list_type }},
+  price_list_name = {{ j_pl_upd_form.formData?.price_list_name ?? appsmith.store.plRow?.price_list_name }},
+  currency_id     = {{ Number(j_pl_upd_form.formData?.currency_id ?? appsmith.store.plRow?.currency_id) }},
+
+  customer_id     = {{
+    j_pl_upd_form.formData?.price_list_type === 'CUSTOMER'
+      ? (j_pl_upd_form.formData?.customer_id === '' || j_pl_upd_form.formData?.customer_id == null
+          ? null : Number(j_pl_upd_form.formData.customer_id))
+      : null
+  }},
+
+  resource_id     = {{
+    j_pl_upd_form.formData?.price_list_type === 'RESOURCE'
+      ? (j_pl_upd_form.formData?.resource_id === '' || j_pl_upd_form.formData?.resource_id == null
+          ? null : Number(j_pl_upd_form.formData.resource_id))
+      : null
+  }},
+
+  is_active       = {{
+    j_pl_upd_form.formData?.is_active === true  ? 1 :
+    j_pl_upd_form.formData?.is_active === false ? 0 :
+    Number(appsmith.store.plRow?.is_active ?? 1)
+  }}
+
+WHERE price_list_id = {{ Number(appsmith.store.plRow?.price_list_id ?? j_pl_upd_form.formData?.price_list_id) }};

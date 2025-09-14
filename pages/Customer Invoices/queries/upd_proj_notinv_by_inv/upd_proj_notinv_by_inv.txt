@@ -1,0 +1,5 @@
+UPDATE projects p
+JOIN invoice_project_link l
+  ON l.project_id = p.project_id
+SET p.project_status = 'Not Invoiced'
+WHERE l.customer_invoice_id = {{ appsmith.store.invId }};

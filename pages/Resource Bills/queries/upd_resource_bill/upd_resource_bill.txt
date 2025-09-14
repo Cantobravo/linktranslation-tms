@@ -1,0 +1,4 @@
+UPDATE resource_bills
+SET resource_bill_date = {{ upd_bill_date.selectedDate ? moment(upd_bill_date.selectedDate).format('YYYY-MM-DD') : null }},
+    resource_bill_due_date = {{ upd_due_date.selectedDate ? moment(upd_due_date.selectedDate).format('YYYY-MM-DD') : null }}
+WHERE resource_bill_id = {{ appsmith.store.billRow.resource_bill_id }};

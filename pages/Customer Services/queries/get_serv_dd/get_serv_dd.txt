@@ -1,0 +1,20 @@
+SELECT
+  s.service_id AS value,
+  CONCAT(
+    s.service_name, ' | ',
+    IFNULL(u.unit_name,'-'), ' | ',
+    IFNULL(sl.language_name,'-'), ' → ', IFNULL(tl.language_name,'-'), ' | ',
+    IFNULL(cur.currency_name,'-')
+  ) AS label,
+  -- keep only the descriptive fields (no service_rate)
+  s.service_name,
+  u.unit_name,
+  sl.language_name AS source_language_name,
+  tl.language_name AS target_language_name,
+  cur.currency_name
+FROM services s
+LEFT JOIN units      u   ON u.unit_id       = s.unit_id
+LEFT JOIN languages  sl  ON sl.language_id  = s.source_language_id
+LEFT JOIN languages  tl  ON tl.language_id  = s.target_language_id
+LEFT JOIN currencies cur ON cur.currency_id = s.currency_id
+ORDER BY s.service_name, sl.language_name, tl.language_name, u.unit_name;

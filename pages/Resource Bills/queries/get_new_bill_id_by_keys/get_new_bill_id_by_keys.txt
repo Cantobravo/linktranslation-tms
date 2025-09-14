@@ -1,0 +1,10 @@
+SELECT resource_bill_id
+FROM resource_bills
+WHERE resource_id = {{ new_resource_id.selectedOptionValue }}
+  AND COALESCE(currency_id, -1) = COALESCE({{ NULLIF(new_currency_id.selectedOptionValue, '') }}, -1)
+  AND COALESCE(DATE_FORMAT(resource_bill_date, '%Y-%m-%d %H:%i:%s'), '1970-01-01 00:00:00')
+      = COALESCE({{ new_bill_date.selectedDate ? moment(new_bill_date.selectedDate).format('YYYY-MM-DD HH:mm:ss') : null }}, '1970-01-01 00:00:00')
+  AND COALESCE(DATE_FORMAT(resource_bill_due_date, '%Y-%m-%d %H:%i:%s'), '1970-01-01 00:00:00')
+      = COALESCE({{ new_due_date.selectedDate ? moment(new_due_date.selectedDate).format('YYYY-MM-DD HH:mm:ss') : null }}, '1970-01-01 00:00:00')
+ORDER BY resource_bill_id DESC
+LIMIT 1;

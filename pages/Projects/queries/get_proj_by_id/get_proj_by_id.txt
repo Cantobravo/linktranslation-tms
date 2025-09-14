@@ -1,0 +1,20 @@
+SELECT
+  p.project_id,
+  p.project_name,
+  p.customer_id,
+  p.currency_id,
+  p.customer_account_id,
+  p.service_id,
+  p.unit_id,
+  p.source_language_id,
+  p.target_language_id,
+  p.pricing_mode,
+  p.project_volume,
+  p.project_rate,
+  p.project_total,
+  p.project_start_date,
+  p.project_end_date,
+  p.customer_reference_number,
+  p.project_comments
+FROM projects p
+WHERE p.project_id = {{ appsmith.store.proj_id || u_project_id.text || null }};

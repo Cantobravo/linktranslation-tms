@@ -1,0 +1,4 @@
+UPDATE customer_portals
+SET customer_portal_status = 'Inactive',
+    updated_at = NOW()
+WHERE customer_portal_id = {{ appsmith.store.cportRow?.customer_portal_id }};

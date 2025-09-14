@@ -1,0 +1,64 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "autoFocus": false,
+  "borderRadius": "0.375rem",
+  "bottomRow": 17,
+  "boxShadow": "none",
+  "defaultText": "",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "onTextChanged"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onTextChanged"
+    }
+  ],
+  "iconAlign": "left",
+  "inputType": "TEXT",
+  "isDisabled": false,
+  "isLoading": false,
+  "isRequired": false,
+  "isVisible": true,
+  "key": "9jtgc8uews",
+  "label": "Search",
+  "labelAlignment": "left",
+  "labelPosition": "Top",
+  "labelStyle": "",
+  "labelTextSize": "0.875rem",
+  "labelWidth": 5,
+  "leftColumn": 1,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 15,
+  "mobileLeftColumn": 37,
+  "mobileRightColumn": 57,
+  "mobileTopRow": 8,
+  "needsErrorInfo": false,
+  "onTextChanged": "{{\n  (() => {\n    const t = (proj_filter_text.text || '').trim();\n    const like = \"'\" + \"%\" + t + \"%\" + \"'\";   // yields e.g. '%term%' (with quotes)\n    return Promise.all([\n      storeValue('f_text', t),\n      storeValue('f_like', like)\n    ]).then(() => get_projects.run());\n  })()\n}}\n\n\n",
+  "originalBottomRow": 34,
+  "originalTopRow": 27,
+  "parentColumnSpace": 22.125,
+  "parentId": "n7gp4ek6zv",
+  "parentRowSpace": 10,
+  "placeholderText": "Type to search…",
+  "renderMode": "CANVAS",
+  "resetOnSubmit": true,
+  "responsiveBehavior": "fill",
+  "rightColumn": 30,
+  "showStepArrows": false,
+  "topRow": 10,
+  "type": "INPUT_WIDGET_V2",
+  "version": 2,
+  "widgetId": "eqyzmi80p9",
+  "widgetName": "proj_filter_text"
+}

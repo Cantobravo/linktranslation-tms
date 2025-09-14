@@ -1,0 +1,6 @@
+UPDATE resource_purchase_orders po
+JOIN JSON_TABLE(
+  {{ JSON.stringify(unbilled_po_table_new.selectedRows.map(x => x.purchase_order_id)) }},
+  '$[*]' COLUMNS (po_id INT PATH '$')
+) jt ON jt.po_id = po.purchase_order_id
+SET po.is_billed = 'Yes';

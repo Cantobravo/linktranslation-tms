@@ -1,0 +1,4 @@
+SELECT r.resource_id, r.resource_full_name, r.resource_email
+FROM resources r
+WHERE COALESCE(r.resource_is_active, 1) = 1
+ORDER BY r.resource_full_name;

@@ -1,0 +1,13 @@
+UPDATE `company`
+SET
+  company_name      = {{ CompanyUpdateHandler.payload.company_name }},
+  logo              = {{ CompanyUpdateHandler.payload.logo }},
+  website           = {{ CompanyUpdateHandler.payload.website }},
+  signature         = {{ CompanyUpdateHandler.payload.signature }},
+  address           = {{ CompanyUpdateHandler.payload.address }},
+  currency_id       = {{ CompanyUpdateHandler.payload.currency_id }},
+  tax_number        = {{ CompanyUpdateHandler.payload.tax_number }},
+  bank_account      = {{ CompanyUpdateHandler.payload.bank_account }},
+  payoneer_account  = {{ CompanyUpdateHandler.payload.payoneer_account }},
+  updated_at        = NOW()
+WHERE company_id = {{ appsmith.store.companyRow?.company_id ?? get_company.data[0]?.company_id }};

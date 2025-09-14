@@ -1,0 +1,13 @@
+INSERT INTO absences (
+  resource_id,
+  absence_name,
+  absence_start_date,
+  absence_end_date,
+  absence_note
+) VALUES (
+  {{ Number(ddl_i_resource_id.selectedOptionValue) || null }},
+  {{ i_absence_name.text }},
+  {{ dp_i_start_date.selectedDate ? moment(dp_i_start_date.selectedDate).format('YYYY-MM-DD') : null }},
+  {{ dp_i_end_date.selectedDate ? moment(dp_i_end_date.selectedDate).format('YYYY-MM-DD') : null }},
+  {{ i_absence_note.text }}
+);

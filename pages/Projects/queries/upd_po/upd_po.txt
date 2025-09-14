@@ -1,0 +1,16 @@
+UPDATE resource_purchase_orders
+SET
+  resource_id        = {{ up_resource_id.selectedOptionValue || null }},
+  currency_id        = 1,
+  project_id         = {{ up_project_id.selectedOptionValue || up_project_id.text || appsmith.store.proj_id || null }},
+  service_id         = {{ up_service_id.selectedOptionValue || null }},
+  source_language_id = {{ up_source_language_id.selectedOptionValue || null }},
+  target_language_id = {{ up_target_language_id.selectedOptionValue || null }},
+  unit_id            = {{ up_unit_id.selectedOptionValue || null }},
+  volume             = {{ up_volume.text ? up_volume.text : null }},
+  rate               = {{ up_rate.text ? up_rate.text : null }},
+  total              = {{ up_total.text ? up_total.text : null }},
+  date               = {{ up_date.selectedDate ? moment(up_date.selectedDate).format('YYYY-MM-DD') : null }},
+  due_date           = {{ up_due_date.selectedDate ? moment(up_due_date.selectedDate).format('YYYY-MM-DD') : null }},
+  note               = {{ up_note.text || null }}
+WHERE purchase_order_id = {{ appsmith.store.rpo_id || null }};

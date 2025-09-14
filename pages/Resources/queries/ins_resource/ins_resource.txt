@@ -1,0 +1,23 @@
+INSERT INTO resources (
+  resource_first_name,
+  resource_last_name,
+  resource_full_name,
+  resource_email,
+  resource_country,
+  resource_status,
+  resource_phone,
+  resource_documentation
+)
+VALUES (
+  NULLIF({{ j_res_ins_form.formData.resource_first_name }}, ''),
+  NULLIF({{ j_res_ins_form.formData.resource_last_name }}, ''),
+  TRIM(CONCAT(
+    COALESCE({{ j_res_ins_form.formData.resource_first_name }}, ''), ' ',
+    COALESCE({{ j_res_ins_form.formData.resource_last_name }}, '')
+  )),
+  NULLIF({{ j_res_ins_form.formData.resource_email }}, ''),
+  NULLIF({{ j_res_ins_form.formData.resource_country }}, ''),
+  NULLIF({{ j_res_ins_form.formData.resource_status }}, ''),
+  NULLIF({{ j_res_ins_form.formData.resource_phone }}, ''),
+  NULLIF({{ j_res_ins_form.formData.resource_documentation }}, '')
+);

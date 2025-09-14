@@ -1,0 +1,6 @@
+INSERT INTO iso_texts (snippet_title, tags, full_text)
+VALUES (
+  {{ j_iso_ins_form.formData.snippet_title || null }},
+  {{ j_iso_ins_form.formData.tags || null }},
+  {{ j_iso_ins_form.formData.full_text || null }}
+);

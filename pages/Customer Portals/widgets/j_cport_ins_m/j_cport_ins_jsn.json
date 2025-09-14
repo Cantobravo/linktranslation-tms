@@ -1,0 +1,711 @@
+{
+  "animateLoading": true,
+  "autoGenerateForm": true,
+  "backgroundColor": "#fff",
+  "borderColor": "{{appsmith.theme.colors.primaryColor}}",
+  "borderRadius": "1.5rem",
+  "borderWidth": "1",
+  "bottomRow": 108,
+  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+  "childStylesheet": {
+    "ARRAY": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none",
+      "cellBorderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "cellBoxShadow": "none"
+    },
+    "CHECKBOX": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}"
+    },
+    "CURRENCY_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "DATEPICKER": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "EMAIL_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "MULTILINE_TEXT_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "MULTISELECT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "NUMBER_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "OBJECT": {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none",
+      "cellBorderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "cellBoxShadow": "none"
+    },
+    "PASSWORD_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "PHONE_NUMBER_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "RADIO_GROUP": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "boxShadow": "none"
+    },
+    "SELECT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "SWITCH": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "boxShadow": "none"
+    },
+    "TEXT_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    }
+  },
+  "disabledWhenInvalid": true,
+  "dynamicBindingPathList": [
+    {
+      "key": "boxShadow"
+    },
+    {
+      "key": "submitButtonStyles.buttonColor"
+    },
+    {
+      "key": "resetButtonStyles.buttonColor"
+    },
+    {
+      "key": "resetButtonStyles.borderRadius"
+    },
+    {
+      "key": "sourceData"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_portal_id.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_portal_id.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_portal_id.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_id.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_id.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_id.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_name.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_name.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_name.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_contact_id.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_contact_id.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_contact_id.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_contact_name.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_contact_name.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_contact_name.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_portal_name.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_portal_name.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_portal_name.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_portal_credentials.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_portal_credentials.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_portal_credentials.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_portal_website.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_portal_website.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_portal_website.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_portal_notes.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_portal_notes.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_portal_notes.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_portal_first_update.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_portal_first_update.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_portal_first_update.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_portal_last_update.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_portal_last_update.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_portal_last_update.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_portal_next_update.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_portal_next_update.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_portal_next_update.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.created_at.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.created_at.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.created_at.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.updated_at.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.updated_at.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.updated_at.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.cellBorderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_id.options"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_contact_id.options"
+    },
+    {
+      "key": "borderColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.customField1.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.customField1.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.customField1.options"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [
+    {
+      "key": "sourceData"
+    },
+    {
+      "key": "onSubmit"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_id.onOptionChange"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onSubmit"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_id.onOptionChange"
+    }
+  ],
+  "fieldLimitExceeded": false,
+  "fixedFooter": true,
+  "flexVerticalAlignment": "start",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "sxaxq5vhp1",
+  "leftColumn": 1,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 43,
+  "mobileLeftColumn": 1,
+  "mobileRightColumn": 26,
+  "mobileTopRow": 2,
+  "needsErrorInfo": false,
+  "onSubmit": "{{\n  SubmitShield.runOnce(async () => {\n    await ins_cport.run();\n    if (toggle_show_inactive_cport.isSwitchedOn) {\n      await get_cport_all.run();\n    } else {\n      await get_cport_active.run();\n    }\n    closeModal('j_cport_ins_m');\n    showAlert('Portal created','success');\n  })\n}}\n",
+  "originalBottomRow": 108,
+  "originalTopRow": 2,
+  "parentColumnSpace": 6.9375,
+  "parentId": "or523ibijd",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "resetButtonLabel": "Reset",
+  "resetButtonStyles": {
+    "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+    "boxShadow": "none",
+    "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+    "buttonVariant": "SECONDARY"
+  },
+  "responsiveBehavior": "fill",
+  "rightColumn": 61,
+  "schema": {
+    "__root_schema__": {
+      "accessor": "__root_schema__",
+      "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_cport_ins_jsn.sourceData, j_cport_ins_jsn.formData, j_cport_ins_jsn.fieldState)}}",
+      "boxShadow": "none",
+      "cellBorderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_cport_ins_jsn.sourceData, j_cport_ins_jsn.formData, j_cport_ins_jsn.fieldState)}}",
+      "cellBoxShadow": "none",
+      "children": {
+        "created_at": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_cport_ins_jsn.sourceData, j_cport_ins_jsn.formData, j_cport_ins_jsn.fieldState)}}",
+          "accessor": "created_at",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_cport_ins_jsn.sourceData, j_cport_ins_jsn.formData, j_cport_ins_jsn.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.created_at))(j_cport_ins_jsn.sourceData, j_cport_ins_jsn.formData, j_cport_ins_jsn.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "created_at",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": false,
+          "label": "Created At",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "created_at",
+          "position": 12,
+          "sourceData": "2025-06-12T20:53:40Z"
+        },
+        "customField1": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_cport_ins_jsn.sourceData, j_cport_ins_jsn.formData, j_cport_ins_jsn.fieldState)}}",
+          "accessor": "customer_portal_status",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_cport_ins_jsn.sourceData, j_cport_ins_jsn.formData, j_cport_ins_jsn.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "Active",
+          "fieldType": "Select",
+          "identifier": "customField1",
+          "isCustomField": true,
+          "isDisabled": false,
+          "isFilterable": false,
+          "isRequired": false,
+          "isVisible": true,
+          "label": "Status",
+          "labelTextSize": "0.875rem",
+          "options": "{{[\n  { \"label\": \"Active\",   \"value\": \"Active\" },\n  { \"label\": \"Inactive\", \"value\": \"Inactive\" }\n]\n}}",
+          "originalIdentifier": "customField1",
+          "position": 14,
+          "serverSideFiltering": false,
+          "sourceData": ""
+        },
+        "customer_contact_id": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_cport_ins_jsn.sourceData, j_cport_ins_jsn.formData, j_cport_ins_jsn.fieldState)}}",
+          "accessor": "customer_contact_id",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_cport_ins_jsn.sourceData, j_cport_ins_jsn.formData, j_cport_ins_jsn.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "number",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.customer_contact_id))(j_cport_ins_jsn.sourceData, j_cport_ins_jsn.formData, j_cport_ins_jsn.fieldState)}}",
+          "fieldType": "Select",
+          "identifier": "customer_contact_id",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isFilterable": false,
+          "isRequired": false,
+          "isVisible": true,
+          "label": "Customer Contact",
+          "labelTextSize": "0.875rem",
+          "options": "{{\n  (get_ccont_active_dd.data || [])\n    .filter(o => !j_cport_ins_jsn.formData.customer_id || o.customer_id === j_cport_ins_jsn.formData.customer_id)\n    .map(o => ({ label: o.label, value: o.value }))\n}}\n",
+          "originalIdentifier": "customer_contact_id",
+          "position": 4,
+          "serverSideFiltering": false,
+          "sourceData": 3
+        },
+        "customer_contact_name": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_cport_ins_jsn.sourceData, j_cport_ins_jsn.formData, j_cport_ins_jsn.fieldState)}}",
+          "accessor": "customer_contact_name",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_cport_ins_jsn.sourceData, j_cport_ins_jsn.formData, j_cport_ins_jsn.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.customer_contact_name))(j_cport_ins_jsn.sourceData, j_cport_ins_jsn.formData, j_cport_ins_jsn.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "customer_contact_name",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": false,
+          "label": "Contact Name",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "customer_contact_name",
+          "position": 5,
+          "sourceData": "Daniel"
+        },
+        "customer_id": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_cport_ins_jsn.sourceData, j_cport_ins_jsn.formData, j_cport_ins_jsn.fieldState)}}",
+          "accessor": "customer_id",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_cport_ins_jsn.sourceData, j_cport_ins_jsn.formData, j_cport_ins_jsn.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "number",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.customer_id))(j_cport_ins_jsn.sourceData, j_cport_ins_jsn.formData, j_cport_ins_jsn.fieldState)}}",
+          "fieldType": "Select",
+          "identifier": "customer_id",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isFilterable": false,
+          "isRequired": false,
+          "isVisible": true,
+          "label": "Customer",
+          "labelTextSize": "0.875rem",
+          "onOptionChange": "{{\n  (async () => {\n    await get_ccont_active_dd.run();\n    j_cport_ins_jsn.updateField('customer_contact_id', null); // clear the contact when customer changes\n  })()\n}}\n",
+          "options": "{{ get_cust_active_dd.data }}\n",
+          "originalIdentifier": "customer_id",
+          "position": 2,
+          "serverSideFiltering": false,
+          "sourceData": 1
+        },
+        "customer_name": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_cport_ins_jsn.sourceData, j_cport_ins_jsn.formData, j_cport_ins_jsn.fieldState)}}",
+          "accessor": "customer_name",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_cport_ins_jsn.sourceData, j_cport_ins_jsn.formData, j_cport_ins_jsn.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.customer_name))(j_cport_ins_jsn.sourceData, j_cport_ins_jsn.formData, j_cport_ins_jsn.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "customer_name",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": false,
+          "label": "Customer Name",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "customer_name",
+          "position": 3,
+          "sourceData": "Acolad"
+        },
+        "customer_portal_credentials": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_cport_ins_jsn.sourceData, j_cport_ins_jsn.formData, j_cport_ins_jsn.fieldState)}}",
+          "accessor": "customer_portal_credentials",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_cport_ins_jsn.sourceData, j_cport_ins_jsn.formData, j_cport_ins_jsn.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.customer_portal_credentials))(j_cport_ins_jsn.sourceData, j_cport_ins_jsn.formData, j_cport_ins_jsn.fieldState)}}",
+          "fieldType": "Multiline Text Input",
+          "iconAlign": "left",
+          "identifier": "customer_portal_credentials",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": true,
+          "label": "Portal Credentials",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "customer_portal_credentials",
+          "position": 6,
+          "sourceData": ""
+        },
+        "customer_portal_first_update": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_cport_ins_jsn.sourceData, j_cport_ins_jsn.formData, j_cport_ins_jsn.fieldState)}}",
+          "accessor": "customer_portal_first_update",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_cport_ins_jsn.sourceData, j_cport_ins_jsn.formData, j_cport_ins_jsn.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "closeOnSelection": false,
+          "convertToISO": false,
+          "dataType": "null",
+          "dateFormat": "YYYY-MM-DD",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.customer_portal_first_update))(j_cport_ins_jsn.sourceData, j_cport_ins_jsn.formData, j_cport_ins_jsn.fieldState)}}",
+          "fieldType": "Datepicker",
+          "identifier": "customer_portal_first_update",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isVisible": true,
+          "label": "First Update",
+          "labelTextSize": "0.875rem",
+          "maxDate": "2121-12-31T18:29:00.000Z",
+          "minDate": "1920-12-31T18:30:00.000Z",
+          "originalIdentifier": "customer_portal_first_update",
+          "position": 9,
+          "shortcuts": false,
+          "timePrecision": "minute"
+        },
+        "customer_portal_id": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_cport_ins_jsn.sourceData, j_cport_ins_jsn.formData, j_cport_ins_jsn.fieldState)}}",
+          "accessor": "customer_portal_id",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_cport_ins_jsn.sourceData, j_cport_ins_jsn.formData, j_cport_ins_jsn.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "number",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.customer_portal_id))(j_cport_ins_jsn.sourceData, j_cport_ins_jsn.formData, j_cport_ins_jsn.fieldState)}}",
+          "fieldType": "Number Input",
+          "iconAlign": "left",
+          "identifier": "customer_portal_id",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": false,
+          "label": "Customer Portal Id",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "customer_portal_id",
+          "position": 1,
+          "sourceData": 7
+        },
+        "customer_portal_last_update": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_cport_ins_jsn.sourceData, j_cport_ins_jsn.formData, j_cport_ins_jsn.fieldState)}}",
+          "accessor": "customer_portal_last_update",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_cport_ins_jsn.sourceData, j_cport_ins_jsn.formData, j_cport_ins_jsn.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "closeOnSelection": false,
+          "convertToISO": false,
+          "dataType": "null",
+          "dateFormat": "YYYY-MM-DD",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.customer_portal_last_update))(j_cport_ins_jsn.sourceData, j_cport_ins_jsn.formData, j_cport_ins_jsn.fieldState)}}",
+          "fieldType": "Datepicker",
+          "identifier": "customer_portal_last_update",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isVisible": true,
+          "label": "Last Update",
+          "labelTextSize": "0.875rem",
+          "maxDate": "2121-12-31T18:29:00.000Z",
+          "minDate": "1920-12-31T18:30:00.000Z",
+          "originalIdentifier": "customer_portal_last_update",
+          "position": 10,
+          "shortcuts": false,
+          "timePrecision": "minute"
+        },
+        "customer_portal_name": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_cport_ins_jsn.sourceData, j_cport_ins_jsn.formData, j_cport_ins_jsn.fieldState)}}",
+          "accessor": "customer_portal_name",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_cport_ins_jsn.sourceData, j_cport_ins_jsn.formData, j_cport_ins_jsn.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.customer_portal_name))(j_cport_ins_jsn.sourceData, j_cport_ins_jsn.formData, j_cport_ins_jsn.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "customer_portal_name",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": true,
+          "label": "Portal Name",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "customer_portal_name",
+          "position": 0,
+          "sourceData": "projetex"
+        },
+        "customer_portal_next_update": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_cport_ins_jsn.sourceData, j_cport_ins_jsn.formData, j_cport_ins_jsn.fieldState)}}",
+          "accessor": "customer_portal_next_update",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_cport_ins_jsn.sourceData, j_cport_ins_jsn.formData, j_cport_ins_jsn.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "closeOnSelection": false,
+          "convertToISO": false,
+          "dataType": "null",
+          "dateFormat": "YYYY-MM-DD",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.customer_portal_next_update))(j_cport_ins_jsn.sourceData, j_cport_ins_jsn.formData, j_cport_ins_jsn.fieldState)}}",
+          "fieldType": "Datepicker",
+          "identifier": "customer_portal_next_update",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isVisible": true,
+          "label": "Next Update",
+          "labelTextSize": "0.875rem",
+          "maxDate": "2121-12-31T18:29:00.000Z",
+          "minDate": "1920-12-31T18:30:00.000Z",
+          "originalIdentifier": "customer_portal_next_update",
+          "position": 11,
+          "shortcuts": false,
+          "timePrecision": "minute"
+        },
+        "customer_portal_notes": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_cport_ins_jsn.sourceData, j_cport_ins_jsn.formData, j_cport_ins_jsn.fieldState)}}",
+          "accessor": "customer_portal_notes",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_cport_ins_jsn.sourceData, j_cport_ins_jsn.formData, j_cport_ins_jsn.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.customer_portal_notes))(j_cport_ins_jsn.sourceData, j_cport_ins_jsn.formData, j_cport_ins_jsn.fieldState)}}",
+          "fieldType": "Multiline Text Input",
+          "iconAlign": "left",
+          "identifier": "customer_portal_notes",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": true,
+          "label": "Portal Notes",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "customer_portal_notes",
+          "position": 8,
+          "sourceData": ""
+        },
+        "customer_portal_website": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_cport_ins_jsn.sourceData, j_cport_ins_jsn.formData, j_cport_ins_jsn.fieldState)}}",
+          "accessor": "customer_portal_website",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_cport_ins_jsn.sourceData, j_cport_ins_jsn.formData, j_cport_ins_jsn.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.customer_portal_website))(j_cport_ins_jsn.sourceData, j_cport_ins_jsn.formData, j_cport_ins_jsn.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "customer_portal_website",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": true,
+          "label": "Portal Website",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "customer_portal_website",
+          "position": 7,
+          "sourceData": ""
+        },
+        "updated_at": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_cport_ins_jsn.sourceData, j_cport_ins_jsn.formData, j_cport_ins_jsn.fieldState)}}",
+          "accessor": "updated_at",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_cport_ins_jsn.sourceData, j_cport_ins_jsn.formData, j_cport_ins_jsn.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.updated_at))(j_cport_ins_jsn.sourceData, j_cport_ins_jsn.formData, j_cport_ins_jsn.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "updated_at",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": false,
+          "label": "Updated At",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "updated_at",
+          "position": 13,
+          "sourceData": "2025-06-12T20:53:40Z"
+        }
+      },
+      "dataType": "object",
+      "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData))(j_cport_ins_jsn.sourceData, j_cport_ins_jsn.formData, j_cport_ins_jsn.fieldState)}}",
+      "fieldType": "Object",
+      "identifier": "__root_schema__",
+      "isCustomField": false,
+      "isDisabled": false,
+      "isRequired": false,
+      "isVisible": true,
+      "label": "",
+      "labelTextSize": "0.875rem",
+      "originalIdentifier": "__root_schema__",
+      "position": -1,
+      "sourceData": {
+        "created_at": "2025-06-12T20:53:40Z",
+        "customer_contact_id": 3,
+        "customer_contact_name": "Daniel",
+        "customer_id": 1,
+        "customer_name": "Acolad",
+        "customer_portal_credentials": "",
+        "customer_portal_id": 7,
+        "customer_portal_name": "projetex",
+        "customer_portal_notes": "",
+        "customer_portal_website": "",
+        "updated_at": "2025-06-12T20:53:40Z"
+      }
+    }
+  },
+  "scrollContents": true,
+  "showReset": false,
+  "sourceData": "{{ {} }}",
+  "submitButtonLabel": "Submit",
+  "submitButtonStyles": {
+    "borderRadius": "0.375rem",
+    "boxShadow": "none",
+    "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+    "buttonVariant": "PRIMARY",
+    "iconAlign": "left",
+    "iconName": "add",
+    "placement": "START"
+  },
+  "title": "Add Portal",
+  "topRow": 2,
+  "type": "JSON_FORM_WIDGET",
+  "useSourceData": false,
+  "version": 1,
+  "widgetId": "1y3ezmds0e",
+  "widgetName": "j_cport_ins_jsn"
+}

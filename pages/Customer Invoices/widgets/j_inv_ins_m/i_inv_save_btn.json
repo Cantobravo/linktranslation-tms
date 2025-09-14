@@ -1,0 +1,53 @@
+{
+  "animateLoading": true,
+  "borderRadius": "0.375rem",
+  "bottomRow": 39,
+  "boxShadow": "none",
+  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "buttonStyle": "PRIMARY_BUTTON",
+  "buttonVariant": "PRIMARY",
+  "disabledWhenInvalid": false,
+  "dynamicBindingPathList": [
+    {
+      "key": "buttonColor"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "isDefaultClickDisabled": true,
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "5uy8acrq26",
+  "leftColumn": 25,
+  "minWidth": 120,
+  "mobileBottomRow": 22,
+  "mobileLeftColumn": 47,
+  "mobileRightColumn": 63,
+  "mobileTopRow": 18,
+  "needsErrorInfo": false,
+  "onClick": "{{\n  (async () => {\n    // ---- required fields\n    if (!i_cust_id.selectedOptionValue) { showAlert('Choose a customer','warning'); return; }\n    if (!i_curr_id.selectedOptionValue) { showAlert('Choose a currency','warning'); return; }\n    if (!i_inv_date.selectedDate)       { showAlert('Choose invoice date','warning'); return; }\n    if (!i_due_date.selectedDate)       { showAlert('Choose due date','warning'); return; }\n\n    try {\n      // 1) insert header (reuses your query)\n      await ins_invoice.run();\n\n      // 2) resolve new invoice id (no new queries)\n      let invId = null;\n\n      // 2a) try your helper first\n      try {\n        const rs  = await get_last_inv_id.run();\n        const dat = Array.isArray(rs) ? rs : get_last_inv_id.data;\n        invId = dat?.[0]?.customer_invoice_id ?? dat?.[0]?.last_id ?? null;\n      } catch (_) {}\n\n      // 2b) fallback: refresh main table and pick the max id visible\n      if (!invId) {\n        await get_invoices.run();\n        const rows = get_invoices.data || [];\n        invId = rows.reduce((m, r) => Math.max(m, Number(r.customer_invoice_id || 0)), 0) || null;\n      }\n\n      if (!invId) { showAlert('Could not resolve new invoice id','error'); return; }\n\n      // 3) load canonical row for Update modal\n      await storeValue('invId', invId);\n      await get_inv_by_id.run();\n      const inv = get_inv_by_id.data?.[0] || {};\n      await storeValue('invRow', inv);\n\n      // 4) close New, open Update, prefill (Customer/Currency read-only there)\n      closeModal('j_inv_ins_m');\n      showModal('j_inv_upd_m');\n\n      u_cust_id.setSelectedOption({\n        label: inv.customer_name || i_cust_id.selectedOptionLabel || '',\n        value: inv.customer_id   || i_cust_id.selectedOptionValue\n      });\n      u_currency.setSelectedOption({\n        label: inv.currency_acronym || i_curr_id.selectedOptionLabel || '',\n        value: inv.currency_id      || i_curr_id.selectedOptionValue\n      });\n\n      // dates (prefer DB row; fall back to what user picked)\n      u_inv_date.setValue(\n        inv.customer_invoice_date\n          ? moment(inv.customer_invoice_date).format('YYYY-MM-DD')\n          : moment(i_inv_date.selectedDate).format('YYYY-MM-DD')\n      );\n      u_due_date.setValue(\n        inv.customer_invoice_due_date\n          ? moment(inv.customer_invoice_due_date).format('YYYY-MM-DD')\n          : moment(i_due_date.selectedDate).format('YYYY-MM-DD')\n      );\n\n      // 5) refresh Update-modal tables\n      await get_inv_projects.run();\n      await get_uninv_proj_by_inv.run();\n\n      showAlert('Invoice created','success');\n    } catch (e) {\n      showAlert('Save failed: ' + (e?.message || e), 'error');\n    }\n  })()\n}}\n",
+  "originalBottomRow": 28,
+  "originalTopRow": 24,
+  "parentId": "ca7rgh1fj9",
+  "placement": "CENTER",
+  "recaptchaType": "V3",
+  "renderMode": "CANVAS",
+  "resetFormOnClick": false,
+  "responsiveBehavior": "hug",
+  "rightColumn": 41,
+  "text": "Confirm",
+  "topRow": 35,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "img6x4n2hx",
+  "widgetName": "i_inv_save_btn"
+}

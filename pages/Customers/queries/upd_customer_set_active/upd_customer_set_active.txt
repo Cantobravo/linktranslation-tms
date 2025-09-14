@@ -1,0 +1,3 @@
+UPDATE customers
+SET customer_status = 'Active', updated_at = NOW()
+WHERE customer_id = {{ customer_id }};

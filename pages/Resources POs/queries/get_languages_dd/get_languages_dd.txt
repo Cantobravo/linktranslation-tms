@@ -1,0 +1,3 @@
+SELECT language_id, language_name
+FROM languages
+ORDER BY language_name;

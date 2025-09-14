@@ -1,0 +1,51 @@
+{
+  "animateLoading": true,
+  "borderRadius": "0.375rem",
+  "bottomRow": 26,
+  "boxShadow": "none",
+  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "buttonStyle": "PRIMARY_BUTTON",
+  "buttonVariant": "PRIMARY",
+  "disabledWhenInvalid": false,
+  "dynamicBindingPathList": [
+    {
+      "key": "buttonColor"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "isDefaultClickDisabled": true,
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "rzapx6rvcy",
+  "leftColumn": 31,
+  "minWidth": 120,
+  "mobileBottomRow": 22,
+  "mobileLeftColumn": 47,
+  "mobileRightColumn": 63,
+  "mobileTopRow": 18,
+  "needsErrorInfo": false,
+  "onClick": "{{\n  // Guard: don't allow editing USD\n  appsmith.store.currencyRow.currency_acronym === 'USD'\n    ? showAlert('USD is the base currency and cannot be changed.', 'warning')\n    : upd_currency_quote.run(\n        () => {\n          showAlert('Currency quote updated.', 'success');\n          closeModal('Edit_Currency_Modal');\n          get_currencies.run();\n        },\n        (e) => showAlert('Error: ' + (e?.message || e), 'error')\n      )\n}}\n",
+  "parentId": "ap7y0t471z",
+  "placement": "CENTER",
+  "recaptchaType": "V3",
+  "renderMode": "CANVAS",
+  "resetFormOnClick": false,
+  "responsiveBehavior": "hug",
+  "rightColumn": 47,
+  "text": "Confirm",
+  "topRow": 22,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "v6lwt3d7vt",
+  "widgetName": "btn_save_currency_quote"
+}

@@ -1,0 +1,13 @@
+INSERT INTO linktranslation.languages (
+  language_name,
+  language_acronym,
+  language_status,
+  created_at,
+  updated_at
+) VALUES (
+  TRIM({{ JSON_Language_Insert.formData.language_name }}),
+  UPPER(NULLIF(TRIM({{ JSON_Language_Insert.formData.language_acronym || '' }}), '')),
+  {{ JSON_Language_Insert.formData.language_status || 'Active' }},
+  NOW(),
+  NOW()
+);

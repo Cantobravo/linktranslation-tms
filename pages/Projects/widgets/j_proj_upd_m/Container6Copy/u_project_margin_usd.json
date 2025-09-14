@@ -1,0 +1,64 @@
+{
+  "animateLoading": true,
+  "backgroundColor": "{{\n  (() => {\n    const revenue = Number(u_project_total.text || 0) / (appsmith.store.selected_currency_quote || 1);\n    const expenses = update_purchase_order_table.tableData.reduce((sum, row) => sum + (row.total || 0), 0) / (appsmith.store.selected_currency_quote || 1);\n    if (revenue === 0) return \"#ff4d4f\"; // red\n    const margin = ((revenue - expenses) / revenue) * 100;\n\n    if (margin > 45) return \"#73d13d\";        // green\n    if (margin >= 20 && margin <= 45) return \"#ffc53d\"; // yellow\n    return \"#ff4d4f\";                         // red\n  })()\n}}\n",
+  "borderColor": "#93c5fd",
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "borderWidth": "2",
+  "bottomRow": 9,
+  "dynamicBindingPathList": [
+    {
+      "key": "truncateButtonColor"
+    },
+    {
+      "key": "fontFamily"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "text"
+    },
+    {
+      "key": "backgroundColor"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "backgroundColor"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
+  "fontSize": "1rem",
+  "fontStyle": "BOLD",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "o0jbe430ma",
+  "leftColumn": 13,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 97,
+  "mobileLeftColumn": 1,
+  "mobileRightColumn": 17,
+  "mobileTopRow": 93,
+  "needsErrorInfo": false,
+  "overflow": "NONE",
+  "parentColumnSpace": 11.375,
+  "parentId": "y3bld16bgz",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 53,
+  "shouldTruncate": false,
+  "text": "{{\n  (() => {\n    const revenue = Number(u_project_total.text || 0) / (appsmith.store.selected_currency_quote || 1);\n    const expenses = update_purchase_order_table.tableData.reduce((sum, row) => sum + (row.total || 0), 0) / (appsmith.store.selected_currency_quote || 1);\n    if (revenue === 0) return \"0%\";\n    const margin = ((revenue - expenses) / revenue) * 100;\n    return margin.toFixed(2) + \"%\";\n  })()\n}}\n",
+  "textAlign": "CENTER",
+  "textColor": "#231F20",
+  "topRow": 5,
+  "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "0xvvnhkcav",
+  "widgetName": "u_project_margin_usd"
+}

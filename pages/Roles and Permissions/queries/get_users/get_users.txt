@@ -1,0 +1,9 @@
+SELECT
+  r.resource_id,
+  r.resource_full_name,
+  r.resource_username,
+  r.resource_email,
+  r.role_id
+FROM resources r
+WHERE r.resource_status = 'Staff'
+ORDER BY r.resource_full_name;

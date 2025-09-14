@@ -1,0 +1,62 @@
+SELECT
+  rb.resource_banking_id,
+  rb.resource_id,
+  r.resource_full_name,
+  r.resource_email,
+  rb.banking_resource_beneficary,
+  rb.resource_banking_bank_name,
+  rb.resource_banking_bank_address,
+  rb.resource_banking_bank_country,
+  rb.resource_banking_bank_currency,
+  rb.resource_banking_bank_account,
+  rb.resource_banking_bank_account_number,
+  rb.resource_banking_swift_bic_code,
+  rb.resource_banking_iban_code,
+  rb.resource_banking_paypal,
+  rb.resource_banking_payoneer,
+  rb.resource_banking_pix_code,
+  rb.resource_banking_other_code,
+  rb.resource_banking_banking_name,
+  rb.resource_banking_city,
+  rb.resource_banking_country,
+  rb.resource_banking_nationality,
+  rb.resource_banking_email,
+  rb.resource_banking_phone,
+  rb.resource_banking_street,
+  rb.resource_banking_postal_code,
+  rb.resource_banking_branch_code,
+  rb.resource_banking_birth,
+  rb.resource_banking_gov_id_Type,
+  rb.resource_banking_gov_id_number,
+  rb.created_at,
+  rb.updated_at
+FROM resource_banking rb
+JOIN resources r ON r.resource_id = rb.resource_id
+WHERE
+  rb.resource_id = COALESCE(
+    {{ f_resource_id.selectedOptionValue ? Number(f_resource_id.selectedOptionValue) : null }},
+    rb.resource_id
+  )
+  AND CONCAT_WS(' ',
+        r.resource_full_name,
+        r.resource_email,
+        COALESCE(rb.banking_resource_beneficary,''),
+        COALESCE(rb.resource_banking_bank_name,''),
+        COALESCE(rb.resource_banking_bank_address,''),
+        COALESCE(rb.resource_banking_bank_country,''),
+        COALESCE(rb.resource_banking_bank_currency,''),
+        COALESCE(rb.resource_banking_bank_account,''),
+        COALESCE(rb.resource_banking_bank_account_number,''),
+        COALESCE(rb.resource_banking_swift_bic_code,''),
+        COALESCE(rb.resource_banking_iban_code,''),
+        COALESCE(rb.resource_banking_paypal,''),
+        COALESCE(rb.resource_banking_payoneer,''),
+        COALESCE(rb.resource_banking_pix_code,''),
+        COALESCE(rb.resource_banking_other_code,''),
+        COALESCE(rb.resource_banking_city,''),
+        COALESCE(rb.resource_banking_country,''),
+        COALESCE(rb.resource_banking_nationality,''),
+        COALESCE(rb.resource_banking_email,''),
+        COALESCE(rb.resource_banking_phone,'')
+      ) LIKE CONCAT('%', {{ f_search.text || '' }}, '%')
+ORDER BY r.resource_full_name ASC

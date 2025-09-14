@@ -1,0 +1,14 @@
+SELECT
+  r.resource_id,
+  r.resource_full_name,
+  ro.role_id,
+  ro.role_name,
+  p.permission_id,
+  p.permission_key,
+  p.permission_name
+FROM resources r
+JOIN roles ro            ON ro.role_id = r.role_id
+JOIN role_permissions rp ON rp.role_id = ro.role_id
+JOIN permissions p       ON p.permission_id = rp.permission_id
+WHERE COALESCE(r.resource_is_active, 1) = 1
+ORDER BY r.resource_full_name, p.permission_name;

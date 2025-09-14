@@ -1,0 +1,6 @@
+INSERT INTO iso_texts (snippet_title, tags, full_text)
+VALUES (
+  {{ this.params.title }},
+  {{ this.params.tags }},
+  {{ this.params.full_text }}
+);

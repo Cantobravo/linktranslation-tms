@@ -1,0 +1,16 @@
+{
+  "gitSyncId": "6840b6d2ece888096e42342a_8da70c34-2344-46c7-9a09-cd6461d49135",
+  "id": "Roles and Permissions_Gate",
+  "unpublishedCollection": {
+    "name": "Gate",
+    "pageId": "Roles and Permissions",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "required",
+        "value": "['VIEW_RBAC']"
+      }
+    ]
+  }
+}

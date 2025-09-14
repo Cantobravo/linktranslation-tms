@@ -1,0 +1,24 @@
+INSERT INTO price_lists
+(price_list_type, price_list_name, currency_id, customer_id, resource_id, is_active)
+VALUES
+(
+  CASE
+    WHEN {{ j_pl_ins_form.formData.price_list_type }} = 'BENCHMARK' THEN 'RESOURCE'
+    ELSE {{ j_pl_ins_form.formData.price_list_type || null }}
+  END,
+  {{ j_pl_ins_form.formData.price_list_name || null }},
+  {{ j_pl_ins_form.formData.currency_id || null }},
+  CASE
+    WHEN {{ j_pl_ins_form.formData.price_list_type }} = 'CUSTOMER'
+      THEN {{ j_pl_ins_form.formData.customer_id || null }}
+    ELSE NULL
+  END,
+  CASE
+    WHEN {{ j_pl_ins_form.formData.price_list_type }} = 'RESOURCE'
+      THEN {{ j_pl_ins_form.formData.resource_id || null }}
+    WHEN {{ j_pl_ins_form.formData.price_list_type }} = 'BENCHMARK'
+      THEN NULL
+    ELSE NULL
+  END,
+  {{ j_pl_ins_form.formData.is_active ? 1 : 0 }}
+);

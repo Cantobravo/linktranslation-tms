@@ -1,0 +1,60 @@
+{
+  "animateLoading": true,
+  "borderRadius": "0.375rem",
+  "bottomRow": 61,
+  "boxShadow": "none",
+  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "buttonVariant": "SECONDARY",
+  "disabledWhenInvalid": false,
+  "dynamicBindingPathList": [
+    {
+      "key": "buttonColor"
+    },
+    {
+      "key": "isVisible"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "isVisible"
+    },
+    {
+      "key": "onClick"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "isDefaultClickDisabled": true,
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": "{{ e_status.selectedOptionValue !== 'Completed' }}",
+  "key": "gyu1nd6ul4",
+  "leftColumn": 31,
+  "minWidth": 120,
+  "mobileBottomRow": 60,
+  "mobileLeftColumn": 39,
+  "mobileRightColumn": 55,
+  "mobileTopRow": 56,
+  "needsErrorInfo": false,
+  "onClick": "{{\n  mark_note_completed.run(\n    () => { NotesHandlers.afterComplete(); closeModal('Edit_Note_Modal'); },\n    (e) => showAlert('Error completing note: ' + (e?.message || e), 'error')\n  )\n}}\n",
+  "originalBottomRow": 61,
+  "originalTopRow": 57,
+  "parentColumnSpace": 6.9375,
+  "parentId": "hjqmofm4vp",
+  "parentRowSpace": 10,
+  "placement": "CENTER",
+  "recaptchaType": "V3",
+  "renderMode": "CANVAS",
+  "resetFormOnClick": false,
+  "responsiveBehavior": "hug",
+  "rightColumn": 47,
+  "text": "Copleted",
+  "topRow": 57,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "62ey9wk7z1",
+  "widgetName": "e_complete_btn"
+}

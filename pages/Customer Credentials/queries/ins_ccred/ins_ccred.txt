@@ -1,0 +1,17 @@
+INSERT INTO customer_credentials (
+  customer_id,
+  customer_credential_name,
+  customer_credential_website,
+  customer_credential_notes,
+  customer_credential_status,
+  created_at,
+  updated_at
+) VALUES (
+  {{ j_ccred_ins_jsn.formData.customer_id ?? null }},
+  {{ j_ccred_ins_jsn.formData.customer_credential_name ?? null }},
+  {{ j_ccred_ins_jsn.formData.customer_credential_website ?? null }},
+  {{ j_ccred_ins_jsn.formData.customer_credential_notes ?? null }},
+  {{ j_ccred_ins_jsn.formData.customer_credential_status || 'Active' }},
+  NOW(),
+  NOW()
+);

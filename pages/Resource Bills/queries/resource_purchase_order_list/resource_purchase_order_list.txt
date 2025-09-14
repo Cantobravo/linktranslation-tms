@@ -1,0 +1,10 @@
+UPDATE resource_bills b
+LEFT JOIN (
+  SELECT l.resource_bill_id,
+         GROUP_CONCAT(l.purchase_order_id ORDER BY l.purchase_order_id) AS po_list
+  FROM resource_bill_po_link l
+  WHERE l.resource_bill_id = {{ appsmith.store.billRow.resource_bill_id }}
+  GROUP BY l.resource_bill_id
+) x ON x.resource_bill_id = b.resource_bill_id
+SET b.resource_purchase_order_list = x.po_list
+WHERE b.resource_bill_id = {{ appsmith.store.billRow.resource_bill_id }};

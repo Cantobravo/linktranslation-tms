@@ -1,0 +1,4 @@
+-- count only visible projects
+SELECT COUNT(*) AS total
+FROM projects
+WHERE COALESCE(project_status, '') <> 'SOFT_DELETED';

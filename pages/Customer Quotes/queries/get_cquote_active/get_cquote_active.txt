@@ -1,0 +1,24 @@
+SELECT
+  q.customer_quote_id,
+  q.customer_quote_name,
+  q.customer_id,
+  c.customer_name,
+  q.customer_contact_id,
+  cc.customer_contact_name,
+  q.currency_id,
+  cur.currency_name,
+  q.customer_quote_status,
+  q.quote_is_active,
+  q.quote_amount,
+  q.customer_quote_start_date,
+  q.customer_quote_last_contact_date,
+  q.customer_quote_next_contact_date,
+  q.quote_notes,
+  q.created_at,
+  q.updated_at
+FROM customer_quotes q
+JOIN customers c ON c.customer_id = q.customer_id
+LEFT JOIN customer_contacts cc ON cc.customer_contact_id = q.customer_contact_id
+LEFT JOIN currencies cur ON cur.currency_id = q.currency_id
+WHERE COALESCE(q.quote_is_active, 1) = 1
+ORDER BY q.customer_quote_id DESC;

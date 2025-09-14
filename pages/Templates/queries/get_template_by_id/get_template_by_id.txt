@@ -1,0 +1,4 @@
+SELECT
+  t.*
+FROM templates t
+WHERE t.template_id = {{ appsmith.store.templateRow?.template_id || appsmith.store.templateNewId }};

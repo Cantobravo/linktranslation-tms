@@ -1,0 +1,177 @@
+{
+  "appIsExample": false,
+  "appLayout": {
+    "type": "FLUID"
+  },
+  "applicationDetail": {
+    "navigationSetting": {
+      "colorStyle": "theme",
+      "itemStyle": "text",
+      "logoAssetId": "",
+      "logoConfiguration": "logoAndApplicationTitle",
+      "navStyle": "stacked",
+      "orientation": "top",
+      "position": "static",
+      "showNavbar": false,
+      "showSignIn": true
+    },
+    "themeSetting": {
+      "appMaxWidth": "LARGE",
+      "density": 1.0,
+      "sizing": 1.0
+    }
+  },
+  "applicationVersion": 2,
+  "collapseInvisibleWidgets": true,
+  "color": "#D9E7FF",
+  "embedSetting": {
+    "height": "720px",
+    "showNavigationBar": true,
+    "width": "1024px"
+  },
+  "evaluationVersion": 2,
+  "icon": "shopper",
+  "pages": [
+    {
+      "id": "Absences",
+      "isDefault": false
+    },
+    {
+      "id": "Currencies",
+      "isDefault": false
+    },
+    {
+      "id": "Units",
+      "isDefault": false
+    },
+    {
+      "id": "Languages",
+      "isDefault": false
+    },
+    {
+      "id": "Customers",
+      "isDefault": false
+    },
+    {
+      "id": "Resources",
+      "isDefault": false
+    },
+    {
+      "id": "Customer Accounts",
+      "isDefault": false
+    },
+    {
+      "id": "Customer Contacts",
+      "isDefault": false
+    },
+    {
+      "id": "Customer Credentials",
+      "isDefault": false
+    },
+    {
+      "id": "Customer Portals",
+      "isDefault": false
+    },
+    {
+      "id": "Customer Quotes",
+      "isDefault": false
+    },
+    {
+      "id": "Customer Services",
+      "isDefault": false
+    },
+    {
+      "id": "Projects",
+      "isDefault": false
+    },
+    {
+      "id": "Resource Bills",
+      "isDefault": false
+    },
+    {
+      "id": "Messages",
+      "isDefault": false
+    },
+    {
+      "id": "Home",
+      "isDefault": true
+    },
+    {
+      "id": "Resource Banking",
+      "isDefault": false
+    },
+    {
+      "id": "Company",
+      "isDefault": false
+    },
+    {
+      "id": "Login Page",
+      "isDefault": false
+    },
+    {
+      "id": "Roles and Permissions",
+      "isDefault": false
+    },
+    {
+      "id": "Price List",
+      "isDefault": false
+    },
+    {
+      "id": "Price List Items",
+      "isDefault": false
+    },
+    {
+      "id": "Services",
+      "isDefault": false
+    },
+    {
+      "id": "Templates",
+      "isDefault": false
+    },
+    {
+      "id": "Customer Invoices",
+      "isDefault": false
+    },
+    {
+      "id": "Resources POs",
+      "isDefault": false
+    },
+    {
+      "id": "Work Teams",
+      "isDefault": false
+    },
+    {
+      "id": "Sales Pipeline",
+      "isDefault": false
+    },
+    {
+      "id": "Company Documentation",
+      "isDefault": false
+    },
+    {
+      "id": "Portfolio",
+      "isDefault": false
+    }
+  ],
+  "unpublishedAppLayout": {
+    "type": "FLUID"
+  },
+  "unpublishedApplicationDetail": {
+    "navigationSetting": {
+      "colorStyle": "theme",
+      "itemStyle": "text",
+      "logoAssetId": "",
+      "logoConfiguration": "logoAndApplicationTitle",
+      "navStyle": "stacked",
+      "orientation": "top",
+      "position": "static",
+      "showNavbar": false,
+      "showSignIn": true
+    },
+    "themeSetting": {
+      "appMaxWidth": "LARGE",
+      "density": 1.0,
+      "sizing": 1.0
+    }
+  }
+}

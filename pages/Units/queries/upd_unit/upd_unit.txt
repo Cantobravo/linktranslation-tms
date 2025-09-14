@@ -1,0 +1,13 @@
+UPDATE units
+SET
+  unit_name   = {{ JSON_Unit_Update.formData.unit_name }},
+  unit_status = {{ JSON_Unit_Update.formData.unit_status || 'Active' }},
+  updated_at  = NOW()
+WHERE unit_id = {{
+  (() => {
+    const id1 = JSON_Unit_Update.formData?.unit_id;
+    const id2 = appsmith.store.unitRow?.unit_id;
+    const id3 = tbl_units.selectedRow?.unit_id;
+    return Number(id1 || id2 || id3);
+  })()
+}};

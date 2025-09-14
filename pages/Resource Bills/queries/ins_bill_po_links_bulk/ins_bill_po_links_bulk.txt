@@ -1,0 +1,14 @@
+INSERT INTO resource_bill_po_link (resource_bill_id, purchase_order_id)
+SELECT
+  {{ appsmith.store.billRow.resource_bill_id }},
+  jt.po_id
+FROM JSON_TABLE(
+  {{ JSON.stringify(unbilled_po_table_new.selectedRows.map(x => x.purchase_order_id)) }},
+  '$[*]' COLUMNS (po_id INT PATH '$')
+) jt
+WHERE NOT EXISTS (
+  SELECT 1
+  FROM resource_bill_po_link l
+  WHERE l.resource_bill_id = {{ appsmith.store.billRow.resource_bill_id }}
+    AND l.purchase_order_id = jt.po_id
+);

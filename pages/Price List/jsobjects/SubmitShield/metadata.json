@@ -1,0 +1,20 @@
+{
+  "gitSyncId": "6840b6d2ece888096e42342a_602b24b9-9400-4094-89a6-c9c960e1cd73",
+  "id": "Price List_SubmitShield",
+  "unpublishedCollection": {
+    "name": "SubmitShield",
+    "pageId": "Price List",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "lastRun",
+        "value": "0"
+      },
+      {
+        "name": "isSubmitting",
+        "value": "false"
+      }
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+SELECT
+  ci.customer_invoice_id,
+  ci.customer_id,
+  c.customer_name,
+  ci.currency_id,
+  cur.currency_acronym,
+  ci.customer_invoice_date,
+  ci.customer_invoice_due_date,
+  CAST(ci.customer_invoice_total_amount AS DECIMAL(10,2)) AS total_amount,
+  CAST(ci.customer_invoice_total_usd    AS DECIMAL(10,2)) AS total_usd
+FROM customer_invoices ci
+LEFT JOIN customers  c   ON c.customer_id  = ci.customer_id
+LEFT JOIN currencies cur ON cur.currency_id = ci.currency_id
+WHERE ci.customer_invoice_id = {{ appsmith.store.invId }};

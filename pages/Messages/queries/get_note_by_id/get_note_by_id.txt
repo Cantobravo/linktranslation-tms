@@ -1,0 +1,12 @@
+SELECT
+  note_id,
+  note_date,
+  note_text,
+  priority,
+  status,
+  created_by_name,
+  created_by_email,
+  created_at,
+  updated_at
+FROM linktranslation.notes
+WHERE note_id = {{ appsmith.store.dash_note_id }};

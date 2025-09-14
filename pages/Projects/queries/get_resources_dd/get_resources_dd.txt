@@ -1,0 +1,11 @@
+SELECT
+  r.resource_id AS value,
+  COALESCE(
+    NULLIF(TRIM(r.resource_full_name), ''),
+    NULLIF(TRIM(CONCAT_WS(' ', r.resource_first_name, r.resource_last_name)), ''),
+    CONCAT('Resource #', r.resource_id)
+  ) AS label,
+  r.resource_email
+FROM resources r
+WHERE COALESCE(r.resource_is_active, 1) = 1
+ORDER BY label;

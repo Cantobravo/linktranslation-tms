@@ -1,0 +1,16 @@
+{
+  "gitSyncId": "6840b6d2ece888096e42342a_88766b8a-f5e5-4c50-ab0f-7dab4028789c",
+  "id": "Customers_Gate",
+  "unpublishedCollection": {
+    "name": "Gate",
+    "pageId": "Customers",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "required",
+        "value": "['VIEW_CUSTOMERS']"
+      }
+    ]
+  }
+}

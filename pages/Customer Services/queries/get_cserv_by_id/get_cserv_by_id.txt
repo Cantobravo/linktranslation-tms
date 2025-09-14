@@ -1,0 +1,3 @@
+SELECT *
+FROM customer_services
+WHERE customer_service_id = {{ appsmith.store.cservRow?.customer_service_id }};

@@ -1,0 +1,12 @@
+SELECT
+  r.role_id,
+  r.role_name,
+  COUNT(p.permission_id)              AS perm_count,
+  GROUP_CONCAT(p.permission_name
+               ORDER BY p.permission_name
+               SEPARATOR ', ')       AS perm_list
+FROM roles r
+LEFT JOIN role_permissions rp  ON rp.role_id = r.role_id
+LEFT JOIN permissions p        ON p.permission_id = rp.permission_id
+GROUP BY r.role_id, r.role_name
+ORDER BY r.role_name;

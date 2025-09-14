@@ -1,0 +1,27 @@
+SELECT
+    b.resource_bill_id,
+    b.resource_bill_date,
+    b.resource_bill_due_date,
+    b.currency_id,
+    b.resource_id,
+    r.resource_full_name,
+    r.resource_email,
+    GROUP_CONCAT(l.purchase_order_id ORDER BY l.purchase_order_id ASC SEPARATOR ', ') AS resource_purchase_order_list,
+    b.is_billed
+FROM
+    resource_bills b
+JOIN
+    resources r ON b.resource_id = r.resource_id
+LEFT JOIN
+    resource_bill_po_link l ON b.resource_bill_id = l.resource_bill_id
+GROUP BY
+    b.resource_bill_id,
+    b.resource_bill_date,
+    b.resource_bill_due_date,
+    b.currency_id,
+    b.resource_id,
+    r.resource_full_name,
+    r.resource_email,
+    b.is_billed
+ORDER BY
+    b.resource_bill_date DESC;

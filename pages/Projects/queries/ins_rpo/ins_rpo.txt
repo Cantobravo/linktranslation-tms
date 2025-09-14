@@ -1,0 +1,34 @@
+INSERT INTO resource_purchase_orders
+(
+  project_id,
+  resource_id,
+  currency_id,
+  service_id,
+  source_language_id,
+  target_language_id,
+  unit_id,
+  volume,
+  rate,
+  total,
+  date,
+  due_date,
+  note,
+  template_id
+)
+VALUES
+(
+  {{ p_project_id.selectedOptionValue || null }},
+  {{ p_resource_id.selectedOptionValue || null }},
+  {{ p_currency_id.selectedOptionValue || null }},
+  {{ p_service_id.selectedOptionValue || null }},
+  {{ p_source_language_id.selectedOptionValue || null }},
+  {{ p_target_language_id.selectedOptionValue || null }},
+  {{ p_unit_id.selectedOptionValue || null }},
+  {{ p_volume.text ? p_volume.text : null }},
+  {{ p_rate.text ? p_rate.text : null }},
+  {{ p_total.text ? p_total.text : null }},
+  {{ p_date.selectedDate ? moment(p_date.selectedDate).format('YYYY-MM-DD') : null }},
+  {{ p_due_date.selectedDate ? moment(p_due_date.selectedDate).format('YYYY-MM-DD') : null }},
+  {{ p_note.text || null }},
+  NULL
+);

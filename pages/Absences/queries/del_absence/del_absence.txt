@@ -1,0 +1,2 @@
+DELETE FROM absences
+WHERE absence_id = {{ appsmith.store.absenceRow.absence_id }};

@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "6840b6d2ece888096e42342a_2b0a9b67-1555-4316-aacf-ebe9dcdee799",
+  "id": "Company_CompanyStore",
+  "unpublishedCollection": {
+    "name": "CompanyStore",
+    "pageId": "Company",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

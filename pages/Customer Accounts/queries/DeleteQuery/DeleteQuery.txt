@@ -1,0 +1,2 @@
+DELETE FROM customer_accounts
+  WHERE customer_account_id = {{tbl_cacc.triggeredRow.customer_account_id}};

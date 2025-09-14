@@ -1,0 +1,15 @@
+SELECT
+  wt.work_team_id,
+  wt.customer_id,
+  wt.customer_account_id,
+  wt.service_id,
+  wt.unit_id,
+  wt.source_language_id,
+  wt.target_language_id,
+  wt.currency_id,
+  wt.work_team_status,
+  wt.certification_names,
+  wt.work_team_name
+FROM work_teams wt
+WHERE wt.work_team_id = {{ appsmith.store.wtRow?.work_team_id || tbl_work_teams.triggeredRow?.work_team_id || 0 }}
+LIMIT 1;

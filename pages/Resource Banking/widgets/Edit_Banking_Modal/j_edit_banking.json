@@ -1,0 +1,1194 @@
+{
+  "animateLoading": true,
+  "autoGenerateForm": true,
+  "backgroundColor": "#fff",
+  "borderColor": "{{appsmith.theme.colors.primaryColor}}",
+  "borderRadius": "1.5rem",
+  "borderWidth": "1",
+  "bottomRow": 226,
+  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+  "childStylesheet": {
+    "ARRAY": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none",
+      "cellBorderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "cellBoxShadow": "none"
+    },
+    "CHECKBOX": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}"
+    },
+    "CURRENCY_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "DATEPICKER": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "EMAIL_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "MULTILINE_TEXT_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "MULTISELECT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "NUMBER_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "OBJECT": {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none",
+      "cellBorderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "cellBoxShadow": "none"
+    },
+    "PASSWORD_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "PHONE_NUMBER_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "RADIO_GROUP": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "boxShadow": "none"
+    },
+    "SELECT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "SWITCH": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "boxShadow": "none"
+    },
+    "TEXT_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    }
+  },
+  "disabledWhenInvalid": true,
+  "dynamicBindingPathList": [
+    {
+      "key": "boxShadow"
+    },
+    {
+      "key": "submitButtonStyles.buttonColor"
+    },
+    {
+      "key": "resetButtonStyles.buttonColor"
+    },
+    {
+      "key": "resetButtonStyles.borderRadius"
+    },
+    {
+      "key": "sourceData"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_id.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_id.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_banking_banking_name.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_banking_banking_name.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_banking_banking_name.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_banking_country.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_banking_country.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_banking_country.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_banking_city.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_banking_city.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_banking_city.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_banking_street.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_banking_street.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_banking_street.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_banking_postal_code.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_banking_postal_code.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_banking_postal_code.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_banking_gov_id_Type.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_banking_gov_id_Type.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_banking_gov_id_Type.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_banking_gov_id_number.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_banking_gov_id_number.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_banking_gov_id_number.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_banking_phone.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_banking_phone.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_banking_phone.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_banking_birth.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_banking_birth.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_banking_birth.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_banking_nationality.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_banking_nationality.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_banking_nationality.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_banking_email.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_banking_email.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_banking_email.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_banking_payoneer.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_banking_payoneer.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_banking_payoneer.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_banking_paypal.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_banking_paypal.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_banking_paypal.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_banking_bank_account.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_banking_bank_account.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_banking_bank_account.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_banking_bank_currency.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_banking_bank_currency.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_banking_bank_currency.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_banking_bank_name.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_banking_bank_name.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_banking_bank_name.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_banking_bank_address.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_banking_bank_address.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_banking_bank_address.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_banking_bank_country.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_banking_bank_country.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_banking_bank_country.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_banking_swift_bic_code.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_banking_swift_bic_code.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_banking_swift_bic_code.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_banking_iban_code.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_banking_iban_code.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_banking_iban_code.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_banking_bank_account_number.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_banking_bank_account_number.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_banking_bank_account_number.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_banking_branch_code.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_banking_branch_code.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_banking_branch_code.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_banking_other_code.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_banking_other_code.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_banking_other_code.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_banking_pix_code.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_banking_pix_code.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_banking_pix_code.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.banking_resource_beneficary.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.banking_resource_beneficary.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.banking_resource_beneficary.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.cellBorderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_id.defaultValue"
+    },
+    {
+      "key": "title"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_banking_id.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_banking_id.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_banking_id.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_full_name.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_full_name.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_full_name.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_email.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_email.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_email.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.created_at.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.created_at.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.created_at.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.updated_at.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.updated_at.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.updated_at.borderRadius"
+    },
+    {
+      "key": "borderColor"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [
+    {
+      "key": "sourceData"
+    },
+    {
+      "key": "onSubmit"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onSubmit"
+    }
+  ],
+  "fieldLimitExceeded": false,
+  "fixedFooter": true,
+  "flexVerticalAlignment": "start",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "qxljtcl0d7",
+  "leftColumn": 2,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 50,
+  "mobileLeftColumn": 33,
+  "mobileRightColumn": 58,
+  "mobileTopRow": 9,
+  "needsErrorInfo": false,
+  "onSubmit": "{{ UpdateBankingHandler.save(j_edit_banking.formData) }}\n\n",
+  "originalBottomRow": 226,
+  "originalTopRow": 2,
+  "parentColumnSpace": 6.9375,
+  "parentId": "nwi0fn5r8q",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "resetButtonLabel": "Reset",
+  "resetButtonStyles": {
+    "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+    "boxShadow": "none",
+    "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+    "buttonVariant": "SECONDARY"
+  },
+  "responsiveBehavior": "fill",
+  "rightColumn": 58,
+  "schema": {
+    "__root_schema__": {
+      "accessor": "__root_schema__",
+      "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+      "boxShadow": "none",
+      "cellBorderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+      "cellBoxShadow": "none",
+      "children": {
+        "banking_resource_beneficary": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "accessor": "banking_resource_beneficary",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.banking_resource_beneficary))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "banking_resource_beneficary",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": true,
+          "label": "Banking Resource Beneficary",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "banking_resource_beneficary",
+          "position": 1,
+          "sourceData": "Daniel"
+        },
+        "created_at": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "accessor": "created_at",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.created_at))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "created_at",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": false,
+          "label": "Created At",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "created_at",
+          "position": 29,
+          "sourceData": "2025-08-11T18:30:35Z"
+        },
+        "resource_banking_bank_account": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "accessor": "resource_banking_bank_account",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.resource_banking_bank_account))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "resource_banking_bank_account",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": true,
+          "label": "Resource Banking Bank Account",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "resource_banking_bank_account",
+          "position": 15,
+          "sourceData": ""
+        },
+        "resource_banking_bank_account_number": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "accessor": "resource_banking_bank_account_number",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.resource_banking_bank_account_number))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "resource_banking_bank_account_number",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": true,
+          "label": "Resource Banking Bank Account Number",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "resource_banking_bank_account_number",
+          "position": 22,
+          "sourceData": ""
+        },
+        "resource_banking_bank_address": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "accessor": "resource_banking_bank_address",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.resource_banking_bank_address))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "resource_banking_bank_address",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": true,
+          "label": "Resource Banking Bank Address",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "resource_banking_bank_address",
+          "position": 18,
+          "sourceData": ""
+        },
+        "resource_banking_bank_country": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "accessor": "resource_banking_bank_country",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "null",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.resource_banking_bank_country))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "resource_banking_bank_country",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": true,
+          "label": "Resource Banking Bank Country",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "resource_banking_bank_country",
+          "position": 19
+        },
+        "resource_banking_bank_currency": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "accessor": "resource_banking_bank_currency",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.resource_banking_bank_currency))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "resource_banking_bank_currency",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": true,
+          "label": "Resource Banking Bank Currency",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "resource_banking_bank_currency",
+          "position": 16,
+          "sourceData": ""
+        },
+        "resource_banking_bank_name": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "accessor": "resource_banking_bank_name",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.resource_banking_bank_name))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "resource_banking_bank_name",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": true,
+          "label": "Resource Banking Bank Name",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "resource_banking_bank_name",
+          "position": 17,
+          "sourceData": ""
+        },
+        "resource_banking_banking_name": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "accessor": "resource_banking_banking_name",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.resource_banking_banking_name))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "resource_banking_banking_name",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": true,
+          "label": "Resource Banking Banking Name",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "resource_banking_banking_name",
+          "position": 2,
+          "sourceData": "Chase"
+        },
+        "resource_banking_birth": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "accessor": "resource_banking_birth",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "null",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.resource_banking_birth))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "resource_banking_birth",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": true,
+          "label": "Resource Banking Birth",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "resource_banking_birth",
+          "position": 10
+        },
+        "resource_banking_branch_code": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "accessor": "resource_banking_branch_code",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.resource_banking_branch_code))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "resource_banking_branch_code",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": true,
+          "label": "Resource Banking Branch Code",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "resource_banking_branch_code",
+          "position": 23,
+          "sourceData": ""
+        },
+        "resource_banking_city": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "accessor": "resource_banking_city",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.resource_banking_city))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "resource_banking_city",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": true,
+          "label": "Resource Banking City",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "resource_banking_city",
+          "position": 4,
+          "sourceData": ""
+        },
+        "resource_banking_country": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "accessor": "resource_banking_country",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.resource_banking_country))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "resource_banking_country",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": true,
+          "label": "Resource Banking Country",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "resource_banking_country",
+          "position": 3,
+          "sourceData": "USA"
+        },
+        "resource_banking_email": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "accessor": "resource_banking_email",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.resource_banking_email))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "fieldType": "Email Input",
+          "iconAlign": "left",
+          "identifier": "resource_banking_email",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": true,
+          "label": "Resource Banking Email",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "resource_banking_email",
+          "position": 12,
+          "sourceData": "dfaisca@linktranslation.com"
+        },
+        "resource_banking_gov_id_Type": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "accessor": "resource_banking_gov_id_Type",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.resource_banking_gov_id_Type))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "resource_banking_gov_id_Type",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": true,
+          "label": "Resource Banking Gov Id Type",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "resource_banking_gov_id_Type",
+          "position": 7,
+          "sourceData": ""
+        },
+        "resource_banking_gov_id_number": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "accessor": "resource_banking_gov_id_number",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.resource_banking_gov_id_number))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "resource_banking_gov_id_number",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": true,
+          "label": "Resource Banking Gov Id Number",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "resource_banking_gov_id_number",
+          "position": 8,
+          "sourceData": ""
+        },
+        "resource_banking_iban_code": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "accessor": "resource_banking_iban_code",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.resource_banking_iban_code))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "resource_banking_iban_code",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": true,
+          "label": "Resource Banking Iban Code",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "resource_banking_iban_code",
+          "position": 21,
+          "sourceData": ""
+        },
+        "resource_banking_id": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "accessor": "resource_banking_id",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "number",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.resource_banking_id))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "fieldType": "Number Input",
+          "iconAlign": "left",
+          "identifier": "resource_banking_id",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": true,
+          "label": "Resource Banking Id",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "resource_banking_id",
+          "position": 26,
+          "sourceData": 4
+        },
+        "resource_banking_nationality": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "accessor": "resource_banking_nationality",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.resource_banking_nationality))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "resource_banking_nationality",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": true,
+          "label": "Resource Banking Nationality",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "resource_banking_nationality",
+          "position": 11,
+          "sourceData": ""
+        },
+        "resource_banking_other_code": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "accessor": "resource_banking_other_code",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.resource_banking_other_code))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "resource_banking_other_code",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": true,
+          "label": "Resource Banking Other Code",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "resource_banking_other_code",
+          "position": 24,
+          "sourceData": ""
+        },
+        "resource_banking_payoneer": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "accessor": "resource_banking_payoneer",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.resource_banking_payoneer))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "resource_banking_payoneer",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": true,
+          "label": "Resource Banking Payoneer",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "resource_banking_payoneer",
+          "position": 13,
+          "sourceData": ""
+        },
+        "resource_banking_paypal": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "accessor": "resource_banking_paypal",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.resource_banking_paypal))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "resource_banking_paypal",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": true,
+          "label": "Resource Banking Paypal",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "resource_banking_paypal",
+          "position": 14,
+          "sourceData": ""
+        },
+        "resource_banking_phone": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "accessor": "resource_banking_phone",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.resource_banking_phone))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "resource_banking_phone",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": true,
+          "label": "Resource Banking Phone",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "resource_banking_phone",
+          "position": 9,
+          "sourceData": ""
+        },
+        "resource_banking_pix_code": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "accessor": "resource_banking_pix_code",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.resource_banking_pix_code))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "resource_banking_pix_code",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": true,
+          "label": "Resource Banking Pix Code",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "resource_banking_pix_code",
+          "position": 25,
+          "sourceData": ""
+        },
+        "resource_banking_postal_code": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "accessor": "resource_banking_postal_code",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.resource_banking_postal_code))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "resource_banking_postal_code",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": true,
+          "label": "Resource Banking Postal Code",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "resource_banking_postal_code",
+          "position": 6,
+          "sourceData": ""
+        },
+        "resource_banking_street": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "accessor": "resource_banking_street",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.resource_banking_street))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "resource_banking_street",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": true,
+          "label": "Resource Banking Street",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "resource_banking_street",
+          "position": 5,
+          "sourceData": ""
+        },
+        "resource_banking_swift_bic_code": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "accessor": "resource_banking_swift_bic_code",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.resource_banking_swift_bic_code))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "resource_banking_swift_bic_code",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": true,
+          "label": "Resource Banking Swift Bic Code",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "resource_banking_swift_bic_code",
+          "position": 20,
+          "sourceData": ""
+        },
+        "resource_email": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "accessor": "resource_email",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.resource_email))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "fieldType": "Email Input",
+          "iconAlign": "left",
+          "identifier": "resource_email",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": true,
+          "label": "Resource Email",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "resource_email",
+          "position": 28,
+          "sourceData": "grodriguez@linktranslation.com"
+        },
+        "resource_full_name": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "accessor": "resource_full_name",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.resource_full_name))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "resource_full_name",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": true,
+          "label": "Resource Full Name",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "resource_full_name",
+          "position": 27,
+          "sourceData": "Giovani Rodriguez"
+        },
+        "resource_id": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "accessor": "resource_id",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "number",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.resource_id))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "fieldType": "Number Input",
+          "iconAlign": "left",
+          "identifier": "resource_id",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": false,
+          "label": "Resource Id",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "resource_id",
+          "position": 0,
+          "sourceData": 2
+        },
+        "updated_at": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "accessor": "updated_at",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.updated_at))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "updated_at",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": false,
+          "label": "Updated At",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "updated_at",
+          "position": 30,
+          "sourceData": "2025-08-11T18:30:35Z"
+        }
+      },
+      "dataType": "object",
+      "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData))(j_edit_banking.sourceData, j_edit_banking.formData, j_edit_banking.fieldState)}}",
+      "fieldType": "Object",
+      "identifier": "__root_schema__",
+      "isCustomField": false,
+      "isDisabled": false,
+      "isRequired": false,
+      "isVisible": true,
+      "label": "",
+      "labelTextSize": "0.875rem",
+      "originalIdentifier": "__root_schema__",
+      "position": -1,
+      "sourceData": {
+        "banking_resource_beneficary": "Daniel",
+        "banking_resource_name": "Daniel Faisca",
+        "resource_banking_bank_account": "",
+        "resource_banking_bank_account_number": "",
+        "resource_banking_bank_address": "",
+        "resource_banking_bank_currency": "",
+        "resource_banking_bank_name": "",
+        "resource_banking_banking_name": "Chase",
+        "resource_banking_branch_code": "",
+        "resource_banking_city": "",
+        "resource_banking_country": "USA",
+        "resource_banking_email": "dfaisca@linktranslation.com",
+        "resource_banking_gov_id_Type": "",
+        "resource_banking_gov_id_number": "",
+        "resource_banking_iban_code": "",
+        "resource_banking_nationality": "",
+        "resource_banking_other_code": "",
+        "resource_banking_payoneer": "",
+        "resource_banking_paypal": "",
+        "resource_banking_phone": "",
+        "resource_banking_pix_code": "",
+        "resource_banking_postal_code": "",
+        "resource_banking_street": "",
+        "resource_banking_swift_bic_code": "",
+        "resource_id": 2
+      }
+    }
+  },
+  "scrollContents": true,
+  "showReset": true,
+  "sourceData": "{{ appsmith.store.resourceBankingRow }}\n",
+  "submitButtonLabel": "Submit",
+  "submitButtonStyles": {
+    "borderRadius": "0.375rem",
+    "boxShadow": "none",
+    "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+    "buttonVariant": "PRIMARY",
+    "iconAlign": "left",
+    "iconName": "add",
+    "placement": "START"
+  },
+  "title": "Update Banking: {{ appsmith.store.resourceBankingRow?.resource_full_name || \"Resource Name\" }}",
+  "topRow": 2,
+  "type": "JSON_FORM_WIDGET",
+  "useSourceData": false,
+  "version": 1,
+  "widgetId": "3l767qaa8d",
+  "widgetName": "j_edit_banking"
+}

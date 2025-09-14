@@ -1,0 +1,38 @@
+-- get_purchase_orders_update (paginated)
+SELECT 
+  po.purchase_order_id,
+  po.resource_id,
+  r.resource_full_name AS resource_name,
+  r.resource_email,
+  po.project_id,
+  p.project_name,
+  po.currency_id,
+  c.currency_name,
+  c.currency_quote,
+  po.source_language_id,
+  sl.language_name AS source_language_name,
+  po.target_language_id,
+  tl.language_name AS target_language_name,
+  po.service_id,
+  s.service_name,
+  po.unit_id,
+  u.unit_name,
+  po.volume,
+  po.rate,
+  po.total,
+  po.date,
+  po.due_date,
+  po.note
+FROM resource_purchase_orders po
+LEFT JOIN resources  r  ON r.resource_id   = po.resource_id
+LEFT JOIN projects   p  ON p.project_id    = po.project_id
+LEFT JOIN currencies c  ON c.currency_id   = po.currency_id
+LEFT JOIN languages  sl ON sl.language_id  = po.source_language_id
+LEFT JOIN languages  tl ON tl.language_id  = po.target_language_id
+LEFT JOIN services   s  ON s.service_id    = po.service_id
+LEFT JOIN units      u  ON u.unit_id       = po.unit_id
+WHERE po.project_id = {{ appsmith.store.selectedProjectData.project_id }}
+ORDER BY {{ update_purchase_order_table.sortOrder.column || 'po.due_date' }}
+         {{ update_purchase_order_table.sortOrder.order === 'desc' ? 'DESC' : '' }}
+LIMIT  {{ update_purchase_order_table.pageSize   || 25 }}
+OFFSET {{ update_purchase_order_table.pageOffset || 0 }};

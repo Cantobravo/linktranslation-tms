@@ -1,0 +1,7 @@
+SELECT
+  unit_id,
+  unit_name,
+  unit_status,
+  updated_at
+FROM units
+ORDER BY unit_name;

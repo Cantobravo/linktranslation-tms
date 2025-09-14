@@ -1,0 +1,6 @@
+UPDATE services
+SET
+  service_name   = NULLIF({{ j_serv_upd_form.formData.service_name }}, ''),
+  service_status = {{ j_serv_upd_form.formData.service_status }},
+  updated_at     = NOW()
+WHERE service_id = {{ j_serv_upd_form.formData.service_id }};

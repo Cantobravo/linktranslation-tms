@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "6840b6d2ece888096e42342a_f64e4be0-d5ff-420a-a3ab-ee3cf65530db",
+  "id": "Price List Items_PLIForm",
+  "unpublishedCollection": {
+    "name": "PLIForm",
+    "pageId": "Price List Items",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

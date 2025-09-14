@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "6840b6d2ece888096e42342a_3fdc963a-1182-476a-8e6a-7ce0b65cd8a4",
+  "id": "Customers_DeleteHandlers",
+  "unpublishedCollection": {
+    "name": "DeleteHandlers",
+    "pageId": "Customers",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

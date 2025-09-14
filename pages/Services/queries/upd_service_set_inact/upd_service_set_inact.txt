@@ -1,0 +1,4 @@
+UPDATE services
+SET service_status = 'Inactive',
+    updated_at     = NOW()
+WHERE service_id = {{ service_id }};

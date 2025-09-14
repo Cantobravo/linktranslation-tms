@@ -1,0 +1,16 @@
+{
+  "gitSyncId": "6840b6d2ece888096e42342a_315c3604-ac22-4e1d-8763-b721d8090173",
+  "id": "Company_CompanyUpdateHandler",
+  "unpublishedCollection": {
+    "name": "CompanyUpdateHandler",
+    "pageId": "Company",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "payload",
+        "value": "{}"
+      }
+    ]
+  }
+}

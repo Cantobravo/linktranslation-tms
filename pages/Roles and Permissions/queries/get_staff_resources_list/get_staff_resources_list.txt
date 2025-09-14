@@ -1,0 +1,12 @@
+SELECT
+  r.resource_id,
+  r.resource_full_name,
+  r.resource_email,
+  r.resource_country,
+  r.resource_status,
+  COALESCE(r.resource_is_active,1) AS resource_is_active,
+  r.resource_username
+FROM resources r
+WHERE COALESCE(r.resource_is_active,1) = 1
+  AND r.resource_status = 'Staff'
+ORDER BY r.resource_full_name;

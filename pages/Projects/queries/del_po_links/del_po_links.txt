@@ -1,0 +1,2 @@
+DELETE FROM resource_bill_po_link
+WHERE purchase_order_id = {{ appsmith.store.poDelRow?.purchase_order_id || null }};

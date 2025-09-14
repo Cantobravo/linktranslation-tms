@@ -1,0 +1,5 @@
+SELECT resource_bill_id
+FROM resource_bills
+WHERE resource_id = {{ new_resource_id.selectedOptionValue }}
+ORDER BY resource_bill_id DESC
+LIMIT 1;

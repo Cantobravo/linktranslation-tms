@@ -1,0 +1,7 @@
+CALL linktranslation.sp_insert_resource_bill_return_id(
+  {{ NULLIF(new_resource_id.selectedOptionValue, '') }},
+  {{ NULLIF(new_currency_id.selectedOptionValue, '') }},
+  {{ new_bill_date.selectedDate ? moment(new_bill_date.selectedDate).format('YYYY-MM-DD HH:mm:ss') : null }},
+  {{ new_due_date.selectedDate ? moment(new_due_date.selectedDate).format('YYYY-MM-DD HH:mm:ss') : null }},
+  {{ new_po_list.text ?? null }}
+);

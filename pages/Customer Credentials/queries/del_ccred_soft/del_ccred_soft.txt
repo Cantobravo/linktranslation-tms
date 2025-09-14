@@ -1,0 +1,4 @@
+UPDATE customer_credentials
+SET customer_credential_status = 'Inactive',
+    updated_at = NOW()
+WHERE customer_credential_id = {{ appsmith.store.ccredRow?.customer_credential_id }};

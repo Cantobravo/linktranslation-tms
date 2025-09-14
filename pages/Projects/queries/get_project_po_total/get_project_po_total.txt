@@ -1,0 +1,4 @@
+SELECT 
+  COALESCE(SUM(total), 0) AS total_expense
+FROM resource_purchase_orders
+WHERE project_id = {{ appsmith.store.selectedProjectData.project_id }};

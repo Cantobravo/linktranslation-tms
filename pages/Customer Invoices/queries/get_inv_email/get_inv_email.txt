@@ -1,0 +1,14 @@
+SELECT
+  t.template_id,
+  t.template_name,
+  t.template_type,
+  t.template_email_subject,
+  t.template_email_body_html,
+  t.template_header_html,
+  t.template_footer_html,
+  t.template_email_bcc_field
+FROM templates t
+WHERE (t.template_id = {{ this.params.tplId || NULL }})
+   OR (t.template_type = 'invoice_email')
+ORDER BY (t.template_id = {{ this.params.tplId || 0 }}) DESC, t.template_id DESC
+LIMIT 1;

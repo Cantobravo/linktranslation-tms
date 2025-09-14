@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "6840b6d2ece888096e42342a_eb2e2d14-bbbe-4910-be90-cf164add3f05",
+  "id": "Currencies_updateAllCurrencyQuotes",
+  "unpublishedCollection": {
+    "name": "updateAllCurrencyQuotes",
+    "pageId": "Currencies",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

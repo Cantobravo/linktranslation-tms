@@ -1,0 +1,16 @@
+{
+  "gitSyncId": "6840b6d2ece888096e42342a_a64affa5-0f26-4111-9874-1f9fee99ba01",
+  "id": "Units_Gate",
+  "unpublishedCollection": {
+    "name": "Gate",
+    "pageId": "Units",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "required",
+        "value": "['VIEW_UNITS']"
+      }
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+-- get_projects (paginated, excludes SOFT_DELETED)
+SELECT
+  p.project_id,
+  p.project_name,
+  p.project_status,
+  DATE(p.project_start_date) AS project_start_date,
+  DATE(p.project_end_date)   AS project_end_date,
+
+  p.customer_id,
+  c.customer_name,
+
+  p.customer_account_id,
+  ca.customer_account_name,
+
+  p.service_id,
+  p.unit_id,
+  p.source_language_id,
+  p.target_language_id,
+  p.currency_id,
+
+  p.project_volume,
+  p.project_rate,
+  p.project_total,
+  p.project_total_usd,
+  p.project_net_total_usd,
+  p.project_margin_usd,
+  p.created_at,
+  p.updated_at
+FROM projects p
+LEFT JOIN customers         c  ON c.customer_id          = p.customer_id
+LEFT JOIN customer_accounts ca ON ca.customer_account_id = p.customer_account_id
+WHERE COALESCE(p.project_status, '') <> 'SOFT_DELETED'
+ORDER BY p.project_id DESC
+LIMIT  {{ Projects_Table.pageSize || 25 }}
+OFFSET {{ ((Projects_Table.pageNo || 1) - 1) * (Projects_Table.pageSize || 25) }};

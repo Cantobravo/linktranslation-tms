@@ -1,0 +1,14 @@
+UPDATE linktranslation.languages
+SET
+  language_name    = TRIM({{ JSON_Language_Update.formData.language_name }}),
+  language_acronym = UPPER(NULLIF(TRIM({{ JSON_Language_Update.formData.language_acronym || '' }}), '')),
+  language_status  = {{ JSON_Language_Update.formData.language_status || 'Active' }},
+  updated_at       = NOW()
+WHERE language_id = {{
+  (() => {
+    const id1 = JSON_Language_Update.formData?.language_id;
+    const id2 = appsmith.store.languageRow?.language_id;
+    const id3 = tbl_languages.selectedRow?.language_id;
+    return Number(id1 || id2 || id3);
+  })()
+}};

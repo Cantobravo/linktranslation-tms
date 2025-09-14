@@ -1,0 +1,13 @@
+INSERT INTO resource_bills (
+  resource_id, currency_id, resource_bill_date, resource_bill_due_date,
+  is_billed, resource_purchase_order_list, created_at, updated_at
+) VALUES (
+  {{ NULLIF(new_resource_id.selectedOptionValue, '') }},
+  {{ NULLIF(new_currency_id.selectedOptionValue, '') }},
+  {{ new_bill_date.selectedDate ? moment(new_bill_date.selectedDate).format('YYYY-MM-DD HH:mm:ss') : null }},
+  {{ new_due_date.selectedDate ? moment(new_due_date.selectedDate).format('YYYY-MM-DD HH:mm:ss') : null }},
+  'No',
+  {{ new_po_list.text ?? null }},
+  NOW(), NOW()
+);
+SELECT LAST_INSERT_ID() AS resource_bill_id;

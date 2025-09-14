@@ -1,0 +1,9 @@
+UPDATE customer_accounts
+SET
+    customer_account_name = {{ JSON_Update_form.formData.customer_account_name || null }},
+    customer_account_industry = {{ JSON_Update_form.formData.customer_account_industry || null }},
+    customer_account_tools = {{ JSON_Update_form.formData.customer_account_tools || null }},
+    customer_id = {{ JSON_Update_form.formData.customer_id || null }},
+    resource_id = {{ JSON_Update_form.formData.resource_id || null }}
+WHERE
+    customer_account_id = {{ JSON_Update_form.formData.customer_account_id }};

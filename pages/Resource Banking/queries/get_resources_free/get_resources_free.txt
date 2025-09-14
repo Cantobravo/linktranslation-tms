@@ -1,0 +1,8 @@
+SELECT r.resource_id, r.resource_full_name, r.resource_email
+FROM resources r
+WHERE NOT EXISTS (
+  SELECT 1
+  FROM resource_banking rb
+  WHERE rb.resource_id = r.resource_id
+)
+ORDER BY r.resource_full_name;

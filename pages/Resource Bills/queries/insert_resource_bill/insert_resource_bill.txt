@@ -1,0 +1,7 @@
+INSERT INTO resource_bills (resource_id, resource_bill_date, resource_bill_due_date, is_billed)
+VALUES (
+  {{ new_resource_id.selectedOptionValue }},
+  '{{ moment(new_bill_date.selectedDate).format("YYYY-MM-DD") }}',
+  '{{ moment(new_due_date.selectedDate).format("YYYY-MM-DD") }}',
+  'No'
+);

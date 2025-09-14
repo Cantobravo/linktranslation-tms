@@ -1,0 +1,12 @@
+SELECT
+  cr.customer_credential_id,
+  cr.customer_id,
+  c.customer_name,
+  cr.customer_credential_name,
+  cr.customer_credential_website,
+  cr.customer_credential_notes,
+  cr.created_at,
+  cr.updated_at
+FROM customer_credentials cr
+JOIN customers c ON c.customer_id = cr.customer_id
+ORDER BY cr.customer_credential_id DESC;

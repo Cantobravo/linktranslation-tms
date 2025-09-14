@@ -1,0 +1,6 @@
+SELECT
+  u.unit_id   AS value,
+  u.unit_name AS label
+FROM units u
+WHERE COALESCE(u.unit_is_active, 1) = 1
+ORDER BY u.unit_name;

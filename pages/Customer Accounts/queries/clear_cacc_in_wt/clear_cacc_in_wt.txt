@@ -1,0 +1,4 @@
+UPDATE work_teams
+SET customer_account_id = NULL,
+    updated_at = CURRENT_TIMESTAMP
+WHERE customer_account_id = {{ this.params.customer_account_id }};
