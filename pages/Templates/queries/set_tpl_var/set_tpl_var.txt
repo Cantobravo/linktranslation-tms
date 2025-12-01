@@ -1,0 +1,7 @@
+UPDATE templates
+SET template_vars = JSON_SET(
+  COALESCE(template_vars,'{}'),
+  CONCAT('$.', {{ j_tpl_var_ins_jsn.isVisible ? j_tpl_var_ins_jsn.formData.var_key : j_tpl_var_upd_jsn.formData.var_key }}),
+  {{ j_tpl_var_ins_jsn.isVisible ? j_tpl_var_ins_jsn.formData.var_value : j_tpl_var_upd_jsn.formData.var_value || null }}
+)
+WHERE template_id = {{ j_tpl_var_ins_jsn.isVisible ? j_tpl_var_ins_jsn.formData.template_id : j_tpl_var_upd_jsn.formData.template_id }};

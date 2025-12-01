@@ -1,14 +1,14 @@
 {
   "animateLoading": true,
   "borderRadius": "1.5rem",
-  "bottomRow": 132,
+  "bottomRow": 1502,
   "boxShadow": "none",
   "canEscapeKeyClose": true,
   "canOutsideClickClose": true,
   "children": [
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 1320,
+      "bottomRow": 1470,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": true,
       "detachFromLayout": true,
@@ -29,7 +29,7 @@
       "leftColumn": 0,
       "maxDynamicHeight": 9000,
       "minDynamicHeight": 4,
-      "minHeight": 1250,
+      "minHeight": 1560,
       "minWidth": 450,
       "mobileBottomRow": 240,
       "mobileLeftColumn": 0,
@@ -54,14 +54,14 @@
   "dynamicBindingPathList": [],
   "dynamicHeight": "AUTO_HEIGHT",
   "dynamicTriggerPathList": [],
-  "height": 1320,
+  "height": 1470,
   "isCanvas": true,
   "isLoading": false,
   "key": "gi4j4tfe06",
   "leftColumn": 25,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 24,
-  "minHeight": 1320,
+  "minHeight": 1470,
   "mobileBottomRow": 56,
   "mobileLeftColumn": 25,
   "mobileRightColumn": 49,
@@ -78,5 +78,5 @@
   "version": 2,
   "widgetId": "9974pjszp5",
   "widgetName": "j_tpl_upd_m",
-  "width": 806
+  "width": 992
 }

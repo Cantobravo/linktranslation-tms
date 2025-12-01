@@ -1,14 +1,14 @@
 {
   "animateLoading": true,
   "borderRadius": "1.5rem",
-  "bottomRow": 1041,
+  "bottomRow": 981,
   "boxShadow": "none",
   "canEscapeKeyClose": true,
   "canOutsideClickClose": true,
   "children": [
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 1020,
+      "bottomRow": 960,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": true,
       "detachFromLayout": true,
@@ -29,7 +29,7 @@
       "leftColumn": 0,
       "maxDynamicHeight": 9000,
       "minDynamicHeight": 4,
-      "minHeight": 950,
+      "minHeight": 1140,
       "minWidth": 450,
       "mobileBottomRow": 240,
       "mobileLeftColumn": 0,
@@ -54,14 +54,14 @@
   "dynamicBindingPathList": [],
   "dynamicHeight": "AUTO_HEIGHT",
   "dynamicTriggerPathList": [],
-  "height": 1020,
+  "height": 960,
   "isCanvas": true,
   "isLoading": false,
   "key": "tu2v0zron9",
   "leftColumn": 18,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 24,
-  "minHeight": 1020,
+  "minHeight": 960,
   "mobileBottomRow": 45,
   "mobileLeftColumn": 18,
   "mobileRightColumn": 42,
@@ -78,5 +78,5 @@
   "version": 2,
   "widgetId": "wdtylqqado",
   "widgetName": "j_wt_ins_m",
-  "width": 764
+  "width": 928
 }

@@ -151,6 +151,18 @@
     {
       "id": "Portfolio",
       "isDefault": false
+    },
+    {
+      "id": "Resources Original",
+      "isDefault": false
+    },
+    {
+      "id": "Resources WT",
+      "isDefault": false
+    },
+    {
+      "id": "Work Teams tmp",
+      "isDefault": false
     }
   ],
   "unpublishedAppLayout": {

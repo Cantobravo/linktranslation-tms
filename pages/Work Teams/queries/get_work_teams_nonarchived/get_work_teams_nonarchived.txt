@@ -3,7 +3,7 @@ SELECT
   wt.work_team_name,
   wt.work_team_status,
   wt.certification_names,
-  COALESCE(wt.is_active,1)          AS is_active,
+  COALESCE(wt.is_active,1) AS is_active,
   ca.customer_account_name,
   c.customer_name,
   s.service_name,
@@ -11,6 +11,8 @@ SELECT
   ls.language_name AS source_language_name,
   lt.language_name AS target_language_name,
   cur.currency_name AS currency_name,
+  wt.translator_rate,
+  wt.customer_rate,
   wt.updated_at
 FROM work_teams wt
 LEFT JOIN customer_accounts ca ON ca.customer_account_id = wt.customer_account_id

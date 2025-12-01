@@ -1,0 +1,18 @@
+SELECT
+  rlp.resource_id,
+  rlp.source_language_id,
+  sl.language_name  AS source_language,
+  rlp.target_language_id,
+  tl.language_name  AS target_language,
+  rlp.created_at,
+  rlp.updated_at
+FROM resource_language_pairs rlp
+JOIN languages sl ON sl.language_id = rlp.source_language_id
+JOIN languages tl ON tl.language_id = rlp.target_language_id
+WHERE rlp.resource_id = {{
+  appsmith.store.resRow?.resource_id
+  || tbl_resources.selectedRow?.resource_id
+  || 0
+}}
+AND COALESCE(rlp.is_active, 1) = 1
+ORDER BY sl.language_name, tl.language_name;

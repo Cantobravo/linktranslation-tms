@@ -1,0 +1,8 @@
+SELECT
+  r.resource_full_name,
+  r.resource_email
+FROM work_team_members wtm
+JOIN resources r ON wtm.resource_id = r.resource_id
+WHERE wtm.work_team_id = {{ tbl_home_wt.selectedRow.work_team_id || null }}
+  AND COALESCE(wtm.is_active,1) = 1
+ORDER BY r.resource_full_name;

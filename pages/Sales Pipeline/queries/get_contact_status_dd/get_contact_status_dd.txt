@@ -1,0 +1,8 @@
+SELECT 'Active' AS label, 'Active' AS value
+UNION ALL SELECT 'Inactive','Inactive'
+UNION
+SELECT DISTINCT COALESCE(customer_contact_status,'') AS label,
+                COALESCE(customer_contact_status,'') AS value
+FROM customer_contacts
+WHERE COALESCE(customer_contact_status,'') <> ''
+ORDER BY 1;

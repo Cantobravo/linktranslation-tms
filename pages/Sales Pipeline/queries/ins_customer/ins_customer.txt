@@ -1,0 +1,13 @@
+INSERT INTO customers (
+  customer_name,
+  customer_status
+)
+SELECT
+  {{ i_customer_name.text }},
+  {{ i_customer_status.selectedOptionValue || null }}
+FROM DUAL
+WHERE NOT EXISTS (
+  SELECT 1
+  FROM customers x
+  WHERE LOWER(x.customer_name) = LOWER({{ i_customer_name.text }})
+);

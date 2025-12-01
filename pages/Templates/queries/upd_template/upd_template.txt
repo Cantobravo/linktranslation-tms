@@ -1,28 +1,15 @@
 UPDATE templates
 SET
-  template_name            = NULLIF({{ j_tpl_upd_form.formData.template_name }}, ''),
-  template_type            = NULLIF({{ j_tpl_upd_form.formData.template_type }}, ''),
-  template_description     = NULLIF({{ j_tpl_upd_form.formData.template_description }}, ''),
-  template_is_active       = COALESCE({{ j_tpl_upd_form.formData.template_is_active ? 1 : 0 }}, 1),
-  template_version         = COALESCE({{ Number(j_tpl_upd_form.formData.template_version) }}, 1),
-
-  -- Email fields
-  template_from_field      = NULLIF({{ j_tpl_upd_form.formData.template_from_field || null }}, ''),
-  template_email_to_field  = NULLIF({{ j_tpl_upd_form.formData.template_email_to_field || null }}, ''),
-  template_email_bcc_field = NULLIF({{ j_tpl_upd_form.formData.template_email_bcc_field || null }}, ''),
-  template_email_subject   = NULLIF({{ j_tpl_upd_form.formData.template_email_subject || null }}, ''),
-  template_email_body_html = NULLIF({{ j_tpl_upd_form.formData.template_email_body_html || null }}, ''),
-  template_signature_field = NULLIF({{ j_tpl_upd_form.formData.template_signature_field || null }}, ''),
-
-  -- PDF fixed parts
-  template_header_html     = NULLIF({{ j_tpl_upd_form.formData.template_header_html || null }}, ''),
-  template_footer_html     = NULLIF({{ j_tpl_upd_form.formData.template_footer_html || null }}, ''),
-
-  -- PDF body
-  template_pdf_body        = NULLIF({{ j_tpl_upd_form.formData.template_pdf_body || null }}, ''),
-
-  -- Declared placeholders (JSON)
-  template_vars            = {{ TemplateVarsHelper.buildVarJson(j_tpl_upd_form.formData) }},
-
-  updated_at               = CURRENT_TIMESTAMP
-WHERE template_id = {{ Number(j_tpl_upd_form.formData.template_id) }};
+  template_name            = {{ j_tpl_upd_form.formData.template_name }},
+  template_type            = {{ j_tpl_upd_form.formData.template_type || null }},
+  template_email_subject   = {{ j_tpl_upd_form.formData.template_email_subject || null }},
+  template_email_body_html = {{ j_tpl_upd_form.formData.template_email_body_html || null }},
+  template_email_to_field  = {{ j_tpl_upd_form.formData.template_email_to_field || null }},
+  template_email_bcc_field = {{ j_tpl_upd_form.formData.template_email_bcc_field || null }},
+  template_from_field      = {{ j_tpl_upd_form.formData.template_from_field || null }},
+  template_signature_field = {{ j_tpl_upd_form.formData.template_signature_field || null }},
+  template_description     = {{ j_tpl_upd_form.formData.template_description || null }},
+  template_version         = {{ j_tpl_upd_form.formData.template_version || null }},
+  template_vars            = {{ j_tpl_upd_form.formData.template_vars || null }},
+  template_is_active       = {{ j_tpl_upd_form.formData.template_is_active ? 1 : 0 }}
+WHERE template_id           = {{ j_tpl_upd_form.formData.template_id }};

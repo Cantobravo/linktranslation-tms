@@ -1,4 +1,6 @@
-SELECT customer_id AS value, customer_name AS label
+SELECT
+  customer_id   AS value,
+  customer_name AS label
 FROM customers
-WHERE COALESCE(customer_status,'Active') <> 'Inactive'
+WHERE customer_status = '10. Active Client'
 ORDER BY customer_name;

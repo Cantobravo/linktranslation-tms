@@ -1,0 +1,10 @@
+UPDATE work_team_members
+SET
+  is_available          = NULLIF({{ tbl_team_members.updatedRow.is_available }}, ''),
+  certification_status  = NULLIF({{ tbl_team_members.updatedRow.certification_status }}, ''),
+  daily_capacity_words  = NULLIF({{ tbl_team_members.updatedRow.daily_capacity_words }}, ''),
+  po_status             = NULLIF({{ tbl_team_members.updatedRow.po_status }}, ''),
+  rates_text            = NULLIF({{ tbl_team_members.updatedRow.rates_text }}, ''),
+  note                  = NULLIF({{ tbl_team_members.updatedRow.note }}, ''),
+  updated_at            = NOW()
+WHERE work_team_member_id = {{ tbl_team_members.updatedRow.work_team_member_id || tbl_team_members.triggeredRow.work_team_member_id }};

@@ -1,0 +1,9 @@
+SELECT
+  template_id,
+  template_name,
+  template_email_subject,
+  template_email_body_html,
+  template_email_bcc_field
+FROM templates
+WHERE template_id = {{ i_email_template_res.selectedOptionValue || null }}
+LIMIT 1;

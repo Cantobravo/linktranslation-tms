@@ -1,0 +1,77 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "animateLoading": true,
+  "borderRadius": "0.375rem",
+  "bottomRow": 16,
+  "boxShadow": "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
+  "defaultOptionValue": "",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "isVisible"
+    },
+    {
+      "key": "sourceData"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "sourceData"
+    },
+    {
+      "key": "isVisible"
+    },
+    {
+      "key": "onOptionChange"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onOptionChange"
+    }
+  ],
+  "isDisabled": false,
+  "isFilterable": true,
+  "isLoading": false,
+  "isRequired": false,
+  "isVisible": "{{ (get_wtm_by_res.data || []).length > 1 }}\n",
+  "key": "5lsvbhbp8r",
+  "labelAlignment": "left",
+  "labelPosition": "Top",
+  "labelStyle": "BOLD",
+  "labelText": "Select Resource",
+  "labelTextColor": "#231f20",
+  "labelTextSize": "1.25rem",
+  "labelWidth": 5,
+  "leftColumn": 2,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 16,
+  "mobileLeftColumn": 5,
+  "mobileRightColumn": 25,
+  "mobileTopRow": 9,
+  "needsErrorInfo": false,
+  "onOptionChange": "{{\n(() => {\n  const id = sel_wtm_member.selectedOptionValue || null;\n  const rows = get_wtm_by_res.data || [];\n  const row  = rows.find(x => x.work_team_member_id === id) || null;\n\n  const curr = j_cred_add.formData || {};\n  j_cred_add.setSourceData({\n    ...curr,\n    work_team_member_id: id,\n    wtm_member_display: row ? `${row.resource_full_name} — ${row.work_team_name}` : \"\"\n  });\n})()\n}}\n",
+  "optionLabel": "label",
+  "optionValue": "value",
+  "originalBottomRow": 16,
+  "originalTopRow": 9,
+  "parentColumnSpace": 5.09375,
+  "parentId": "cz6hh6alve",
+  "parentRowSpace": 10,
+  "placeholderText": "Select option",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 59,
+  "serverSideFiltering": false,
+  "sourceData": "{{ (get_wtm_by_res.data || []).map(r => ({\n     label: r.resource_full_name,\n     value: r.work_team_member_id\n   }))\n}}\n",
+  "topRow": 9,
+  "type": "SELECT_WIDGET",
+  "version": 1,
+  "widgetId": "ap75gg268n",
+  "widgetName": "sel_wtm_member"
+}

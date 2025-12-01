@@ -9,8 +9,12 @@ INSERT INTO work_teams (
   work_team_status,
   certification_names,
   work_team_name,
-  is_active
-) VALUES (
+  is_active,
+  webapp_name,
+  translator_rate,
+  customer_rate
+)
+VALUES (
   NULLIF({{ j_wt_ins_form.formData.customer_id }}, ''),
   NULLIF({{ j_wt_ins_form.formData.customer_account_id }}, ''),
   NULLIF({{ j_wt_ins_form.formData.service_id }}, ''),
@@ -20,21 +24,9 @@ INSERT INTO work_teams (
   NULLIF({{ j_wt_ins_form.formData.currency_id }}, ''),
   COALESCE(NULLIF({{ j_wt_ins_form.formData.work_team_status }}, ''), 'Active'),
   NULLIF({{ j_wt_ins_form.formData.certification_names }}, ''),
-  COALESCE(
-    NULLIF({{ j_wt_ins_form.formData.work_team_name }}, ''),
-    CONCAT_WS(
-      ' · ',
-      (SELECT customer_name   FROM customers  WHERE customer_id   = NULLIF({{ j_wt_ins_form.formData.customer_id }}, '')),
-      CONCAT(
-        COALESCE((SELECT language_name FROM languages WHERE language_id = NULLIF({{ j_wt_ins_form.formData.source_language_id }}, '')), ''),
-        '→',
-        COALESCE((SELECT language_name FROM languages WHERE language_id = NULLIF({{ j_wt_ins_form.formData.target_language_id }}, '')), '')
-      ),
-      (SELECT service_name    FROM services   WHERE service_id    = NULLIF({{ j_wt_ins_form.formData.service_id }}, '')),
-      (SELECT unit_name       FROM units      WHERE unit_id       = NULLIF({{ j_wt_ins_form.formData.unit_id }}, ''))
-    )
-  ),
-  1
+  NULLIF({{ j_wt_ins_form.formData.work_team_name }}, ''),
+  COALESCE(NULLIF({{ j_wt_ins_form.formData.is_active }}, ''), 1),
+  NULLIF({{ j_wt_ins_form.formData.webapp_name }}, ''),
+  NULLIF({{ j_wt_ins_form.formData.translator_rate }}, ''),
+  NULLIF({{ j_wt_ins_form.formData.customer_rate }}, '')
 );
-
-SELECT LAST_INSERT_ID() AS work_team_id;

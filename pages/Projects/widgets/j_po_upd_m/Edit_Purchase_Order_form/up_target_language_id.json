@@ -51,7 +51,7 @@
   "placeholderText": "Select option",
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 64,
+  "rightColumn": 63,
   "serverSideFiltering": false,
   "sourceData": "{{ get_languages_dd.data }}",
   "topRow": 33,

@@ -1,0 +1,15 @@
+SELECT
+  s.service_name    AS service,
+  u.unit_name       AS unit,
+  sl.language_name  AS source_language,
+  tl.language_name  AS target_language,
+  poi.volume,
+  poi.rate
+FROM po_items poi
+JOIN services  s  ON poi.service_id = s.service_id
+JOIN units     u  ON poi.unit_id = u.unit_id
+JOIN languages sl ON poi.source_language_id = sl.language_id
+JOIN languages tl ON poi.target_language_id = tl.language_id
+WHERE poi.po_id = {{
+  (update_purchase_order_table.triggeredRow || update_purchase_order_table.selectedRow).purchase_order_id
+}};

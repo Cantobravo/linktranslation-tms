@@ -1,14 +1,14 @@
 {
   "animateLoading": true,
   "borderRadius": "1.5rem",
-  "bottomRow": 61,
+  "bottomRow": 704,
   "boxShadow": "none",
   "canEscapeKeyClose": true,
   "canOutsideClickClose": true,
   "children": [
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 610,
+      "bottomRow": 680,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": true,
       "detachFromLayout": true,
@@ -29,7 +29,7 @@
       "leftColumn": 0,
       "maxDynamicHeight": 9000,
       "minDynamicHeight": 4,
-      "minHeight": 510,
+      "minHeight": 680,
       "minWidth": 450,
       "mobileBottomRow": 240,
       "mobileLeftColumn": 0,
@@ -54,14 +54,14 @@
   "dynamicBindingPathList": [],
   "dynamicHeight": "AUTO_HEIGHT",
   "dynamicTriggerPathList": [],
-  "height": 610,
+  "height": 680,
   "isCanvas": true,
   "isLoading": false,
   "key": "f7iw9f52l1",
   "leftColumn": 22,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 24,
-  "minHeight": 610,
+  "minHeight": 680,
   "mobileBottomRow": 48,
   "mobileLeftColumn": 22,
   "mobileRightColumn": 46,
@@ -78,5 +78,5 @@
   "version": 2,
   "widgetId": "51kne6p343",
   "widgetName": "j_pl_ins_modal",
-  "width": 596
+  "width": 678
 }

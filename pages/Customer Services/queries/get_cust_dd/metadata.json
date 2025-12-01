@@ -25,7 +25,7 @@
     "dynamicBindingPathList": [],
     "name": "get_cust_dd",
     "pageId": "Customer Services",
-    "runBehaviour": "AUTOMATIC",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

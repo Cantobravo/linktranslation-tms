@@ -289,10 +289,23 @@
     },
     {
       "key": "schema.__root_schema__.children.currency_id.options"
+    },
+    {
+      "key": "schema.__root_schema__.children.currency_name.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.currency_name.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.currency_name.borderRadius"
     }
   ],
   "dynamicHeight": "FIXED",
-  "dynamicPropertyPathList": [],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onSubmit"
+    }
+  ],
   "dynamicTriggerPathList": [
     {
       "key": "onSubmit"
@@ -313,7 +326,7 @@
   "mobileRightColumn": 26,
   "mobileTopRow": 6,
   "needsErrorInfo": false,
-  "onSubmit": "{{\n  SubmitShield.runOnce(async () => {\n    await upd_customer.run();\n    await get_customers_list.run();\n    closeModal('j_customer_update_modal');\n    showAlert('Customer updated','success');\n  })\n}}\n",
+  "onSubmit": "{{\n  SubmitShield.runOnce(async () => {\n    await upd_customer.run();\n    closeModal('j_customer_update_modal');\n    await get_customers_active.run();\n    await get_customers_list.run();\n    showAlert('Customer updated','success');\n  })\n}}\n",
   "parentColumnSpace": 14.125,
   "parentId": "c8bgfxnq6z",
   "parentRowSpace": 10,
@@ -354,7 +367,7 @@
           "label": "Created At",
           "labelTextSize": "0.875rem",
           "originalIdentifier": "created_at",
-          "position": 18,
+          "position": 17,
           "sourceData": "2025-08-19T15:16:38Z"
         },
         "currency_id": {
@@ -376,8 +389,30 @@
           "labelTextSize": "0.875rem",
           "options": "{{ get_currencies_dropdown.data }}",
           "originalIdentifier": "currency_id",
-          "position": 11,
+          "position": 12,
           "serverSideFiltering": false
+        },
+        "currency_name": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_customer_update_json.sourceData, j_customer_update_json.formData, j_customer_update_json.fieldState)}}",
+          "accessor": "currency_name",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_customer_update_json.sourceData, j_customer_update_json.formData, j_customer_update_json.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.currency_name))(j_customer_update_json.sourceData, j_customer_update_json.formData, j_customer_update_json.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "currency_name",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": false,
+          "label": "Currency Name",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "currency_name",
+          "position": 19,
+          "sourceData": "US Dollar"
         },
         "customer_address": {
           "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_customer_update_json.sourceData, j_customer_update_json.formData, j_customer_update_json.fieldState)}}",
@@ -398,7 +433,7 @@
           "label": "Customer Address",
           "labelTextSize": "0.875rem",
           "originalIdentifier": "customer_address",
-          "position": 3
+          "position": 4
         },
         "customer_bank_fee": {
           "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_customer_update_json.sourceData, j_customer_update_json.formData, j_customer_update_json.fieldState)}}",
@@ -440,7 +475,7 @@
           "label": "Customer Country",
           "labelTextSize": "0.875rem",
           "originalIdentifier": "customer_country",
-          "position": 4
+          "position": 5
         },
         "customer_documentation": {
           "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_customer_update_json.sourceData, j_customer_update_json.formData, j_customer_update_json.fieldState)}}",
@@ -461,7 +496,7 @@
           "label": "Customer Documentation",
           "labelTextSize": "0.875rem",
           "originalIdentifier": "customer_documentation",
-          "position": 17
+          "position": 16
         },
         "customer_id": {
           "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_customer_update_json.sourceData, j_customer_update_json.formData, j_customer_update_json.fieldState)}}",
@@ -504,7 +539,7 @@
           "label": "Customer Industry",
           "labelTextSize": "0.875rem",
           "originalIdentifier": "customer_industry",
-          "position": 6
+          "position": 7
         },
         "customer_invoice_procedure": {
           "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_customer_update_json.sourceData, j_customer_update_json.formData, j_customer_update_json.fieldState)}}",
@@ -525,7 +560,7 @@
           "label": "Customer Invoice Procedure",
           "labelTextSize": "0.875rem",
           "originalIdentifier": "customer_invoice_procedure",
-          "position": 8
+          "position": 9
         },
         "customer_linkedIn": {
           "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_customer_update_json.sourceData, j_customer_update_json.formData, j_customer_update_json.fieldState)}}",
@@ -589,7 +624,7 @@
           "label": "Customer Note",
           "labelTextSize": "0.875rem",
           "originalIdentifier": "customer_note",
-          "position": 7
+          "position": 8
         },
         "customer_payment_term": {
           "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_customer_update_json.sourceData, j_customer_update_json.formData, j_customer_update_json.fieldState)}}",
@@ -610,7 +645,7 @@
           "label": "Customer Payment Term",
           "labelTextSize": "0.875rem",
           "originalIdentifier": "customer_payment_term",
-          "position": 9
+          "position": 10
         },
         "customer_phone": {
           "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_customer_update_json.sourceData, j_customer_update_json.formData, j_customer_update_json.fieldState)}}",
@@ -631,7 +666,7 @@
           "label": "Customer Phone",
           "labelTextSize": "0.875rem",
           "originalIdentifier": "customer_phone",
-          "position": 5
+          "position": 6
         },
         "customer_receivable_bank_name": {
           "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_customer_update_json.sourceData, j_customer_update_json.formData, j_customer_update_json.fieldState)}}",
@@ -671,9 +706,9 @@
           "isVisible": true,
           "label": "Customer Status",
           "labelTextSize": "0.875rem",
-          "options": "{{ [\n  { label: 'Active',   value: 'Active' },\n  { label: 'Prospect', value: 'Prospect' },\n  { label: 'Inactive', value: 'Inactive' }\n] }}\n",
+          "options": "{{[\n{ label: '1. Lead Identified',   value: '1. Lead Identified' },\n{ label: '2. First Contact Sent',   value: '2. First Contact Sent' },\n{ label: '3. Response Received',   value: '3. Response Received' },\n{ label: '4. Vendor Onboarding',   value: '4. Vendor Onboarding' },\n{ label: '5. Sample Test Requested,',   value: '5. Sample Test Requested,' },\n{ label: '6. Awaiting Approval',   value: '6. Awaiting Approval' },\n{ label: '7. Approved Vendor',   value: '7. Approved Vendor' },\n{ label: '8. Quote Requested',   value: '8. Quote Requested' },\n{ label: '9. First Project Request',   value: '9. First Project Request' },\n{ label: '10. Active Client',   value: '10. Active Client' },\n{ label: '11. Dormant Client',   value: '11. Dormant Client' },\n{ label: '12. Lost Opportunity',   value: '12. Lost Opportunity' },\n{ label: '13. Other',   value: '13. Other' },\n{ label: '14. Inactive',   value: '14. Inactive' },\n]}}",
           "originalIdentifier": "customer_status",
-          "position": 16,
+          "position": 3,
           "serverSideFiltering": false,
           "sourceData": "Active"
         },
@@ -696,7 +731,7 @@
           "label": "Customer Tax Vat Number",
           "labelTextSize": "0.875rem",
           "originalIdentifier": "customer_tax_vat_number",
-          "position": 10
+          "position": 11
         },
         "customer_type": {
           "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_customer_update_json.sourceData, j_customer_update_json.formData, j_customer_update_json.fieldState)}}",
@@ -739,7 +774,7 @@
           "label": "Updated At",
           "labelTextSize": "0.875rem",
           "originalIdentifier": "updated_at",
-          "position": 19,
+          "position": 18,
           "sourceData": "2025-08-19T15:16:38Z"
         }
       },

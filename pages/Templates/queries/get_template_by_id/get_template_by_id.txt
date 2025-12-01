@@ -1,4 +1,18 @@
 SELECT
-  t.*
+  t.template_id,
+  t.template_name,
+  t.template_type,
+  t.template_description,
+  t.template_is_active,
+  t.template_version,
+  t.template_from_field,
+  t.template_email_to_field,
+  t.template_email_bcc_field,
+  t.template_email_subject,
+  t.template_email_body_html,
+  t.template_signature_field,
+  t.template_vars,
+  t.created_at,
+  t.updated_at
 FROM templates t
-WHERE t.template_id = {{ appsmith.store.templateRow?.template_id || appsmith.store.templateNewId }};
+WHERE t.template_id = {{ appsmith.store.tplRow?.template_id }};

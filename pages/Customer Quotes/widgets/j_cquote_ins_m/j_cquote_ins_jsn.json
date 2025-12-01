@@ -324,7 +324,7 @@
   "mobileTopRow": 5,
   "needsErrorInfo": false,
   "onSubmit": "{{\n  SubmitShield.runOnce(async () => {\n    await ins_cquote.run();\n    if (toggle_show_inactive_cquote.isSwitchedOn) {\n      await get_cquote_all.run();\n    } else {\n      await get_cquote_active.run();\n    }\n    closeModal('j_cquote_ins_m');\n    showAlert('Quote created','success');\n  })\n}}\n",
-  "originalBottomRow": 149,
+  "originalBottomRow": 112,
   "originalTopRow": 5,
   "parentColumnSpace": 11.4375,
   "parentId": "n5981o336e",
@@ -477,7 +477,7 @@
           "label": "Customer",
           "labelTextSize": "0.875rem",
           "onOptionChange": "{{\n  (async () => {\n    await get_ccont_active_dd_cq.run();\n    j_cquote_ins_jsn.updateField('customer_contact_id', null);\n  })()\n}}\n\n",
-          "options": "{{ get_cust_active_dd.data }}",
+          "options": "{{ get_cust_dd_cred.data }}",
           "originalIdentifier": "customer_id",
           "position": 2,
           "serverSideFiltering": false,
@@ -546,8 +546,7 @@
           "label": "Customer Quote Last Contact Date",
           "labelTextSize": "0.875rem",
           "originalIdentifier": "customer_quote_last_contact_date",
-          "position": 12,
-          "sourceData": null
+          "position": 12
         },
         "customer_quote_name": {
           "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_cquote_ins_jsn.sourceData, j_cquote_ins_jsn.formData, j_cquote_ins_jsn.fieldState)}}",
@@ -590,8 +589,7 @@
           "label": "Customer Quote Next Contact Date",
           "labelTextSize": "0.875rem",
           "originalIdentifier": "customer_quote_next_contact_date",
-          "position": 13,
-          "sourceData": null
+          "position": 13
         },
         "customer_quote_start_date": {
           "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_cquote_ins_jsn.sourceData, j_cquote_ins_jsn.formData, j_cquote_ins_jsn.fieldState)}}",
@@ -707,8 +705,7 @@
           "label": "Quote Notes",
           "labelTextSize": "0.875rem",
           "originalIdentifier": "quote_notes",
-          "position": 14,
-          "sourceData": null
+          "position": 14
         },
         "updated_at": {
           "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_cquote_ins_jsn.sourceData, j_cquote_ins_jsn.formData, j_cquote_ins_jsn.fieldState)}}",
@@ -754,14 +751,11 @@
         "customer_id": 2,
         "customer_name": "Centific",
         "customer_quote_id": 3,
-        "customer_quote_last_contact_date": null,
         "customer_quote_name": "Test2",
-        "customer_quote_next_contact_date": null,
         "customer_quote_start_date": "2025-08-18",
         "customer_quote_status": "Inactive",
         "quote_amount": "100",
         "quote_is_active": true,
-        "quote_notes": null,
         "updated_at": "2025-09-09T11:54:06Z"
       }
     }

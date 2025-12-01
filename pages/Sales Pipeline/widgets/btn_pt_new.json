@@ -1,0 +1,57 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 75,
+  "boxShadow": "none",
+  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "buttonVariant": "PRIMARY",
+  "disabledWhenInvalid": false,
+  "dynamicBindingPathList": [
+    {
+      "key": "buttonColor"
+    },
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "isDefaultClickDisabled": true,
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "bgu5wyc6if",
+  "leftColumn": 37,
+  "minWidth": 120,
+  "mobileBottomRow": 75,
+  "mobileLeftColumn": 37,
+  "mobileRightColumn": 53,
+  "mobileTopRow": 71,
+  "needsErrorInfo": false,
+  "onClick": "{{\n  resetWidget('j_portal_new', true);\n\n  const cid = Number(appsmith.store.sel_cust_id) || '';\n  if (cid) {\n    const opt = (get_cust_dd_active.data || []).find(x => x.value === cid) || {label:'', value:''};\n    i_pt_customer_id.setSelectedOption(opt);\n    storeValue('sel_cust_id', cid).then(() => get_contact_dd_bycust.run());\n  } else {\n    i_pt_customer_id.setSelectedOption({label:'', value:''});\n  }\n  i_pt_contact_id.setSelectedOption({label:'', value:''});\n\n  showModal('j_portal_new');\n}}\n",
+  "originalBottomRow": 75,
+  "originalTopRow": 71,
+  "parentColumnSpace": 25.875,
+  "parentId": "0",
+  "parentRowSpace": 10,
+  "placement": "CENTER",
+  "recaptchaType": "V3",
+  "renderMode": "CANVAS",
+  "resetFormOnClick": false,
+  "responsiveBehavior": "hug",
+  "rightColumn": 53,
+  "text": "Add Portal",
+  "topRow": 71,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "74oz9fydvd",
+  "widgetName": "btn_pt_new"
+}

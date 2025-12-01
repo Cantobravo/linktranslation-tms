@@ -29,7 +29,7 @@
     ],
     "name": "get_res_count",
     "pageId": "Resources",
-    "runBehaviour": "AUTOMATIC",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

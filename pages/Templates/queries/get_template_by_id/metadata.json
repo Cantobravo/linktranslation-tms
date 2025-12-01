@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT\n  t.*\nFROM templates t\nWHERE t.template_id = {{ appsmith.store.templateRow?.template_id || appsmith.store.templateNewId }};\n",
+      "body": "SELECT\n  t.template_id,\n  t.template_name,\n  t.template_type,\n  t.template_description,\n  t.template_is_active,\n  t.template_version,\n  t.template_from_field,\n  t.template_email_to_field,\n  t.template_email_bcc_field,\n  t.template_email_subject,\n  t.template_email_body_html,\n  t.template_signature_field,\n  t.template_vars,\n  t.created_at,\n  t.updated_at\nFROM templates t\nWHERE t.template_id = {{ appsmith.store.tplRow?.template_id }};\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

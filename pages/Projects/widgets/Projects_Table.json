@@ -59,7 +59,7 @@
     "updated_at",
     "EditActions1"
   ],
-  "columnUpdatedAt": 1757357167340,
+  "columnUpdatedAt": 1758975080166,
   "columnWidthMap": {
     "currency_name": 95,
     "customColumn1": 78,
@@ -1140,7 +1140,7 @@
   },
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 33,
+  "rightColumn": 34,
   "searchKey": "",
   "serverSidePaginationEnabled": true,
   "showInlineEditingOptionDropdown": true,

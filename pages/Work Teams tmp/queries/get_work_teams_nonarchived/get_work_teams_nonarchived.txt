@@ -1,0 +1,30 @@
+SELECT
+  wt.work_team_id,
+  wt.work_team_name,
+  wt.work_team_status,
+  wt.certification_names,
+  COALESCE(wt.is_active,1)          AS is_active,
+  ca.customer_account_name,
+  c.customer_name,
+  s.service_name,
+  u.unit_name,
+  ls.language_name AS source_language_name,
+  lt.language_name AS target_language_name,
+  cur.currency_name AS currency_name,
+  wt.updated_at
+FROM work_teams wt
+LEFT JOIN customer_accounts ca ON ca.customer_account_id = wt.customer_account_id
+LEFT JOIN customers         c  ON c.customer_id          = wt.customer_id
+LEFT JOIN services          s  ON s.service_id           = wt.service_id
+LEFT JOIN units             u  ON u.unit_id              = wt.unit_id
+LEFT JOIN languages         ls ON ls.language_id         = wt.source_language_id
+LEFT JOIN languages         lt ON lt.language_id         = wt.target_language_id
+LEFT JOIN currencies        cur ON cur.currency_id       = wt.currency_id
+WHERE COALESCE(wt.is_active,1) = 1
+  AND COALESCE(wt.work_team_status,'') <> 'Archived'
+  AND (
+        {{ i_wt_lang_search.text || '' }} = ''
+        OR ls.language_name LIKE CONCAT('%', {{ i_wt_lang_search.text }}, '%')
+        OR lt.language_name LIKE CONCAT('%', {{ i_wt_lang_search.text }}, '%')
+      )
+ORDER BY wt.updated_at DESC, wt.work_team_id DESC;

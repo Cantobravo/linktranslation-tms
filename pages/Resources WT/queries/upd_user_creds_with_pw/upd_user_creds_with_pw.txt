@@ -1,0 +1,5 @@
+UPDATE resources
+SET
+  resource_username      = {{ this.params.username }},
+  resource_password_hash = SHA2({{ this.params.new_password }}, 256),
+WHERE resource_id = {{ this.params.resource_id }};

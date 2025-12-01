@@ -1,0 +1,7 @@
+SELECT
+  r.resource_id,
+  r.resource_full_name,
+  r.resource_email,
+  r.resource_status
+FROM resources r
+ORDER BY r.resource_full_name;

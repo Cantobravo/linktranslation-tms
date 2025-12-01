@@ -1,6 +1,6 @@
 SELECT
-  customer_id,
-  customer_name
+  customer_id   AS value,
+  customer_name AS label
 FROM customers
-WHERE COALESCE(customer_status, 'Active') = 'Active'
+WHERE customer_status = '10. Active Client'
 ORDER BY customer_name;

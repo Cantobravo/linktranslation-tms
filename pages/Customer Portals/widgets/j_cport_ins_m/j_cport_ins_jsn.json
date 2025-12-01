@@ -422,7 +422,7 @@
           "label": "Customer",
           "labelTextSize": "0.875rem",
           "onOptionChange": "{{\n  (async () => {\n    await get_ccont_active_dd.run();\n    j_cport_ins_jsn.updateField('customer_contact_id', null); // clear the contact when customer changes\n  })()\n}}\n",
-          "options": "{{ get_cust_active_dd.data }}\n",
+          "options": "{{ get_cust_dd_cred.data }}",
           "originalIdentifier": "customer_id",
           "position": 2,
           "serverSideFiltering": false,

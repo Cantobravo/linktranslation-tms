@@ -1,0 +1,20 @@
+UPDATE customers
+SET
+  customer_name = {{ json_cust_upd.formData.customer_name }},
+  customer_type = {{ json_cust_upd.formData.customer_type || null }},
+  customer_address = {{ json_cust_upd.formData.customer_address || null }},
+  customer_country = {{ json_cust_upd.formData.customer_country || null }},
+  customer_phone = {{ json_cust_upd.formData.customer_phone || null }},
+  customer_industry = {{ json_cust_upd.formData.customer_industry || null }},
+  customer_note = {{ json_cust_upd.formData.customer_note || null }},
+  customer_invoice_procedure = {{ json_cust_upd.formData.customer_invoice_procedure || null }},
+  customer_payment_term = {{ json_cust_upd.formData.customer_payment_term || null }},
+  customer_tax_vat_number = {{ json_cust_upd.formData.customer_tax_vat_number || null }},
+  currency_id = {{ json_cust_upd.formData.currency_id || null }},
+  customer_receivable_bank_name = {{ json_cust_upd.formData.customer_receivable_bank_name || null }},
+  customer_linkedIn = {{ json_cust_upd.formData.customer_linkedIn || null }},
+  customer_bank_fee = {{ json_cust_upd.formData.customer_bank_fee || null }},
+  customer_status = {{ json_cust_upd.formData.customer_status || null }},
+  customer_documentation = {{ json_cust_upd.formData.customer_documentation || null }},
+  updated_at = NOW()
+WHERE customer_id = {{ json_cust_upd.formData.customer_id }};

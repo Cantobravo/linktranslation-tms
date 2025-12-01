@@ -25,7 +25,7 @@
     "dynamicBindingPathList": [],
     "name": "get_work_teams_dd",
     "pageId": "Resources",
-    "runBehaviour": "AUTOMATIC",
-    "userSetOnLoad": false
+    "runBehaviour": "ON_PAGE_LOAD",
+    "userSetOnLoad": true
   }
 }

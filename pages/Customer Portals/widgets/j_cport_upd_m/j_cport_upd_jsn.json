@@ -294,7 +294,7 @@
   "mobileTopRow": 2,
   "needsErrorInfo": false,
   "onSubmit": "{{\n  SubmitShield.runOnce(async () => {\n    await upd_cport.run();\n    if (toggle_show_inactive_cport.isSwitchedOn) {\n      await get_cport_all.run();\n    } else {\n      await get_cport_active.run();\n    }\n    closeModal('j_cport_upd_m');\n    showAlert('Portal updated','success');\n  })\n}}\n",
-  "originalBottomRow": 123,
+  "originalBottomRow": 108,
   "originalTopRow": 2,
   "parentColumnSpace": 6.9375,
   "parentId": "gosh6fpdna",
@@ -308,7 +308,7 @@
     "buttonVariant": "SECONDARY"
   },
   "responsiveBehavior": "fill",
-  "rightColumn": 62,
+  "rightColumn": 60,
   "schema": {
     "__root_schema__": {
       "accessor": "__root_schema__",
@@ -405,7 +405,7 @@
           "labelTextSize": "0.875rem",
           "originalIdentifier": "customer_contact_name",
           "position": 14,
-          "sourceData": "Daniel"
+          "sourceData": "Mark Mark"
         },
         "customer_id": {
           "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_cport_upd_jsn.sourceData, j_cport_upd_jsn.formData, j_cport_upd_jsn.fieldState)}}",
@@ -425,7 +425,7 @@
           "label": "Customer",
           "labelTextSize": "0.875rem",
           "onOptionChange": "{{\n  (async () => {\n    // Reload active contacts (dataset used by the Contact field)\n    await get_ccont_active_dd.run();\n    // Clear the currently selected contact so the user picks a valid one for the new customer\n    j_cport_upd_jsn.updateField('customer_contact_id', null);\n  })()\n}}\n",
-          "options": "{{ get_cust_active_dd.data }}\n",
+          "options": "{{ get_cust_dd_cred.data }}",
           "originalIdentifier": "customer_id",
           "position": 2,
           "serverSideFiltering": false,
@@ -451,7 +451,7 @@
           "labelTextSize": "0.875rem",
           "originalIdentifier": "customer_name",
           "position": 13,
-          "sourceData": "Acolad"
+          "sourceData": "Acolad, Inc"
         },
         "customer_portal_credentials": {
           "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_cport_upd_jsn.sourceData, j_cport_upd_jsn.formData, j_cport_upd_jsn.fieldState)}}",

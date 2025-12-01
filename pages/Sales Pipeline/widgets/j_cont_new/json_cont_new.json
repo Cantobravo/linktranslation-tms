@@ -1,0 +1,504 @@
+{
+  "animateLoading": true,
+  "autoGenerateForm": true,
+  "backgroundColor": "#fff",
+  "borderColor": "#E0DEDE",
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "borderWidth": "1",
+  "bottomRow": 92,
+  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+  "childStylesheet": {
+    "ARRAY": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none",
+      "cellBorderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "cellBoxShadow": "none"
+    },
+    "CHECKBOX": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}"
+    },
+    "CURRENCY_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "DATEPICKER": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "EMAIL_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "MULTILINE_TEXT_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "MULTISELECT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "NUMBER_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "OBJECT": {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none",
+      "cellBorderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "cellBoxShadow": "none"
+    },
+    "PASSWORD_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "PHONE_NUMBER_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "RADIO_GROUP": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "boxShadow": "none"
+    },
+    "SELECT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "SWITCH": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "boxShadow": "none"
+    },
+    "TEXT_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    }
+  },
+  "disabledWhenInvalid": true,
+  "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "boxShadow"
+    },
+    {
+      "key": "submitButtonStyles.buttonColor"
+    },
+    {
+      "key": "submitButtonStyles.borderRadius"
+    },
+    {
+      "key": "resetButtonStyles.buttonColor"
+    },
+    {
+      "key": "resetButtonStyles.borderRadius"
+    },
+    {
+      "key": "sourceData"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_id.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_id.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_id.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.contact_full_name.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.contact_full_name.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.contact_full_name.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.contact_role.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.contact_role.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.contact_role.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.contact_email.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.contact_email.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.contact_email.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.initial_contact_date.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.initial_contact_date.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.initial_contact_date.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.last_contact_date.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.last_contact_date.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.last_contact_date.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.next_contact_date.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.next_contact_date.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.next_contact_date.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.contact_is_active.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.contact_is_active.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_contact_notes.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_contact_notes.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_contact_notes.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.cellBorderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_id.options"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [
+    {
+      "key": "sourceData"
+    },
+    {
+      "key": "schema.__root_schema__.children.contact_is_active.defaultValue"
+    },
+    {
+      "key": "onSubmit"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onSubmit"
+    }
+  ],
+  "fieldLimitExceeded": false,
+  "fixedFooter": true,
+  "flexVerticalAlignment": "start",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "xxrp443p56",
+  "leftColumn": 1,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 54,
+  "mobileLeftColumn": 4,
+  "mobileRightColumn": 29,
+  "mobileTopRow": 13,
+  "needsErrorInfo": false,
+  "onSubmit": "{{\n  ins_contact.run(\n    () => {\n      get_cust_contacts_bycust.run();\n      closeModal('j_cont_new');\n      resetWidget('j_cont_new', true);\n      showAlert('Contact added', 'success');\n    },\n    (e) => showAlert('Insert failed: ' + (e && e.message ? e.message : e), 'error')\n  );\n}}\n",
+  "originalBottomRow": 92,
+  "originalTopRow": 1,
+  "parentColumnSpace": 6.9375,
+  "parentId": "muu5yy9xwf",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "resetButtonLabel": "Reset",
+  "resetButtonStyles": {
+    "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+    "boxShadow": "none",
+    "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+    "buttonVariant": "SECONDARY"
+  },
+  "responsiveBehavior": "fill",
+  "rightColumn": 56,
+  "schema": {
+    "__root_schema__": {
+      "accessor": "__root_schema__",
+      "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(json_cont_new.sourceData, json_cont_new.formData, json_cont_new.fieldState)}}",
+      "boxShadow": "none",
+      "cellBorderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(json_cont_new.sourceData, json_cont_new.formData, json_cont_new.fieldState)}}",
+      "cellBoxShadow": "none",
+      "children": {
+        "contact_email": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(json_cont_new.sourceData, json_cont_new.formData, json_cont_new.fieldState)}}",
+          "accessor": "contact_email",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(json_cont_new.sourceData, json_cont_new.formData, json_cont_new.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.contact_email))(json_cont_new.sourceData, json_cont_new.formData, json_cont_new.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "contact_email",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": true,
+          "label": "Contact Email",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "contact_email",
+          "position": 3,
+          "sourceData": ""
+        },
+        "contact_full_name": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(json_cont_new.sourceData, json_cont_new.formData, json_cont_new.fieldState)}}",
+          "accessor": "contact_full_name",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(json_cont_new.sourceData, json_cont_new.formData, json_cont_new.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.contact_full_name))(json_cont_new.sourceData, json_cont_new.formData, json_cont_new.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "contact_full_name",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": true,
+          "label": "Contact Full Name",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "contact_full_name",
+          "position": 1,
+          "sourceData": ""
+        },
+        "contact_is_active": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(json_cont_new.sourceData, json_cont_new.formData, json_cont_new.fieldState)}}",
+          "accessor": "contact_is_active",
+          "alignWidget": "LEFT",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "boolean",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.contact_is_active))(json_cont_new.sourceData, json_cont_new.formData, json_cont_new.fieldState)}}",
+          "fieldType": "Switch",
+          "identifier": "contact_is_active",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isVisible": true,
+          "label": "Contact Is Active",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "contact_is_active",
+          "position": 7,
+          "sourceData": true
+        },
+        "contact_role": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(json_cont_new.sourceData, json_cont_new.formData, json_cont_new.fieldState)}}",
+          "accessor": "contact_role",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(json_cont_new.sourceData, json_cont_new.formData, json_cont_new.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.contact_role))(json_cont_new.sourceData, json_cont_new.formData, json_cont_new.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "contact_role",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": true,
+          "label": "Contact Role",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "contact_role",
+          "position": 2,
+          "sourceData": ""
+        },
+        "customer_contact_notes": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(json_cont_new.sourceData, json_cont_new.formData, json_cont_new.fieldState)}}",
+          "accessor": "customer_contact_notes",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(json_cont_new.sourceData, json_cont_new.formData, json_cont_new.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.customer_contact_notes))(json_cont_new.sourceData, json_cont_new.formData, json_cont_new.fieldState)}}",
+          "fieldType": "Multiline Text Input",
+          "iconAlign": "left",
+          "identifier": "customer_contact_notes",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": true,
+          "label": "Customer Contact Notes",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "customer_contact_notes",
+          "position": 8,
+          "sourceData": ""
+        },
+        "customer_id": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(json_cont_new.sourceData, json_cont_new.formData, json_cont_new.fieldState)}}",
+          "accessor": "customer_id",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(json_cont_new.sourceData, json_cont_new.formData, json_cont_new.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "null",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.customer_id))(json_cont_new.sourceData, json_cont_new.formData, json_cont_new.fieldState)}}",
+          "fieldType": "Select",
+          "identifier": "customer_id",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isFilterable": false,
+          "isRequired": false,
+          "isVisible": true,
+          "label": "Customer",
+          "labelTextSize": "0.875rem",
+          "options": "{{ get_cust_dd_active.data }}",
+          "originalIdentifier": "customer_id",
+          "position": 0,
+          "serverSideFiltering": false
+        },
+        "initial_contact_date": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(json_cont_new.sourceData, json_cont_new.formData, json_cont_new.fieldState)}}",
+          "accessor": "initial_contact_date",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(json_cont_new.sourceData, json_cont_new.formData, json_cont_new.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "closeOnSelection": false,
+          "convertToISO": false,
+          "dataType": "null",
+          "dateFormat": "YYYY-MM-DD",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.initial_contact_date))(json_cont_new.sourceData, json_cont_new.formData, json_cont_new.fieldState)}}",
+          "fieldType": "Datepicker",
+          "identifier": "initial_contact_date",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isVisible": true,
+          "label": "Initial Contact Date",
+          "labelTextSize": "0.875rem",
+          "maxDate": "2121-12-31T18:29:00.000Z",
+          "minDate": "1920-12-31T18:30:00.000Z",
+          "originalIdentifier": "initial_contact_date",
+          "position": 4,
+          "shortcuts": false,
+          "timePrecision": "minute"
+        },
+        "last_contact_date": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(json_cont_new.sourceData, json_cont_new.formData, json_cont_new.fieldState)}}",
+          "accessor": "last_contact_date",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(json_cont_new.sourceData, json_cont_new.formData, json_cont_new.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "closeOnSelection": false,
+          "convertToISO": false,
+          "dataType": "null",
+          "dateFormat": "YYYY-MM-DD",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.last_contact_date))(json_cont_new.sourceData, json_cont_new.formData, json_cont_new.fieldState)}}",
+          "fieldType": "Datepicker",
+          "identifier": "last_contact_date",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isVisible": true,
+          "label": "Last Contact Date",
+          "labelTextSize": "0.875rem",
+          "maxDate": "2121-12-31T18:29:00.000Z",
+          "minDate": "1920-12-31T18:30:00.000Z",
+          "originalIdentifier": "last_contact_date",
+          "position": 5,
+          "shortcuts": false,
+          "timePrecision": "minute"
+        },
+        "next_contact_date": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(json_cont_new.sourceData, json_cont_new.formData, json_cont_new.fieldState)}}",
+          "accessor": "next_contact_date",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(json_cont_new.sourceData, json_cont_new.formData, json_cont_new.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "closeOnSelection": false,
+          "convertToISO": false,
+          "dataType": "null",
+          "dateFormat": "YYYY-MM-DD",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.next_contact_date))(json_cont_new.sourceData, json_cont_new.formData, json_cont_new.fieldState)}}",
+          "fieldType": "Datepicker",
+          "identifier": "next_contact_date",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isVisible": true,
+          "label": "Next Contact Date",
+          "labelTextSize": "0.875rem",
+          "maxDate": "2121-12-31T18:29:00.000Z",
+          "minDate": "1920-12-31T18:30:00.000Z",
+          "originalIdentifier": "next_contact_date",
+          "position": 6,
+          "shortcuts": false,
+          "timePrecision": "minute"
+        }
+      },
+      "dataType": "object",
+      "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData))(json_cont_new.sourceData, json_cont_new.formData, json_cont_new.fieldState)}}",
+      "fieldType": "Object",
+      "identifier": "__root_schema__",
+      "isCustomField": false,
+      "isDisabled": false,
+      "isRequired": false,
+      "isVisible": true,
+      "label": "",
+      "labelTextSize": "0.875rem",
+      "originalIdentifier": "__root_schema__",
+      "position": -1,
+      "sourceData": {
+        "contact_email": "",
+        "contact_full_name": "",
+        "contact_is_active": true,
+        "contact_role": "",
+        "customer_contact_notes": ""
+      }
+    }
+  },
+  "scrollContents": true,
+  "showReset": false,
+  "sourceData": "{{\n  {\n    customer_id: appsmith.store.sel_cust_id || null,\n    contact_full_name: '',\n    contact_role: '',\n    contact_email: '',\n    initial_contact_date: null,\n    last_contact_date: null,\n    next_contact_date: null,\n    contact_is_active: true,\n    customer_contact_notes: ''\n  }\n}}\n",
+  "submitButtonLabel": "Submit",
+  "submitButtonStyles": {
+    "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+    "boxShadow": "none",
+    "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+    "buttonVariant": "PRIMARY"
+  },
+  "title": "New Contact",
+  "topRow": 1,
+  "type": "JSON_FORM_WIDGET",
+  "useSourceData": false,
+  "version": 1,
+  "widgetId": "bu4bf3dw82",
+  "widgetName": "json_cont_new"
+}

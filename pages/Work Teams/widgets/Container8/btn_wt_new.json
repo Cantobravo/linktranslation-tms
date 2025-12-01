@@ -35,7 +35,7 @@
   "mobileRightColumn": 18,
   "mobileTopRow": 16,
   "needsErrorInfo": false,
-  "onClick": "{{\n  resetWidget('j_wt_ins_form', true);\n  storeValue('_wt_last_cid', null);\n  get_customers_dd.run();\n  get_services_dd.run();\n  get_units_dd.run();\n  get_languages_dd.run();\n  get_currencies_dd.run();\n  showModal('j_wt_ins_m');\n}}\n",
+  "onClick": "{{\n(async () => {\n  resetWidget('j_wt_ins_form', true);\n  j_wt_ins_form.setSourceData({\n    customer_id: null,\n    customer_account_id: null,\n    service_id: null,\n    unit_id: null,\n    source_language_id: null,\n    target_language_id: null,\n    currency_id: null,\n    work_team_status: \"Active\",\n    certification_names: \"\",\n    webapp_name: null,\n    translator_rate: null,\n    customer_rate: null,\n    is_active: 1\n  });\n  showModal('j_wt_ins_m');\n})();\n}}\n",
   "originalBottomRow": 17,
   "originalTopRow": 13,
   "parentColumnSpace": 19.8125,

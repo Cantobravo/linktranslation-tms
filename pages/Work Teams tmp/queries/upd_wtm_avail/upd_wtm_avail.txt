@@ -1,0 +1,12 @@
+UPDATE work_team_members
+SET
+  is_available = {{ j_avail_edit.formData.is_available }},
+  updated_at   = NOW()
+WHERE
+  work_team_member_id = (
+    SELECT wtm.work_team_member_id
+    FROM work_team_members wtm
+    WHERE wtm.resource_id   = {{ tbl_resources.selectedRow.resource_id }}
+      AND wtm.work_team_id  = {{ i_wt_pick.selectedOptionValue }}
+    LIMIT 1
+  );

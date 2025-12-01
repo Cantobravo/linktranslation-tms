@@ -1,0 +1,26 @@
+SELECT
+  wtm.work_team_member_id,
+  wtm.work_team_id,
+  wtm.resource_id,
+  r.resource_full_name,
+  r.resource_email,
+  wtm.is_available,
+  wtm.certification_status,
+  wtm.daily_capacity_words,
+  wtm.po_status,
+  wtm.rates_text,
+  wtm.note
+FROM work_team_members wtm
+JOIN resources r ON r.resource_id = wtm.resource_id
+WHERE wtm.work_team_member_id = COALESCE(
+  {{ appsmith.store.wtmRow?.work_team_member_id || 0 }},
+  (
+    SELECT w2.work_team_member_id
+    FROM work_team_members w2
+    WHERE COALESCE(w2.is_active,1)=1
+      AND w2.work_team_id = {{ appsmith.store.wtRow?.work_team_id || 0 }}
+    ORDER BY w2.work_team_member_id
+    LIMIT 1
+  )
+)
+LIMIT 1;

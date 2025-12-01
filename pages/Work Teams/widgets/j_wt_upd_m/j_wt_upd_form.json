@@ -5,7 +5,7 @@
   "borderColor": "{{appsmith.theme.colors.primaryColor}}",
   "borderRadius": "1.5rem",
   "borderWidth": "1",
-  "bottomRow": 121,
+  "bottomRow": 128,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "childStylesheet": {
     "ARRAY": {
@@ -111,6 +111,75 @@
       "key": "schema.__root_schema__.children.work_team_id.borderRadius"
     },
     {
+      "key": "schema.__root_schema__.children.work_team_status.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.work_team_status.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.work_team_status.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.certification_names.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.certification_names.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.certification_names.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.work_team_name.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.work_team_name.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.work_team_name.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.cellBorderRadius"
+    },
+    {
+      "key": "borderColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.work_team_status.options"
+    },
+    {
+      "key": "schema.__root_schema__.children.customField1.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.customField1.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.customField1.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.translator_rate.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.translator_rate.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.translator_rate.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_rate.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_rate.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_rate.borderRadius"
+    },
+    {
       "key": "schema.__root_schema__.children.customer_id.defaultValue"
     },
     {
@@ -174,42 +243,6 @@
       "key": "schema.__root_schema__.children.currency_id.borderRadius"
     },
     {
-      "key": "schema.__root_schema__.children.work_team_status.defaultValue"
-    },
-    {
-      "key": "schema.__root_schema__.children.work_team_status.accentColor"
-    },
-    {
-      "key": "schema.__root_schema__.children.work_team_status.borderRadius"
-    },
-    {
-      "key": "schema.__root_schema__.children.certification_names.defaultValue"
-    },
-    {
-      "key": "schema.__root_schema__.children.certification_names.accentColor"
-    },
-    {
-      "key": "schema.__root_schema__.children.certification_names.borderRadius"
-    },
-    {
-      "key": "schema.__root_schema__.children.work_team_name.defaultValue"
-    },
-    {
-      "key": "schema.__root_schema__.children.work_team_name.accentColor"
-    },
-    {
-      "key": "schema.__root_schema__.children.work_team_name.borderRadius"
-    },
-    {
-      "key": "schema.__root_schema__.defaultValue"
-    },
-    {
-      "key": "schema.__root_schema__.borderRadius"
-    },
-    {
-      "key": "schema.__root_schema__.cellBorderRadius"
-    },
-    {
       "key": "schema.__root_schema__.children.customer_id.options"
     },
     {
@@ -229,21 +262,6 @@
     },
     {
       "key": "schema.__root_schema__.children.currency_id.options"
-    },
-    {
-      "key": "borderColor"
-    },
-    {
-      "key": "schema.__root_schema__.children.work_team_status.options"
-    },
-    {
-      "key": "schema.__root_schema__.children.customField1.accentColor"
-    },
-    {
-      "key": "schema.__root_schema__.children.customField1.borderRadius"
-    },
-    {
-      "key": "schema.__root_schema__.children.customField1.defaultValue"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
@@ -252,18 +270,18 @@
       "key": "sourceData"
     },
     {
-      "key": "schema.__root_schema__.children.customer_id.onOptionChange"
+      "key": "onSubmit"
     },
     {
-      "key": "onSubmit"
+      "key": "schema.__root_schema__.children.customer_id.onOptionChange"
     }
   ],
   "dynamicTriggerPathList": [
     {
-      "key": "schema.__root_schema__.children.customer_id.onOptionChange"
+      "key": "onSubmit"
     },
     {
-      "key": "onSubmit"
+      "key": "schema.__root_schema__.children.customer_id.onOptionChange"
     }
   ],
   "fieldLimitExceeded": false,
@@ -282,7 +300,7 @@
   "mobileTopRow": 12,
   "needsErrorInfo": false,
   "onSubmit": "{{\n  (async () => {\n    try {\n      await upd_work_team.run();\n\n      if (toggle_show_archived_wt.isSwitchedOn) {\n        await (get_work_teams_all?.run?.() || get_work_teams_list.run());\n      } else {\n        await (get_work_teams_nonarchived?.run?.() || get_work_teams_list.run());\n      }\n\n      resetWidget('tbl_work_teams', true);   // <- force the grid to repaint with new data\n      closeModal('j_wt_upd_m');\n      showAlert('Team updated.', 'success');\n    } catch (e) {\n      showAlert('Update failed: ' + (e?.message || e), 'error');\n    }\n  })()\n}}\n",
-  "originalBottomRow": 121,
+  "originalBottomRow": 136,
   "originalTopRow": 7,
   "parentColumnSpace": 6.9375,
   "parentId": "ewk6ycpl9o",
@@ -333,11 +351,11 @@
           "boxShadow": "none",
           "children": {},
           "dataType": "null",
-          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.currency_id))(j_wt_upd_form.sourceData, j_wt_upd_form.formData, j_wt_upd_form.fieldState)}}",
+          "defaultValue": "{{((sourceData, formData, fieldState) => ( j_wt_upd_form.formData.currency_id ))(j_wt_upd_form.sourceData, j_wt_upd_form.formData, j_wt_upd_form.fieldState)}}",
           "fieldType": "Select",
           "identifier": "currency_id",
           "isCustomField": false,
-          "isDisabled": true,
+          "isDisabled": false,
           "isFilterable": false,
           "isRequired": false,
           "isVisible": true,
@@ -345,8 +363,9 @@
           "labelTextSize": "0.875rem",
           "options": "{{ get_currencies_dd.data }}",
           "originalIdentifier": "currency_id",
-          "position": 7,
-          "serverSideFiltering": false
+          "position": 10,
+          "serverSideFiltering": false,
+          "sourceData": null
         },
         "customField1": {
           "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_wt_upd_form.sourceData, j_wt_upd_form.formData, j_wt_upd_form.fieldState)}}",
@@ -377,7 +396,7 @@
           "boxShadow": "none",
           "children": {},
           "dataType": "number",
-          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.customer_account_id))(j_wt_upd_form.sourceData, j_wt_upd_form.formData, j_wt_upd_form.fieldState)}}",
+          "defaultValue": "{{((sourceData, formData, fieldState) => ( j_wt_upd_form.formData.customer_account_id ))(j_wt_upd_form.sourceData, j_wt_upd_form.formData, j_wt_upd_form.fieldState)}}",
           "fieldType": "Select",
           "identifier": "customer_account_id",
           "isCustomField": false,
@@ -387,11 +406,11 @@
           "isVisible": true,
           "label": "Customer Account",
           "labelTextSize": "0.875rem",
-          "options": "{{ get_cust_acc_dd_upd.data }}",
+          "options": "{{ get_cust_acc_dd.data }}",
           "originalIdentifier": "customer_account_id",
           "position": 2,
           "serverSideFiltering": false,
-          "sourceData": 2
+          "sourceData": 10
         },
         "customer_id": {
           "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_wt_upd_form.sourceData, j_wt_upd_form.formData, j_wt_upd_form.fieldState)}}",
@@ -400,7 +419,7 @@
           "boxShadow": "none",
           "children": {},
           "dataType": "number",
-          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.customer_id))(j_wt_upd_form.sourceData, j_wt_upd_form.formData, j_wt_upd_form.fieldState)}}",
+          "defaultValue": "{{((sourceData, formData, fieldState) => ( j_wt_upd_form.formData.customer_id ))(j_wt_upd_form.sourceData, j_wt_upd_form.formData, j_wt_upd_form.fieldState)}}",
           "fieldType": "Select",
           "identifier": "customer_id",
           "isCustomField": false,
@@ -410,12 +429,33 @@
           "isVisible": true,
           "label": "Customer",
           "labelTextSize": "0.875rem",
-          "onOptionChange": "{{\n  storeValue('_wt_cid_upd', j_wt_upd_form.formData?.customer_id);\n  get_cust_acc_dd_upd.run();\n}}\n",
-          "options": "{{ get_customers_dd.data }}",
+          "onOptionChange": "{{\n  get_cust_acc_dd_upd.run(() => {\n    const f = j_wt_upd_form.formData || {};\n    j_wt_upd_form.setSourceData({ ...f, customer_account_id: null });\n  })\n}}\n",
+          "options": "{{get_customers_dd.data}}",
           "originalIdentifier": "customer_id",
           "position": 1,
           "serverSideFiltering": false,
-          "sourceData": 1
+          "sourceData": 2
+        },
+        "customer_rate": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_wt_upd_form.sourceData, j_wt_upd_form.formData, j_wt_upd_form.fieldState)}}",
+          "accessor": "customer_rate",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_wt_upd_form.sourceData, j_wt_upd_form.formData, j_wt_upd_form.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "null",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.customer_rate))(j_wt_upd_form.sourceData, j_wt_upd_form.formData, j_wt_upd_form.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "customer_rate",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": true,
+          "label": "Customer Rate",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "customer_rate",
+          "position": 8
         },
         "service_id": {
           "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_wt_upd_form.sourceData, j_wt_upd_form.formData, j_wt_upd_form.fieldState)}}",
@@ -424,7 +464,7 @@
           "boxShadow": "none",
           "children": {},
           "dataType": "number",
-          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.service_id))(j_wt_upd_form.sourceData, j_wt_upd_form.formData, j_wt_upd_form.fieldState)}}",
+          "defaultValue": "{{((sourceData, formData, fieldState) => ( j_wt_upd_form.formData.service_id ))(j_wt_upd_form.sourceData, j_wt_upd_form.formData, j_wt_upd_form.fieldState)}}",
           "fieldType": "Select",
           "identifier": "service_id",
           "isCustomField": false,
@@ -434,7 +474,7 @@
           "isVisible": true,
           "label": "Service",
           "labelTextSize": "0.875rem",
-          "options": "{{ get_services_dd.data }}",
+          "options": "{{get_services_dd.data}}",
           "originalIdentifier": "service_id",
           "position": 3,
           "serverSideFiltering": false,
@@ -447,7 +487,7 @@
           "boxShadow": "none",
           "children": {},
           "dataType": "number",
-          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.source_language_id))(j_wt_upd_form.sourceData, j_wt_upd_form.formData, j_wt_upd_form.fieldState)}}",
+          "defaultValue": "{{((sourceData, formData, fieldState) => ( j_wt_upd_form.formData.source_language_id ))(j_wt_upd_form.sourceData, j_wt_upd_form.formData, j_wt_upd_form.fieldState)}}",
           "fieldType": "Select",
           "identifier": "source_language_id",
           "isCustomField": false,
@@ -461,7 +501,7 @@
           "originalIdentifier": "source_language_id",
           "position": 5,
           "serverSideFiltering": false,
-          "sourceData": 14
+          "sourceData": 1
         },
         "target_language_id": {
           "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_wt_upd_form.sourceData, j_wt_upd_form.formData, j_wt_upd_form.fieldState)}}",
@@ -470,7 +510,7 @@
           "boxShadow": "none",
           "children": {},
           "dataType": "number",
-          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.target_language_id))(j_wt_upd_form.sourceData, j_wt_upd_form.formData, j_wt_upd_form.fieldState)}}",
+          "defaultValue": "{{((sourceData, formData, fieldState) => ( j_wt_upd_form.formData.target_language_id ))(j_wt_upd_form.sourceData, j_wt_upd_form.formData, j_wt_upd_form.fieldState)}}",
           "fieldType": "Select",
           "identifier": "target_language_id",
           "isCustomField": false,
@@ -478,13 +518,34 @@
           "isFilterable": false,
           "isRequired": false,
           "isVisible": true,
-          "label": "Target Language",
+          "label": "Target Language ",
           "labelTextSize": "0.875rem",
           "options": "{{ get_languages_dd.data }}",
           "originalIdentifier": "target_language_id",
           "position": 6,
           "serverSideFiltering": false,
-          "sourceData": 44
+          "sourceData": 8
+        },
+        "translator_rate": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_wt_upd_form.sourceData, j_wt_upd_form.formData, j_wt_upd_form.fieldState)}}",
+          "accessor": "translator_rate",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_wt_upd_form.sourceData, j_wt_upd_form.formData, j_wt_upd_form.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "null",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.translator_rate))(j_wt_upd_form.sourceData, j_wt_upd_form.formData, j_wt_upd_form.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "translator_rate",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": true,
+          "label": "Translator Rate",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "translator_rate",
+          "position": 7
         },
         "unit_id": {
           "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_wt_upd_form.sourceData, j_wt_upd_form.formData, j_wt_upd_form.fieldState)}}",
@@ -493,7 +554,7 @@
           "boxShadow": "none",
           "children": {},
           "dataType": "number",
-          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.unit_id))(j_wt_upd_form.sourceData, j_wt_upd_form.formData, j_wt_upd_form.fieldState)}}",
+          "defaultValue": "{{((sourceData, formData, fieldState) => ( j_wt_upd_form.formData.unit_id ))(j_wt_upd_form.sourceData, j_wt_upd_form.formData, j_wt_upd_form.fieldState)}}",
           "fieldType": "Select",
           "identifier": "unit_id",
           "isCustomField": false,
@@ -507,7 +568,7 @@
           "originalIdentifier": "unit_id",
           "position": 4,
           "serverSideFiltering": false,
-          "sourceData": 7
+          "sourceData": 1
         },
         "work_team_id": {
           "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_wt_upd_form.sourceData, j_wt_upd_form.formData, j_wt_upd_form.fieldState)}}",
@@ -543,14 +604,14 @@
           "iconAlign": "left",
           "identifier": "work_team_name",
           "isCustomField": false,
-          "isDisabled": true,
+          "isDisabled": false,
           "isRequired": false,
           "isSpellCheck": false,
-          "isVisible": true,
+          "isVisible": false,
           "label": "Work Team Name",
           "labelTextSize": "0.875rem",
           "originalIdentifier": "work_team_name",
-          "position": 10,
+          "position": 12,
           "sourceData": "Amazon · Translation · Hits · Arabic → Bengali"
         },
         "work_team_status": {
@@ -572,7 +633,7 @@
           "labelTextSize": "0.875rem",
           "options": "{{[\n  { \"label\": \"Active\", \"value\": \"Active\" },\n  { \"label\": \"Paused\", \"value\": \"Paused\" },\n  { \"label\": \"Archived\", \"value\": \"Archived\" }\n]\n}}",
           "originalIdentifier": "work_team_status",
-          "position": 8,
+          "position": 13,
           "serverSideFiltering": false,
           "sourceData": "Active"
         }

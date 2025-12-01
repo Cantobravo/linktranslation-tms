@@ -1,0 +1,10 @@
+INSERT INTO resource_language_pairs
+  (resource_id, source_language_id, target_language_id, is_active, created_at)
+VALUES
+  (
+    {{ this.params.resource_id }},
+    {{ this.params.source_language_id }},
+    {{ this.params.target_language_id }},
+    1,
+    NOW()
+  );

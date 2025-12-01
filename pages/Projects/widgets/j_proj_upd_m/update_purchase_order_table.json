@@ -5,7 +5,7 @@
   "borderColor": "{{appsmith.theme.colors.primaryColor}}",
   "borderRadius": "1.5rem",
   "borderWidth": "3",
-  "bottomRow": 114,
+  "bottomRow": 126,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "cachedTableData": {},
   "canFreezeColumn": true,
@@ -36,6 +36,7 @@
     "customColumn1",
     "customColumn4",
     "customColumn3",
+    "customColumn5",
     "purchase_order_id",
     "project_name",
     "resource_name",
@@ -61,7 +62,7 @@
     "currency_quote",
     "EditActions1"
   ],
-  "columnUpdatedAt": 1756474108654,
+  "columnUpdatedAt": 1758980193709,
   "columnWidthMap": {
     "customColumn1": 70,
     "customColumn2": 88,
@@ -185,6 +186,12 @@
     },
     {
       "key": "borderColor"
+    },
+    {
+      "key": "primaryColumns.customColumn5.borderRadius"
+    },
+    {
+      "key": "primaryColumns.customColumn5.boxShadow"
     }
   ],
   "dynamicPropertyPathList": [
@@ -217,6 +224,9 @@
     },
     {
       "key": "onSort"
+    },
+    {
+      "key": "primaryColumns.customColumn5.onClick"
     }
   ],
   "dynamicTriggerPathList": [
@@ -246,6 +256,9 @@
     },
     {
       "key": "primaryColumns.customColumn4.onClick"
+    },
+    {
+      "key": "primaryColumns.customColumn5.onClick"
     }
   ],
   "enableClientSideSearch": true,
@@ -274,8 +287,8 @@
   "onPageChange": "{{ get_purchase_orders_update.run(); get_po_count_by_project.run(); }}\n",
   "onRowSelected": "{{ \n  storeValue('editPurchaseOrderData', update_purchase_order_table.selectedRow);\n  storeValue('resource_email_live', update_purchase_order_table.selectedRow.resource_email);\n  storeValue('editMode', false);\n  showModal('Edit_Purchase_Order_Modal');\n}}\n\n",
   "onSort": "{{ get_purchase_orders_update.run(); get_po_count_by_project.run(); }}\n",
-  "originalBottomRow": 114,
-  "originalTopRow": 85,
+  "originalBottomRow": 126,
+  "originalTopRow": 97,
   "parentColumnSpace": 8.90625,
   "parentId": "y2pnhcycst",
   "parentRowSpace": 10,
@@ -540,6 +553,45 @@
       "verticalAlignment": "CENTER",
       "width": 150
     },
+    "customColumn5": {
+      "alias": "PDF",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "borderRadius": "{{update_purchase_order_table.processedTableData.map((currentRow, currentIndex) => ( (appsmith.theme.borderRadius.appBorderRadius)))}}",
+      "boxShadow": "{{update_purchase_order_table.processedTableData.map((currentRow, currentIndex) => ( \"none\"))}}",
+      "buttonColor": "#93c5fd",
+      "buttonLabel": "PDF",
+      "buttonStyle": "rgb(3, 179, 101)",
+      "columnType": "button",
+      "computedValue": "",
+      "currencyCode": "USD",
+      "customAlias": "",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "horizontalAlignment": "LEFT",
+      "id": "customColumn5",
+      "index": 10,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": true,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "PDF",
+      "labelColor": "#FFFFFF",
+      "notation": "standard",
+      "onClick": "{{\n  POPlanB.buildUploadAndDownload(\n    \"sv=2024-11-04&ss=bfqt&srt=co&sp=rwdlacupiytfx&se=2026-08-25T05:29:25Z&st=2025-09-24T21:14:25Z&spr=https&sig=GeLXsoQAlR02yidb8TZiOzSAm15FFICRoGUY2mx%2BDWI%3D\"\n  )\n}}\n",
+      "originalId": "customColumn5",
+      "sticky": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
     "date": {
       "alias": "date",
       "allowCellWrapping": false,
@@ -628,7 +680,7 @@
       "isDiscardVisible": true,
       "isEditable": false,
       "isSaveVisible": true,
-      "isVisible": false,
+      "isVisible": true,
       "label": "Note",
       "notation": "standard",
       "originalId": "note",
@@ -723,7 +775,7 @@
       "isEditable": false,
       "isSaveVisible": true,
       "isVisible": true,
-      "label": "ID",
+      "label": "PO ID",
       "notation": "standard",
       "originalId": "purchase_order_id",
       "sticky": "",
@@ -753,7 +805,7 @@
       "isDiscardVisible": true,
       "isEditable": true,
       "isSaveVisible": true,
-      "isVisible": false,
+      "isVisible": true,
       "label": "Rate",
       "notation": "standard",
       "originalId": "rate",
@@ -908,7 +960,7 @@
       "isDiscardVisible": true,
       "isEditable": false,
       "isSaveVisible": true,
-      "isVisible": false,
+      "isVisible": true,
       "label": "Service",
       "notation": "standard",
       "originalId": "service_name",
@@ -970,7 +1022,7 @@
       "isDiscardVisible": true,
       "isEditable": false,
       "isSaveVisible": true,
-      "isVisible": false,
+      "isVisible": true,
       "label": "Source Language",
       "notation": "standard",
       "originalId": "source_language_name",
@@ -1032,7 +1084,7 @@
       "isDiscardVisible": true,
       "isEditable": false,
       "isSaveVisible": true,
-      "isVisible": false,
+      "isVisible": true,
       "label": "Target Language",
       "notation": "standard",
       "originalId": "target_language_name",
@@ -1156,7 +1208,7 @@
       "isDiscardVisible": true,
       "isEditable": true,
       "isSaveVisible": true,
-      "isVisible": false,
+      "isVisible": true,
       "label": "Volume",
       "notation": "standard",
       "originalId": "volume",
@@ -1176,7 +1228,7 @@
   "showInlineEditingOptionDropdown": true,
   "tableData": "{{ get_purchase_orders_update.data }}",
   "textSize": "0.875rem",
-  "topRow": 85,
+  "topRow": 97,
   "totalRecordsCount": "{{ get_po_count_by_project.data[0].cnt }}",
   "type": "TABLE_WIDGET_V2",
   "variant": "VARIANT2",

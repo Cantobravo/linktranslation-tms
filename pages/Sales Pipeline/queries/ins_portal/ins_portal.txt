@@ -1,0 +1,23 @@
+INSERT INTO customer_portals (
+  customer_id,
+  customer_contact_id,
+  customer_portal_name,
+  customer_portal_website,
+  customer_portal_credentials,
+  customer_portal_notes,
+  customer_portal_status,
+  customer_portal_first_update,
+  customer_portal_last_update,
+  customer_portal_next_update
+) VALUES (
+  {{ i_pt_customer_id.selectedOptionValue || null }},
+  {{ i_pt_contact_id.selectedOptionValue || null }},
+  {{ i_pt_name.text }},
+  {{ i_pt_website.text || null }},
+  {{ i_pt_creds.text || null }},
+  {{ i_pt_notes.text || null }},
+  {{ i_pt_status.selectedOptionValue || null }},
+  {{ i_pt_first_upd.selectedDate ? moment(i_pt_first_upd.selectedDate).format('YYYY-MM-DD') : null }},
+  {{ i_pt_last_upd.selectedDate ? moment(i_pt_last_upd.selectedDate).format('YYYY-MM-DD') : null }},
+  {{ i_pt_next_upd.selectedDate ? moment(i_pt_next_upd.selectedDate).format('YYYY-MM-DD') : null }}
+);

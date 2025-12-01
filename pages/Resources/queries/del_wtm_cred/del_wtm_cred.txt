@@ -1,0 +1,2 @@
+DELETE FROM work_team_member_credentials
+WHERE wtm_cred_id = {{ tbl_wtm_creds.triggeredRow.wtm_cred_id }};

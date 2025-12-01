@@ -1,27 +1,26 @@
-INSERT INTO price_lists
-  (price_list_type, price_list_name, currency_id, customer_id, resource_id, is_active)
-VALUES
-  (
-    {{ j_pl_ins_form.formData?.price_list_type }},
-    {{ j_pl_ins_form.formData?.price_list_name }},
-    {{ Number(j_pl_ins_form.formData?.currency_id) }},
-    {{
-      j_pl_ins_form.formData?.price_list_type === 'CUSTOMER'
-        ? (
-            j_pl_ins_form.formData?.customer_id === '' || j_pl_ins_form.formData?.customer_id == null
-              ? null
-              : Number(j_pl_ins_form.formData.customer_id)
-          )
-        : null
-    }},
-    {{
-      j_pl_ins_form.formData?.price_list_type === 'RESOURCE'
-        ? (
-            j_pl_ins_form.formData?.resource_id === '' || j_pl_ins_form.formData?.resource_id == null
-              ? null
-              : Number(j_pl_ins_form.formData.resource_id)
-          )
-        : null
-    }},
-    1
-  );
+INSERT INTO price_lists (
+  price_list_type,
+  price_list_name,
+  currency_id,
+  customer_id,
+  pl_customer_account,
+  resource_id,
+  is_active
+) VALUES (
+  {{ j_pl_ins_form.formData.price_list_type }},
+  {{ j_pl_ins_form.formData.price_list_name }},
+  {{ j_pl_ins_form.formData.currency_id }},
+  CASE WHEN {{ j_pl_ins_form.formData.price_list_type }} = 'CUSTOMER'
+       THEN {{ j_pl_ins_form.formData.customer_id || null }}
+       ELSE NULL
+  END,
+  CASE WHEN {{ j_pl_ins_form.formData.price_list_type }} = 'CUSTOMER'
+       THEN {{ j_pl_ins_form.formData.pl_customer_account || null }}
+       ELSE NULL
+  END,
+  CASE WHEN {{ j_pl_ins_form.formData.price_list_type }} = 'RESOURCE'
+       THEN {{ j_pl_ins_form.formData.resource_id || null }}
+       ELSE NULL
+  END,
+  {{ j_pl_ins_form.formData.is_active ? 1 : 0 }}
+);

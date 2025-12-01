@@ -1,0 +1,10 @@
+SELECT
+  t.template_id,
+  jk.key_name AS var_key,
+  JSON_UNQUOTE(JSON_EXTRACT(t.template_vars, CONCAT('$.', jk.key_name))) AS var_value
+FROM templates t
+JOIN JSON_TABLE(JSON_KEYS(COALESCE(t.template_vars,'{}')), '$[*]'
+  COLUMNS (key_name VARCHAR(255) PATH '$')
+) AS jk
+WHERE t.template_id = {{ tbl_templates.triggeredRow ? tbl_templates.triggeredRow.template_id : tbl_templates.selectedRow?.template_id || null }}
+ORDER BY jk.key_name;

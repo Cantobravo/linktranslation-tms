@@ -1,0 +1,4 @@
+SELECT COUNT(*) AS cnt
+FROM resources
+WHERE resource_username = {{ this.params.username }}
+  AND resource_id <> {{ this.params.resource_id }};

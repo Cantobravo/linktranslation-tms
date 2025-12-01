@@ -248,7 +248,7 @@
   "isLoading": false,
   "isVisible": true,
   "key": "9dwsg2xvcf",
-  "leftColumn": 4,
+  "leftColumn": 9,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "minWidth": 450,
@@ -257,9 +257,9 @@
   "mobileRightColumn": 58,
   "mobileTopRow": 11,
   "needsErrorInfo": false,
-  "onSubmit": "{{\n  upd_company.run(\n    () => { showAlert('Company saved', 'success'); get_company.run(); },\n    (e) => showAlert('Error: ' + (e?.message || e), 'error')\n  )\n}}\n\n\n\n\n",
+  "onSubmit": "{{\n  (async () => {\n    await upd_company.run();\n    closeModal('Edit_Company_Modal');\n    resetWidget('j_edit_company', true);\n    await get_company.run();\n    showAlert('Company updated', 'success');\n  })()\n}}\n\n\n\n\n",
   "originalBottomRow": 116,
-  "originalTopRow": 16,
+  "originalTopRow": 17,
   "parentColumnSpace": 6.9375,
   "parentId": "0",
   "parentRowSpace": 10,
@@ -272,7 +272,7 @@
     "buttonVariant": "SECONDARY"
   },
   "responsiveBehavior": "fill",
-  "rightColumn": 59,
+  "rightColumn": 51,
   "schema": {
     "__root_schema__": {
       "accessor": "__root_schema__",
@@ -335,10 +335,10 @@
           "iconAlign": "left",
           "identifier": "company_id",
           "isCustomField": false,
-          "isDisabled": false,
+          "isDisabled": true,
           "isRequired": false,
           "isSpellCheck": false,
-          "isVisible": false,
+          "isVisible": true,
           "label": "Company Id",
           "labelTextSize": "0.875rem",
           "originalIdentifier": "company_id",
@@ -382,7 +382,7 @@
           "isDisabled": false,
           "isRequired": false,
           "isSpellCheck": false,
-          "isVisible": true,
+          "isVisible": false,
           "label": "Created At",
           "labelTextSize": "0.875rem",
           "originalIdentifier": "created_at",
@@ -451,7 +451,7 @@
           "label": "Logo",
           "labelTextSize": "0.875rem",
           "originalIdentifier": "logo",
-          "position": 1
+          "position": 2
         },
         "payoneer_account": {
           "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_edit_company.sourceData, j_edit_company.formData, j_edit_company.fieldState)}}",
@@ -482,7 +482,7 @@
           "children": {},
           "dataType": "string",
           "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.signature))(j_edit_company.sourceData, j_edit_company.formData, j_edit_company.fieldState)}}",
-          "fieldType": "Text Input",
+          "fieldType": "Multiline Text Input",
           "iconAlign": "left",
           "identifier": "signature",
           "isCustomField": false,
@@ -531,7 +531,7 @@
           "isDisabled": false,
           "isRequired": false,
           "isSpellCheck": false,
-          "isVisible": true,
+          "isVisible": false,
           "label": "Updated At",
           "labelTextSize": "0.875rem",
           "originalIdentifier": "updated_at",
@@ -557,7 +557,7 @@
           "label": "Website",
           "labelTextSize": "0.875rem",
           "originalIdentifier": "website",
-          "position": 2,
+          "position": 1,
           "sourceData": "www.linktranslation.com"
         }
       },
@@ -596,7 +596,7 @@
     "placement": "START"
   },
   "title": "Company",
-  "topRow": 16,
+  "topRow": 17,
   "type": "JSON_FORM_WIDGET",
   "useSourceData": false,
   "version": 1,

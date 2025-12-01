@@ -29,6 +29,7 @@
     "customer_id",
     "customer_name",
     "customer_contact_name",
+    "contact_position",
     "customer_contact_email",
     "customer_contact_status",
     "customer_contact_industry",
@@ -48,7 +49,7 @@
     "step": 62,
     "task": 245
   },
-  "columnUpdatedAt": 1755635069850,
+  "columnUpdatedAt": 1758229729300,
   "columnWidthMap": {
     "customColumn1": 90,
     "customColumn2": 109,
@@ -169,6 +170,9 @@
     },
     {
       "key": "borderColor"
+    },
+    {
+      "key": "primaryColumns.contact_position.computedValue"
     }
   ],
   "dynamicPropertyPathList": [
@@ -234,6 +238,40 @@
   "parentRowSpace": 10,
   "primaryColumnId": "customer_contact_id",
   "primaryColumns": {
+    "contact_position": {
+      "alias": "contact_position",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = tbl_ccont.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"contact_position\"])) : contact_position })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "contact_position",
+      "index": 17,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "contact_position",
+      "notation": "standard",
+      "originalId": "contact_position",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
     "created_at": {
       "alias": "created_at",
       "allowCellWrapping": false,
@@ -296,7 +334,7 @@
       "label": "Edit",
       "labelColor": "#FFFFFF",
       "notation": "standard",
-      "onClick": "{{\n  storeValue('ccontRow', tbl_ccont.triggeredRow)\n    .then(() => get_ccont_by_id.run(() => {\n      j_ccont_upd_jsn.setSourceData(get_ccont_by_id.data[0] || appsmith.store.ccontRow);\n      showModal('j_ccont_upd_m');\n    }))\n}}\n",
+      "onClick": "{{\n  storeValue('ccontRow', tbl_ccont.triggeredRow)\n    .then(() => get_ccont_by_id.run())\n    .then(() => {\n      const db = (get_ccont_by_id.data && get_ccont_by_id.data[0]) ? get_ccont_by_id.data[0] : {};\n      const local = appsmith.store.ccontRow || {};\n      const posVal =\n        db.contact_position ??\n        local.contact_position ??\n        db.Position ??\n        local.Position ??\n        '';\n      const row = {\n        ...local,\n        ...db,\n        contact_position: posVal,\n        Position: posVal\n      };\n      j_ccont_upd_jsn.setSourceData(row);\n      showModal('j_ccont_upd_m');\n    })\n    .catch((e) => showAlert('Failed to open: ' + (e?.message || 'Unknown error'), 'error'))\n}}\n",
       "originalId": "customColumn1",
       "sticky": "",
       "textSize": "0.875rem",

@@ -1,13 +1,17 @@
-UPDATE `company`
+UPDATE company
 SET
-  company_name      = {{ CompanyUpdateHandler.payload.company_name }},
-  logo              = {{ CompanyUpdateHandler.payload.logo }},
-  website           = {{ CompanyUpdateHandler.payload.website }},
-  signature         = {{ CompanyUpdateHandler.payload.signature }},
-  address           = {{ CompanyUpdateHandler.payload.address }},
-  currency_id       = {{ CompanyUpdateHandler.payload.currency_id }},
-  tax_number        = {{ CompanyUpdateHandler.payload.tax_number }},
-  bank_account      = {{ CompanyUpdateHandler.payload.bank_account }},
-  payoneer_account  = {{ CompanyUpdateHandler.payload.payoneer_account }},
-  updated_at        = NOW()
-WHERE company_id = {{ appsmith.store.companyRow?.company_id ?? get_company.data[0]?.company_id }};
+  company_name     = {{ j_edit_company.formData.company_name     || null }},
+  logo             = {{ j_edit_company.formData.logo             || null }},
+  website          = {{ j_edit_company.formData.website          || null }},
+  signature        = {{ j_edit_company.formData.signature        || null }},
+  address          = {{ j_edit_company.formData.address          || null }},
+  currency_id      = {{ j_edit_company.formData.currency_id      || null }},
+  tax_number       = {{ j_edit_company.formData.tax_number       || null }},
+  bank_account     = {{ j_edit_company.formData.bank_account     || null }},
+  payoneer_account = {{ j_edit_company.formData.payoneer_account || null }}
+WHERE company_id = {{
+  Number(
+    (CompanyStore && CompanyStore.row && CompanyStore.row.company_id)
+    || (get_company && get_company.data && get_company.data[0] && get_company.data[0].company_id)
+  )
+}};

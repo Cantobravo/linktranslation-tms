@@ -4,7 +4,7 @@
   "borderColor": "{{appsmith.theme.colors.primaryColor}}",
   "borderRadius": "1.5rem",
   "borderWidth": "3",
-  "bottomRow": 136,
+  "bottomRow": 163,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "childStylesheet": {
     "button": {
@@ -24,6 +24,7 @@
     }
   },
   "columnOrder": [
+    "customColumn6",
     "customColumn3",
     "customColumn4",
     "customColumn5",
@@ -32,18 +33,18 @@
     "resource_status",
     "resource_full_name",
     "resource_email",
-    "resource_country",
-    "resource_phone",
-    "resource_documentation",
-    "language_pairs",
-    "teams_list"
+    "created_at",
+    "updated_at",
+    "resource_username",
+    "resource_native_language",
+    "language_pairs"
   ],
   "columnSizeMap": {
     "status": 75,
     "step": 62,
     "task": 245
   },
-  "columnUpdatedAt": 1757711032119,
+  "columnUpdatedAt": 1758645894457,
   "columnWidthMap": {
     "customColumn2": 138,
     "customColumn3": 92,
@@ -57,12 +58,13 @@
     "resource_phone": 174,
     "resource_status": 115,
     "resource_username": 190,
+    "source_language_name": 227,
     "teams_list": 585
   },
   "compactMode": "DEFAULT",
   "defaultPageSize": 0,
   "defaultSelectedRowIndex": "0",
-  "defaultSelectedRowIndices": "{{ appsmith.store._res_sel || [] }}",
+  "defaultSelectedRowIndices": "",
   "delimiter": ",",
   "derivedColumns": {
     "customColumn1": {
@@ -116,21 +118,6 @@
       "key": "primaryColumns.resource_email.computedValue"
     },
     {
-      "key": "primaryColumns.resource_country.computedValue"
-    },
-    {
-      "key": "primaryColumns.resource_phone.computedValue"
-    },
-    {
-      "key": "primaryColumns.resource_documentation.computedValue"
-    },
-    {
-      "key": "primaryColumns.language_pairs.computedValue"
-    },
-    {
-      "key": "primaryColumns.teams_list.computedValue"
-    },
-    {
       "key": "primaryColumns.customColumn2.boxShadow"
     },
     {
@@ -146,10 +133,28 @@
       "key": "primaryColumns.customColumn5.boxShadow"
     },
     {
-      "key": "defaultSelectedRowIndices"
+      "key": "totalRecordsCount"
     },
     {
-      "key": "totalRecordsCount"
+      "key": "primaryColumns.created_at.computedValue"
+    },
+    {
+      "key": "primaryColumns.updated_at.computedValue"
+    },
+    {
+      "key": "primaryColumns.resource_username.computedValue"
+    },
+    {
+      "key": "primaryColumns.resource_native_language.computedValue"
+    },
+    {
+      "key": "primaryColumns.language_pairs.computedValue"
+    },
+    {
+      "key": "primaryColumns.customColumn6.computedValue"
+    },
+    {
+      "key": "primaryColumns.customColumn6.isCellVisible"
     }
   ],
   "dynamicPropertyPathList": [
@@ -176,6 +181,9 @@
     },
     {
       "key": "onPageChange"
+    },
+    {
+      "key": "primaryColumns.customColumn6.isCellVisible"
     }
   ],
   "dynamicTriggerPathList": [
@@ -224,18 +232,52 @@
   "labelTextSize": "0.875rem",
   "leftColumn": 0,
   "multiRowSelection": true,
-  "onPageChange": "{{ get_resources_list.run(); get_res_count.run(); }}",
-  "onPageSizeChange": "{{ get_resources_list.run() }}",
-  "onRowSelected": "{{\n(() => {\n// If you don't want row clicks to accumulate selections, clear them\nif (typeof tbl_resources.clearSelection === 'function') {\ntbl_resources.clearSelection(); // preserves selectedRow\n}\nget_resource_teams.run();\n})()\n}}",
+  "onPageChange": "{{\n  toggle_show_inactive_res.isSwitchedOn\n    ? get_resources_all.run()\n    : get_resources_list.run()\n}}\n",
+  "onPageSizeChange": "{{\n  storeValue('resPageSize', Number(tbl_resources.pageSize || 50))\n    .then(() => sel_res_page_size.setSelectedOption({ label: String(tbl_resources.pageSize), value: String(tbl_resources.pageSize) }))\n    .then(() => get_res_all_cnt.run())\n    .then(() => get_res_list_cnt.run())\n    .then(() => toggle_show_inactive_res.isSwitchedOn\n      ? get_resources_all.run()\n      : get_resources_list.run()\n    )\n}}\n",
+  "onRowSelected": "{{\n(() => {\n  // keep single-click selection behavior\n  if (typeof tbl_resources.clearSelection === 'function') {\n    tbl_resources.clearSelection(); // preserves selectedRow\n  }\n\n  // persist selection for defaulting and side widgets\n  storeValue('_res_sel', [tbl_resources.selectedRow]);\n  return storeValue('resRow', tbl_resources.selectedRow)\n    .then(() => Promise.all([\n      get_resource_teams.run(),\n      get_wtm_creds.run()\n    ]));\n})()\n}}\n",
   "onSearchTextChanged": "{{get_users.run()}}",
   "onSort": "{{get_users.run()}}",
-  "originalBottomRow": 136,
-  "originalTopRow": 65,
+  "originalBottomRow": 147,
+  "originalTopRow": 72,
   "parentColumnSpace": 16.3125,
   "parentId": "59rw5mx0bq",
   "parentRowSpace": 10,
   "primaryColumnId": "resource_id",
   "primaryColumns": {
+    "created_at": {
+      "alias": "created_at",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = tbl_resources.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"created_at\"])) : created_at })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "created_at",
+      "index": 5,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": false,
+      "label": "created_at",
+      "notation": "standard",
+      "originalId": "created_at",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
     "customColumn2": {
       "alias": "Open Docs",
       "allowCellWrapping": false,
@@ -396,6 +438,39 @@
       "verticalAlignment": "CENTER",
       "width": 150
     },
+    "customColumn6": {
+      "alias": "Is Available?",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "buttonStyle": "rgb(3, 179, 101)",
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = tbl_resources.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (\n(() => {\n  const m = {};\n  (get_wt_avail.data || []).forEach(r => { m[r.resource_id] = r.is_available; });\n  return m[currentRow.resource_id] || '';\n})()\n)) : \n(() => {\n  const m = {};\n  (get_wt_avail.data || []).forEach(r => { m[r.resource_id] = r.is_available; });\n  return m[currentRow.resource_id] || '';\n})()\n })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "horizontalAlignment": "LEFT",
+      "id": "customColumn6",
+      "index": 10,
+      "isCellEditable": false,
+      "isCellVisible": "{{(() => { const tableData = tbl_resources.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => ( !!i_wt_pick.selectedOptionValue && t_wt_mode.isSwitchedOn )) :  !!i_wt_pick.selectedOptionValue && t_wt_mode.isSwitchedOn  })()}}",
+      "isDerived": true,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "Is Available?",
+      "labelColor": "#FFFFFF",
+      "notation": "standard",
+      "originalId": "customColumn6",
+      "sticky": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
     "language_pairs": {
       "alias": "language_pairs",
       "allowCellWrapping": false,
@@ -410,74 +485,6 @@
       "fontStyle": "",
       "horizontalAlignment": "LEFT",
       "id": "language_pairs",
-      "index": 7,
-      "isCellEditable": false,
-      "isCellVisible": true,
-      "isDerived": false,
-      "isDisabled": false,
-      "isDiscardVisible": true,
-      "isEditable": false,
-      "isSaveVisible": true,
-      "isVisible": true,
-      "label": "Language Pairs",
-      "notation": "standard",
-      "originalId": "language_pairs",
-      "sticky": "",
-      "textColor": "",
-      "textSize": "0.875rem",
-      "thousandSeparator": true,
-      "validation": {},
-      "verticalAlignment": "CENTER",
-      "width": 150
-    },
-    "resource_country": {
-      "alias": "resource_country",
-      "allowCellWrapping": false,
-      "allowSameOptionsInNewRow": true,
-      "cellBackground": "",
-      "columnType": "text",
-      "computedValue": "{{(() => { const tableData = tbl_resources.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"resource_country\"])) : resource_country })()}}",
-      "currencyCode": "USD",
-      "decimals": 0,
-      "enableFilter": true,
-      "enableSort": true,
-      "fontStyle": "",
-      "horizontalAlignment": "LEFT",
-      "id": "resource_country",
-      "index": 12,
-      "isCellEditable": false,
-      "isCellVisible": true,
-      "isDerived": false,
-      "isDisabled": false,
-      "isDiscardVisible": true,
-      "isEditable": false,
-      "isSaveVisible": true,
-      "isVisible": false,
-      "label": "resource_country",
-      "notation": "standard",
-      "originalId": "resource_country",
-      "sticky": "",
-      "textColor": "",
-      "textSize": "0.875rem",
-      "thousandSeparator": true,
-      "validation": {},
-      "verticalAlignment": "CENTER",
-      "width": 150
-    },
-    "resource_documentation": {
-      "alias": "resource_documentation",
-      "allowCellWrapping": false,
-      "allowSameOptionsInNewRow": true,
-      "cellBackground": "",
-      "columnType": "text",
-      "computedValue": "{{(() => { const tableData = tbl_resources.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"resource_documentation\"])) : resource_documentation })()}}",
-      "currencyCode": "USD",
-      "decimals": 0,
-      "enableFilter": true,
-      "enableSort": true,
-      "fontStyle": "",
-      "horizontalAlignment": "LEFT",
-      "id": "resource_documentation",
       "index": 6,
       "isCellEditable": false,
       "isCellVisible": true,
@@ -486,10 +493,10 @@
       "isDiscardVisible": true,
       "isEditable": false,
       "isSaveVisible": true,
-      "isVisible": false,
-      "label": "resource_documentation",
+      "isVisible": true,
+      "label": "language_pairs",
       "notation": "standard",
-      "originalId": "resource_documentation",
+      "originalId": "language_pairs",
       "sticky": "",
       "textColor": "",
       "textSize": "0.875rem",
@@ -600,20 +607,20 @@
       "verticalAlignment": "CENTER",
       "width": 150
     },
-    "resource_phone": {
-      "alias": "resource_phone",
+    "resource_native_language": {
+      "alias": "resource_native_language",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
       "cellBackground": "",
       "columnType": "text",
-      "computedValue": "{{(() => { const tableData = tbl_resources.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"resource_phone\"])) : resource_phone })()}}",
+      "computedValue": "{{(() => { const tableData = tbl_resources.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"resource_native_language\"])) : resource_native_language })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
       "enableSort": true,
       "fontStyle": "",
       "horizontalAlignment": "LEFT",
-      "id": "resource_phone",
+      "id": "resource_native_language",
       "index": 5,
       "isCellEditable": false,
       "isCellVisible": true,
@@ -622,10 +629,10 @@
       "isDiscardVisible": true,
       "isEditable": false,
       "isSaveVisible": true,
-      "isVisible": false,
-      "label": "resource_phone",
+      "isVisible": true,
+      "label": "Native",
       "notation": "standard",
-      "originalId": "resource_phone",
+      "originalId": "resource_native_language",
       "sticky": "",
       "textColor": "",
       "textSize": "0.875rem",
@@ -668,21 +675,21 @@
       "verticalAlignment": "CENTER",
       "width": 150
     },
-    "teams_list": {
-      "alias": "teams_list",
+    "resource_username": {
+      "alias": "resource_username",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
       "cellBackground": "",
       "columnType": "text",
-      "computedValue": "{{(() => { const tableData = tbl_resources.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"teams_list\"])) : teams_list })()}}",
+      "computedValue": "{{(() => { const tableData = tbl_resources.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"resource_username\"])) : resource_username })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
       "enableSort": true,
       "fontStyle": "",
       "horizontalAlignment": "LEFT",
-      "id": "teams_list",
-      "index": 8,
+      "id": "resource_username",
+      "index": 2,
       "isCellEditable": false,
       "isCellVisible": true,
       "isDerived": false,
@@ -691,9 +698,43 @@
       "isEditable": false,
       "isSaveVisible": true,
       "isVisible": false,
-      "label": "teams_list",
+      "label": "resource_username",
       "notation": "standard",
-      "originalId": "teams_list",
+      "originalId": "resource_username",
+      "sticky": "",
+      "textColor": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "updated_at": {
+      "alias": "updated_at",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
+      "columnType": "text",
+      "computedValue": "{{(() => { const tableData = tbl_resources.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"updated_at\"])) : updated_at })()}}",
+      "currencyCode": "USD",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "fontStyle": "",
+      "horizontalAlignment": "LEFT",
+      "id": "updated_at",
+      "index": 6,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": false,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": false,
+      "label": "updated_at",
+      "notation": "standard",
+      "originalId": "updated_at",
       "sticky": "",
       "textColor": "",
       "textSize": "0.875rem",
@@ -707,14 +748,14 @@
   "rightColumn": 64,
   "searchKey": "",
   "serverSidePaginationEnabled": true,
-  "tableData": "{{ toggle_show_inactive_res.isSwitchedOn\n     ? get_resources_all.data\n     : get_resources_list.data }}\n\n",
+  "tableData": "{{\n  (\n    (toggle_show_inactive_res.isSwitchedOn\n      ? get_resources_all.data\n      : get_resources_list.data) || []\n  )\n\n  // D) Team filter (Show Members / Show Non-Members)\n  .filter(row => {\n    const teamId = i_wt_pick.selectedOptionValue;\n    if (!teamId) return true; // no team chosen -> no team filtering\n\n    const mode = appsmith.store.wtMode || (t_wt_mode.isSwitchedOn ? 'members' : 'nonmembers');\n    const ids = (get_wt_member_ids.data || []).map(x => x.resource_id);\n    const idSet = new Set(ids);\n    const inTeam = idSet.has(row.resource_id);\n\n    return mode === 'members' ? inTeam : !inTeam;\n  })\n\n  // A) Status filter (normalized)\n  .filter(row => {\n    const picks = appsmith.store.resStatus || [];            // normalized lower+trim\n    const hasEmpty = !!appsmith.store.resStatusHasEmpty;\n    const status = (row.resource_status || '').toLowerCase().trim();\n\n    if (picks.length === 0 && !hasEmpty) return true;\n    if (hasEmpty && status === '') return true;\n    if (picks.length > 0 && picks.includes(status)) return true;\n    return false;\n  })\n\n  // B) Language-pairs filter (i_lang_search) – ONLY language_pairs\n  .filter(row => {\n    const q = (appsmith.store.langQ || '').toLowerCase();\n    if (!q) return true;\n    return (row.language_pairs || '').toLowerCase().includes(q);\n  })\n\n  // C) General text filter (i_res_q)\n  .filter(row => {\n    const q = (appsmith.store.resQ || '').toLowerCase();\n    if (!q) return true;\n    const hay = [\n      row.resource_full_name,\n      row.resource_username,\n      row.resource_email,\n      row.resource_status,\n      row.resource_native_language,\n      row.language_pairs\n    ].map(x => (x || '').toLowerCase()).join(' ');\n    return hay.includes(q);\n  })\n}}\n",
   "textSize": "0.875rem",
-  "topRow": 65,
-  "totalRecordsCount": "{{ get_res_count.data?.[0]?.total_rows || 0 }}",
+  "topRow": 88,
+  "totalRecordsCount": "{{\n  toggle_show_inactive_res.isSwitchedOn\n    ? (get_res_all_cnt.data?.[0]?.total || 0)\n    : (get_res_list_cnt.data?.[0]?.total || 0)\n}}",
   "type": "TABLE_WIDGET_V2",
   "variant": "VARIANT2",
   "version": 3,
   "verticalAlignment": "CENTER",
-  "widgetId": "uji69u6swx",
+  "widgetId": "n5kkprsnxh",
   "widgetName": "tbl_resources"
 }

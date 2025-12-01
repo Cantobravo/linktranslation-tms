@@ -1,0 +1,47 @@
+SELECT
+  r.resource_id,
+  r.resource_full_name,
+  r.resource_username,
+  r.resource_email,
+  r.resource_status,
+  r.resource_native_language,
+
+  -- pick defaults from resources.* if present, else fallback to 1st active pair
+  COALESCE(r.source_language_id, rp.first_src_id)  AS source_language_id_resolved,
+  COALESCE(r.target_language_id, rp.first_tgt_id)  AS target_language_id_resolved,
+
+  ls.language_name AS source_language_name,
+  lt.language_name AS target_language_name,
+
+  r.created_at,
+  r.updated_at
+FROM resources r
+LEFT JOIN (
+  SELECT
+    resource_id,
+    MIN(source_language_id) AS first_src_id,
+    MIN(target_language_id) AS first_tgt_id
+  FROM resource_language_pairs
+  WHERE COALESCE(is_active,1) = 1
+  GROUP BY resource_id
+) rp ON rp.resource_id = r.resource_id
+LEFT JOIN languages ls
+  ON ls.language_id = COALESCE(r.source_language_id, rp.first_src_id)
+LEFT JOIN languages lt
+  ON lt.language_id = COALESCE(r.target_language_id, rp.first_tgt_id)
+WHERE COALESCE(r.resource_is_active, 1) = 1
+  AND (
+    COALESCE({{ i_res_q.text && i_res_q.text.trim() }}, '') = ''
+    OR LOWER(
+        CONCAT_WS(' ',
+          COALESCE(r.resource_full_name,''),
+          COALESCE(r.resource_username,''),
+          COALESCE(r.resource_email,''),
+          COALESCE(r.resource_status,''),
+          COALESCE(r.resource_native_language,''),
+          COALESCE(ls.language_name,''),
+          COALESCE(lt.language_name,'')
+        )
+      ) LIKE LOWER(CONCAT('%', {{ i_res_q.text && i_res_q.text.trim() || '' }}, '%'))
+  )
+ORDER BY r.resource_full_name;

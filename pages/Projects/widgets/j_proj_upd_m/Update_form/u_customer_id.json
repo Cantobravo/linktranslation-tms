@@ -25,10 +25,10 @@
       "key": "sourceData"
     },
     {
-      "key": "onOptionChange"
+      "key": "isDisabled"
     },
     {
-      "key": "isDisabled"
+      "key": "onOptionChange"
     }
   ],
   "dynamicTriggerPathList": [

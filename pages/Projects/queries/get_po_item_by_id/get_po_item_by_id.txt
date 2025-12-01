@@ -1,0 +1,27 @@
+SELECT
+  rpo.purchase_order_id,
+  rpo.project_id,
+  rpo.resource_id,
+  rpo.service_id,
+  rpo.unit_id,
+  rpo.source_language_id,
+  rpo.target_language_id,
+  rpo.volume,
+  rpo.rate,
+  rpo.total,
+  rpo.note,
+  s.service_name            AS service,
+  u.unit_name               AS unit,
+  sl.language_name          AS source_language,
+  tl.language_name          AS target_language,
+  res.resource_full_name    AS resource_full_name,
+  res.resource_email        AS resource_email
+FROM resource_purchase_orders rpo
+JOIN services  s   ON rpo.service_id         = s.service_id
+JOIN units     u   ON rpo.unit_id            = u.unit_id
+JOIN languages sl  ON rpo.source_language_id = sl.language_id
+JOIN languages tl  ON rpo.target_language_id = tl.language_id
+LEFT JOIN resources res ON rpo.resource_id   = res.resource_id
+WHERE rpo.purchase_order_id = {{
+  (update_purchase_order_table.triggeredRow || update_purchase_order_table.selectedRow).purchase_order_id
+}};

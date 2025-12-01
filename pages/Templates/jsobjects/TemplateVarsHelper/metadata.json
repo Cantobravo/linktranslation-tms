@@ -9,7 +9,7 @@
     "variables": [
       {
         "name": "commonVars",
-        "value": "[\"project_name\", \"project_total\", \"project_currency\", \"project_start_date\", \"project_end_date\", \"service_name\", \"unit_name\", \"volume\", \"rate\", \"total\", \"purchase_order_id\", \"purchase_order_date\", \"due_date\", \"invoice_number\", \"invoice_date\", \"invoice_total\", \"invoice_currency\", \"customer_name\", \"customer_email\", \"resource_name\", \"resource_email\", \"work_team_name\", \"resource_alias_email\", \"system_code\", \"daily_capacity\", \"po_status\", \"rates\", \"company_name\", \"company_logo\", \"company_website\", \"company_address\", \"company_signature\", \"company_tax_number\", \"company_bank_account\", \"company_payoneer_account\"]"
+        "value": "[\"project_name\", \"project_total\", \"project_currency\", \"project_start_date\", \"project_end_date\", \"service_name\", \"unit_name\", \"volume\", \"rate\", \"total\", \"purchase_order_id\", \"purchase_order_date\", \"due_date\", \"invoice_number\", \"invoice_date\", \"invoice_total\", \"invoice_currency\", \"customer_name\", \"customer_email\", \"resource_name\", \"resource_email\", \"work_team_name\", \"service_id\", \"source_language_id\", \"target_language_id\", \"certification_names\", \"webapp_name\", \"alias_email\", \"password_text\", \"daily_capacity\", \"po_status\", \"rates\", \"company_name\", \"company_logo\", \"company_website\", \"company_address\", \"company_signature\", \"company_tax_number\", \"company_bank_account\", \"company_payoneer_account\"]"
       }
     ]
   }

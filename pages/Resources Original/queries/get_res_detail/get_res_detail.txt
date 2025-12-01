@@ -1,0 +1,17 @@
+SELECT
+  resource_id,
+  resource_first_name,
+  resource_last_name,
+  resource_full_name,
+  resource_email,
+  resource_country,
+  resource_status,
+  resource_phone,
+  resource_documentation
+FROM resources
+WHERE resource_id = {{
+  appsmith.store.resRow?.resource_id
+  || tbl_resources.selectedRow?.resource_id
+  || 0
+}}
+LIMIT 1;

@@ -1,0 +1,21 @@
+INSERT INTO customer_contacts (
+  customer_id,
+  customer_contact_name,
+  contact_position,
+  customer_contact_email,
+  customer_contact_first_contact,
+  customer_contact_last_contact,
+  customer_contact_next_contact,
+  customer_contact_status,
+  customer_contact_notes
+) VALUES (
+  {{ i_ct_customer_id.selectedOptionValue || null }},
+  {{ i_ct_full_name.text }},
+  {{ i_ct_role.text || null }},
+  {{ i_ct_email.text || null }},
+  {{ i_ct_initial_date.selectedDate ? moment(i_ct_initial_date.selectedDate).format('YYYY-MM-DD') : null }},
+  {{ i_ct_last_date.selectedDate ? moment(i_ct_last_date.selectedDate).format('YYYY-MM-DD') : null }},
+  {{ i_ct_next_date.selectedDate ? moment(i_ct_next_date.selectedDate).format('YYYY-MM-DD') : null }},
+  {{ i_ct_active.isSwitchedOn ? 'Active' : 'Inactive' }},
+  {{ i_ct_notes.text || null }}
+);

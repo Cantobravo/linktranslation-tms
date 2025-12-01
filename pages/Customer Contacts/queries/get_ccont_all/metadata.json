@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT\n  cc.customer_contact_id,\n  cc.customer_id,\n  c.customer_name,\n  cc.customer_contact_name,\n  cc.customer_contact_email,\n  cc.customer_contact_status,\n  cc.customer_contact_industry,\n  cc.customer_contact_website,\n  cc.customer_contact_linkedin,\n  cc.customer_contact_first_contact,\n  cc.customer_contact_last_contact,\n  cc.customer_contact_next_contact,\n  cc.customer_contact_contact_method,\n  cc.customer_contact_test,\n  cc.customer_contact_notes,\n  cc.created_at,\n  cc.updated_at\nFROM customer_contacts cc\nJOIN customers c ON c.customer_id = cc.customer_id\nORDER BY cc.customer_contact_id DESC;\n",
+      "body": "SELECT\n  cc.customer_contact_id,\n  cc.customer_contact_name,\n  cc.contact_position,\n  cc.customer_contact_email,\n  cc.customer_id,\n  c.customer_name,\n  cc.customer_contact_status,\n  cc.customer_contact_industry,\n  cc.customer_contact_website,\n  cc.customer_contact_linkedin,\n  cc.customer_contact_first_contact,\n  cc.customer_contact_last_contact,\n  cc.customer_contact_next_contact,\n  cc.customer_contact_contact_method,\n  cc.customer_contact_test,\n  cc.customer_contact_notes,\n  cc.created_at,\n  cc.updated_at\nFROM customer_contacts cc\nLEFT JOIN customers c ON c.customer_id = cc.customer_id\nORDER BY cc.updated_at DESC;\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

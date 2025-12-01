@@ -51,7 +51,7 @@
   "placeholderText": "Select option",
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 64,
+  "rightColumn": 62,
   "serverSideFiltering": false,
   "sourceData": "{{ get_units_dd.data }}",
   "topRow": 25,

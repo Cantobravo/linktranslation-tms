@@ -5,7 +5,7 @@
   "borderColor": "{{appsmith.theme.colors.primaryColor}}",
   "borderRadius": "1.5rem",
   "borderWidth": "1",
-  "bottomRow": 59,
+  "bottomRow": 66,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "childStylesheet": {
     "ARRAY": {
@@ -126,22 +126,10 @@
       "key": "schema.__root_schema__.children.currency_id.borderRadius"
     },
     {
-      "key": "schema.__root_schema__.children.customer_id.defaultValue"
-    },
-    {
       "key": "schema.__root_schema__.children.customer_id.accentColor"
     },
     {
       "key": "schema.__root_schema__.children.customer_id.borderRadius"
-    },
-    {
-      "key": "schema.__root_schema__.children.resource_id.defaultValue"
-    },
-    {
-      "key": "schema.__root_schema__.children.resource_id.accentColor"
-    },
-    {
-      "key": "schema.__root_schema__.children.resource_id.borderRadius"
     },
     {
       "key": "schema.__root_schema__.children.is_active.defaultValue"
@@ -162,25 +150,37 @@
       "key": "schema.__root_schema__.children.currency_id.options"
     },
     {
-      "key": "schema.__root_schema__.children.customer_id.options"
-    },
-    {
       "key": "schema.__root_schema__.children.customer_id.isVisible"
     },
     {
       "key": "schema.__root_schema__.children.customer_id.isRequired"
     },
     {
-      "key": "schema.__root_schema__.children.resource_id.options"
-    },
-    {
-      "key": "schema.__root_schema__.children.resource_id.isVisible"
-    },
-    {
-      "key": "schema.__root_schema__.children.resource_id.isRequired"
-    },
-    {
       "key": "borderColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.pl_customer_account.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.pl_customer_account.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.pl_customer_account.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.pl_customer_account.options"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_id.options"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_id.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_id.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.resource_id.borderRadius"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
@@ -198,18 +198,18 @@
       "key": "schema.__root_schema__.children.customer_id.isRequired"
     },
     {
-      "key": "schema.__root_schema__.children.resource_id.isVisible"
-    },
-    {
-      "key": "schema.__root_schema__.children.resource_id.isRequired"
-    },
-    {
       "key": "onSubmit"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_id.onOptionChange"
     }
   ],
   "dynamicTriggerPathList": [
     {
       "key": "onSubmit"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_id.onOptionChange"
     }
   ],
   "fieldLimitExceeded": false,
@@ -227,8 +227,8 @@
   "mobileRightColumn": 26,
   "mobileTopRow": 2,
   "needsErrorInfo": false,
-  "onSubmit": "{{\n  ins_price_list.run(\n    () => {\n      get_price_lists.run();\n      closeModal('j_pl_ins_modal');\n      resetWidget('j_pl_ins_form', true);\n      showAlert('Price list created', 'success');\n    },\n    (e) => showAlert('Insert failed: ' + (e?.message || e), 'error')\n  )\n}}\n\n",
-  "originalBottomRow": 59,
+  "onSubmit": "{{\n  ins_price_list.run(\n    () => {\n      get_price_lists.run(\n        () => {\n          closeModal('j_pl_ins_modal');\n          resetWidget('j_pl_ins_form', true);\n          showAlert('Price list created', 'success');\n        },\n        (e) => showAlert('Refresh failed: ' + (e?.message || 'Unknown error'), 'error')\n      );\n    },\n    (e) => showAlert('Insert failed: ' + (e?.message || 'Unknown error'), 'error')\n  )\n}}\n",
+  "originalBottomRow": 73,
   "originalTopRow": 4,
   "parentColumnSpace": 6.9375,
   "parentId": "tgymo32btl",
@@ -242,7 +242,7 @@
     "buttonVariant": "SECONDARY"
   },
   "responsiveBehavior": "fill",
-  "rightColumn": 56,
+  "rightColumn": 58,
   "schema": {
     "__root_schema__": {
       "accessor": "__root_schema__",
@@ -270,7 +270,7 @@
           "labelTextSize": "0.875rem",
           "options": "{{ get_curr_dd.data }}",
           "originalIdentifier": "currency_id",
-          "position": 2,
+          "position": 4,
           "serverSideFiltering": false,
           "sourceData": ""
         },
@@ -280,22 +280,23 @@
           "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_pl_ins_form.sourceData, j_pl_ins_form.formData, j_pl_ins_form.fieldState)}}",
           "boxShadow": "none",
           "children": {},
-          "dataType": "string",
-          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.customer_id))(j_pl_ins_form.sourceData, j_pl_ins_form.formData, j_pl_ins_form.fieldState)}}",
+          "dataType": "number",
+          "defaultValue": "",
           "fieldType": "Select",
           "identifier": "customer_id",
           "isCustomField": false,
           "isDisabled": false,
           "isFilterable": false,
-          "isRequired": "{{((sourceData, formData, fieldState) => ( j_pl_ins_form.formData.price_list_type === 'CUSTOMER' ))(j_pl_ins_form.sourceData, j_pl_ins_form.formData, j_pl_ins_form.fieldState)}}",
+          "isRequired": false,
           "isVisible": true,
           "label": "Customer",
           "labelTextSize": "0.875rem",
-          "options": "{{ get_customers_dd.data }}\n",
+          "onOptionChange": "{{ get_cacc_by_cust_pl.run() }}\n",
+          "options": "{{get_customers_dd.data}}",
           "originalIdentifier": "customer_id",
-          "position": 3,
+          "position": 2,
           "serverSideFiltering": false,
-          "sourceData": ""
+          "sourceData": 2
         },
         "is_active": {
           "accentColor": "#93c5fd",
@@ -316,6 +317,28 @@
           "originalIdentifier": "is_active",
           "position": 5,
           "sourceData": true
+        },
+        "pl_customer_account": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_pl_ins_form.sourceData, j_pl_ins_form.formData, j_pl_ins_form.fieldState)}}",
+          "accessor": "pl_customer_account",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_pl_ins_form.sourceData, j_pl_ins_form.formData, j_pl_ins_form.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "null",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.pl_customer_account))(j_pl_ins_form.sourceData, j_pl_ins_form.formData, j_pl_ins_form.fieldState)}}",
+          "fieldType": "Select",
+          "identifier": "pl_customer_account",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isFilterable": false,
+          "isRequired": false,
+          "isVisible": true,
+          "label": "Customer Account",
+          "labelTextSize": "0.875rem",
+          "options": "{{ get_cacc_by_cust_pl.data }}\n",
+          "originalIdentifier": "pl_customer_account",
+          "position": 3,
+          "serverSideFiltering": false
         },
         "price_list_name": {
           "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_pl_ins_form.sourceData, j_pl_ins_form.formData, j_pl_ins_form.fieldState)}}",
@@ -356,7 +379,7 @@
           "isVisible": true,
           "label": "Price List Type",
           "labelTextSize": "0.875rem",
-          "options": "{{[\n  { label: 'Standard (Sell)',  value: 'STANDARD'  },\n  { label: 'Customer (Sell)',  value: 'CUSTOMER'  },\n  { label: 'Resource (Cost)',  value: 'RESOURCE'  },\n  { label: 'Benchmark (Cost)', value: 'BENCHMARK' }\n]\n}}",
+          "options": "{{[\n  { label: 'Standard (Sell)', value: 'STANDARD' },\n  { label: 'Customer (Sell)', value: 'CUSTOMER' },\n  { label: 'Resource (Cost)', value: 'RESOURCE' }\n]}}\n",
           "originalIdentifier": "price_list_type",
           "position": 0,
           "serverSideFiltering": false,
@@ -368,22 +391,20 @@
           "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_pl_ins_form.sourceData, j_pl_ins_form.formData, j_pl_ins_form.fieldState)}}",
           "boxShadow": "none",
           "children": {},
-          "dataType": "string",
+          "dataType": "null",
           "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.resource_id))(j_pl_ins_form.sourceData, j_pl_ins_form.formData, j_pl_ins_form.fieldState)}}",
-          "fieldType": "Select",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
           "identifier": "resource_id",
           "isCustomField": false,
           "isDisabled": false,
-          "isFilterable": false,
-          "isRequired": "{{((sourceData, formData, fieldState) => ( j_pl_ins_form.formData.price_list_type === 'RESOURCE' ))(j_pl_ins_form.sourceData, j_pl_ins_form.formData, j_pl_ins_form.fieldState)}}",
-          "isVisible": "{{((sourceData, formData, fieldState) => ( j_pl_ins_form.formData.price_list_type === 'RESOURCE' ))(j_pl_ins_form.sourceData, j_pl_ins_form.formData, j_pl_ins_form.fieldState)}}",
-          "label": "Resource",
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": false,
+          "label": "Resource Id",
           "labelTextSize": "0.875rem",
-          "options": "{{ get_resources_dd.data }}\n",
           "originalIdentifier": "resource_id",
-          "position": 4,
-          "serverSideFiltering": false,
-          "sourceData": ""
+          "position": 6
         }
       },
       "dataType": "object",
@@ -410,7 +431,7 @@
   },
   "scrollContents": true,
   "showReset": false,
-  "sourceData": "{\n  \"price_list_type\": \"STANDARD\",\n  \"price_list_name\": \"\",\n  \"currency_id\": \"\",\n  \"customer_id\": \"\",\n  \"resource_id\": \"\",\n  \"is_active\": true\n}\n",
+  "sourceData": "{\n  \"price_list_type\": \"STANDARD\",\n  \"price_list_name\": \"\",\n  \"currency_id\": null,\n  \"customer_id\": null,\n  \"pl_customer_account\": null,\n  \"resource_id\": null,\n  \"is_active\": true\n}\n\n",
   "submitButtonLabel": "Submit",
   "submitButtonStyles": {
     "borderRadius": "0.375rem",

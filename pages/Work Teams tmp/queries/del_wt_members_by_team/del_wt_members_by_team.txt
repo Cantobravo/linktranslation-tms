@@ -1,0 +1,2 @@
+DELETE FROM work_team_members
+WHERE work_team_id = {{ appsmith.store.wtRow.work_team_id }};

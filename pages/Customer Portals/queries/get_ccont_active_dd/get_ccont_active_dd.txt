@@ -3,5 +3,4 @@ SELECT
   cc.customer_contact_name AS label,
   cc.customer_id
 FROM customer_contacts cc
-WHERE COALESCE(cc.customer_contact_status,'Active') = 'Active'
 ORDER BY cc.customer_contact_name;

@@ -1,0 +1,3 @@
+SELECT COUNT(*) AS cnt
+FROM customers
+WHERE LOWER(TRIM(customer_name)) = LOWER(TRIM({{ j_customer_insert_json.formData.customer_name }}));

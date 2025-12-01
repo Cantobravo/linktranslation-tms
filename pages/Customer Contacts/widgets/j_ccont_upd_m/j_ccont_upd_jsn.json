@@ -5,7 +5,7 @@
   "borderColor": "{{appsmith.theme.colors.primaryColor}}",
   "borderRadius": "1.5rem",
   "borderWidth": "1",
-  "bottomRow": 118,
+  "bottomRow": 132,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "childStylesheet": {
     "ARRAY": {
@@ -265,6 +265,33 @@
     },
     {
       "key": "borderColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_name.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_name.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_name.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.contact_position.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.contact_position.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.contact_position.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.Position.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.Position.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.Position.borderRadius"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
@@ -299,8 +326,8 @@
   "mobileRightColumn": 39,
   "mobileTopRow": 9,
   "needsErrorInfo": false,
-  "onSubmit": "{{\n  SubmitShield.runOnce(async () => {\n    await upd_ccont.run();\n    if (toggle_show_inactive_ccont.isSwitchedOn) {\n      await get_ccont_all.run();\n    } else {\n      await get_ccont_active.run();\n    }\n    closeModal('j_ccont_upd_m');\n    showAlert('Contact updated','success');\n  })\n}}\n",
-  "originalBottomRow": 118,
+  "onSubmit": "{{\n  upd_ccont.run(\n    () => {\n      get_ccont_active.run();\n      get_ccont_all.run();\n      resetWidget('j_ccont_upd_jsn', true);\n      closeModal('j_ccont_upd_m');\n      showAlert('Contact updated', 'success');\n    },\n    (e) => showAlert('Update failed: ' + (e?.message || 'Unknown error'), 'error')\n  )\n}}\n",
+  "originalBottomRow": 132,
   "originalTopRow": 0,
   "parentColumnSpace": 13.375,
   "parentId": "enskf9zbqx",
@@ -323,6 +350,50 @@
       "cellBorderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_ccont_upd_jsn.sourceData, j_ccont_upd_jsn.formData, j_ccont_upd_jsn.fieldState)}}",
       "cellBoxShadow": "none",
       "children": {
+        "Position": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_ccont_upd_jsn.sourceData, j_ccont_upd_jsn.formData, j_ccont_upd_jsn.fieldState)}}",
+          "accessor": "Position",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_ccont_upd_jsn.sourceData, j_ccont_upd_jsn.formData, j_ccont_upd_jsn.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.Position))(j_ccont_upd_jsn.sourceData, j_ccont_upd_jsn.formData, j_ccont_upd_jsn.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "Position",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": true,
+          "label": "Position",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "Position",
+          "position": 18,
+          "sourceData": ""
+        },
+        "contact_position": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_ccont_upd_jsn.sourceData, j_ccont_upd_jsn.formData, j_ccont_upd_jsn.fieldState)}}",
+          "accessor": "contact_position",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_ccont_upd_jsn.sourceData, j_ccont_upd_jsn.formData, j_ccont_upd_jsn.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.contact_position))(j_ccont_upd_jsn.sourceData, j_ccont_upd_jsn.formData, j_ccont_upd_jsn.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "contact_position",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": true,
+          "label": "Contact Position",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "contact_position",
+          "position": 18,
+          "sourceData": "eee"
+        },
         "created_at": {
           "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_ccont_upd_jsn.sourceData, j_ccont_upd_jsn.formData, j_ccont_upd_jsn.fieldState)}}",
           "accessor": "created_at",
@@ -447,18 +518,19 @@
           "children": {},
           "dataType": "string",
           "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.customer_contact_industry))(j_ccont_upd_jsn.sourceData, j_ccont_upd_jsn.formData, j_ccont_upd_jsn.fieldState)}}",
-          "fieldType": "Text Input",
-          "iconAlign": "left",
+          "fieldType": "Select",
           "identifier": "customer_contact_industry",
           "isCustomField": false,
           "isDisabled": false,
+          "isFilterable": false,
           "isRequired": false,
-          "isSpellCheck": false,
           "isVisible": true,
           "label": "Industry",
           "labelTextSize": "0.875rem",
+          "options": "[\n  {\n    \"label\": \"LSP\",\n    \"value\": \"LSP\"\n  },\n  {\n    \"label\": \"Direct Client\",\n    \"value\": \"Direct Client\"\n  },\n  {\n    \"label\": \"AI\",\n    \"value\": \"AI\"\n  }\n]",
           "originalIdentifier": "customer_contact_industry",
           "position": 4,
+          "serverSideFiltering": false,
           "sourceData": ""
         },
         "customer_contact_last_contact": {
@@ -596,7 +668,7 @@
           "isVisible": true,
           "label": "Status",
           "labelTextSize": "0.875rem",
-          "options": "{{ [\n  { label: 'Active',   value: 'Active' },\n  { label: 'Prospect', value: 'Prospect' },\n  { label: 'Inactive', value: 'Inactive' }\n] }}",
+          "options": "{{[\n{ label: '1. Lead Identified',   value: '1. Lead Identified' },\n{ label: '2. First Contact Sent',   value: '2. First Contact Sent' },\n{ label: '3. Response Received',   value: '3. Response Received' },\n{ label: '4. Vendor Onboarding',   value: '4. Vendor Onboarding' },\n{ label: '5. Sample Test Requested,',   value: '5. Sample Test Requested,' },\n{ label: '6. Awaiting Approval',   value: '6. Awaiting Approval' },\n{ label: '7. Approved Vendor',   value: '7. Approved Vendor' },\n{ label: '8. Quote Requested',   value: '8. Quote Requested' },\n{ label: '9. First Project Request',   value: '9. First Project Request' },\n{ label: '10. Active Client',   value: '10. Active Client' },\n{ label: '11. Dormant Client',   value: '11. Dormant Client' },\n{ label: '12. Lost Opportunity',   value: '12. Lost Opportunity' },\n{ label: '13. Other',   value: '13. Other' },\n{ label: '14. Inactive',   value: '14. Inactive' },\n]}}",
           "originalIdentifier": "customer_contact_status",
           "position": 3,
           "serverSideFiltering": false,
@@ -665,6 +737,28 @@
           "originalIdentifier": "customer_id",
           "position": 0,
           "serverSideFiltering": false
+        },
+        "customer_name": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_ccont_upd_jsn.sourceData, j_ccont_upd_jsn.formData, j_ccont_upd_jsn.fieldState)}}",
+          "accessor": "customer_name",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_ccont_upd_jsn.sourceData, j_ccont_upd_jsn.formData, j_ccont_upd_jsn.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.customer_name))(j_ccont_upd_jsn.sourceData, j_ccont_upd_jsn.formData, j_ccont_upd_jsn.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "customer_name",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": false,
+          "label": "Customer Name",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "customer_name",
+          "position": 17,
+          "sourceData": "Centific"
         },
         "updated_at": {
           "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_ccont_upd_jsn.sourceData, j_ccont_upd_jsn.formData, j_ccont_upd_jsn.fieldState)}}",

@@ -29,7 +29,7 @@
     ],
     "name": "get_wtm_progress_by_member",
     "pageId": "Work Teams",
-    "runBehaviour": "AUTOMATIC",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

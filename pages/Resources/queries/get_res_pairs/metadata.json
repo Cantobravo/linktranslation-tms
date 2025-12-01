@@ -29,7 +29,7 @@
     ],
     "name": "get_res_pairs",
     "pageId": "Resources",
-    "runBehaviour": "MANUAL",
+    "runBehaviour": "ON_PAGE_LOAD",
     "userSetOnLoad": true
   }
 }

@@ -62,6 +62,7 @@
     "customColumn1": 100,
     "customColumn2": 106,
     "item_is_active": 106,
+    "price_list_name": 294,
     "rate": 112
   },
   "customIsLoading": false,

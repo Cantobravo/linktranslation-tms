@@ -9,7 +9,10 @@ SELECT
   wt.currency_id,
   wt.work_team_status,
   wt.certification_names,
-  wt.work_team_name
+  wt.work_team_name,
+  wt.webapp_name,
+  wt.translator_rate,
+  wt.customer_rate
 FROM work_teams wt
 WHERE wt.work_team_id = {{ appsmith.store.wtRow?.work_team_id || tbl_work_teams.triggeredRow?.work_team_id || 0 }}
 LIMIT 1;

@@ -1,0 +1,20 @@
+SELECT
+  customer_id,
+  customer_name,
+  customer_type,
+  customer_address,
+  customer_country,
+  customer_phone,
+  customer_industry,
+  customer_note,
+  customer_invoice_procedure,
+  customer_payment_term,
+  customer_tax_vat_number,
+  currency_id,
+  customer_receivable_bank_name,
+  customer_linkedIn,
+  customer_bank_fee,
+  customer_status,
+  customer_documentation
+FROM customers
+WHERE customer_id = {{ appsmith.store.upd_cust_id || -1 }};

@@ -1,0 +1,6 @@
+SELECT
+  COALESCE(c.customer_status,'Unknown') AS customer_status,
+  COUNT(*) AS customer_count
+FROM customers c
+GROUP BY COALESCE(c.customer_status,'Unknown')
+ORDER BY customer_status;

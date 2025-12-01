@@ -29,7 +29,7 @@
     ],
     "name": "get_resource_teams",
     "pageId": "Resources",
-    "runBehaviour": "AUTOMATIC",
-    "userSetOnLoad": false
+    "runBehaviour": "ON_PAGE_LOAD",
+    "userSetOnLoad": true
   }
 }

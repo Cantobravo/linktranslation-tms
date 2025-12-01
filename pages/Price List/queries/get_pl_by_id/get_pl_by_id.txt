@@ -1,10 +1,15 @@
 SELECT
-  pl.price_list_id,
-  pl.price_list_type,
-  pl.price_list_name,
-  pl.currency_id,
-  pl.customer_id,
-  pl.resource_id,
-  pl.is_active
-FROM price_lists pl
-WHERE pl.price_list_id = {{ appsmith.store.pl_id || tbl_pl.triggeredRow?.price_list_id || null }};
+  price_list_id,
+  price_list_type,
+  price_list_name,
+  currency_id,
+  customer_id,
+  pl_customer_account,
+  resource_id,
+  is_active
+FROM price_lists
+WHERE price_list_id = {{
+  (tbl_pl.triggeredRow && tbl_pl.triggeredRow.price_list_id)
+  || (appsmith.store.plRow && appsmith.store.plRow.price_list_id)
+  || null
+}};

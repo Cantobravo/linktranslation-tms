@@ -1,0 +1,7 @@
+SELECT
+  cc.customer_contact_id AS value,
+  cc.customer_contact_name AS label
+FROM customer_contacts cc
+WHERE cc.customer_id = {{ Number(appsmith.store.sel_cust_id) || -1 }}
+  AND LOWER(COALESCE(cc.customer_contact_status,'Active'))='active'
+ORDER BY cc.customer_contact_name;

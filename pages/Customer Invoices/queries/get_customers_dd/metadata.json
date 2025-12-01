@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT\n  c.customer_id         AS value,\n  c.customer_name       AS label,\n  c.currency_id,\n  cur.currency_acronym\nFROM customers c\nLEFT JOIN currencies cur ON cur.currency_id = c.currency_id\nWHERE COALESCE(c.customer_status, 'Active') <> 'Inactive'\nORDER BY c.customer_name;\n",
+      "body": "SELECT\n  customer_id   AS value,\n  customer_name AS label\nFROM customers\nWHERE customer_status = '10. Active Client'\nORDER BY customer_name;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -25,7 +25,7 @@
     "dynamicBindingPathList": [],
     "name": "get_customers_dd",
     "pageId": "Customer Invoices",
-    "runBehaviour": "AUTOMATIC",
-    "userSetOnLoad": false
+    "runBehaviour": "ON_PAGE_LOAD",
+    "userSetOnLoad": true
   }
 }

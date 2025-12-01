@@ -1,0 +1,18 @@
+SELECT
+  d.resource_id,
+  (
+    SELECT wtm2.is_available
+    FROM work_team_members wtm2
+    WHERE wtm2.work_team_id = {{ i_wt_pick.selectedOptionValue || 0 }}
+      AND wtm2.resource_id  = d.resource_id
+      AND COALESCE(wtm2.is_active, 1) = 1
+    ORDER BY wtm2.updated_at DESC, wtm2.work_team_member_id DESC
+    LIMIT 1
+  ) AS is_available
+FROM (
+  SELECT DISTINCT wtm.resource_id
+  FROM work_team_members wtm
+  WHERE wtm.work_team_id = {{ i_wt_pick.selectedOptionValue || 0 }}
+    AND COALESCE(wtm.is_active, 1) = 1
+) d
+ORDER BY d.resource_id

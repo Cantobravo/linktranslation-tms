@@ -5,7 +5,7 @@
   "borderColor": "{{appsmith.theme.colors.primaryColor}}",
   "borderRadius": "1.5rem",
   "borderWidth": "1",
-  "bottomRow": 56,
+  "bottomRow": 57,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "childStylesheet": {
     "ARRAY": {
@@ -180,10 +180,13 @@
       "key": "borderColor"
     },
     {
-      "key": "schema.__root_schema__.children.customer_account_is_active.defaultValue"
+      "key": "schema.__root_schema__.children.customer_name.defaultValue"
     },
     {
-      "key": "schema.__root_schema__.children.customer_account_is_active.accentColor"
+      "key": "schema.__root_schema__.children.customer_name.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_name.borderRadius"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
@@ -193,9 +196,6 @@
     },
     {
       "key": "onSubmit"
-    },
-    {
-      "key": "schema.__root_schema__.children.customer_account_is_active.defaultValue"
     }
   ],
   "dynamicTriggerPathList": [
@@ -219,7 +219,7 @@
   "mobileTopRow": 8,
   "needsErrorInfo": false,
   "onSubmit": "{{\n  SubmitShield.runOnce(async () => {\n    await upd_cacc.run();\n    await get_cacc_list.run();\n    closeModal('j_cacc_upd_m');\n    showAlert('Account updated','success');\n  })\n}}\n",
-  "originalBottomRow": 57,
+  "originalBottomRow": 56,
   "originalTopRow": 1,
   "parentColumnSpace": 6.9375,
   "parentId": "6remn008w0",
@@ -308,26 +308,6 @@
           "position": 4,
           "sourceData": ""
         },
-        "customer_account_is_active": {
-          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_cacc_upd_jsn.sourceData, j_cacc_upd_jsn.formData, j_cacc_upd_jsn.fieldState)}}",
-          "accessor": "customer_account_is_active",
-          "alignWidget": "LEFT",
-          "boxShadow": "none",
-          "children": {},
-          "dataType": "boolean",
-          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.customer_account_is_active))(j_cacc_upd_jsn.sourceData, j_cacc_upd_jsn.formData, j_cacc_upd_jsn.fieldState)}}",
-          "fieldType": "Switch",
-          "identifier": "customer_account_is_active",
-          "isCustomField": false,
-          "isDisabled": false,
-          "isRequired": false,
-          "isVisible": true,
-          "label": "Customer Account Is Active",
-          "labelTextSize": "0.875rem",
-          "originalIdentifier": "customer_account_is_active",
-          "position": 7,
-          "sourceData": true
-        },
         "customer_account_name": {
           "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_cacc_upd_jsn.sourceData, j_cacc_upd_jsn.formData, j_cacc_upd_jsn.fieldState)}}",
           "accessor": "customer_account_name",
@@ -394,6 +374,28 @@
           "position": 2,
           "serverSideFiltering": false,
           "sourceData": 1
+        },
+        "customer_name": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_cacc_upd_jsn.sourceData, j_cacc_upd_jsn.formData, j_cacc_upd_jsn.fieldState)}}",
+          "accessor": "customer_name",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_cacc_upd_jsn.sourceData, j_cacc_upd_jsn.formData, j_cacc_upd_jsn.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.customer_name))(j_cacc_upd_jsn.sourceData, j_cacc_upd_jsn.formData, j_cacc_upd_jsn.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "customer_name",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": true,
+          "label": "Customer Name",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "customer_name",
+          "position": 7,
+          "sourceData": "Centific"
         },
         "updated_at": {
           "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_cacc_upd_jsn.sourceData, j_cacc_upd_jsn.formData, j_cacc_upd_jsn.fieldState)}}",

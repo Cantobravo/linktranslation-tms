@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT customer_id AS value, customer_name AS label FROM customers ORDER BY customer_name;",
+      "body": "SELECT\n  customer_id   AS value,\n  customer_name AS label\nFROM customers\nWHERE customer_status = '10. Active Client'\nORDER BY customer_name;",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

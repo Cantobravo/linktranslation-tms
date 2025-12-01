@@ -1,3 +1,22 @@
-SELECT *
-FROM customer_contacts
-WHERE customer_contact_id = {{ appsmith.store.ccontRow?.customer_contact_id }};
+SELECT
+  cc.customer_contact_id,
+  cc.customer_contact_name,
+  cc.contact_position,
+  cc.customer_contact_email,
+  cc.customer_id,
+  c.customer_name,
+  cc.customer_contact_status,
+  cc.customer_contact_industry,
+  cc.customer_contact_website,
+  cc.customer_contact_linkedin,
+  cc.customer_contact_first_contact,
+  cc.customer_contact_last_contact,
+  cc.customer_contact_next_contact,
+  cc.customer_contact_contact_method,
+  cc.customer_contact_test,
+  cc.customer_contact_notes,
+  cc.created_at,
+  cc.updated_at
+FROM customer_contacts cc
+LEFT JOIN customers c ON c.customer_id = cc.customer_id
+WHERE cc.customer_contact_id = COALESCE({{ appsmith.store.ccontRow ? appsmith.store.ccontRow.customer_contact_id : null }}, -1);

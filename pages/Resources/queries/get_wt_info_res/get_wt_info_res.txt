@@ -1,0 +1,15 @@
+SELECT
+  wt.work_team_id,
+  wt.webapp_name,
+  wt.translator_rate,
+  ca.customer_account_name,
+  s.service_name,
+  lsrc.language_name AS source_language_name,
+  ltar.language_name AS target_language_name
+FROM work_teams wt
+LEFT JOIN customer_accounts ca ON ca.customer_account_id = wt.customer_account_id
+LEFT JOIN services s ON s.service_id = wt.service_id
+LEFT JOIN languages lsrc ON lsrc.language_id = wt.source_language_id
+LEFT JOIN languages ltar ON ltar.language_id = wt.target_language_id
+WHERE wt.work_team_id = {{ i_wt_pick.selectedOptionValue || null }}
+LIMIT 1;

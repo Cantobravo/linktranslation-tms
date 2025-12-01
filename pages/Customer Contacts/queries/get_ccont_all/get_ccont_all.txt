@@ -1,9 +1,10 @@
 SELECT
   cc.customer_contact_id,
+  cc.customer_contact_name,
+  cc.contact_position,
+  cc.customer_contact_email,
   cc.customer_id,
   c.customer_name,
-  cc.customer_contact_name,
-  cc.customer_contact_email,
   cc.customer_contact_status,
   cc.customer_contact_industry,
   cc.customer_contact_website,
@@ -17,5 +18,5 @@ SELECT
   cc.created_at,
   cc.updated_at
 FROM customer_contacts cc
-JOIN customers c ON c.customer_id = cc.customer_id
-ORDER BY cc.customer_contact_id DESC;
+LEFT JOIN customers c ON c.customer_id = cc.customer_id
+ORDER BY cc.updated_at DESC;

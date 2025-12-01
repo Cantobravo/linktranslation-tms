@@ -1,0 +1,8 @@
+SELECT
+  customer_account_id,
+  customer_account_name,
+  customer_id
+FROM customer_accounts
+WHERE customer_id = {{ appsmith.store.sel_cust_id || null }}
+  AND customer_account_is_active = 1
+ORDER BY customer_account_name;

@@ -10,7 +10,7 @@ export default {
   "customer_name","customer_email","resource_name","resource_email",
 
   // Work Teams (from work_teams)
-  "work_team_name","resource_alias_email","system_code","daily_capacity","po_status","rates",
+  "work_team_name", "service_id", "source_language_id", "target_language_id", "certification_names", "webapp_name", "alias_email","password_text","daily_capacity","po_status","rates",
 
   // Company (from company)
   "company_name","company_logo","company_website","company_address","company_signature",

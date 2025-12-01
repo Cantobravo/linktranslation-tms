@@ -1,0 +1,14 @@
+SELECT
+  customer_portal_id     AS portal_id,
+  customer_id,
+  customer_contact_id,
+  customer_portal_name   AS portal_name,
+  customer_portal_website AS portal_website,
+  customer_portal_credentials AS portal_credentials,
+  customer_portal_notes  AS portal_notes,
+  customer_portal_status AS portal_status,
+  customer_portal_first_update AS first_update,
+  customer_portal_last_update  AS last_update,
+  customer_portal_next_update  AS next_update
+FROM customer_portals
+WHERE customer_portal_id = {{ appsmith.store.upd_portal_id || -1 }};

@@ -403,7 +403,7 @@
           "isVisible": true,
           "label": "Customer",
           "labelTextSize": "0.875rem",
-          "options": "{{ get_cust_dd.data }}",
+          "options": "{{ get_cust_dd_cred.data }}",
           "originalIdentifier": "customer_id",
           "position": 1,
           "serverSideFiltering": false,

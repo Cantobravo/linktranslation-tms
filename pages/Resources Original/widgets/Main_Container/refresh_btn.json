@@ -1,0 +1,36 @@
+{
+  "borderRadius": "0.375rem",
+  "bottomRow": 65,
+  "boxShadow": "none",
+  "buttonColor": "#dbeafe",
+  "buttonVariant": "PRIMARY",
+  "dynamicBindingPathList": [],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "iconName": "refresh",
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": "true",
+  "labelTextSize": "0.875rem",
+  "leftColumn": 58,
+  "onClick": "{{get_resources_all.run(); get_resources_list.run()}}\n",
+  "originalBottomRow": 65,
+  "originalTopRow": 60,
+  "parentColumnSpace": 12.0703125,
+  "parentId": "59rw5mx0bq",
+  "parentRowSpace": 10,
+  "rightColumn": 62,
+  "topRow": 60,
+  "type": "ICON_BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "2jj0197tff",
+  "widgetName": "refresh_btn"
+}

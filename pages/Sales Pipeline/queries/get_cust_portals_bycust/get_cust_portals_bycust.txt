@@ -1,0 +1,22 @@
+SELECT
+  p.customer_portal_id AS portal_id,
+  p.customer_id,
+  p.customer_contact_id,
+  p.customer_portal_name AS portal_name,
+  p.customer_portal_website AS portal_website,
+  p.customer_portal_credentials AS portal_credentials,
+  p.customer_portal_notes AS portal_notes,
+  p.customer_portal_status AS portal_status,
+  p.customer_portal_first_update,
+  p.customer_portal_last_update,
+  p.customer_portal_next_update,
+  p.created_at,
+  p.updated_at
+FROM customer_portals p
+WHERE p.customer_id = {{
+  Number(
+    appsmith.store.sel_cust_id
+    || (tbl_pipeline.selectedRow ? tbl_pipeline.selectedRow.customer_id : null)
+  ) || -1
+}}
+ORDER BY p.customer_portal_name;

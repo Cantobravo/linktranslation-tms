@@ -1,17 +1,7 @@
 SELECT
-  template_id AS value,
-  CONCAT(
-    template_name,
-    IFNULL(CONCAT(' v', template_version), ''),
-    ' — ',
-    COALESCE(template_type, '')
-  ) AS label,
-  template_email_subject,
-  template_email_body_html,
-  template_email_bcc_field,
-  template_email_to_field,
-  template_type
+  template_id   AS value,
+  CONCAT(template_name, ' (', template_type, ')') AS label
 FROM templates
-WHERE COALESCE(`template_is_active`, 1) = 1
-  AND LOCATE('email', LOWER(TRIM(`template_type`))) > 0
-ORDER BY COALESCE(updated_at, created_at) DESC, template_name;
+WHERE template_is_active = 1
+  AND template_type IN ('Projects','HR')
+ORDER BY template_name;

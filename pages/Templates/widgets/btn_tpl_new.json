@@ -33,7 +33,7 @@
   "mobileRightColumn": 32,
   "mobileTopRow": 6,
   "needsErrorInfo": false,
-  "onClick": "{{\n  storeValue('tpl_ins_data', {\n    template_name: \"\",\n    template_type: \"\",\n    template_description: \"\",\n    template_is_active: true,\n    template_version: 1,\n    template_from_field: \"\",\n    template_email_to_field: \"\",\n    template_email_bcc_field: \"\",\n    template_email_subject: \"\",\n    template_email_body_html: \"\",\n    template_signature_field: \"\",\n    template_header_html: \"\",\n    template_footer_html: \"\",\n    template_pdf_body: \"\",\n    template_vars: []\n  });\n  showModal('j_tpl_ins_m');\n}}\n",
+  "onClick": "{{\n  resetWidget('j_tpl_ins_form', true);\n  showModal('j_tpl_ins_m');\n}}\n",
   "originalBottomRow": 23,
   "originalTopRow": 19,
   "parentColumnSpace": 19.8125,

@@ -25,7 +25,7 @@
     "dynamicBindingPathList": [],
     "name": "get_menu_items",
     "pageId": "Templates",
-    "runBehaviour": "AUTOMATIC",
-    "userSetOnLoad": false
+    "runBehaviour": "ON_PAGE_LOAD",
+    "userSetOnLoad": true
   }
 }

@@ -174,7 +174,7 @@
   "mobileTopRow": 10,
   "needsErrorInfo": false,
   "onSubmit": "{{\n  ins_iso_text.run(\n    () => {\n      showAlert('Inserted.', 'success');\n      resetWidget('j_iso_ins_form', true);\n      closeModal('j_iso_ins_modal');\n      ISOTags.refresh();\n      ISOTextSearch.search();\n    },\n    (e) => showAlert('Insert failed: ' + (e?.message || e), 'error')\n  )\n}}\n",
-  "originalBottomRow": 44,
+  "originalBottomRow": 51,
   "originalTopRow": 6,
   "parentColumnSpace": 6.9375,
   "parentId": "49f9drcg2k",
