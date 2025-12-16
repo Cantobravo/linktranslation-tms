@@ -1,6 +1,6 @@
 {
   "borderRadius": "0.375rem",
-  "bottomRow": 76,
+  "bottomRow": 69,
   "boxShadow": "none",
   "buttonColor": "#dbeafe",
   "buttonVariant": "PRIMARY",
@@ -28,7 +28,7 @@
   "parentId": "59rw5mx0bq",
   "parentRowSpace": 10,
   "rightColumn": 64,
-  "topRow": 71,
+  "topRow": 64,
   "type": "ICON_BUTTON_WIDGET",
   "version": 1,
   "widgetId": "2jj0197tff",

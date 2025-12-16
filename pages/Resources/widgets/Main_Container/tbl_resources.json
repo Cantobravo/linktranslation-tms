@@ -4,7 +4,7 @@
   "borderColor": "{{appsmith.theme.colors.primaryColor}}",
   "borderRadius": "1.5rem",
   "borderWidth": "3",
-  "bottomRow": 163,
+  "bottomRow": 149,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "childStylesheet": {
     "button": {
@@ -237,8 +237,8 @@
   "onRowSelected": "{{\n(() => {\n  // keep single-click selection behavior\n  if (typeof tbl_resources.clearSelection === 'function') {\n    tbl_resources.clearSelection(); // preserves selectedRow\n  }\n\n  // persist selection for defaulting and side widgets\n  storeValue('_res_sel', [tbl_resources.selectedRow]);\n  return storeValue('resRow', tbl_resources.selectedRow)\n    .then(() => Promise.all([\n      get_resource_teams.run(),\n      get_wtm_creds.run()\n    ]));\n})()\n}}\n",
   "onSearchTextChanged": "{{get_users.run()}}",
   "onSort": "{{get_users.run()}}",
-  "originalBottomRow": 147,
-  "originalTopRow": 72,
+  "originalBottomRow": 149,
+  "originalTopRow": 74,
   "parentColumnSpace": 16.3125,
   "parentId": "59rw5mx0bq",
   "parentRowSpace": 10,
@@ -750,7 +750,7 @@
   "serverSidePaginationEnabled": true,
   "tableData": "{{\n  (\n    (toggle_show_inactive_res.isSwitchedOn\n      ? get_resources_all.data\n      : get_resources_list.data) || []\n  )\n\n  // D) Team filter (Show Members / Show Non-Members)\n  .filter(row => {\n    const teamId = i_wt_pick.selectedOptionValue;\n    if (!teamId) return true; // no team chosen -> no team filtering\n\n    const mode = appsmith.store.wtMode || (t_wt_mode.isSwitchedOn ? 'members' : 'nonmembers');\n    const ids = (get_wt_member_ids.data || []).map(x => x.resource_id);\n    const idSet = new Set(ids);\n    const inTeam = idSet.has(row.resource_id);\n\n    return mode === 'members' ? inTeam : !inTeam;\n  })\n\n  // A) Status filter (normalized)\n  .filter(row => {\n    const picks = appsmith.store.resStatus || [];            // normalized lower+trim\n    const hasEmpty = !!appsmith.store.resStatusHasEmpty;\n    const status = (row.resource_status || '').toLowerCase().trim();\n\n    if (picks.length === 0 && !hasEmpty) return true;\n    if (hasEmpty && status === '') return true;\n    if (picks.length > 0 && picks.includes(status)) return true;\n    return false;\n  })\n\n  // B) Language-pairs filter (i_lang_search) – ONLY language_pairs\n  .filter(row => {\n    const q = (appsmith.store.langQ || '').toLowerCase();\n    if (!q) return true;\n    return (row.language_pairs || '').toLowerCase().includes(q);\n  })\n\n  // C) General text filter (i_res_q)\n  .filter(row => {\n    const q = (appsmith.store.resQ || '').toLowerCase();\n    if (!q) return true;\n    const hay = [\n      row.resource_full_name,\n      row.resource_username,\n      row.resource_email,\n      row.resource_status,\n      row.resource_native_language,\n      row.language_pairs\n    ].map(x => (x || '').toLowerCase()).join(' ');\n    return hay.includes(q);\n  })\n}}\n",
   "textSize": "0.875rem",
-  "topRow": 88,
+  "topRow": 74,
   "totalRecordsCount": "{{\n  toggle_show_inactive_res.isSwitchedOn\n    ? (get_res_all_cnt.data?.[0]?.total || 0)\n    : (get_res_list_cnt.data?.[0]?.total || 0)\n}}",
   "type": "TABLE_WIDGET_V2",
   "variant": "VARIANT2",

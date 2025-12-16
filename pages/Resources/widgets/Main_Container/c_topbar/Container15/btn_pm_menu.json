@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "0.375rem",
-  "bottomRow": 18,
+  "bottomRow": 11,
   "boxShadow": "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
   "configureMenuItems": {
     "config": {
@@ -62,8 +62,8 @@
   "mobileRightColumn": 23,
   "mobileTopRow": 58,
   "needsErrorInfo": false,
-  "originalBottomRow": 11,
-  "originalTopRow": 7,
+  "originalBottomRow": 18,
+  "originalTopRow": 14,
   "parentColumnSpace": 4.500000476837158,
   "parentId": "6cjavsc7no",
   "parentRowSpace": 10,
@@ -71,7 +71,7 @@
   "renderMode": "CANVAS",
   "rightColumn": 19,
   "sourceData": "{{ AppNav.itemsForLabel('PM Menu').map(x => x.value) }}",
-  "topRow": 14,
+  "topRow": 7,
   "type": "MENU_BUTTON_WIDGET",
   "version": 1,
   "widgetId": "1ypa3jvqsx",
