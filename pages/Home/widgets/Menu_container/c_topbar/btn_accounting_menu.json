@@ -44,7 +44,7 @@
   "iconAlign": "left",
   "iconName": "chart",
   "isCompact": false,
-  "isDisabled": "{{ Perms.menuDisabled('Accounting Menu') }}\n",
+  "isDisabled": "{{ !Perms.canMenu('Accounting Menu') }}\n",
   "isLoading": false,
   "isVisible": true,
   "key": "hc8a5fp8c9",

@@ -44,7 +44,7 @@
   "iconAlign": "left",
   "iconName": "geosearch",
   "isCompact": false,
-  "isDisabled": "{{ Perms.menuDisabled('System Menu') }}\n",
+  "isDisabled": "{{ !Perms.canMenu('System Menu') }}\n",
   "isLoading": false,
   "isVisible": true,
   "key": "hc8a5fp8c9",

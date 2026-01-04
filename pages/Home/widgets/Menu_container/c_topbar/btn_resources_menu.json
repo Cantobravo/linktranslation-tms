@@ -44,7 +44,7 @@
   "iconAlign": "left",
   "iconName": "person",
   "isCompact": false,
-  "isDisabled": "{{ Perms.menuDisabled('Resources Menu') }}\n",
+  "isDisabled": "{{ !Perms.canMenu('Resources Menu') }}\n",
   "isLoading": false,
   "isVisible": true,
   "key": "hc8a5fp8c9",
