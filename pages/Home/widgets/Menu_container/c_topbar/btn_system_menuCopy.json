@@ -44,7 +44,7 @@
   "iconAlign": "left",
   "iconName": "geosearch",
   "isCompact": false,
-  "isDisabled": "{{ !Perms.canMenu('Sales Menu') }}\n",
+  "isDisabled": "{{ appsmith.store.myPerms?.inited ? !Perms.canMenu('Sales Menu') : false }}",
   "isLoading": false,
   "isVisible": true,
   "key": "hc8a5fp8c9",

@@ -7,5 +7,5 @@ JOIN app_menu_items ami
   ON (ami.role_key COLLATE utf8mb4_unicode_ci) = (ro.role_name COLLATE utf8mb4_unicode_ci)
 WHERE (res.resource_email COLLATE utf8mb4_unicode_ci) =
       (COALESCE(NULLIF({{ appsmith.user.email }}, ''), NULL) COLLATE utf8mb4_unicode_ci)
-  AND COALESCE(ami.is_active, 1) = 1
+  AND ami.is_active = 1
 ORDER BY ami.page_value;

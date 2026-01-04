@@ -44,7 +44,7 @@
   "iconAlign": "left",
   "iconName": "person",
   "isCompact": false,
-  "isDisabled": "{{ !Perms.canMenu('Resources Menu') }}\n",
+  "isDisabled": "{{ appsmith.store.myPerms?.inited ? !Perms.canMenu('Resources Menu') : false }}\n",
   "isLoading": false,
   "isVisible": true,
   "key": "hc8a5fp8c9",

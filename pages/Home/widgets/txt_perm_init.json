@@ -43,7 +43,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 2,
   "shouldTruncate": false,
-  "text": "{{ appsmith.store.myPerms?.inited ? '' : Perms.init() }}\n",
+  "text": "{{ appsmith.store.myPerms?.inited ? '' : Perms.init() }}\n\n\n",
   "textAlign": "LEFT",
   "textColor": "#231F20",
   "topRow": 18,

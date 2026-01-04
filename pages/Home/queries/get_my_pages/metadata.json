@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT DISTINCT\n  ami.page_value\nFROM resources res\nJOIN roles ro\n  ON ro.role_id = res.role_id\nJOIN app_menu_items ami\n  ON (ami.role_key COLLATE utf8mb4_unicode_ci) = (ro.role_name COLLATE utf8mb4_unicode_ci)\nWHERE (res.resource_email COLLATE utf8mb4_unicode_ci) =\n      (COALESCE(NULLIF({{ appsmith.user.email }}, ''), NULL) COLLATE utf8mb4_unicode_ci)\n  AND COALESCE(ami.is_active, 1) = 1\nORDER BY ami.page_value;\n",
+      "body": "SELECT DISTINCT\n  ami.page_value\nFROM resources res\nJOIN roles ro\n  ON ro.role_id = res.role_id\nJOIN app_menu_items ami\n  ON (ami.role_key COLLATE utf8mb4_unicode_ci) = (ro.role_name COLLATE utf8mb4_unicode_ci)\nWHERE (res.resource_email COLLATE utf8mb4_unicode_ci) =\n      (COALESCE(NULLIF({{ appsmith.user.email }}, ''), NULL) COLLATE utf8mb4_unicode_ci)\n  AND ami.is_active = 1\nORDER BY ami.page_value;\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

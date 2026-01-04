@@ -44,7 +44,7 @@
   "iconAlign": "left",
   "iconName": "paperclip",
   "isCompact": false,
-  "isDisabled": "{{ Perms.menuDisabled('Customers Menu') }}\n",
+  "isDisabled": "{{ appsmith.store.myPerms?.inited ? !Perms.canMenu('Customers Menu') : false }}\n",
   "isLoading": false,
   "isVisible": true,
   "key": "hc8a5fp8c9",
