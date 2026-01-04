@@ -29,7 +29,7 @@
     ],
     "name": "get_my_pages",
     "pageId": "Home",
-    "runBehaviour": "AUTOMATIC",
-    "userSetOnLoad": false
+    "runBehaviour": "ON_PAGE_LOAD",
+    "userSetOnLoad": true
   }
 }

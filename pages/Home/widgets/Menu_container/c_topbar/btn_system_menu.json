@@ -9,7 +9,7 @@
       "isDisabled": false,
       "isVisible": true,
       "label": "{{btn_system_menu.sourceData.map((currentItem, currentIndex) => ( currentItem))}}",
-      "onClick": "{{ AppNav.go(currentItem) }}"
+      "onClick": "{{\n  (async () => {\n    const page = currentItem?.value || currentItem;\n    await Perms.go(page);\n  })()\n}}\n"
     },
     "id": "config",
     "label": "Configure menu items"
@@ -28,9 +28,6 @@
   "dynamicPropertyPathList": [
     {
       "key": "configureMenuItems.config.onClick"
-    },
-    {
-      "key": "isDisabled"
     }
   ],
   "dynamicTriggerPathList": [
@@ -41,7 +38,7 @@
   "iconAlign": "left",
   "iconName": "geosearch",
   "isCompact": false,
-  "isDisabled": "\n",
+  "isDisabled": false,
   "isLoading": false,
   "isVisible": true,
   "key": "hc8a5fp8c9",

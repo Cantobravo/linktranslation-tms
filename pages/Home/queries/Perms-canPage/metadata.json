@@ -1,12 +1,16 @@
 {
-  "gitSyncId": "6840b6d2ece888096e42342a_2effc09f-4713-4f91-97bc-2cc405c8d46e",
-  "id": "Home_Perms.init",
+  "gitSyncId": "6840b6d2ece888096e42342a_7e8fb71a-d006-459b-9fb3-a83e408d354f",
+  "id": "Home_Perms.canPage",
   "pluginId": "js-plugin",
   "pluginType": "JS",
   "unpublishedAction": {
     "actionConfiguration": {
       "encodeParamsToggle": true,
-      "jsArguments": [],
+      "jsArguments": [
+        {
+          "name": "pageName"
+        }
+      ],
       "paginationType": "NONE",
       "timeoutInMillisecond": 10000
     },
@@ -22,10 +26,10 @@
         "key": "body"
       }
     ],
-    "fullyQualifiedName": "Perms.init",
-    "name": "init",
+    "fullyQualifiedName": "Perms.canPage",
+    "name": "canPage",
     "pageId": "Home",
-    "runBehaviour": "ON_PAGE_LOAD",
-    "userSetOnLoad": true
+    "runBehaviour": "MANUAL",
+    "userSetOnLoad": false
   }
 }

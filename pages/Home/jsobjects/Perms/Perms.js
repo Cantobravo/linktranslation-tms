@@ -1,21 +1,49 @@
 export default {
-  init: async () => {
-    const email = String(appsmith.user.email || '').trim().toLowerCase();
+  // normalize strings for safe comparison
+  norm: (v) => String(v || '').trim().toLowerCase(),
 
-    if (appsmith.store.pagePermsInited && appsmith.store.pagePermsEmail === email) return;
+  // load & cache allowed pages for the logged-in user
+  loadPages: async () => {
+    const email = Perms.norm(appsmith.user.email);
 
+    // reuse cache for same user
+    if (
+      appsmith.store.pagePermsEmail === email &&
+      Array.isArray(appsmith.store.pagePerms)
+    ) {
+      return;
+    }
+
+    // fetch allowed pages
     await get_my_pages.run();
 
     const pages = (get_my_pages.data || [])
-      .map(x => x.page_value)
-      .filter(Boolean);
+      .map(r => r.page_value)
+      .filter(Boolean)
+      .map(Perms.norm);
 
     await storeValue('pagePerms', pages);
-    await storeValue('pagePermsInited', true);
     await storeValue('pagePermsEmail', email);
   },
 
-  canAccessPage: (pageName) => {
-    return (appsmith.store.pagePerms || []).includes(pageName);
+  // check if a page is allowed
+  canPage: (pageName) => {
+    const pages = appsmith.store.pagePerms || [];
+    return pages.includes(Perms.norm(pageName));
+  },
+
+  // guarded navigation (USE THIS FROM MENU CLICKS)
+  go: async (pageName) => {
+    await Perms.loadPages();
+
+    const allowed = Perms.canPage(pageName);
+
+    if (allowed) {
+      return navigateTo(pageName);
+    }
+
+    // optional: remember blocked page
+    await storeValue('noAccessFrom', pageName);
+    return navigateTo('NoAccess');
   }
 };
