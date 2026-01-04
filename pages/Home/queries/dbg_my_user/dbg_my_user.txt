@@ -1,0 +1,10 @@
+SELECT
+  r.resource_email,
+  r.role_id,
+  ro.role_name
+FROM resources r
+LEFT JOIN roles ro
+  ON ro.role_id = r.role_id
+WHERE (r.resource_email COLLATE utf8mb4_unicode_ci) =
+      (COALESCE(NULLIF({{ appsmith.user.email }}, ''), NULL) COLLATE utf8mb4_unicode_ci)
+LIMIT 1;

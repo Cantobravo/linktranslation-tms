@@ -1,12 +1,18 @@
 SELECT DISTINCT
   ami.page_value
 FROM resources r
-JOIN roles ro
-  ON ro.role_id = r.role_id
+JOIN role_permissions rp
+  ON rp.role_id = r.role_id
+JOIN permissions p
+  ON p.permission_id = rp.permission_id
 JOIN app_menu_items ami
-  ON (ami.role_key COLLATE utf8mb4_unicode_ci)
-     = (ro.role_name COLLATE utf8mb4_unicode_ci)
+  ON (
+    LOWER(REPLACE(ami.page_value, ' ', '_')) COLLATE utf8mb4_unicode_ci
+    =
+    LOWER(REPLACE(p.permission_key, 'VIEW_', '')) COLLATE utf8mb4_unicode_ci
+  )
 WHERE (r.resource_email COLLATE utf8mb4_unicode_ci)
-      = (COALESCE(NULLIF({{ appsmith.user.email }}, ''), NULL)
-         COLLATE utf8mb4_unicode_ci)
-  AND ami.is_active = 1;
+      =
+      (COALESCE(NULLIF({{ appsmith.user.email }}, ''), NULL) COLLATE utf8mb4_unicode_ci)
+  AND COALESCE(ami.is_active, 1) = 1
+ORDER BY ami.page_value;

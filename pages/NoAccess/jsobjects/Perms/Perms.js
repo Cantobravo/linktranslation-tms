@@ -1,49 +1,41 @@
 export default {
-  // normalize strings for safe comparison
-  norm: (v) => String(v || '').trim().toLowerCase(),
+  norm: (v) =>
+    String(v || '')
+      .trim()
+      .toLowerCase()
+      .replace(/\s+/g, '')
+      .replace(/_/g, ''),
 
-  // load & cache allowed pages for the logged-in user
-  loadPages: async () => {00
-    const email = Perms.norm(appsmith.user.email);
+  loadPages: async () => {
+    const email = String(appsmith.user.email || '').trim().toLowerCase();
 
-    // reuse cache for same user
-    if (
-      appsmith.store.pagePermsEmail === email &&
-      Array.isArray(appsmith.store.pagePerms)
-    ) {
-      return;
-    }
+    if (appsmith.store.pagePermsEmail === email && Array.isArray(appsmith.store.pagePermsNorm)) return;
 
-    // fetch allowed pages
     await get_my_pages.run();
 
-    const pages = (get_my_pages.data || [])
-      .map(r => r.page_value)
-      .filter(Boolean)
-      .map(Perms.norm);
+    const raw = (get_my_pages.data || [])
+      .map(x => x.page_value)
+      .filter(Boolean);
 
-    await storeValue('pagePerms', pages);
+    await storeValue('pagePermsRaw', raw);
+    await storeValue('pagePermsNorm', raw.map(Perms.norm));
     await storeValue('pagePermsEmail', email);
   },
 
-  // check if a page is allowed
   canPage: (pageName) => {
-    const pages = appsmith.store.pagePerms || [];
-    return pages.includes(Perms.norm(pageName));
+    const allowed = appsmith.store.pagePermsNorm || [];
+    return allowed.includes(Perms.norm(pageName));
   },
 
-  // guarded navigation (USE THIS FROM MENU CLICKS)
   go: async (pageName) => {
     await Perms.loadPages();
 
-    const allowed = Perms.canPage(pageName);
-
-    if (allowed) {
-      return navigateTo(pageName);
-    }
-
-    // optional: remember blocked page
+    // DEBUG (will show the real clicked value)
     await storeValue('noAccessFrom', pageName);
+    await storeValue('lastClickNorm', Perms.norm(pageName));
+
+    if (Perms.canPage(pageName)) return navigateTo(pageName);
+
     return navigateTo('NoAccess');
   }
 };

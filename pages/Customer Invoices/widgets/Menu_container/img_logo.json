@@ -37,13 +37,13 @@
   "objectFit": "contain",
   "onClick": "{{ navigateTo('Home') }}",
   "parentColumnSpace": 4.5,
-  "parentId": "j564trrn27",
+  "parentId": "shq9np2l7j",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "rightColumn": 3,
   "topRow": 0,
   "type": "IMAGE_WIDGET",
   "version": 1,
-  "widgetId": "ug7ac3yf6o",
+  "widgetId": "2fst4ao8mi",
   "widgetName": "img_logo"
 }

@@ -5,7 +5,7 @@
   "borderColor": "{{appsmith.theme.colors.primaryColor}}",
   "borderRadius": "1.5rem",
   "borderWidth": "1",
-  "bottomRow": 118,
+  "bottomRow": 116,
   "boxShadow": "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)",
   "childStylesheet": {
     "ARRAY": {
@@ -258,7 +258,7 @@
   "mobileTopRow": 11,
   "needsErrorInfo": false,
   "onSubmit": "{{\n  (async () => {\n    await upd_company.run();\n    closeModal('Edit_Company_Modal');\n    resetWidget('j_edit_company', true);\n    await get_company.run();\n    showAlert('Company updated', 'success');\n  })()\n}}\n\n\n\n\n",
-  "originalBottomRow": 118,
+  "originalBottomRow": 116,
   "originalTopRow": 17,
   "parentColumnSpace": 6.9375,
   "parentId": "0",
