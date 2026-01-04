@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 19,
+  "bottomRow": 22,
   "dynamicBindingPathList": [
     {
       "key": "truncateButtonColor"
@@ -30,8 +30,8 @@
   "mobileRightColumn": 16,
   "mobileTopRow": 18,
   "needsErrorInfo": false,
-  "originalBottomRow": 19,
-  "originalTopRow": 14,
+  "originalBottomRow": 22,
+  "originalTopRow": 17,
   "overflow": "NONE",
   "parentColumnSpace": 34.890625,
   "parentId": "0",
@@ -43,7 +43,7 @@
   "text": "Price List",
   "textAlign": "LEFT",
   "textColor": "#231F20",
-  "topRow": 14,
+  "topRow": 17,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,

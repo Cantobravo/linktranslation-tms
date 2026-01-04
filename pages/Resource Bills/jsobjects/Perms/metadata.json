@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "6840b6d2ece888096e42342a_a95e19da-7d00-4178-aea2-93033dedc778",
+  "id": "Resource Bills_Perms",
+  "unpublishedCollection": {
+    "name": "Perms",
+    "pageId": "Resource Bills",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 19,
+  "bottomRow": 20,
   "dynamicBindingPathList": [
     {
       "key": "truncateButtonColor"
@@ -30,8 +30,8 @@
   "mobileRightColumn": 17,
   "mobileTopRow": 21,
   "needsErrorInfo": false,
-  "originalBottomRow": 19,
-  "originalTopRow": 14,
+  "originalBottomRow": 20,
+  "originalTopRow": 15,
   "overflow": "NONE",
   "parentColumnSpace": 34.890625,
   "parentId": "0",
@@ -43,7 +43,7 @@
   "text": "Work Teams Management",
   "textAlign": "LEFT",
   "textColor": "#231F20",
-  "topRow": 14,
+  "topRow": 15,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,

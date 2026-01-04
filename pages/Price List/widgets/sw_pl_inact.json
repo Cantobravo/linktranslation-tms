@@ -2,7 +2,7 @@
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "alignWidget": "LEFT",
   "animateLoading": true,
-  "bottomRow": 36,
+  "bottomRow": 37,
   "boxShadow": "none",
   "defaultSwitchState": false,
   "dynamicBindingPathList": [
@@ -36,7 +36,7 @@
   "mobileTopRow": 23,
   "needsErrorInfo": false,
   "onChange": "{{ \n  dd_pl_acc.selectedOptionValue \n    ? get_pl_items_acc.run() \n    : \"\" \n}}\n",
-  "originalBottomRow": 36,
+  "originalBottomRow": 37,
   "originalTopRow": 32,
   "parentColumnSpace": 34.890625,
   "parentId": "0",

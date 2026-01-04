@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "6840b6d2ece888096e42342a_ec42352a-d8f8-4cc8-926c-c3a9c12ba80e",
+  "id": "Customers_Perms",
+  "unpublishedCollection": {
+    "name": "Perms",
+    "pageId": "Customers",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

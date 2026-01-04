@@ -16,7 +16,7 @@
       "leftColumn": 0,
       "minHeight": 49.5,
       "parentColumnSpace": 1,
-      "parentId": "kvx1dpw47b",
+      "parentId": "annsuasgsw",
       "parentRowSpace": 1,
       "props": {
         "canExtend": false,
@@ -29,7 +29,7 @@
       "topRow": 0,
       "type": "CANVAS_WIDGET",
       "version": 1,
-      "widgetId": "ai8lzfx7jb",
+      "widgetId": "cko7ovi72w",
       "widgetName": "Canvas19Copy"
     }
   ],
@@ -69,7 +69,7 @@
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 63,
+  "rightColumn": 64,
   "searchTags": [
     "div",
     "parent",
@@ -84,6 +84,6 @@
   "topRow": 1,
   "type": "CONTAINER_WIDGET",
   "version": 1,
-  "widgetId": "kvx1dpw47b",
+  "widgetId": "annsuasgsw",
   "widgetName": "Menu_container"
 }

@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "6840b6d2ece888096e42342a_ea403272-d504-4dad-951e-92965811189d",
+  "id": "Absences_Perms",
+  "unpublishedCollection": {
+    "name": "Perms",
+    "pageId": "Absences",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

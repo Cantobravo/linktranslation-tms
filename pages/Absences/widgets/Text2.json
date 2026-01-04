@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 18,
+  "bottomRow": 19,
   "dynamicBindingPathList": [
     {
       "key": "truncateButtonColor"
@@ -30,8 +30,8 @@
   "mobileRightColumn": 17,
   "mobileTopRow": 15,
   "needsErrorInfo": false,
-  "originalBottomRow": 18,
-  "originalTopRow": 13,
+  "originalBottomRow": 19,
+  "originalTopRow": 14,
   "overflow": "NONE",
   "parentColumnSpace": 21.953125,
   "parentId": "0",
@@ -43,7 +43,7 @@
   "text": "Absences Tracking",
   "textAlign": "LEFT",
   "textColor": "#231F20",
-  "topRow": 13,
+  "topRow": 14,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,

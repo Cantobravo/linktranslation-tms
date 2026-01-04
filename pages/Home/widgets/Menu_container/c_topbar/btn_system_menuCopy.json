@@ -9,7 +9,7 @@
       "isDisabled": false,
       "isVisible": true,
       "label": "{{btn_system_menuCopy.sourceData.map((currentItem, currentIndex) => ( currentItem))}}",
-      "onClick": "{{ AppNav.go(currentItem) }}"
+      "onClick": "{{\n  (async () => {\n    const page = currentItem?.value || currentItem;\n    await Perms.go(page);\n  })()\n}}"
     },
     "id": "config",
     "label": "Configure menu items"

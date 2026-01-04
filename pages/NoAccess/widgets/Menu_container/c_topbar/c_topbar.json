@@ -17,7 +17,7 @@
       "leftColumn": 0,
       "minHeight": 18.000001907348633,
       "parentColumnSpace": 1,
-      "parentId": "9q9hvfj6gw",
+      "parentId": "nntfub0s04",
       "parentRowSpace": 1,
       "props": {
         "canExtend": false,
@@ -30,7 +30,7 @@
       "topRow": 0,
       "type": "CANVAS_WIDGET",
       "version": 1,
-      "widgetId": "62jfvobw3n",
+      "widgetId": "ububyfnarf",
       "widgetName": "Canvas9"
     }
   ],
@@ -67,7 +67,7 @@
     "selectionColorCSSVar": "--on-canvas-ui-widget-focus"
   },
   "parentColumnSpace": 4.5,
-  "parentId": "ai8lzfx7jb",
+  "parentId": "cko7ovi72w",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
@@ -86,6 +86,6 @@
   "topRow": 0,
   "type": "CONTAINER_WIDGET",
   "version": 1,
-  "widgetId": "9q9hvfj6gw",
+  "widgetId": "nntfub0s04",
   "widgetName": "c_topbar"
 }

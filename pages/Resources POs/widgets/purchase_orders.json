@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 20,
+  "bottomRow": 22,
   "dynamicBindingPathList": [
     {
       "key": "truncateButtonColor"
@@ -30,8 +30,8 @@
   "mobileRightColumn": 16,
   "mobileTopRow": 7,
   "needsErrorInfo": false,
-  "originalBottomRow": 20,
-  "originalTopRow": 15,
+  "originalBottomRow": 22,
+  "originalTopRow": 17,
   "overflow": "NONE",
   "parentColumnSpace": 22.125,
   "parentId": "0",
@@ -43,7 +43,7 @@
   "text": "Purchase Orders",
   "textAlign": "LEFT",
   "textColor": "#231F20",
-  "topRow": 15,
+  "topRow": 17,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,

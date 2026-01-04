@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "6840b6d2ece888096e42342a_b29e3b4c-a282-42f5-840a-19456009b70a",
+  "id": "Currencies_Perms",
+  "unpublishedCollection": {
+    "name": "Perms",
+    "pageId": "Currencies",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

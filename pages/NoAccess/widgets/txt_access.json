@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 39,
+  "bottomRow": 41,
   "dynamicBindingPathList": [
     {
       "key": "truncateButtonColor"
@@ -11,9 +11,6 @@
     },
     {
       "key": "borderRadius"
-    },
-    {
-      "key": "text"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
@@ -33,8 +30,8 @@
   "mobileRightColumn": 34,
   "mobileTopRow": 26,
   "needsErrorInfo": false,
-  "originalBottomRow": 50,
-  "originalTopRow": 26,
+  "originalBottomRow": 41,
+  "originalTopRow": 28,
   "overflow": "NONE",
   "parentColumnSpace": 27.515625,
   "parentId": "0",
@@ -43,10 +40,10 @@
   "responsiveBehavior": "fill",
   "rightColumn": 48,
   "shouldTruncate": false,
-  "text": "{{appsmith.user.name || appsmith.user.email}} - You do not have permission to access this page.",
-  "textAlign": "LEFT",
+  "text": "You do not have permission to access this page.",
+  "textAlign": "CENTER",
   "textColor": "#231F20",
-  "topRow": 26,
+  "topRow": 28,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,

@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "6840b6d2ece888096e42342a_cfc47800-3435-4885-9a49-c0c0e528ac3c",
+  "id": "Sales Pipeline_Perms",
+  "unpublishedCollection": {
+    "name": "Perms",
+    "pageId": "Sales Pipeline",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

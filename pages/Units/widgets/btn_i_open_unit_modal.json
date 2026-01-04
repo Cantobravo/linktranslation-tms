@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "0.375rem",
-  "bottomRow": 25,
+  "bottomRow": 36,
   "boxShadow": "none",
   "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
   "buttonVariant": "SECONDARY",
@@ -48,7 +48,7 @@
   "responsiveBehavior": "hug",
   "rightColumn": 11,
   "text": "New Unit",
-  "topRow": 21,
+  "topRow": 32,
   "type": "BUTTON_WIDGET",
   "version": 1,
   "widgetId": "w58ccxr4sc",

@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "6840b6d2ece888096e42342a_734ad08c-25d2-4c57-a3bf-680e7b51fb52",
+  "id": "Price List_Perms",
+  "unpublishedCollection": {
+    "name": "Perms",
+    "pageId": "Price List",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}
