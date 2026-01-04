@@ -1,23 +1,23 @@
 {
-  "gitSyncId": "6840b6d2ece888096e42342a_b7cb2af2-6b8f-4daa-99fb-92baff1cacf6",
+  "gitSyncId": "6840b6d2ece888096e42342a_fb670dc7-d9b3-4747-9e79-b534da54064c",
   "unpublishedPage": {
     "isHidden": false,
     "layouts": [
       {
         "dsl": {
           "backgroundColor": "none",
-          "bottomRow": 1210,
+          "bottomRow": 390,
           "canExtend": true,
           "containerStyle": "none",
           "detachFromLayout": true,
           "dynamicBindingPathList": [],
           "leftColumn": 0,
-          "minHeight": 780,
+          "minHeight": 990,
           "parentColumnSpace": 1,
           "parentRowSpace": 1,
           "rightColumn": 1224,
           "snapColumns": 64,
-          "snapRows": 76,
+          "snapRows": 97,
           "topRow": 0,
           "type": "CANVAS_WIDGET",
           "version": 94,
@@ -26,7 +26,7 @@
         }
       }
     ],
-    "name": "Customer Invoices",
-    "slug": "customer-invoices"
+    "name": "NoAccess",
+    "slug": "noaccess"
   }
 }

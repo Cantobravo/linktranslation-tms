@@ -1,7 +1,0 @@
-SELECT
-  r.resource_id,
-  r.resource_email,
-  r.role_id
-FROM resources r
-WHERE r.resource_email = COALESCE(NULLIF({{ appsmith.user.email }}, ''), NULL)
-LIMIT 1;

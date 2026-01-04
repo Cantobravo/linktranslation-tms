@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 33,
+  "bottomRow": 39,
   "dynamicBindingPathList": [
     {
       "key": "truncateButtonColor"
@@ -11,42 +11,45 @@
     },
     {
       "key": "borderRadius"
+    },
+    {
+      "key": "text"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
   "dynamicTriggerPathList": [],
   "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
-  "fontSize": "1.875rem",
+  "fontSize": "3rem",
   "fontStyle": "BOLD",
   "isLoading": false,
   "isVisible": true,
-  "key": "xcxnv1jxow",
-  "leftColumn": 1,
+  "key": "7e0qmrukyz",
+  "leftColumn": 18,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "minWidth": 450,
-  "mobileBottomRow": 18,
-  "mobileLeftColumn": 1,
-  "mobileRightColumn": 17,
-  "mobileTopRow": 14,
+  "mobileBottomRow": 30,
+  "mobileLeftColumn": 18,
+  "mobileRightColumn": 34,
+  "mobileTopRow": 26,
   "needsErrorInfo": false,
-  "originalBottomRow": 33,
-  "originalTopRow": 28,
+  "originalBottomRow": 50,
+  "originalTopRow": 26,
   "overflow": "NONE",
-  "parentColumnSpace": 25.875,
+  "parentColumnSpace": 27.515625,
   "parentId": "0",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 19,
+  "rightColumn": 48,
   "shouldTruncate": false,
-  "text": "Customer Invoices",
+  "text": "{{appsmith.user.name || appsmith.user.email}} - You do not have permission to access this page.",
   "textAlign": "LEFT",
   "textColor": "#231F20",
-  "topRow": 28,
+  "topRow": 26,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,
-  "widgetId": "5ysbbu19wa",
-  "widgetName": "Text3"
+  "widgetId": "ogcqq1lm10",
+  "widgetName": "txt_access"
 }

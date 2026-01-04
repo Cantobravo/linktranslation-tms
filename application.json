@@ -127,6 +127,10 @@
     {
       "id": "Home",
       "isDefault": true
+    },
+    {
+      "id": "NoAccess",
+      "isDefault": false
     }
   ],
   "unpublishedAppLayout": {
