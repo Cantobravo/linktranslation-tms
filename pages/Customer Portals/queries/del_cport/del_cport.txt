@@ -1,2 +1,0 @@
-DELETE FROM customer_portals
-WHERE customer_portal_id = {{ appsmith.store.cportRow?.customer_portal_id }};

@@ -1,13 +1,10 @@
 {
   "animateLoading": true,
-  "borderRadius": "1.5rem",
-  "bottomRow": 63,
-  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
-  "defaultText": "{{ appsmith.store.isoCurrent?.full_text || \"No results\" }}",
+  "borderRadius": "0px",
+  "bottomRow": 111,
+  "boxShadow": "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
+  "defaultText": "{{ appsmith.store.isoCurrent?.full_text || \"\" }}\n\n",
   "dynamicBindingPathList": [
-    {
-      "key": "boxShadow"
-    },
     {
       "key": "defaultText"
     }

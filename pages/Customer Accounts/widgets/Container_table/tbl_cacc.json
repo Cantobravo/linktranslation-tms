@@ -2,8 +2,9 @@
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "animateLoading": true,
   "borderColor": "{{appsmith.theme.colors.primaryColor}}",
-  "borderRadius": "1.5rem",
-  "bottomRow": 87,
+  "borderRadius": "0px",
+  "borderWidth": "1",
+  "bottomRow": 84,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "childStylesheet": {
     "button": {
@@ -44,6 +45,7 @@
     "customColumn1": 96,
     "customColumn2": 108,
     "customer_account_customer_name": 151,
+    "customer_account_industry": 175,
     "customer_account_name": 231,
     "customer_account_tools": 78
   },
@@ -147,6 +149,12 @@
     },
     {
       "key": "primaryColumns.customColumn2.onClick"
+    },
+    {
+      "key": "onSort"
+    },
+    {
+      "key": "onSearchTextChanged"
     }
   ],
   "dynamicTriggerPathList": [
@@ -174,19 +182,19 @@
   "isLoading": false,
   "isSortable": true,
   "isVisible": "true",
-  "isVisibleDownload": true,
-  "isVisibleFilters": true,
+  "isVisibleDownload": false,
+  "isVisibleFilters": false,
   "isVisiblePagination": true,
   "isVisibleSearch": true,
   "key": "zba5qel0au",
   "label": "Data",
   "labelTextSize": "0.875rem",
-  "leftColumn": 1,
+  "leftColumn": 0,
   "onPageChange": "{{SelectQuery.run()}}",
-  "onSearchTextChanged": "{{SelectQuery.run()}}",
-  "onSort": "{{SelectQuery.run()}}",
-  "originalBottomRow": 87,
-  "originalTopRow": 29,
+  "onSearchTextChanged": "{{}}\n",
+  "onSort": "{{}}\n",
+  "originalBottomRow": 84,
+  "originalTopRow": 26,
   "parentColumnSpace": 16.3125,
   "parentId": "59rw5mx0bq",
   "parentRowSpace": 10,
@@ -254,7 +262,7 @@
       "label": "Edit",
       "labelColor": "#FFFFFF",
       "notation": "standard",
-      "onClick": "{{\n  storeValue('caccRow', tbl_cacc.triggeredRow || currentRow || tbl_cacc.selectedRow)\n    .then(() =>\n      get_cacc_by_id.run(() => {\n        j_cacc_upd_jsn.setSourceData(get_cacc_by_id.data[0] || appsmith.store.caccRow);\n        showModal('j_cacc_upd_m');\n      })\n    )\n}}\n",
+      "onClick": "{{\n  (async () => {\n    const row = tbl_cacc.triggeredRow;\n    if (!row?.customer_account_id) {\n      showAlert('Select a row to edit.', 'warning');\n      return;\n    }\n\n    // 1️⃣ Store FIRST (single source of truth)\n    await storeValue('caccRow', row);\n\n    // 2️⃣ (Optional) Refresh from DB, then overwrite store\n    await get_cacc_by_id.run(\n      () => {\n        const fresh = get_cacc_by_id.data?.[0];\n        if (fresh) storeValue('caccRow', fresh);\n      },\n      () => {}\n    );\n\n    // 3️⃣ Open modal ONLY after store is ready\n    showModal('j_cacc_upd_m');\n  })()\n}}\n",
       "originalId": "customColumn1",
       "sticky": "",
       "textSize": "0.875rem",
@@ -294,7 +302,7 @@
       "label": "Delete",
       "labelColor": "#FFFFFF",
       "notation": "standard",
-      "onClick": "{{\n  storeValue('caccRow', tbl_cacc.triggeredRow || currentRow || tbl_cacc.selectedRow)\n    .then(() => showModal('j_cacc_del_m'))\n}}\n",
+      "onClick": "{{\n  (() => {\n    const row = tbl_cacc.triggeredRow;\n\n    if (!row?.customer_account_id) {\n      showAlert('Select a row to delete.', 'warning');\n      return;\n    }\n\n    storeValue('caccRow', row);\n    showModal('j_cacc_del_m');\n  })()\n}}\n\n\n",
       "originalId": "customColumn2",
       "sticky": "",
       "textSize": "0.875rem",
@@ -522,12 +530,12 @@
     }
   },
   "renderMode": "CANVAS",
-  "rightColumn": 62,
+  "rightColumn": 64,
   "searchKey": "",
-  "serverSidePaginationEnabled": true,
+  "serverSidePaginationEnabled": false,
   "tableData": "{{get_cacc_list.data}}",
   "textSize": "0.875rem",
-  "topRow": 29,
+  "topRow": 26,
   "totalRecordsCount": 0,
   "type": "TABLE_WIDGET_V2",
   "variant": "VARIANT2",

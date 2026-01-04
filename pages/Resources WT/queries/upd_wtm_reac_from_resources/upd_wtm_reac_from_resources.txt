@@ -1,7 +1,0 @@
-UPDATE work_team_members wtm
-SET is_active = 1, updated_at = NOW()
-WHERE wtm.work_team_id = {{ i_wt_pick.selectedOptionValue || 0 }}
-  AND wtm.resource_id IN (
-    {{ (tbl_resources.selectedRows || []).map(x => x.resource_id).join(',') || '0' }}
-  )
-  AND COALESCE(wtm.is_active,1) = 0;

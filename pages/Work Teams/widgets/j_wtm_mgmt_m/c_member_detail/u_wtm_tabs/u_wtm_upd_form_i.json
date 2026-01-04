@@ -3,9 +3,9 @@
   "autoGenerateForm": true,
   "backgroundColor": "#fff",
   "borderColor": "{{appsmith.theme.colors.primaryColor}}",
-  "borderRadius": "1.5rem",
+  "borderRadius": "0px",
   "borderWidth": "1",
-  "bottomRow": 89,
+  "bottomRow": 86,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "childStylesheet": {
     "ARRAY": {
@@ -252,7 +252,7 @@
   "mobileTopRow": 1,
   "needsErrorInfo": false,
   "onSubmit": "{{\n(async () => {\n  // Identify which member to update (table selection first, then stored context)\n  const id = Number(\n    tbl_team_members.selectedRow?.work_team_member_id\n    || appsmith.store.wtmRow?.work_team_member_id\n    || 0\n  );\n  if (!id) { showAlert('No member selected/loaded to update.', 'warning'); return; }\n\n  // Double-click shield\n  if (appsmith.store._wtm_upd_i_busy) return;\n  await storeValue('_wtm_upd_i_busy', true);\n\n  try {\n    // 1) UPDATE only (no inserts anywhere)\n    const res = await upd_wtm_basic_i.run();\n\n    // 2) Confirm the DB says we updated at least one row\n    const affected = Number(\n      res?.rowsAffected ?? res?.affectedRows ?? res?.[0]?.affectedRows ?? 0\n    );\n    if (!affected) {\n      showAlert('No rows were updated — check the selected member context.', 'warning');\n    } else {\n      showAlert('Member updated.', 'success');\n    }\n\n    // 3) Refresh the members list (respects current filters)\n    await get_team_members.run();\n\n    // 4) Re-select the updated row and sync the detail panel\n    const rows = get_team_members.data || [];\n    const idx = rows.findIndex(r => String(r.work_team_member_id) === String(id));\n    if (idx >= 0) {\n      if (typeof tbl_team_members.selectRow === 'function') {\n        tbl_team_members.selectRow(idx);     // re-highlight the row\n      }\n      await storeValue('wtmRow', rows[idx]); // keep detail panel in sync\n    } else {\n      // If filters now hide the row, clear detail so the panel collapses\n      await storeValue('wtmRow', null);\n    }\n\n    // 5) Refresh detail queries\n    await Promise.allSettled([\n      get_wtm_detail.run(),\n      get_wtm_credentials.run(),\n      get_wtm_links.run()\n    ]);\n\n    // Keep values; just clear dirty state\n    resetWidget('u_wtm_upd_form_i', false);\n  } catch (e) {\n    showAlert('Update failed: ' + (e?.message || e), 'error');\n  } finally {\n    await storeValue('_wtm_upd_i_busy', false);\n  }\n})();\n}}\n",
-  "originalBottomRow": 89,
+  "originalBottomRow": 86,
   "originalTopRow": 1,
   "parentColumnSpace": 17.8935546875,
   "parentId": "3uy9c0f8wi",

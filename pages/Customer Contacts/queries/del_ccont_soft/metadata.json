@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "UPDATE customer_contacts\nSET customer_contact_status = '14. Inactive'\nWHERE customer_contact_id = {{ appsmith.store.ccontRow?.customer_contact_id }};\n",
+      "body": "UPDATE customer_contacts\nSET\n  contact_is_active = 0,\n  updated_at = NOW()\nWHERE customer_contact_id = COALESCE(\n  {{ appsmith.store.ccontRow?.customer_contact_id }},\n  {{ tbl_ccont.triggeredRow?.customer_contact_id }},\n  -1\n);\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

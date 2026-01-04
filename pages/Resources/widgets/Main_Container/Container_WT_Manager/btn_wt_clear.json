@@ -1,0 +1,54 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 21,
+  "boxShadow": "none",
+  "buttonColor": "#dbeafe",
+  "buttonVariant": "PRIMARY",
+  "disabledWhenInvalid": false,
+  "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "isDefaultClickDisabled": true,
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "f2bjqyrt42",
+  "leftColumn": 48,
+  "minWidth": 120,
+  "mobileBottomRow": 22,
+  "mobileLeftColumn": 21,
+  "mobileRightColumn": 37,
+  "mobileTopRow": 18,
+  "needsErrorInfo": false,
+  "onClick": "{{\n(() => {\n  // Clear team selection and mode\n  i_wt_pick.setSelectedOption({ label: '', value: '' });\n  t_wt_mode.setValue(true); // back to Show Members by default\n  storeValue('wtPick', null);\n  storeValue('wtMode', 'members');\n\n  // Refresh membership ids and main list\n  return get_wt_member_ids.run().then(() =>\n    (toggle_show_inactive_res.isSwitchedOn ? get_resources_all.run() : get_resources_list.run())\n  );\n})()\n}}\n",
+  "originalBottomRow": 21,
+  "originalTopRow": 16,
+  "parentColumnSpace": 25.5625,
+  "parentId": "ppuwhcal8o",
+  "parentRowSpace": 10,
+  "placement": "CENTER",
+  "recaptchaType": "V3",
+  "renderMode": "CANVAS",
+  "resetFormOnClick": false,
+  "responsiveBehavior": "hug",
+  "rightColumn": 62,
+  "text": "Reset Filters",
+  "topRow": 16,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "l3hfaf9ke4",
+  "widgetName": "btn_wt_clear"
+}

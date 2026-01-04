@@ -3,9 +3,9 @@
   "autoGenerateForm": true,
   "backgroundColor": "#fff",
   "borderColor": "{{appsmith.theme.colors.primaryColor}}",
-  "borderRadius": "1.5rem",
+  "borderRadius": "0px",
   "borderWidth": "1",
-  "bottomRow": 57,
+  "bottomRow": 64,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "childStylesheet": {
     "ARRAY": {
@@ -102,15 +102,6 @@
       "key": "sourceData"
     },
     {
-      "key": "schema.__root_schema__.children.customer_account_id.defaultValue"
-    },
-    {
-      "key": "schema.__root_schema__.children.customer_account_id.accentColor"
-    },
-    {
-      "key": "schema.__root_schema__.children.customer_account_id.borderRadius"
-    },
-    {
       "key": "schema.__root_schema__.children.customer_id.defaultValue"
     },
     {
@@ -147,6 +138,36 @@
       "key": "schema.__root_schema__.children.customer_account_tools.borderRadius"
     },
     {
+      "key": "schema.__root_schema__.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.cellBorderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_id.options"
+    },
+    {
+      "key": "borderColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_account_is_active.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_account_is_active.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_account_id.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_account_id.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_account_id.borderRadius"
+    },
+    {
       "key": "schema.__root_schema__.children.created_at.defaultValue"
     },
     {
@@ -163,30 +184,6 @@
     },
     {
       "key": "schema.__root_schema__.children.updated_at.borderRadius"
-    },
-    {
-      "key": "schema.__root_schema__.defaultValue"
-    },
-    {
-      "key": "schema.__root_schema__.borderRadius"
-    },
-    {
-      "key": "schema.__root_schema__.cellBorderRadius"
-    },
-    {
-      "key": "schema.__root_schema__.children.customer_id.options"
-    },
-    {
-      "key": "borderColor"
-    },
-    {
-      "key": "schema.__root_schema__.children.customer_name.defaultValue"
-    },
-    {
-      "key": "schema.__root_schema__.children.customer_name.accentColor"
-    },
-    {
-      "key": "schema.__root_schema__.children.customer_name.borderRadius"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
@@ -196,6 +193,9 @@
     },
     {
       "key": "onSubmit"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_account_is_active.defaultValue"
     }
   ],
   "dynamicTriggerPathList": [
@@ -218,9 +218,9 @@
   "mobileRightColumn": 59,
   "mobileTopRow": 8,
   "needsErrorInfo": false,
-  "onSubmit": "{{\n  SubmitShield.runOnce(async () => {\n    await upd_cacc.run();\n    await get_cacc_list.run();\n    closeModal('j_cacc_upd_m');\n    showAlert('Account updated','success');\n  })\n}}\n",
-  "originalBottomRow": 56,
-  "originalTopRow": 1,
+  "onSubmit": "{{\n  SubmitShield.runOnce(async () => {\n    // 1️⃣ Merge ID + edited fields (CRITICAL)\n    await storeValue('caccRow', {\n      ...appsmith.store.caccRow,\n      ...j_cacc_upd_jsn.formData\n    });\n\n    // 2️⃣ Run update\n    await upd_cacc.run();\n\n    // 3️⃣ Refresh table\n    await get_cacc_list.run();\n\n    closeModal('j_cacc_upd_m');\n    showAlert('Account updated', 'success');\n  })\n}}\n",
+  "originalBottomRow": 64,
+  "originalTopRow": 9,
   "parentColumnSpace": 6.9375,
   "parentId": "6remn008w0",
   "parentRowSpace": 10,
@@ -262,7 +262,7 @@
           "labelTextSize": "0.875rem",
           "originalIdentifier": "created_at",
           "position": 6,
-          "sourceData": ""
+          "sourceData": "2025-12-30T12:45:43Z"
         },
         "customer_account_id": {
           "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_cacc_upd_jsn.sourceData, j_cacc_upd_jsn.formData, j_cacc_upd_jsn.fieldState)}}",
@@ -283,8 +283,8 @@
           "label": "Customer Account Id",
           "labelTextSize": "0.875rem",
           "originalIdentifier": "customer_account_id",
-          "position": 0,
-          "sourceData": 7
+          "position": 5,
+          "sourceData": 14
         },
         "customer_account_industry": {
           "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_cacc_upd_jsn.sourceData, j_cacc_upd_jsn.formData, j_cacc_upd_jsn.fieldState)}}",
@@ -307,6 +307,26 @@
           "originalIdentifier": "customer_account_industry",
           "position": 4,
           "sourceData": ""
+        },
+        "customer_account_is_active": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_cacc_upd_jsn.sourceData, j_cacc_upd_jsn.formData, j_cacc_upd_jsn.fieldState)}}",
+          "accessor": "customer_account_is_active",
+          "alignWidget": "LEFT",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "boolean",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.customer_account_is_active))(j_cacc_upd_jsn.sourceData, j_cacc_upd_jsn.formData, j_cacc_upd_jsn.fieldState)}}",
+          "fieldType": "Switch",
+          "identifier": "customer_account_is_active",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isVisible": true,
+          "label": "Customer Account Is Active",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "customer_account_is_active",
+          "position": 7,
+          "sourceData": true
         },
         "customer_account_name": {
           "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_cacc_upd_jsn.sourceData, j_cacc_upd_jsn.formData, j_cacc_upd_jsn.fieldState)}}",
@@ -375,28 +395,6 @@
           "serverSideFiltering": false,
           "sourceData": 1
         },
-        "customer_name": {
-          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_cacc_upd_jsn.sourceData, j_cacc_upd_jsn.formData, j_cacc_upd_jsn.fieldState)}}",
-          "accessor": "customer_name",
-          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_cacc_upd_jsn.sourceData, j_cacc_upd_jsn.formData, j_cacc_upd_jsn.fieldState)}}",
-          "boxShadow": "none",
-          "children": {},
-          "dataType": "string",
-          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.customer_name))(j_cacc_upd_jsn.sourceData, j_cacc_upd_jsn.formData, j_cacc_upd_jsn.fieldState)}}",
-          "fieldType": "Text Input",
-          "iconAlign": "left",
-          "identifier": "customer_name",
-          "isCustomField": false,
-          "isDisabled": false,
-          "isRequired": false,
-          "isSpellCheck": false,
-          "isVisible": true,
-          "label": "Customer Name",
-          "labelTextSize": "0.875rem",
-          "originalIdentifier": "customer_name",
-          "position": 7,
-          "sourceData": "Centific"
-        },
         "updated_at": {
           "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_cacc_upd_jsn.sourceData, j_cacc_upd_jsn.formData, j_cacc_upd_jsn.fieldState)}}",
           "accessor": "updated_at",
@@ -417,7 +415,7 @@
           "labelTextSize": "0.875rem",
           "originalIdentifier": "updated_at",
           "position": 7,
-          "sourceData": ""
+          "sourceData": "2025-12-30T12:45:43Z"
         }
       },
       "dataType": "object",
@@ -446,7 +444,7 @@
   },
   "scrollContents": true,
   "showReset": false,
-  "sourceData": "{{ appsmith.store.caccRow || tbl_cacc.selectedRow }}",
+  "sourceData": "{{ appsmith.store.caccRow }}\n\n",
   "submitButtonLabel": "Submit",
   "submitButtonStyles": {
     "borderRadius": "0.375rem",
@@ -457,8 +455,8 @@
     "iconName": "add",
     "placement": "START"
   },
-  "title": "Update Customer Account",
-  "topRow": 1,
+  "title": "Edit Customer Account",
+  "topRow": 9,
   "type": "JSON_FORM_WIDGET",
   "useSourceData": false,
   "version": 1,

@@ -1,89 +1,105 @@
 // JSObject: EmailHelper
 export default {
-// Replace {{field}} with row[field]
-_render(tpl, row) {
-return String(tpl || '').replace(/\{\{\s*(\w+)\s*\}\}/g, (m, k) => (
-k in (row || {}) ? String(row[k] ?? '') : m
-));
-},
-// Basic HTML → text (keeps line breaks)
-_htmlToText(html) {
-return String(html || '')
-.replace(/<br\s*\/?\s*>/gi, '\n')
-.replace(/<\/p>/gi, '\n\n')
-.replace(/<p\b[^>]*>/gi, '')
-.replace(/<[^>]+>/g, '')
-.replace(/\n{3,}/g, '\n\n')
-.trim();
-},
-// Pull selected template
-_getTemplate() {
-const ds = (get_email_templates_dd_res.data || []);
-const val = String(i_email_template_res.selectedOptionValue ?? '');
-const hit = ds.find(o => String(o.value) === val) || {};
-return {
-subject: hit.template_email_subject || '',
-html: hit.template_email_body_html || ''
+  _render(tpl, row) {
+    return String(tpl || "").replace(/\{\{\s*(\w+)\s*\}\}/g, (m, k) => {
+      if (row && Object.prototype.hasOwnProperty.call(row, k)) {
+        return String(row[k] ?? "");
+      }
+      return m;
+    });
+  },
+
+  _cleanEmailList(list) {
+    return (list || [])
+      .map(e => String(e || "").trim())
+      .filter(Boolean)
+      .map(e => e.replace(/[\s,;]+/g, "")); // normalize
+  },
+
+  _getTplRow() {
+    const ds = get_email_templates_dd_res.data || [];
+    const val = String(i_email_template_res.selectedOptionValue ?? "");
+    return ds.find(x => String(x.value) === val) || null;
+  },
+
+  // TEMPLATE -> opens Outlook using template fields + placeholder replacement using one resource row
+  sendTplRow(row) {
+    const r = row || tbl_resources.triggeredRow || tbl_resources.selectedRow;
+    if (!r) {
+      showAlert("Select a resource row.", "warning");
+      return;
+    }
+
+    const tpl = this._getTplRow();
+    if (!tpl) {
+      showAlert("Select a template first.", "warning");
+      return;
+    }
+
+    const toRaw = this._render(tpl.to_field, r);
+    const ccRaw = this._render(tpl.cc_field, r);
+    const bccRaw = this._render(tpl.bcc_field, r);
+    const subj = this._render(tpl.subject_field, r);
+    const body = this._render(tpl.body_field, r);
+
+    // Outlook tolerates empty values; keep params only when non-empty
+    const params = [];
+
+    const to = String(toRaw || "").trim(); // "mailto:" target
+    const cc = this._cleanEmailList(String(ccRaw || "").split(/[;,]+/)).join(";");
+    const bcc = this._cleanEmailList(String(bccRaw || "").split(/[;,]+/)).join(";");
+
+    if (cc) params.push("cc=" + encodeURIComponent(cc));
+    if (bcc) params.push("bcc=" + encodeURIComponent(bcc));
+    if (subj) params.push("subject=" + encodeURIComponent(subj));
+
+    // BODY MUST BE LAST (prevents it sticking to bcc/subject in some shells)
+    params.push("body=" + encodeURIComponent(body || "\n"));
+
+    const url = "mailto:" + encodeURIComponent(to) + "?" + params.join("&");
+    navigateTo(url, "NEW_WINDOW");
+  },
+
+  // BULK BCC ONLY (no template): selected rows -> BCC
+  sendBulkBccOnly() {
+    const rows = tbl_resources.selectedRows || [];
+    if (!rows.length) {
+      showAlert("Select at least one resource.", "warning");
+      return;
+    }
+
+    const emails = this._cleanEmailList(rows.map(r => r.resource_email));
+    const uniq = [...new Set(emails)];
+    if (!uniq.length) {
+      showAlert("No emails found in selected rows.", "warning");
+      return;
+    }
+
+    const bcc = uniq.join(";");
+    const params = [];
+    params.push("bcc=" + encodeURIComponent(bcc));
+    params.push("body=" + encodeURIComponent("\n")); // LAST
+
+    const url = "mailto:?" + params.join("&");
+    navigateTo(url, "NEW_WINDOW");
+  },
+
+  // COPY selected emails
+  copySelEmails() {
+    const rows = tbl_resources.selectedRows || [];
+    if (!rows.length) {
+      showAlert("Select at least one resource.", "warning");
+      return;
+    }
+
+    const emails = this._cleanEmailList(rows.map(r => r.resource_email));
+    const uniq = [...new Set(emails)];
+    if (!uniq.length) {
+      showAlert("No emails found in selected rows.", "warning");
+      return;
+    }
+
+    copyToClipboard(uniq.join(";"));
+    showAlert(`Copied ${uniq.length} emails.`, "success");
+  }
 };
-},
-
-
-// BULK: one composer with Bcc list
-// Why BODY LAST: some shells append a stray query; keeping body last prevents it sticking to Bcc
-sendBulkBcc() {
-const rows = tbl_resources.selectedRows || [];
-if (!rows.length) { showAlert('Select at least one resource.', 'warning'); return; }
-
-
-const emails = [...new Set(rows
-.map(r => (r.resource_email || '').trim())
-.filter(Boolean))];
-if (!emails.length) { showAlert('No emails found.', 'warning'); return; }
-
-
-const tpl = this._getTemplate();
-const ctx = tbl_resources.selectedRow || rows[0] || {};
-
-
-const subject = this._render(tpl.subject, ctx);
-const bodyTxt = this._htmlToText(this._render(tpl.html, ctx)) || '\n'; // ensure non-empty
-
-
-const bcc = emails.map(e => e.replace(/[\s,;]+/g, '')).join(';'); // Outlook-friendly
-
-
-const params = [];
-if (subject) params.push('subject=' + encodeURIComponent(subject));
-params.push('bcc=' + bcc);
-params.push('body=' + encodeURIComponent(bodyTxt)); // LAST
-
-
-const url = 'mailto:' + '?' + params.join('&');
-navigateTo(url, 'NEW_WINDOW');
-},
-
-
-// PER-ROW: one personalized composer (To: row email)
-sendRowEmail(row) {
-const r = row || tbl_resources.triggeredRow || tbl_resources.selectedRow;
-if (!r) { showAlert('No row selected.', 'warning'); return; }
-
-
-const to = String(r.resource_email || '').trim();
-if (!to) { showAlert('Row has no email.', 'warning'); return; }
-
-
-const tpl = this._getTemplate();
-const subject = this._render(tpl.subject, r);
-const bodyTxt = this._htmlToText(this._render(tpl.html, r)) || '\n';
-
-
-const params = [];
-if (subject) params.push('subject=' + encodeURIComponent(subject));
-params.push('body=' + encodeURIComponent(bodyTxt)); // LAST
-
-
-const url = 'mailto:' + encodeURIComponent(to) + '?' + params.join('&');
-navigateTo(url, 'NEW_WINDOW');
-}
-};	

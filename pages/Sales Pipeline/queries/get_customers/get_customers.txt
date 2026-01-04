@@ -1,0 +1,27 @@
+SELECT
+  c.customer_id,
+  c.customer_name,
+  c.customer_type,
+  c.customer_country,
+  c.customer_industry,
+  c.customer_note,
+  c.currency_id,
+  cur.currency_acronym,
+  c.customer_linkedIn,
+  c.customer_status,
+  c.customer_documentation,
+  c.is_customer
+FROM customers c
+LEFT JOIN currencies cur
+  ON cur.currency_id = c.currency_id
+WHERE
+  (
+    COALESCE(NULLIF({{ dd_cust_status.selectedOptionValue || '' }}, ''), '') = ''
+    OR c.customer_status = {{ dd_cust_status.selectedOptionValue || '' }}
+  )
+  AND
+  (
+    COALESCE(NULLIF({{ dd_cust_type.selectedOptionValue || '' }}, ''), '') = ''
+    OR c.customer_type = {{ dd_cust_type.selectedOptionValue || '' }}
+  )
+ORDER BY c.customer_name;

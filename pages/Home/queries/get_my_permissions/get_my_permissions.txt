@@ -1,0 +1,7 @@
+SELECT
+  p.permission_key
+FROM role_permissions rp
+JOIN permissions p
+  ON p.permission_id = rp.permission_id
+WHERE rp.role_id = COALESCE({{ Number(get_my_role.data?.[0]?.role_id) }}, 0)
+ORDER BY p.permission_key;

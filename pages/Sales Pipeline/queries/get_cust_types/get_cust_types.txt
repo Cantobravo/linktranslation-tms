@@ -1,0 +1,7 @@
+SELECT
+  type_label,
+  type_value
+FROM customer_types
+WHERE is_active = 1
+GROUP BY type_value, type_label
+ORDER BY MIN(sort_order), type_label

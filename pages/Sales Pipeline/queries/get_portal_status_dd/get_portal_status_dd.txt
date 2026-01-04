@@ -1,3 +1,0 @@
-SELECT 'Active' AS label, 'Active' AS value
-UNION ALL
-SELECT 'Inactive', 'Inactive';

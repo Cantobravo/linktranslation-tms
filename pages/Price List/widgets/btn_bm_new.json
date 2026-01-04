@@ -1,0 +1,57 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 34,
+  "boxShadow": "none",
+  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "buttonVariant": "SECONDARY",
+  "disabledWhenInvalid": false,
+  "dynamicBindingPathList": [
+    {
+      "key": "buttonColor"
+    },
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "isDefaultClickDisabled": true,
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "bzzeuas1vs",
+  "leftColumn": 43,
+  "minWidth": 120,
+  "mobileBottomRow": 49,
+  "mobileLeftColumn": 29,
+  "mobileRightColumn": 45,
+  "mobileTopRow": 45,
+  "needsErrorInfo": false,
+  "onClick": "{{\n(async () => {\n  const curId = dd_bm_cur.selectedOptionValue;\n  if (!curId) {\n    showAlert(\"Select a Benchmark currency first.\", \"warning\");\n    return;\n  }\n\n  let plId = get_pl_hdr_bm.data?.[0]?.price_list_id;\n\n  if (!plId) {\n    await ins_pl_hdr_bm.run();\n    await get_pl_hdr_bm.run();\n    plId = get_pl_hdr_bm.data?.[0]?.price_list_id;\n  }\n\n  if (!plId) {\n    showAlert(\"Could not create/find the Benchmark price list.\", \"error\");\n    return;\n  }\n\n  await storeValue(\"plCtx\", { scope: \"BENCHMARK\", price_list_id: plId });\n  resetWidget(\"jf_pl_item_i\");\n  showModal(\"j_pl_item_i\");\n})()\n}}\n",
+  "originalBottomRow": 34,
+  "originalTopRow": 24,
+  "parentColumnSpace": 34.890625,
+  "parentId": "0",
+  "parentRowSpace": 10,
+  "placement": "CENTER",
+  "recaptchaType": "V3",
+  "renderMode": "CANVAS",
+  "resetFormOnClick": false,
+  "responsiveBehavior": "hug",
+  "rightColumn": 52,
+  "text": "New benchmark Price List",
+  "topRow": 24,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "i22kb75wge",
+  "widgetName": "btn_bm_new"
+}

@@ -2,7 +2,7 @@
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 17,
+  "bottomRow": 24,
   "boxShadow": "none",
   "defaultOptionValue": "{{ ((options, serverSideFiltering) => (  1 ))(p_currency_id.options, p_currency_id.serverSideFiltering) }}",
   "dynamicBindingPathList": [
@@ -57,7 +57,7 @@
   "rightColumn": 62,
   "serverSideFiltering": false,
   "sourceData": "{{get_currencies_dropdown.data}}",
-  "topRow": 10,
+  "topRow": 17,
   "type": "SELECT_WIDGET",
   "version": 1,
   "widgetId": "9rf1witwdx",

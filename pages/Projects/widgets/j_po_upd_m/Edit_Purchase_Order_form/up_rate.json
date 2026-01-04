@@ -15,9 +15,18 @@
     }
   ],
   "dynamicHeight": "FIXED",
-  "dynamicTriggerPathList": [],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onTextChanged"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onTextChanged"
+    }
+  ],
   "iconAlign": "left",
-  "inputType": "TEXT",
+  "inputType": "NUMBER",
   "isDisabled": false,
   "isLoading": false,
   "isRequired": false,
@@ -38,6 +47,7 @@
   "mobileRightColumn": 20,
   "mobileTopRow": 75,
   "needsErrorInfo": false,
+  "onTextChanged": "{{ resetWidget('up_total', true) }}\n",
   "parentColumnSpace": 5.974609375,
   "parentId": "p2j9rol4wr",
   "parentRowSpace": 10,
@@ -45,6 +55,7 @@
   "resetOnSubmit": true,
   "responsiveBehavior": "fill",
   "rightColumn": 23,
+  "shouldAllowAutofill": false,
   "showStepArrows": false,
   "topRow": 42,
   "type": "INPUT_WIDGET_V2",

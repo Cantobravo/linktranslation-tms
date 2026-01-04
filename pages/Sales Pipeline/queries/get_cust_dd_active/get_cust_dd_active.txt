@@ -1,5 +1,0 @@
-SELECT
-  c.customer_id AS value,
-  c.customer_name AS label
-FROM customers c
-ORDER BY c.customer_name;

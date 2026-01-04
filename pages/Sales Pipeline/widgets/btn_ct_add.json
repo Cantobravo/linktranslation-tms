@@ -1,0 +1,59 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 144,
+  "boxShadow": "none",
+  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "buttonVariant": "SECONDARY",
+  "disabledWhenInvalid": false,
+  "dynamicBindingPathList": [
+    {
+      "key": "buttonColor"
+    },
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "iconAlign": "left",
+  "iconName": "add",
+  "isDefaultClickDisabled": true,
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "m1qqulucj2",
+  "leftColumn": 1,
+  "minWidth": 120,
+  "mobileBottomRow": 78,
+  "mobileLeftColumn": 1,
+  "mobileRightColumn": 17,
+  "mobileTopRow": 74,
+  "needsErrorInfo": false,
+  "onClick": "{{\n  (async () => {\n    const cid = tbl_customers.selectedRow?.customer_id || appsmith.store.sel_cust_id;\n\n    if (!cid) {\n      showAlert('Select a customer first.', 'warning');\n      return;\n    }\n\n    await storeValue('sel_cust_id', cid);\n\n    await storeValue('ctInsObj', {\n      customer_contact_name: null,\n      contact_position: null,\n      customer_contact_email: null,\n      customer_id: cid,\n      customer_contact_industry: null,\n      customer_contact_website: null,\n      customer_contact_linkedin: null,\n      customer_contact_first_contact: null,\n      customer_contact_last_contact: null,\n      customer_contact_next_contact: null,\n      customer_contact_contact_method: null,\n      customer_contact_test: null,\n      customer_contact_notes: null,\n      contact_is_active: 1\n    });\n\n    resetWidget('jf_ct_ins', true);\n    showModal('m_ct_ins');\n  })()\n}}\n",
+  "originalBottomRow": 144,
+  "originalTopRow": 137,
+  "parentColumnSpace": 18.59375,
+  "parentId": "0",
+  "parentRowSpace": 10,
+  "placement": "CENTER",
+  "recaptchaType": "V3",
+  "renderMode": "CANVAS",
+  "resetFormOnClick": false,
+  "responsiveBehavior": "hug",
+  "rightColumn": 10,
+  "text": "Add New Contact",
+  "topRow": 137,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "2dp9uqbf6d",
+  "widgetName": "btn_ct_add"
+}

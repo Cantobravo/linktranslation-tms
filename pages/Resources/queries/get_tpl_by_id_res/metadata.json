@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT\n  template_id,\n  template_name,\n  template_email_subject,\n  template_email_body_html,\n  template_email_bcc_field\nFROM templates\nWHERE template_id = {{ i_email_template_res.selectedOptionValue || null }}\nLIMIT 1;\n",
+      "body": "SELECT\n  t.template_id,\n  t.template_name,\n  t.to_field,\n  t.cc_field,\n  t.bcc_field,\n  t.subject_field,\n  t.body_field\nFROM templates t\nWHERE t.template_id = COALESCE({{ i_email_template_res.selectedOptionValue }}, NULL)\nLIMIT 1;\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

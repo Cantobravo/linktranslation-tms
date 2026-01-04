@@ -3,7 +3,7 @@
   "autoGenerateForm": true,
   "backgroundColor": "#fff",
   "borderColor": "{{appsmith.theme.colors.primaryColor}}",
-  "borderRadius": "1.5rem",
+  "borderRadius": "0px",
   "borderWidth": "1",
   "bottomRow": 74,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
@@ -179,7 +179,7 @@
   "isLoading": false,
   "isVisible": true,
   "key": "1nwyhb51be",
-  "leftColumn": 4,
+  "leftColumn": 2,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "minWidth": 450,
@@ -203,7 +203,7 @@
     "buttonVariant": "SECONDARY"
   },
   "responsiveBehavior": "fill",
-  "rightColumn": 56,
+  "rightColumn": 61,
   "schema": {
     "__root_schema__": {
       "accessor": "__root_schema__",

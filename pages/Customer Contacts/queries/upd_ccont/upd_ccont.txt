@@ -1,10 +1,9 @@
 UPDATE customer_contacts
 SET
-  customer_contact_name = {{ j_ccont_upd_jsn.formData.customer_contact_name }},
-  contact_position = {{ j_ccont_upd_jsn.formData.contact_position ?? j_ccont_upd_jsn.formData.Position }},
-  customer_contact_email = {{ j_ccont_upd_jsn.formData.customer_contact_email }},
-  customer_id = COALESCE({{ j_ccont_upd_jsn.formData.customer_id || null }}, customer_id),
-  customer_contact_status = {{ j_ccont_upd_jsn.formData.customer_contact_status || null }},
+  customer_contact_name = {{ j_ccont_upd_jsn.formData.customer_contact_name ?? null }},
+  contact_position = {{ j_ccont_upd_jsn.formData.contact_position ?? j_ccont_upd_jsn.formData.Position ?? null }},
+  customer_contact_email = {{ j_ccont_upd_jsn.formData.customer_contact_email ?? null }},
+  customer_id = {{ j_ccont_upd_jsn.formData.customer_id || null }},
   customer_contact_industry = {{ j_ccont_upd_jsn.formData.customer_contact_industry || null }},
   customer_contact_website = {{ j_ccont_upd_jsn.formData.customer_contact_website || null }},
   customer_contact_linkedin = {{ j_ccont_upd_jsn.formData.customer_contact_linkedin || null }},
@@ -13,7 +12,8 @@ SET
   customer_contact_next_contact = {{ j_ccont_upd_jsn.formData.customer_contact_next_contact ? moment(j_ccont_upd_jsn.formData.customer_contact_next_contact).format('YYYY-MM-DD') : null }},
   customer_contact_contact_method = {{ j_ccont_upd_jsn.formData.customer_contact_contact_method || null }},
   customer_contact_test = {{ j_ccont_upd_jsn.formData.customer_contact_test || null }},
-  customer_contact_notes = {{ j_ccont_upd_jsn.formData.customer_contact_notes || null }}
+  customer_contact_notes = {{ j_ccont_upd_jsn.formData.customer_contact_notes || null }},
+  updated_at = NOW()
 WHERE customer_contact_id = COALESCE(
   {{ j_ccont_upd_jsn.formData.customer_contact_id || null }},
   {{ appsmith.store.ccontRow ? appsmith.store.ccontRow.customer_contact_id : null }},

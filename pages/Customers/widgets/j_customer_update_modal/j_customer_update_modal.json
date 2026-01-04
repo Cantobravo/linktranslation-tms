@@ -1,14 +1,14 @@
 {
   "animateLoading": true,
-  "borderRadius": "1.5rem",
-  "bottomRow": 1572,
+  "borderRadius": "0px",
+  "bottomRow": 1472,
   "boxShadow": "none",
   "canEscapeKeyClose": true,
   "canOutsideClickClose": true,
   "children": [
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 1550,
+      "bottomRow": 1450,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": true,
       "detachFromLayout": true,
@@ -29,7 +29,7 @@
       "leftColumn": 0,
       "maxDynamicHeight": 9000,
       "minDynamicHeight": 4,
-      "minHeight": 2330,
+      "minHeight": 1490,
       "minWidth": 450,
       "mobileBottomRow": 240,
       "mobileLeftColumn": 0,
@@ -54,7 +54,7 @@
   "dynamicBindingPathList": [],
   "dynamicHeight": "AUTO_HEIGHT",
   "dynamicTriggerPathList": [],
-  "height": 1550,
+  "height": 1450,
   "isCanvas": true,
   "isLoading": false,
   "key": "9q55dlz5l5",
@@ -78,5 +78,5 @@
   "version": 2,
   "widgetId": "im6h8w9o24",
   "widgetName": "j_customer_update_modal",
-  "width": 916
+  "width": 764
 }

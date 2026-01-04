@@ -1,3 +1,0 @@
-DELETE FROM price_list_items
-WHERE price_list_item_id = {{ appsmith.store.pliRow?.price_list_item_id }};
-	

@@ -3,9 +3,9 @@
   "autoGenerateForm": true,
   "backgroundColor": "#fff",
   "borderColor": "#93c5fd",
-  "borderRadius": "1.5rem",
+  "borderRadius": "0px",
   "borderWidth": "3",
-  "bottomRow": 63,
+  "bottomRow": 66,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "childStylesheet": {
     "ARRAY": {
@@ -186,7 +186,7 @@
   "mobileTopRow": 8,
   "needsErrorInfo": false,
   "onSubmit": "{{\n  ins_wtm_cred.run(\n    () => {\n      showAlert('Credential added.', 'success');\n      get_wtm_creds.run();\n      resetWidget('j_cred_add', true);\n      closeModal('m_add_cred');\n    },\n    (e) => showAlert('Insert failed: ' + (e?.message || 'error'), 'error')\n  )\n}}\n",
-  "originalBottomRow": 66,
+  "originalBottomRow": 63,
   "originalTopRow": 17,
   "parentColumnSpace": 6.9375,
   "parentId": "cz6hh6alve",
@@ -351,7 +351,7 @@
     "buttonVariant": "PRIMARY"
   },
   "title": "",
-  "topRow": 17,
+  "topRow": 20,
   "type": "JSON_FORM_WIDGET",
   "useSourceData": false,
   "version": 1,

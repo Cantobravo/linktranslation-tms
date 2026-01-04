@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 5,
+  "bottomRow": 8,
   "boxShadow": "none",
   "dynamicBindingPathList": [
     {
@@ -41,7 +41,7 @@
   "isVisible": true,
   "key": "1bzsw1373s",
   "label": "",
-  "leftColumn": 59,
+  "leftColumn": 0,
   "menuColor": "{{appsmith.theme.colors.primaryColor}}",
   "menuItems": {
     "menuItem2": {
@@ -84,8 +84,8 @@
   "parentRowSpace": 10,
   "placement": "CENTER",
   "renderMode": "CANVAS",
-  "rightColumn": 64,
-  "topRow": 0,
+  "rightColumn": 7,
+  "topRow": 1,
   "type": "MENU_BUTTON_WIDGET",
   "version": 1,
   "widgetId": "l845lr0n0c",

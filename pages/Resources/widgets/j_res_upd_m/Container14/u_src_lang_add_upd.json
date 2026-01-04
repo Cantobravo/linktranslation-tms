@@ -52,7 +52,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 60,
   "serverSideFiltering": false,
-  "sourceData": "{{ get_languages_dropdown.data }}",
+  "sourceData": "{{get_langs_pairs_dd.data}}",
   "topRow": 6,
   "type": "SELECT_WIDGET",
   "version": 1,

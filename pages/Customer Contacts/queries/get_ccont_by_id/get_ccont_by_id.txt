@@ -5,7 +5,7 @@ SELECT
   cc.customer_contact_email,
   cc.customer_id,
   c.customer_name,
-  cc.customer_contact_status,
+  c.customer_status,
   cc.customer_contact_industry,
   cc.customer_contact_website,
   cc.customer_contact_linkedin,
@@ -19,4 +19,7 @@ SELECT
   cc.updated_at
 FROM customer_contacts cc
 LEFT JOIN customers c ON c.customer_id = cc.customer_id
-WHERE cc.customer_contact_id = COALESCE({{ appsmith.store.ccontRow ? appsmith.store.ccontRow.customer_contact_id : null }}, -1);
+WHERE cc.customer_contact_id = COALESCE(
+  {{ appsmith.store.ccontRow ? appsmith.store.ccontRow.customer_contact_id : null }},
+  -1
+);

@@ -1,0 +1,14 @@
+SELECT
+  r.resource_id,
+  r.resource_email,
+  r.role_id,
+  ro.role_name,
+  p.permission_key
+FROM resources r
+LEFT JOIN roles ro
+  ON ro.role_id = r.role_id
+LEFT JOIN role_permissions rp
+  ON rp.role_id = ro.role_id
+LEFT JOIN permissions p
+  ON p.permission_id = rp.permission_id
+WHERE r.resource_email = COALESCE(NULLIF({{ appsmith.user.email }}, ''), NULL);

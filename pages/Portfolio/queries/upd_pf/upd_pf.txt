@@ -1,0 +1,10 @@
+UPDATE portfolio
+SET
+  customer_name = {{ this.params.customer_name }},
+  customer_description = {{ this.params.customer_description }},
+  projects_details = {{ this.params.projects_details }},
+  project_area = {{ this.params.project_area }},
+  project_size = {{ this.params.project_size }},
+  portfolio_tags = {{ this.params.portfolio_tags }}
+WHERE
+  portfolio_id = {{ this.params.portfolio_id }};

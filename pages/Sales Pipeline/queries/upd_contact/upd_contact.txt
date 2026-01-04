@@ -1,21 +1,31 @@
 UPDATE customer_contacts
 SET
-  customer_id = {{ json_cont_upd.formData.customer_id || null }},
-  customer_contact_name = {{ json_cont_upd.formData.contact_full_name }},
-  contact_position = {{ json_cont_upd.formData.contact_role || null }},
-  customer_contact_email = {{ json_cont_upd.formData.contact_email || null }},
-  customer_contact_status = {{ json_cont_upd.formData.contact_status || null }},
-  customer_contact_industry = {{ json_cont_upd.formData.customer_contact_industry || null }},
-  customer_contact_website = {{ json_cont_upd.formData.customer_contact_website || null }},
-  customer_contact_linkedin = {{ json_cont_upd.formData.customer_contact_linkedin || null }},
-  customer_contact_first_contact = {{ json_cont_upd.formData.initial_contact_date ? moment(json_cont_upd.formData.initial_contact_date).format('YYYY-MM-DD') : null }},
-  customer_contact_last_contact = {{ json_cont_upd.formData.last_contact_date ? moment(json_cont_upd.formData.last_contact_date).format('YYYY-MM-DD') : null }},
-  customer_contact_next_contact = {{ json_cont_upd.formData.next_contact_date ? moment(json_cont_upd.formData.next_contact_date).format('YYYY-MM-DD') : null }},
-  customer_contact_contact_method = {{ json_cont_upd.formData.customer_contact_contact_method || null }},
-  customer_contact_test = {{
-    json_cont_upd.formData.customer_contact_test === true ? 1 :
-    (json_cont_upd.formData.customer_contact_test === false ? 0 : null)
-  }},
-  customer_contact_notes = {{ json_cont_upd.formData.customer_contact_notes || null }},
-  updated_at = NOW()
-WHERE customer_contact_id = {{ json_cont_upd.formData.contact_id }};
+  customer_contact_name = COALESCE(NULLIF({{ jf_ct_upd.formData.customer_contact_name || '' }}, ''), NULL),
+  contact_position = COALESCE(NULLIF({{ jf_ct_upd.formData.contact_position || '' }}, ''), NULL),
+  customer_contact_email = COALESCE(NULLIF({{ jf_ct_upd.formData.customer_contact_email || '' }}, ''), NULL),
+
+  customer_id = COALESCE(
+    NULLIF({{ jf_ct_upd.formData.customer_id || '' }}, ''),
+    {{ (appsmith.store.sel_ct_row && appsmith.store.sel_ct_row.customer_id) || null }},
+    {{ appsmith.store.sel_cust_id || null }}
+  ),
+
+  customer_contact_industry = COALESCE(NULLIF({{ jf_ct_upd.formData.customer_contact_industry || '' }}, ''), NULL),
+  customer_contact_website = COALESCE(NULLIF({{ jf_ct_upd.formData.customer_contact_website || '' }}, ''), NULL),
+  customer_contact_linkedin = COALESCE(NULLIF({{ jf_ct_upd.formData.customer_contact_linkedin || '' }}, ''), NULL),
+
+  customer_contact_first_contact = COALESCE(NULLIF({{ jf_ct_upd.formData.customer_contact_first_contact || '' }}, ''), NULL),
+  customer_contact_last_contact = COALESCE(NULLIF({{ jf_ct_upd.formData.customer_contact_last_contact || '' }}, ''), NULL),
+  customer_contact_next_contact = COALESCE(NULLIF({{ jf_ct_upd.formData.customer_contact_next_contact || '' }}, ''), NULL),
+
+  customer_contact_contact_method = COALESCE(NULLIF({{ jf_ct_upd.formData.customer_contact_contact_method || '' }}, ''), NULL),
+  customer_contact_test = COALESCE(NULLIF({{ jf_ct_upd.formData.customer_contact_test || '' }}, ''), NULL),
+  customer_contact_notes = COALESCE(NULLIF({{ jf_ct_upd.formData.customer_contact_notes || '' }}, ''), NULL),
+
+  updated_at = CURRENT_TIMESTAMP
+WHERE customer_contact_id = COALESCE(
+  {{ appsmith.store.sel_ct_row.customer_contact_id }},
+  {{ tbl_cust_contacts.triggeredRow.customer_contact_id }},
+  {{ tbl_cust_contacts.selectedRow.customer_contact_id }},
+  -1
+)

@@ -1,0 +1,28 @@
+SELECT
+  c.customer_id,
+  c.customer_name,
+  c.customer_type,
+  c.customer_address,
+  c.customer_country,
+  c.customer_phone,
+  c.customer_industry,
+  c.customer_note,
+  c.customer_invoice_procedure,
+  c.customer_payment_term,
+  c.customer_tax_vat_number,
+  c.currency_id,
+  cur.currency_acronym,
+  cur.currency_name,
+  c.customer_receivable_bank_name,
+  c.customer_linkedIn,
+  c.customer_bank_fee,
+  c.customer_status,
+  c.customer_documentation,
+  c.created_at,
+  c.updated_at,
+  c.is_customer
+FROM customers c
+LEFT JOIN currencies cur
+  ON cur.currency_id = c.currency_id
+WHERE c.customer_id = COALESCE({{ appsmith.store.sel_cust_id }}, -1)
+LIMIT 1

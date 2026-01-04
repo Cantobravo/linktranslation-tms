@@ -34,7 +34,7 @@
   "mobileRightColumn": 63,
   "mobileTopRow": 18,
   "needsErrorInfo": false,
-  "onClick": "{{\n  (async () => {\n    await del_ccont_soft.run();\n    if (toggle_show_inactive_ccont.isSwitchedOn) {\n      await get_ccont_all.run();\n    } else {\n      await get_ccont_active.run();\n    }\n    closeModal('j_ccont_del_m');\n    showAlert('Contact set to Inactive', 'success');\n  })()\n}}\n",
+  "onClick": "{{\n(async () => {\n  await del_ccont_soft.run();\n\n  // ✅ refresh the actual table source\n  await get_ccont_list.run();\n\n  closeModal('j_ccont_del_m');\n  showAlert('Contact set to Inactive', 'success');\n\n  // Optional: clear stored row\n  await storeValue('ccontRow', null);\n})()\n}}\n",
   "originalBottomRow": 24,
   "originalTopRow": 20,
   "parentId": "amuycogqlk",

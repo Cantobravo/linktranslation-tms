@@ -20,10 +20,9 @@ SELECT
     po.total,
     po.date,
     po.due_date,
-    po.template_id,
-    t.template_name,
     po.created_at,
-    po.updated_at
+    po.updated_at,
+    po.note
 FROM resource_purchase_orders po
 LEFT JOIN resources r ON po.resource_id = r.resource_id
 LEFT JOIN currencies c ON po.currency_id = c.currency_id
@@ -32,6 +31,5 @@ LEFT JOIN languages sl ON po.source_language_id = sl.language_id
 LEFT JOIN languages tl ON po.target_language_id = tl.language_id
 LEFT JOIN services s ON po.service_id = s.service_id
 LEFT JOIN units u ON po.unit_id = u.unit_id
-LEFT JOIN templates t ON po.template_id = t.template_id
 WHERE po.project_id = {{ appsmith.store.projectInserted }}
 ORDER BY po.date DESC;

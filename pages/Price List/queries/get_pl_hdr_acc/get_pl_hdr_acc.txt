@@ -1,0 +1,10 @@
+SELECT
+  pl.price_list_id,
+  pl.price_list_scope,
+  pl.customer_account_id,
+  ca.customer_id
+FROM price_lists pl
+JOIN customer_accounts ca ON ca.customer_account_id = pl.customer_account_id
+WHERE pl.price_list_scope = 'ACCOUNT'
+  AND pl.customer_account_id = COALESCE({{dd_pl_acc.selectedOptionValue}}, -1)
+LIMIT 1

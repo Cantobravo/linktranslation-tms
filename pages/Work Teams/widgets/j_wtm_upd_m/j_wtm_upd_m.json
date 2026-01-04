@@ -1,6 +1,6 @@
 {
   "animateLoading": true,
-  "borderRadius": "1.5rem",
+  "borderRadius": "0px",
   "bottomRow": 101,
   "boxShadow": "none",
   "canEscapeKeyClose": true,

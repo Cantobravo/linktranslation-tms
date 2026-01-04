@@ -1,1 +1,5 @@
-SELECT currency_id AS value, currency_acronym AS label FROM currencies ORDER BY currency_acronym;
+SELECT
+  currency_id AS value,
+  currency_name AS label
+FROM currencies
+ORDER BY currency_name

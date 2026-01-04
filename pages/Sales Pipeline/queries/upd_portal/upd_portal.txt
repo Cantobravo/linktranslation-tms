@@ -1,14 +1,18 @@
 UPDATE customer_portals
 SET
-  customer_id = {{ json_portal_upd.formData.customer_id || null }},
-  customer_contact_id = {{ json_portal_upd.formData.customer_contact_id || null }},
-  customer_portal_name = {{ json_portal_upd.formData.portal_name }},
-  customer_portal_website = {{ json_portal_upd.formData.portal_website || null }},
-  customer_portal_credentials = {{ json_portal_upd.formData.portal_credentials || null }},
-  customer_portal_notes = {{ json_portal_upd.formData.portal_notes || null }},
-  customer_portal_status = {{ json_portal_upd.formData.portal_status || null }},
-  customer_portal_first_update = {{ json_portal_upd.formData.first_update ? moment(json_portal_upd.formData.first_update).format('YYYY-MM-DD') : null }},
-  customer_portal_last_update = {{ json_portal_upd.formData.last_update ? moment(json_portal_upd.formData.last_update).format('YYYY-MM-DD') : null }},
-  customer_portal_next_update = {{ json_portal_upd.formData.next_update ? moment(json_portal_upd.formData.next_update).format('YYYY-MM-DD') : null }},
-  updated_at = NOW()
-WHERE customer_portal_id = {{ json_portal_upd.formData.portal_id }};
+  customer_portal_name = COALESCE(NULLIF({{ jf_port_upd.formData.customer_portal_name || '' }}, ''), NULL),
+  customer_id = COALESCE(NULLIF({{ jf_port_upd.formData.customer_id || '' }}, ''), NULL),
+  customer_contact_id = COALESCE(NULLIF({{ jf_port_upd.formData.customer_contact_id || '' }}, ''), NULL),
+  customer_portal_credentials = COALESCE(NULLIF({{ jf_port_upd.formData.customer_portal_credentials || '' }}, ''), NULL),
+  customer_portal_website = COALESCE(NULLIF({{ jf_port_upd.formData.customer_portal_website || '' }}, ''), NULL),
+  customer_portal_notes = COALESCE(NULLIF({{ jf_port_upd.formData.customer_portal_notes || '' }}, ''), NULL),
+
+  customer_portal_status = COALESCE(NULLIF({{ jf_port_upd.formData.customer_portal_status || '' }}, ''), customer_portal_status),
+  portal_scope = COALESCE(NULLIF({{ jf_port_upd.formData.portal_scope || '' }}, ''), portal_scope),
+
+  customer_portal_first_update = COALESCE(NULLIF({{ jf_port_upd.formData.customer_portal_first_update || '' }}, ''), NULL),
+  customer_portal_last_update = COALESCE(NULLIF({{ jf_port_upd.formData.customer_portal_last_update || '' }}, ''), NULL),
+  customer_portal_next_update = COALESCE(NULLIF({{ jf_port_upd.formData.customer_portal_next_update || '' }}, ''), NULL),
+
+  updated_at = CURRENT_TIMESTAMP
+WHERE customer_portal_id = COALESCE({{ appsmith.store.sel_port_row.customer_portal_id || 0 }}, -1);

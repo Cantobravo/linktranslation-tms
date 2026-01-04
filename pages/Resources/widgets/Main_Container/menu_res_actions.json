@@ -1,14 +1,14 @@
 {
   "animateLoading": true,
   "borderRadius": "0.375rem",
-  "bottomRow": 68,
+  "bottomRow": 58,
   "boxShadow": "none",
   "dynamicBindingPathList": [
     {
-      "key": "menuItems.menuItemkmddsc8nm2.isDisabled"
+      "key": "menuColor"
     },
     {
-      "key": "menuColor"
+      "key": "menuItems.menuItemyiriawq9ml.isDisabled"
     }
   ],
   "dynamicPropertyPathList": [
@@ -29,17 +29,50 @@
     },
     {
       "key": "menuItems.menuItemkc8q64ijgr.onClick"
+    },
+    {
+      "key": "menuItems.menuItem61gr97py2s.onClick"
+    },
+    {
+      "key": "menuItems.menuItem7vg7xua9us.onClick"
+    },
+    {
+      "key": "menuItems.menuItem3mfrkgv7s4.onClick"
+    },
+    {
+      "key": "menuItems.menuItemyiriawq9ml.onClick"
+    },
+    {
+      "key": "menuItems.menuItemt9l4bu00az.onClick"
+    },
+    {
+      "key": "menuItems.menuItem4i7jt15jok.onClick"
+    },
+    {
+      "key": "menuItems.menuItemyiriawq9ml.isDisabled"
     }
   ],
   "dynamicTriggerPathList": [
-    {
-      "key": "menuItems.menuItemkmddsc8nm2.onClick"
-    },
     {
       "key": "menuItems.menuItemnvlvdksuw6.onClick"
     },
     {
       "key": "menuItems.menuItemkc8q64ijgr.onClick"
+    },
+    {
+      "key": "menuItems.menuItem61gr97py2s.onClick"
+    },
+    {
+      "key": "menuItems.menuItem7vg7xua9us.onClick"
+    },
+    {
+      "key": "menuItems.menuItemyiriawq9ml.onClick"
+    },
+    {
+      "key": "menuItems.menuItemt9l4bu00az.onClick"
+    },
+    {
+      "key": "menuItems.menuItem4i7jt15jok.onClick"
     }
   ],
   "iconAlign": "left",
@@ -50,35 +83,71 @@
   "isVisible": true,
   "key": "wfj5t29vbh",
   "label": "",
-  "leftColumn": 1,
+  "leftColumn": 0,
   "menuColor": "{{appsmith.theme.colors.primaryColor}}",
   "menuItems": {
+    "menuItem4i7jt15jok": {
+      "id": "menuItem4i7jt15jok",
+      "index": 6,
+      "isDisabled": false,
+      "isVisible": true,
+      "label": "Copy All Emails",
+      "onClick": "{{\n  (() => {\n    const rows = tbl_resources.selectedRows || [];\n    if (!rows.length) { showAlert(\"Select at least one resource.\", \"warning\"); return; }\n\n    const emails = [...new Set(\n      rows.map(r => String(r.resource_email || \"\").trim()).filter(Boolean)\n    )];\n\n    if (!emails.length) { showAlert(\"No emails found in selected rows.\", \"warning\"); return; }\n\n    copyToClipboard(emails.join(\";\"));\n    showAlert(`Copied ${emails.length} email(s).`, \"success\");\n  })()\n}}\n\n",
+      "widgetId": "r9pob631jo"
+    },
+    "menuItem61gr97py2s": {
+      "id": "menuItem61gr97py2s",
+      "index": 0,
+      "isDisabled": false,
+      "isVisible": true,
+      "label": "Edit / View Resource",
+      "onClick": "{{\n(async () => {\n  const row =\n    (tbl_resources.selectedRows && tbl_resources.selectedRows[0])\n    || appsmith.store.resRow\n    || tbl_resources.selectedRow;\n\n  if (!row?.resource_id) {\n    showAlert('No resource selected.', 'warning');\n    return;\n  }\n\n  await storeValue('resRow', row);\n\n  // IMPORTANT: refresh pairs every time you open update\n  await get_res_pairs.run();\n\n  showModal('j_res_upd_m');\n})()\n}}\n",
+      "widgetId": "meodic8px0"
+    },
+    "menuItem7vg7xua9us": {
+      "id": "menuItem7vg7xua9us",
+      "index": 1,
+      "isDisabled": false,
+      "isVisible": true,
+      "label": "Delete Resource",
+      "onClick": "{{\n  (async () => {\n    const row =\n      appsmith.store.resRow\n      || (Array.isArray(tbl_resources.selectedRows) && tbl_resources.selectedRows.length ? tbl_resources.selectedRows[0] : null)\n      || tbl_resources.selectedRow\n      || (Array.isArray(appsmith.store._res_sel) && appsmith.store._res_sel.length ? appsmith.store._res_sel[0] : null);\n\n    if (!row?.resource_id) { showAlert('No resource selected.', 'warning'); return; }\n\n    await storeValue('resDelRow', row);\n    showModal('j_res_del_m');\n  })()\n}}",
+      "widgetId": "5ycbpvwkjc"
+    },
     "menuItemkc8q64ijgr": {
       "id": "menuItemkc8q64ijgr",
-      "index": 1,
+      "index": 3,
       "isDisabled": false,
       "isVisible": true,
       "label": "Select All",
       "onClick": "{{\n(() => {\nconst n = (tbl_resources.tableData || []).length;\nif (!n) { showAlert('No rows to select.', 'warning'); return; }\nconst indices = Array.from({ length: n }, (_, i) => i);\nreturn tbl_resources.setSelectedRowIndices(indices);\n})()\n}}",
       "widgetId": "vmhx5smqoo"
     },
-    "menuItemkmddsc8nm2": {
-      "id": "menuItemkmddsc8nm2",
-      "index": 0,
-      "isDisabled": "{{ appsmith.store._res_bulk_del_busy }}",
-      "isVisible": true,
-      "label": "Delete Rows",
-      "onClick": "{{\n(() => {\n  const rows = tbl_resources.selectedRows || [];\n  if (!rows.length) { showAlert('Select at least one resource.', 'warning'); return; }\n  storeValue('resBulkSel', rows);\n  showModal('j_res_bulk_del_m');\n})()\n}}\n",
-      "widgetId": "88qqny35jk"
-    },
     "menuItemnvlvdksuw6": {
       "id": "menuItemnvlvdksuw6",
-      "index": 2,
+      "index": 4,
       "isDisabled": false,
       "isVisible": true,
       "label": "Clear Selection",
       "onClick": "{{ resetWidget('tbl_resources', false) }}\n",
       "widgetId": "30fwrkn7qg"
+    },
+    "menuItemt9l4bu00az": {
+      "id": "menuItemt9l4bu00az",
+      "index": 5,
+      "isDisabled": false,
+      "isVisible": true,
+      "label": "Send Email Bcc",
+      "onClick": "{{\n  (() => {\n    const rows = tbl_resources.selectedRows || [];\n    if (!rows.length) { showAlert(\"Select at least one resource.\", \"warning\"); return; }\n\n    const emails = [...new Set(\n      rows.map(r => String(r.resource_email || \"\").trim()).filter(Boolean)\n    )];\n\n    if (!emails.length) { showAlert(\"No emails found in selected rows.\", \"warning\"); return; }\n\n    const params = new URLSearchParams({\n      bcc: emails.join(\";\"),\n      subject: \"\",\n      body: \"\\n\"\n    });\n\n    const url = \"mailto:?\" + params.toString();\n    navigateTo(url, {}, \"NEW_WINDOW\");\n  })()\n}}\n\n",
+      "widgetId": "jfxhy6odi6"
+    },
+    "menuItemyiriawq9ml": {
+      "id": "menuItemyiriawq9ml",
+      "index": 2,
+      "isDisabled": "{{\n  !(tbl_resources.selectedRows && tbl_resources.selectedRows.length)\n}}\n",
+      "isVisible": true,
+      "label": "Delete Bulk Resources",
+      "onClick": "{{\n  (async () => {\n    const rows = tbl_resources.selectedRows || [];\n\n    if (!rows.length) {\n      showAlert('Select at least one resource.', 'warning');\n      return;\n    }\n\n    await storeValue('resBulkSel', rows);\n\n    showModal('j_res_bulk_del_m');\n  })()\n}}\n",
+      "widgetId": "uear1au6bc"
     }
   },
   "menuItemsSource": "STATIC",
@@ -88,15 +157,15 @@
   "mobileRightColumn": 16,
   "mobileTopRow": 24,
   "needsErrorInfo": false,
-  "originalBottomRow": 68,
-  "originalTopRow": 63,
+  "originalBottomRow": 58,
+  "originalTopRow": 50,
   "parentColumnSpace": 21.640625,
   "parentId": "59rw5mx0bq",
   "parentRowSpace": 10,
   "placement": "CENTER",
   "renderMode": "CANVAS",
-  "rightColumn": 3,
-  "topRow": 63,
+  "rightColumn": 2,
+  "topRow": 50,
   "type": "MENU_BUTTON_WIDGET",
   "version": 1,
   "widgetId": "9fedcox8w8",

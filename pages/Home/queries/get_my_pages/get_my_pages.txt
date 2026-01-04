@@ -1,0 +1,11 @@
+SELECT DISTINCT
+  ami.page_value
+FROM resources res
+JOIN roles ro
+  ON ro.role_id = res.role_id
+JOIN app_menu_items ami
+  ON (ami.role_key COLLATE utf8mb4_unicode_ci) = (ro.role_name COLLATE utf8mb4_unicode_ci)
+WHERE (res.resource_email COLLATE utf8mb4_unicode_ci) =
+      (COALESCE(NULLIF({{ appsmith.user.email }}, ''), NULL) COLLATE utf8mb4_unicode_ci)
+  AND COALESCE(ami.is_active, 1) = 1
+ORDER BY ami.page_value;

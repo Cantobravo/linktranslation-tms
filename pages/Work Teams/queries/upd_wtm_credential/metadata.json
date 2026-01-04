@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "UPDATE work_team_member_credentials\nSET\n  system_code   = NULLIF({{ j_wtm_cred_upd_form.formData.system_code }}, ''),\n  username      = NULLIF({{ j_wtm_cred_upd_form.formData.username }}, ''),\n  alias_email   = NULLIF({{ j_wtm_cred_upd_form.formData.alias_email }}, ''),\n  password_text = NULLIF({{ j_wtm_cred_upd_form.formData.password_text }}, ''),\n  cat_profile   = NULLIF({{ j_wtm_cred_upd_form.formData.cat_profile }}, ''),\n  updated_at    = NOW()\nWHERE wtm_cred_id = {{ tbl_wtm_creds.triggeredRow.wtm_cred_id }};\n",
+      "body": "UPDATE work_team_member_credentials\nSET\n  system_code   = NULLIF({{ j_wtm_cred_upd_form.formData.system_code }}, ''),\n  username      = NULLIF({{ j_wtm_cred_upd_form.formData.username }}, ''),\n  alias_email   = NULLIF({{ j_wtm_cred_upd_form.formData.alias_email }}, ''),\n  password_text = NULLIF({{ j_wtm_cred_upd_form.formData.password_text }}, ''),\n  cat_profile   = NULLIF({{ j_wtm_cred_upd_form.formData.cat_profile }}, ''),\n  updated_at    = NOW()\nWHERE wtm_cred_id = {{\n  (appsmith.store.wtmCredRow && appsmith.store.wtmCredRow.wtm_cred_id)\n  || (tbl_wtm_creds_i.triggeredRow && tbl_wtm_creds_i.triggeredRow.wtm_cred_id)\n  || (tbl_wtm_creds_i.selectedRow && tbl_wtm_creds_i.selectedRow.wtm_cred_id)\n  || (j_wtm_cred_upd_form.formData && j_wtm_cred_upd_form.formData.wtm_cred_id)\n  || 0\n}};\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

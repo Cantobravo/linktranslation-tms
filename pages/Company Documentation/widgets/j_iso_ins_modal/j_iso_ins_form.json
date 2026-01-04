@@ -5,7 +5,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "borderWidth": "1",
-  "bottomRow": 51,
+  "bottomRow": 57,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "childStylesheet": {
     "ARRAY": {
@@ -144,7 +144,7 @@
       "key": "schema.__root_schema__.cellBorderRadius"
     }
   ],
-  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicHeight": "FIXED",
   "dynamicPropertyPathList": [
     {
       "key": "sourceData"
@@ -164,7 +164,7 @@
   "isLoading": false,
   "isVisible": true,
   "key": "6xr0f3ao3l",
-  "leftColumn": 3,
+  "leftColumn": 0,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "minWidth": 450,
@@ -173,9 +173,7 @@
   "mobileRightColumn": 29,
   "mobileTopRow": 10,
   "needsErrorInfo": false,
-  "onSubmit": "{{\n  ins_iso_text.run(\n    () => {\n      showAlert('Inserted.', 'success');\n      resetWidget('j_iso_ins_form', true);\n      closeModal('j_iso_ins_modal');\n      ISOTags.refresh();\n      ISOTextSearch.search();\n    },\n    (e) => showAlert('Insert failed: ' + (e?.message || e), 'error')\n  )\n}}\n",
-  "originalBottomRow": 51,
-  "originalTopRow": 6,
+  "onSubmit": "{{\n  ins_iso_text.run()\n    .then(() => get_iso_all.run())\n    .then(() => {\n      if (typeof ISOTextSearch !== \"undefined\") {\n        return ISOTextSearch.search();\n      }\n      return true;\n    })\n    .then(() => {\n      closeModal('j_iso_ins_modal');\n      resetWidget('j_iso_ins_form', true);\n      showAlert('Documentation added.', 'success');\n    })\n    .catch(() => showAlert('Insert failed.', 'error'));\n}}\n\n",
   "parentColumnSpace": 6.9375,
   "parentId": "49f9drcg2k",
   "parentRowSpace": 10,
@@ -188,7 +186,7 @@
     "buttonVariant": "SECONDARY"
   },
   "responsiveBehavior": "fill",
-  "rightColumn": 54,
+  "rightColumn": 63,
   "schema": {
     "__root_schema__": {
       "accessor": "__root_schema__",
@@ -294,7 +292,7 @@
     "buttonVariant": "PRIMARY"
   },
   "title": "",
-  "topRow": 6,
+  "topRow": 10,
   "type": "JSON_FORM_WIDGET",
   "useSourceData": false,
   "version": 1,

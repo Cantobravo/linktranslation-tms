@@ -1,0 +1,2 @@
+DELETE FROM customer_portals
+WHERE customer_portal_id = COALESCE({{ appsmith.store.sel_port_row.customer_portal_id || 0 }}, -1);

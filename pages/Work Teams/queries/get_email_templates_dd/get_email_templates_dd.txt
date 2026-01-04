@@ -15,5 +15,5 @@ SELECT
 FROM templates
 WHERE COALESCE(`template_is_active`, 1) = 1
   -- case-insensitive "contains 'email'"
-  AND LOCATE('email', LOWER(TRIM(`template_type`))) > 0
+  AND LOCATE('Projects', LOWER(TRIM(`template_type`))) > 0
 ORDER BY COALESCE(updated_at, created_at) DESC, template_name;

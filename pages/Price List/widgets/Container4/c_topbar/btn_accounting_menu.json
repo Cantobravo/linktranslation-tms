@@ -1,0 +1,95 @@
+{
+  "animateLoading": true,
+  "borderRadius": "0.375rem",
+  "bottomRow": 8,
+  "boxShadow": "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
+  "configureMenuItems": {
+    "config": {
+      "id": "config",
+      "isDisabled": false,
+      "isVisible": true,
+      "label": "{{btn_accounting_menu.sourceData.map((currentItem, currentIndex) => ( currentItem))}}",
+      "onClick": "{{ AppNav.go(currentItem) }}"
+    },
+    "id": "config",
+    "label": "Configure menu items"
+  },
+  "dynamicBindingPathList": [
+    {
+      "key": "menuColor"
+    },
+    {
+      "key": "sourceData"
+    },
+    {
+      "key": "configureMenuItems.config.label"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "configureMenuItems.config.onClick"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "configureMenuItems.config.onClick"
+    }
+  ],
+  "iconAlign": "left",
+  "iconName": "chart",
+  "isCompact": false,
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "hc8a5fp8c9",
+  "label": "Accounting Menu",
+  "leftColumn": 30,
+  "menuColor": "{{appsmith.theme.colors.primaryColor}}",
+  "menuItems": {
+    "menuItem1": {
+      "id": "menuItem1",
+      "index": 1,
+      "isDisabled": false,
+      "isVisible": true,
+      "label": "Resource Bills",
+      "widgetId": ""
+    },
+    "menuItem2": {
+      "id": "menuItem2",
+      "index": 0,
+      "isDisabled": false,
+      "isVisible": true,
+      "label": "Customer Invoices",
+      "widgetId": ""
+    },
+    "menuItem3": {
+      "id": "menuItem3",
+      "index": 2,
+      "isDisabled": false,
+      "isVisible": true,
+      "label": "Resource Banking",
+      "widgetId": ""
+    }
+  },
+  "menuItemsSource": "DYNAMIC",
+  "menuVariant": "PRIMARY",
+  "mobileBottomRow": 116,
+  "mobileLeftColumn": 20,
+  "mobileRightColumn": 36,
+  "mobileTopRow": 112,
+  "needsErrorInfo": false,
+  "originalBottomRow": 10,
+  "originalTopRow": 6,
+  "parentColumnSpace": 4.500000476837158,
+  "parentId": "f8a6nsqgg0",
+  "parentRowSpace": 10,
+  "placement": "CENTER",
+  "renderMode": "CANVAS",
+  "rightColumn": 40,
+  "sourceData": "{{ AppNav.itemsForLabel('Accounting Menu').map(x => x.value) }}",
+  "topRow": 1,
+  "type": "MENU_BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "lmimxbkdr8",
+  "widgetName": "btn_accounting_menu"
+}

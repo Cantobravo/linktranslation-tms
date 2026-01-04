@@ -1,4 +1,3 @@
--- params: project_id
 DELETE l
 FROM resource_bill_po_link l
 JOIN resource_purchase_orders rpo

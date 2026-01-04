@@ -1,7 +1,12 @@
 SELECT
-  template_id   AS value,
-  CONCAT(template_name, ' (', template_type, ')') AS label
-FROM templates
-WHERE template_is_active = 1
-  AND template_type IN ('Projects','HR')
-ORDER BY template_name;
+  t.template_id AS value,
+  t.template_name AS label,
+  t.to_field,
+  t.cc_field,
+  t.bcc_field,
+  t.subject_field,
+  t.body_field
+FROM templates t
+WHERE LOWER(t.template_type) = 'resources'
+  AND t.is_active = 1
+ORDER BY t.template_name;

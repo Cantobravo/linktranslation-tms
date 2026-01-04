@@ -1,0 +1,48 @@
+{
+  "accentColor": "#93c5fd",
+  "alignWidget": "LEFT",
+  "animateLoading": true,
+  "bottomRow": 15,
+  "boxShadow": "none",
+  "defaultSwitchState": true,
+  "dynamicBindingPathList": [],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "onChange"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onChange"
+    }
+  ],
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "qcuk295f14",
+  "label": "Show: Non-Member / Member",
+  "labelPosition": "Left",
+  "labelStyle": "BOLD",
+  "labelTextSize": "1rem",
+  "leftColumn": 0,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "mobileBottomRow": 15,
+  "mobileLeftColumn": 51,
+  "mobileRightColumn": 63,
+  "mobileTopRow": 11,
+  "needsErrorInfo": false,
+  "onChange": "{{\n  (async () => {\n    await storeValue('wtMode', t_wt_mode.isSwitchedOn ? 'members' : 'nonmembers');\n    await get_resources_list.run();\n  })()\n}}\n\n",
+  "parentColumnSpace": 9.6728515625,
+  "parentId": "ppuwhcal8o",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 30,
+  "topRow": 11,
+  "type": "SWITCH_WIDGET",
+  "version": 1,
+  "widgetId": "2jc9y4fn41",
+  "widgetName": "t_wt_mode"
+}

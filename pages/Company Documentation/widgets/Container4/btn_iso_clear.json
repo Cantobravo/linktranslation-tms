@@ -1,0 +1,57 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 35,
+  "boxShadow": "none",
+  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "buttonVariant": "SECONDARY",
+  "disabledWhenInvalid": false,
+  "dynamicBindingPathList": [
+    {
+      "key": "buttonColor"
+    },
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "isDefaultClickDisabled": true,
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "69qekayogx",
+  "leftColumn": 27,
+  "minWidth": 120,
+  "mobileBottomRow": 34,
+  "mobileLeftColumn": 27,
+  "mobileRightColumn": 43,
+  "mobileTopRow": 30,
+  "needsErrorInfo": false,
+  "onClick": "(async () => {\n  /* 1) Clear search inputs */\n  resetWidget(\"i_iso_query\", true);\n  resetWidget(\"ms_iso_tags_filter\", true);\n\n  /* 2) Clear search results table */\n  await get_iso_search.run();\n\n  /* 3) Clear navigation + preview state */\n  await storeValue(\"isoSearch\", { ids: [], idx: 0 });\n  await storeValue(\"isoCurrent\", null);\n\n  /* 4) (Optional) Reset viewer widget rendering */\n  resetWidget(\"txt_iso_result\", false);\n\n})();\n",
+  "originalBottomRow": 35,
+  "originalTopRow": 30,
+  "parentColumnSpace": 16.04248046875,
+  "parentId": "uq1ygatx50",
+  "parentRowSpace": 10,
+  "placement": "CENTER",
+  "recaptchaType": "V3",
+  "renderMode": "CANVAS",
+  "resetFormOnClick": false,
+  "responsiveBehavior": "hug",
+  "rightColumn": 43,
+  "text": "Clear All",
+  "topRow": 30,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "0en5xeodzt",
+  "widgetName": "btn_iso_clear"
+}

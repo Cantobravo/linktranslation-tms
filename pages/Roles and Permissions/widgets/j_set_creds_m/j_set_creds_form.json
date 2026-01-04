@@ -5,7 +5,7 @@
   "borderColor": "#E0DEDE",
   "borderRadius": "1.5rem",
   "borderWidth": "1",
-  "bottomRow": 67,
+  "bottomRow": 75,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "childStylesheet": {
     "ARRAY": {
@@ -163,6 +163,15 @@
     },
     {
       "key": "schema.__root_schema__.children.confirm_password.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.role_id.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.role_id.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.role_id.borderRadius"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
@@ -348,6 +357,27 @@
           "originalIdentifier": "resource_username",
           "position": 4,
           "sourceData": ""
+        },
+        "role_id": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_set_creds_form.sourceData, j_set_creds_form.formData, j_set_creds_form.fieldState)}}",
+          "accessor": "role_id",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_set_creds_form.sourceData, j_set_creds_form.formData, j_set_creds_form.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "null",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.role_id))(j_set_creds_form.sourceData, j_set_creds_form.formData, j_set_creds_form.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "role_id",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": true,
+          "label": "Role Id",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "role_id",
+          "position": 6
         }
       },
       "dataType": "object",

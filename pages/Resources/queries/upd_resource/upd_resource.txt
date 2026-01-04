@@ -1,18 +1,25 @@
 UPDATE resources
 SET
-  -- Force USD always
-  currency_id            = 1,
-
-  -- Other fields
-  resource_email         = NULLIF('{{ j_res_upd_form.formData.resource_email }}',''),
-  resource_username      = NULLIF('{{ j_res_upd_form.formData.resource_username }}',''),
-  resource_is_active     = {{ j_res_upd_form.formData.resource_is_active ? 1 : 0 }},
-  resource_status        = NULLIF('{{ j_res_upd_form.formData.resource_status }}',''),
-  resource_first_name    = NULLIF('{{ j_res_upd_form.formData.resource_first_name }}',''),
-  resource_last_name     = NULLIF('{{ j_res_upd_form.formData.resource_last_name }}',''),
-  resource_full_name     = NULLIF('{{ j_res_upd_form.formData.resource_full_name }}',''),
-  resource_payment_term  = NULLIF('{{ j_res_upd_form.formData.resource_payment_term }}',''),
-  resource_address       = NULLIF('{{ j_res_upd_form.formData.resource_address }}',''),
-  updated_at             = NOW()
-WHERE resource_id = {{ appsmith.store.resRow?.resource_id || tbl_resources.selectedRow?.resource_id }}
-LIMIT 1;
+  resource_is_active = COALESCE({{ j_res_upd_form.formData.resource_is_active }}, resource_is_active),
+  resource_status = NULLIF({{ j_res_upd_form.formData.resource_status }}, ''),
+  resource_native_language = NULLIF({{ j_res_upd_form.formData.resource_native_language }}, ''),
+  resource_first_name = NULLIF({{ j_res_upd_form.formData.resource_first_name }}, ''),
+  resource_last_name = NULLIF({{ j_res_upd_form.formData.resource_last_name }}, ''),
+  resource_full_name = TRIM(CONCAT(
+    COALESCE(NULLIF({{ j_res_upd_form.formData.resource_first_name }}, ''), ''),
+    ' ',
+    COALESCE(NULLIF({{ j_res_upd_form.formData.resource_last_name }}, ''), '')
+  )),
+  resource_username = NULLIF({{ j_res_upd_form.formData.resource_username }}, ''),
+  resource_email = NULLIF({{ j_res_upd_form.formData.resource_email }}, ''),
+  currency_id = COALESCE({{ j_res_upd_form.formData.currency_id }}, NULL),
+  resource_payment_term = COALESCE({{ j_res_upd_form.formData.resource_payment_term }}, NULL),
+  resource_address = NULLIF({{ j_res_upd_form.formData.resource_address }}, ''),
+  resource_country = NULLIF({{ j_res_upd_form.formData.resource_country }}, ''),
+  resource_phone = NULLIF({{ j_res_upd_form.formData.resource_phone }}, ''),
+  resource_documentation = NULLIF({{ j_res_upd_form.formData.resource_documentation }}, ''),
+  resource_feedback_notes = NULLIF({{ j_res_upd_form.formData.resource_feedback_notes }}, ''),
+  role_id = COALESCE({{ j_res_upd_form.formData.role_id }}, NULL),
+  updated_at = NOW()
+WHERE resource_id = {{ j_res_upd_form.formData.resource_id }}
+LIMIT 1

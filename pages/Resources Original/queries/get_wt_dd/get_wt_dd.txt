@@ -1,7 +1,0 @@
-SELECT
-  wt.work_team_id   AS value,
-  wt.work_team_name AS label
-FROM work_teams wt
-WHERE COALESCE(wt.is_active, 1) = 1
-  AND COALESCE(wt.work_team_status, 'Active') = 'Active'
-ORDER BY wt.work_team_name;

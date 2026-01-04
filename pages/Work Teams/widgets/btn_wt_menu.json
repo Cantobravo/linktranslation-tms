@@ -1,0 +1,101 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 30,
+  "boxShadow": "none",
+  "dynamicBindingPathList": [
+    {
+      "key": "menuColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "isDisabled"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "isDisabled"
+    },
+    {
+      "key": "menuItems.menuItem1.onClick"
+    },
+    {
+      "key": "menuItems.menuItem2.onClick"
+    },
+    {
+      "key": "menuItems.menuItem3.onClick"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "menuItems.menuItem1.onClick"
+    },
+    {
+      "key": "menuItems.menuItem2.onClick"
+    },
+    {
+      "key": "menuItems.menuItem3.onClick"
+    }
+  ],
+  "iconAlign": "left",
+  "iconName": "menu",
+  "isCompact": false,
+  "isDisabled": "{{ !appsmith.store.wtRow?.work_team_id }}\n",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "jut01zabw3",
+  "label": "",
+  "leftColumn": 1,
+  "menuColor": "{{appsmith.theme.colors.primaryColor}}",
+  "menuItems": {
+    "menuItem1": {
+      "id": "menuItem1",
+      "index": 0,
+      "isDisabled": false,
+      "isVisible": true,
+      "label": "Edit",
+      "onClick": "{{\n(async () => {\n  const row = appsmith.store.wtRow;\n  if (!row?.work_team_id) { showAlert('Select a row first.', 'warning'); return; }\n\n  await storeValue('wtRow', row);\n\n  const detailP = get_work_team_detail.run();\n\n  const ddP = !appsmith.store._wt_dd_loaded\n    ? Promise.all([\n        get_customers_dd.run(),\n        get_services_dd.run(),\n        get_units_dd.run(),\n        get_languages_dd.run(),\n        get_currencies_dd.run()\n      ]).then(() => storeValue('_wt_dd_loaded', true))\n    : Promise.resolve();\n\n  await detailP;\n\n  const cid = get_work_team_detail.data?.[0]?.customer_id || null;\n  await storeValue('_wt_cid_upd', cid);\n\n  await Promise.all([ddP, get_cust_acc_dd_upd.run()]);\n\n  j_wt_upd_form.setSourceData(get_work_team_detail.data?.[0] || {});\n  showModal('j_wt_upd_m');\n})()\n}}\n",
+      "widgetId": ""
+    },
+    "menuItem2": {
+      "id": "menuItem2",
+      "index": 1,
+      "isDisabled": false,
+      "isVisible": true,
+      "label": "Manage",
+      "onClick": "{{\n(async () => {\n  try {\n    // 0) Row context (menu has no triggeredRow)\n    const team = tbl_work_teams.selectedRow || appsmith.store.wtRow;\n    if (!team?.work_team_id) { showAlert('Select a team row to manage.', 'warning'); return; }\n\n    // 1) Store team context\n    await storeValue('wtRow', team);\n\n    // 2) Open modal EARLY (so even if a later step errors, modal still opens)\n    showModal('j_wtm_mgmt_m');\n\n    // 2.1) Load Work Team templates dropdown for this modal\n    await get_tpl_wt_dd.run();\n\n    // 3) Safe reset helpers (prevents missing-widget errors from stopping the flow)\n    const safeReset = (w) => { try { resetWidget(w, true); } catch (e) {} };\n\n    safeReset('member_q');\n    safeReset('member_cert');\n    safeReset('member_avail');\n\n    // 4) Load members for this team (uses wtRow in SQL)\n    await get_team_members.run();\n\n    // 5) Default member selection\n    const firstMember = (get_team_members.data && get_team_members.data.length) ? get_team_members.data[0] : null;\n    await storeValue('wtmRow', firstMember);\n\n    // 6) Preload detail datasets\n    await Promise.allSettled([\n      get_wtm_detail.run(),\n      get_wtm_credentials.run(),\n      get_wtm_links.run()\n    ]);\n\n    // 7) Prefetch auxiliary dropdowns ONLY if not already loaded\n    if (!get_resources_dd?.data || get_resources_dd.data.length === 0) {\n      await Promise.allSettled([ get_resources_dd?.run?.() ]);\n    }\n    if (!get_uncreds_dd?.data || get_uncreds_dd.data.length === 0) {\n      await Promise.allSettled([ get_uncreds_dd?.run?.() ]);\n    }\n\n    // 8) Reset child forms/widgets (safe)\n    safeReset('j_wtm_cred_ins_form');\n    safeReset('j_wtm_cred_upd_form');\n    safeReset('j_wtm_link_ins_form');\n    safeReset('j_wtm_link_upd_form');\n    safeReset('ms_add_resources');\n\n    // 9) Default tab\n    await storeValue('u_wtm_tab', 'Basic');\n\n    // 10) Nudge if no members\n    if (!firstMember) {\n      showAlert('This team has no members yet. Use \"Add Resources\" to add people.', 'info');\n    }\n  } catch (e) {\n    showAlert('Manage open failed: ' + (e?.message || e), 'error');\n  }\n})()\n}}\n",
+      "widgetId": ""
+    },
+    "menuItem3": {
+      "id": "menuItem3",
+      "index": 2,
+      "isDisabled": false,
+      "isVisible": true,
+      "label": "Delete",
+      "onClick": "{{\n(async () => {\n  const row = appsmith.store.wtRow;\n  if (!row?.work_team_id) { showAlert('Select a row first.', 'warning'); return; }\n\n  await storeValue('wtRow', row);\n  showModal('j_wt_del_m');\n})()\n}}\n",
+      "widgetId": ""
+    }
+  },
+  "menuItemsSource": "STATIC",
+  "menuVariant": "SECONDARY",
+  "mobileBottomRow": 47,
+  "mobileLeftColumn": 1,
+  "mobileRightColumn": 17,
+  "mobileTopRow": 43,
+  "needsErrorInfo": false,
+  "originalBottomRow": 30,
+  "originalTopRow": 22,
+  "parentColumnSpace": 21.484375,
+  "parentId": "0",
+  "parentRowSpace": 10,
+  "placement": "CENTER",
+  "renderMode": "CANVAS",
+  "rightColumn": 5,
+  "topRow": 22,
+  "type": "MENU_BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "e4luquw58x",
+  "widgetName": "btn_wt_menu"
+}

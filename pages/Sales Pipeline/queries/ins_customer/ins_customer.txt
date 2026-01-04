@@ -1,13 +1,37 @@
 INSERT INTO customers (
   customer_name,
-  customer_status
-)
-SELECT
-  {{ i_customer_name.text }},
-  {{ i_customer_status.selectedOptionValue || null }}
-FROM DUAL
-WHERE NOT EXISTS (
-  SELECT 1
-  FROM customers x
-  WHERE LOWER(x.customer_name) = LOWER({{ i_customer_name.text }})
+  customer_type,
+  customer_address,
+  customer_country,
+  customer_phone,
+  customer_industry,
+  customer_note,
+  customer_invoice_procedure,
+  customer_payment_term,
+  customer_tax_vat_number,
+  currency_id,
+  customer_receivable_bank_name,
+  customer_linkedIn,
+  customer_bank_fee,
+  customer_status,
+  customer_documentation,
+  is_customer
+) VALUES (
+  COALESCE(NULLIF({{ jf_cust_ins.formData.customer_name || '' }}, ''), NULL),
+  COALESCE(NULLIF({{ jf_cust_ins.formData.customer_type || '' }}, ''), NULL),
+  COALESCE(NULLIF({{ jf_cust_ins.formData.customer_address || '' }}, ''), NULL),
+  COALESCE(NULLIF({{ jf_cust_ins.formData.customer_country || '' }}, ''), NULL),
+  COALESCE(NULLIF({{ jf_cust_ins.formData.customer_phone || '' }}, ''), NULL),
+  COALESCE(NULLIF({{ jf_cust_ins.formData.customer_industry || '' }}, ''), NULL),
+  COALESCE(NULLIF({{ jf_cust_ins.formData.customer_note || '' }}, ''), NULL),
+  COALESCE(NULLIF({{ jf_cust_ins.formData.customer_invoice_procedure || '' }}, ''), NULL),
+  COALESCE(NULLIF({{ jf_cust_ins.formData.customer_payment_term || '' }}, ''), NULL),
+  COALESCE(NULLIF({{ jf_cust_ins.formData.customer_tax_vat_number || '' }}, ''), NULL),
+  COALESCE(NULLIF({{ jf_cust_ins.formData.currency_id || '' }}, ''), NULL),
+  COALESCE(NULLIF({{ jf_cust_ins.formData.customer_receivable_bank_name || '' }}, ''), NULL),
+  COALESCE(NULLIF({{ jf_cust_ins.formData.customer_linkedIn || '' }}, ''), NULL),
+  COALESCE(NULLIF({{ jf_cust_ins.formData.customer_bank_fee || '' }}, ''), NULL),
+  COALESCE(NULLIF({{ jf_cust_ins.formData.customer_status || '' }}, ''), '10. Active'),
+  COALESCE(NULLIF({{ jf_cust_ins.formData.customer_documentation || '' }}, ''), NULL),
+  COALESCE(NULLIF({{ jf_cust_ins.formData.is_customer || '' }}, ''), 'Yes')
 );

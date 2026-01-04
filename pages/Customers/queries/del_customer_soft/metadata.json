@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "UPDATE customers\nSET customer_status = '14. Inactive',\n    updated_at = NOW()\nWHERE customer_id = {{ this.params.customer_id }};\n",
+      "body": "UPDATE customers\nSET\n  is_customer = 'no',\n  customer_status = '14. Inactive',\n  updated_at = NOW()\nWHERE customer_id = {{ this.params.customer_id }};\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

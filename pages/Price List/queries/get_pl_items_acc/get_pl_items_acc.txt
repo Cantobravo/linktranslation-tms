@@ -1,0 +1,48 @@
+SELECT
+  pli.price_list_item_id,
+  pli.price_list_id,
+  c.customer_name,
+  ca.customer_account_name,
+  s.service_name,
+  u.unit_name,
+  sl.language_name AS source_language,
+  tl.language_name AS target_language,
+  cur.currency_acronym AS currency,
+  pli.sell_rate,
+  pli.cost_rate,
+  CASE
+    WHEN pli.sell_rate = 0 THEN 0
+    ELSE ROUND(((pli.sell_rate - pli.cost_rate) / pli.sell_rate) * 100, 2)
+  END AS gross_margin,
+  pli.is_active,
+  pli.notes,
+  pli.service_id,
+  pli.unit_id,
+  pli.source_language_id,
+  pli.target_language_id
+FROM price_list_items pli
+JOIN price_lists pl
+  ON pl.price_list_id = pli.price_list_id
+JOIN customer_accounts ca
+  ON ca.customer_account_id = pl.customer_account_id
+LEFT JOIN customers c
+  ON c.customer_id = ca.customer_id
+LEFT JOIN currencies cur
+  ON cur.currency_id = c.currency_id
+LEFT JOIN services s
+  ON s.service_id = pli.service_id
+LEFT JOIN units u
+  ON u.unit_id = pli.unit_id
+LEFT JOIN languages sl
+  ON sl.language_id = pli.source_language_id
+LEFT JOIN languages tl
+  ON tl.language_id = pli.target_language_id
+WHERE pl.price_list_scope = 'ACCOUNT'
+  AND pl.customer_account_id = COALESCE({{ dd_pl_acc.selectedOptionValue }}, NULL)
+  AND pli.is_active = COALESCE({{ sw_pl_inact.isSwitchedOn ? NULL : 1 }}, pli.is_active)
+ORDER BY
+  s.service_name,
+  u.unit_name,
+  sl.language_name,
+  tl.language_name,
+  pli.price_list_item_id

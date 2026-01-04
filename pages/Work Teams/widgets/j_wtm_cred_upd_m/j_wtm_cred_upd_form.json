@@ -3,7 +3,7 @@
   "autoGenerateForm": true,
   "backgroundColor": "#fff",
   "borderColor": "{{appsmith.theme.colors.primaryColor}}",
-  "borderRadius": "1.5rem",
+  "borderRadius": "0px",
   "borderWidth": "1",
   "bottomRow": 76,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
@@ -227,7 +227,7 @@
   "mobileRightColumn": 61,
   "mobileTopRow": 14,
   "needsErrorInfo": false,
-  "onSubmit": "{{\n(async () => {\n  if (appsmith.store.wtm_cred_upd_busy) return;\n  await storeValue('wtm_cred_upd_busy', true);\n\n  try {\n    const picked  = i_uncred_pick_upd.selectedOptionValue;\n    const oldOrig = appsmith.store.wtmCredRow?.origin_uncred_id || tbl_wtm_creds.triggeredRow?.origin_uncred_id;\n\n    if (picked) {\n      if (oldOrig) { await uncred_return_specific.run(); }\n      await upd_wtm_credential_from_pool.run();\n      await mark_uncred_assigned_upd.run();\n    } else {\n      await upd_wtm_credential.run();\n    }\n\n    await get_wtm_credentials.run();\n    await get_uncreds_dd.run();\n\n    await storeValue('u_wtm_tab','Credentials');\n\n    const parent = appsmith.store.ctx_parent === 'mgmt' ? 'j_wtm_mgmt_m' : 'j_wtm_upd_m';\n    showModal(parent);\n    closeModal('j_wtm_cred_upd_m');\n\n    resetWidget('i_uncred_pick_upd', true);\n    resetWidget('j_wtm_cred_upd_form', true);\n    showAlert('Credential updated.', 'success');\n  } catch (e) {\n    showAlert('Update failed: ' + (e?.message || e), 'error');\n  } finally {\n    await storeValue('wtm_cred_upd_busy', false);\n  }\n})();\n}}\n",
+  "onSubmit": "{{\n(async () => {\n  if (appsmith.store.wtm_cred_upd_busy) return;\n  await storeValue('wtm_cred_upd_busy', true);\n\n  try {\n    const picked  = i_uncred_pick_upd.selectedOptionValue;\n\n    const oldOrig =\n      (appsmith.store.wtmCredRow && appsmith.store.wtmCredRow.origin_uncred_id)\n      || (tbl_wtm_creds_i.triggeredRow && tbl_wtm_creds_i.triggeredRow.origin_uncred_id)\n      || (tbl_wtm_creds_i.selectedRow && tbl_wtm_creds_i.selectedRow.origin_uncred_id)\n      || null;\n\n    if (picked) {\n      if (oldOrig) { await uncred_return_specific.run(); }\n      await upd_wtm_credential_from_pool.run();\n      await mark_uncred_assigned_upd.run();\n    } else {\n      await upd_wtm_credential.run();\n    }\n\n    await get_wtm_credentials.run();\n\n    const parent = appsmith.store.ctx_parent === 'mgmt' ? 'j_wtm_mgmt_m' : 'j_wtm_upd_m';\n    showModal(parent);\n    closeModal('j_wtm_cred_upd_m');\n\n    resetWidget('i_uncred_pick_upd', true);\n    resetWidget('j_wtm_cred_upd_form', true);\n    showAlert('Credential updated.', 'success');\n  } catch (e) {\n    showAlert('Update failed: ' + (e?.message || e), 'error');\n  } finally {\n    await storeValue('wtm_cred_upd_busy', false);\n  }\n})();\n}}\n",
   "originalBottomRow": 76,
   "originalTopRow": 20,
   "parentColumnSpace": 6.9375,
@@ -242,7 +242,7 @@
     "buttonVariant": "SECONDARY"
   },
   "responsiveBehavior": "fill",
-  "rightColumn": 59,
+  "rightColumn": 61,
   "schema": {
     "__root_schema__": {
       "accessor": "__root_schema__",
@@ -481,7 +481,7 @@
   },
   "scrollContents": true,
   "showReset": false,
-  "sourceData": "{{\n  (() => {\n    const cur = appsmith.store.wtmCredRow || tbl_wtm_creds.triggeredRow || {};\n    const opt = (get_uncreds_dd.data || []).find(o => String(o.value) === String(i_uncred_pick_upd.selectedOptionValue));\n    return opt ? {\n      system_code:   opt.system_code,\n      username:      opt.username,\n      alias_email:   opt.alias_email,\n      password_text: opt.password_text,\n      cat_profile:   opt.cat_profile\n    } : cur;\n  })()\n}}\n",
+  "sourceData": "{{\n  (() => {\n    const cur =\n      appsmith.store.wtmCredRow\n      || tbl_wtm_creds_i.triggeredRow\n      || tbl_wtm_creds_i.selectedRow\n      || {};\n\n    const opt = (get_uncreds_dd.data || []).find(\n      o => String(o.value) === String(i_uncred_pick_upd.selectedOptionValue)\n    );\n\n    return opt ? {\n      system_code:   opt.system_code,\n      username:      opt.username,\n      alias_email:   opt.alias_email,\n      password_text: opt.password_text,\n      cat_profile:   opt.cat_profile\n    } : cur;\n  })()\n}}\n",
   "submitButtonLabel": "Save",
   "submitButtonStyles": {
     "borderRadius": "0.375rem",

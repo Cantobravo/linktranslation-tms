@@ -3,6 +3,7 @@ SELECT
   wtm.resource_id,
   wtm.work_team_id,
   wt.work_team_name,
+  wtm.is_available,
   COALESCE(wtm.is_active, 1) AS is_active,
   wtm.created_at,
   wtm.updated_at

@@ -1,0 +1,55 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 11,
+  "boxShadow": "none",
+  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "buttonVariant": "SECONDARY",
+  "disabledWhenInvalid": true,
+  "dynamicBindingPathList": [
+    {
+      "key": "buttonColor"
+    },
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "isDefaultClickDisabled": true,
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "glc3f2gbeg",
+  "leftColumn": 46,
+  "minWidth": 120,
+  "mobileBottomRow": 6,
+  "mobileLeftColumn": 45,
+  "mobileRightColumn": 61,
+  "mobileTopRow": 2,
+  "needsErrorInfo": false,
+  "onClick": "{{\n  (() => {\n    const r = tbl_resources.selectedRow || tbl_resources.triggeredRow;\n    if (!r) { \n      showAlert(\"Select one resource row.\", \"warning\"); \n      return; \n    }\n\n    const t = (get_tpl_by_id_res.data && get_tpl_by_id_res.data[0])\n      ? get_tpl_by_id_res.data[0]\n      : null;\n\n    if (!t) { \n      showAlert(\"Select a template (and wait for it to load).\", \"warning\"); \n      return; \n    }\n\n    const to = (TplRender.render(t.to_field) || \"\").trim() \n      || (r.resource_email || \"\").trim();\n\n    const cc = (TplRender.render(t.cc_field) || \"\").trim();\n    const bcc = (TplRender.render(t.bcc_field) || \"\").trim();\n    const subject = (TplRender.render(t.subject_field) || \"\").trim();\n    const body = (TplRender.render(t.body_field) || \"\").toString();\n\n    if (!to) { \n      showAlert(\"No recipient email found.\", \"warning\"); \n      return; \n    }\n\n    // IMPORTANT:\n    // Do NOT use URLSearchParams for Outlook body\n    // encodeURIComponent keeps spaces as %20 (no \"+\" bug)\n    const q = [];\n    if (cc) q.push(\"cc=\" + encodeURIComponent(cc));\n    if (bcc) q.push(\"bcc=\" + encodeURIComponent(bcc));\n    if (subject) q.push(\"subject=\" + encodeURIComponent(subject));\n    q.push(\"body=\" + encodeURIComponent(body || \"\\n\"));\n\n    const url =\n      \"mailto:\" + encodeURIComponent(to) + \"?\" + q.join(\"&\");\n\n    navigateTo(url, {}, \"NEW_WINDOW\");\n  })()\n}}\n",
+  "parentColumnSpace": 10.484375,
+  "parentId": "5tfpl9779p",
+  "parentRowSpace": 10,
+  "placement": "CENTER",
+  "recaptchaType": "V3",
+  "renderMode": "CANVAS",
+  "resetFormOnClick": true,
+  "responsiveBehavior": "hug",
+  "rightColumn": 62,
+  "text": "Send Email",
+  "topRow": 6,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "zozmrskjnt",
+  "widgetName": "btn_send_tpl_email"
+}

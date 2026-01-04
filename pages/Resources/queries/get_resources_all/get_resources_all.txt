@@ -1,24 +1,39 @@
 SELECT
   r.resource_id,
+  r.resource_first_name,
+  r.resource_last_name,
   r.resource_full_name,
   r.resource_username,
   r.resource_email,
+  r.resource_country,
   r.resource_status,
+  r.resource_phone,
+  r.resource_documentation,
   r.resource_native_language,
-  CASE
-    WHEN COALESCE(lp.language_pairs, '') <> '' THEN lp.language_pairs
-    ELSE TRIM(BOTH '-' FROM CONCAT(COALESCE(ls1.language_name, ''), '-', COALESCE(lt1.language_name, '')))
-  END AS language_pairs,
+  ln.language_name AS resource_native_language_name,
+  r.currency_id,
+  cur.currency_name AS currency_name,
+  r.resource_payment_term,
+  r.resource_address,
+  r.resource_feedback_notes,
+  r.resource_is_active,
+  r.role_id,
+  ro.role_name AS role_name,
+  COALESCE(lp.language_pairs, '') AS language_pairs,
   r.created_at,
   r.updated_at
 FROM resources r
-LEFT JOIN languages ls1 ON ls1.language_id = r.source_language_id
-LEFT JOIN languages lt1 ON lt1.language_id = r.target_language_id
+LEFT JOIN currencies cur
+  ON cur.currency_id = r.currency_id
+LEFT JOIN roles ro
+  ON ro.role_id = r.role_id
+LEFT JOIN languages ln
+  ON ln.language_id = CAST(r.resource_native_language AS UNSIGNED)
 LEFT JOIN (
   SELECT
     rlp.resource_id,
     GROUP_CONCAT(
-      DISTINCT CONCAT(ls.language_name, '-', lt.language_name)
+      DISTINCT CONCAT(ls.language_name, ' > ', lt.language_name)
       ORDER BY ls.language_name, lt.language_name
       SEPARATOR ' | '
     ) AS language_pairs
@@ -28,4 +43,41 @@ LEFT JOIN (
   WHERE COALESCE(rlp.is_active, 1) = 1
   GROUP BY rlp.resource_id
 ) lp ON lp.resource_id = r.resource_id
+WHERE
+  (
+    {{ appsmith.store.wtPick ? 0 : 1 }} = 1
+    OR (
+      {{ (appsmith.store.wtMode || 'members') === 'members' ? 1 : 0 }} = 1
+      AND EXISTS (
+        SELECT 1
+        FROM work_team_members wtm
+        WHERE wtm.resource_id = r.resource_id
+          AND COALESCE(wtm.is_active, 1) = 1
+          AND wtm.work_team_id = {{ appsmith.store.wtPick || null }}
+      )
+    )
+    OR (
+      {{ (appsmith.store.wtMode || 'members') === 'nonmembers' ? 1 : 0 }} = 1
+      AND NOT EXISTS (
+        SELECT 1
+        FROM work_team_members wtm
+        WHERE wtm.resource_id = r.resource_id
+          AND COALESCE(wtm.is_active, 1) = 1
+          AND wtm.work_team_id = {{ appsmith.store.wtPick || null }}
+      )
+    )
+  )
+  AND (
+    {{ (appsmith.store.resStatusCsv || '').length ? 0 : 1 }} = 1
+    OR FIND_IN_SET(
+      LOWER(COALESCE(r.resource_status, '')),
+      '{{ appsmith.store.resStatusCsv || "" }}'
+    ) > 0
+    OR (
+      {{ appsmith.store.resStatusHasEmpty ? 1 : 0 }} = 1
+      AND (r.resource_status <=> NULL OR r.resource_status = '')
+    )
+  )
 ORDER BY r.resource_full_name
+LIMIT {{ tbl_resources.pageSize }}
+OFFSET {{ tbl_resources.pageOffset }};

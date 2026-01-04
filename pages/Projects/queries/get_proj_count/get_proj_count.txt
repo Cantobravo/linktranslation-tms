@@ -1,4 +1,62 @@
--- count only visible projects
-SELECT COUNT(*) AS total
-FROM projects
-WHERE COALESCE(project_status, '') <> 'SOFT_DELETED';
+SELECT
+  COUNT(DISTINCT p.project_id) AS total
+FROM projects p
+LEFT JOIN customers c
+  ON c.customer_id = p.customer_id
+LEFT JOIN customer_accounts ca
+  ON ca.customer_account_id = p.customer_account_id
+WHERE
+  COALESCE(p.project_status, '') <> 'SOFT_DELETED'
+  AND (
+    COALESCE({{ proj_filter_lang_id.selectedOptionValue }}, NULL) = NULL
+    OR p.source_language_id = {{ COALESCE(proj_filter_lang_id.selectedOptionValue, NULL) }}
+    OR p.target_language_id = {{ COALESCE(proj_filter_lang_id.selectedOptionValue, NULL) }}
+  )
+  AND (
+    COALESCE({{ proj_filter_wt_id.selectedOptionValue }}, NULL) = NULL
+    OR EXISTS (
+      SELECT 1
+      FROM resource_purchase_orders rpo
+      JOIN work_team_members wtm
+        ON wtm.resource_id = rpo.resource_id
+      WHERE
+        rpo.project_id = p.project_id
+        AND wtm.work_team_id = {{ COALESCE(proj_filter_wt_id.selectedOptionValue, NULL) }}
+        AND COALESCE(wtm.is_active, 1) = 1
+    )
+  )
+  AND (
+    COALESCE({{ appsmith.store.f_text }}, '') = ''
+    OR (
+      COALESCE({{ appsmith.store.f_field }}, '') = 'project_id'
+      AND CAST(p.project_id AS CHAR) LIKE {{ appsmith.store.f_like }}
+    )
+    OR (
+      COALESCE({{ appsmith.store.f_field }}, '') = 'project_name'
+      AND COALESCE(p.project_name,'') LIKE {{ appsmith.store.f_like }}
+    )
+    OR (
+      COALESCE({{ appsmith.store.f_field }}, '') = 'customer_name'
+      AND COALESCE(c.customer_name,'') LIKE {{ appsmith.store.f_like }}
+    )
+    OR (
+      COALESCE({{ appsmith.store.f_field }}, '') = 'customer_account_name'
+      AND COALESCE(ca.customer_account_name,'') LIKE {{ appsmith.store.f_like }}
+    )
+    OR (
+      COALESCE({{ appsmith.store.f_field }}, '') = 'resource_name'
+      AND EXISTS (
+        SELECT 1
+        FROM resource_purchase_orders rpo2
+        JOIN resources r2
+          ON r2.resource_id = rpo2.resource_id
+        WHERE
+          rpo2.project_id = p.project_id
+          AND COALESCE(
+                NULLIF(TRIM(r2.resource_full_name), ''),
+                NULLIF(TRIM(CONCAT_WS(' ', r2.resource_first_name, r2.resource_last_name)), ''),
+                CONCAT('Resource #', r2.resource_id)
+              ) LIKE {{ appsmith.store.f_like }}
+      )
+    )
+  );

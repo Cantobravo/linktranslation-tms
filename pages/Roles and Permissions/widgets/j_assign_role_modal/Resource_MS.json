@@ -4,7 +4,7 @@
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 22,
   "boxShadow": "none",
-  "defaultOptionValue": "{{ ((options, serverSideFiltering) => (  (get_users.data || []).map(u => u.resource_id) ))(MultiSelect2.options, MultiSelect2.serverSideFiltering) }}",
+  "defaultOptionValue": "{{ ((options, serverSideFiltering) => (  appsmith.store.resourceRow?.resource_id ? [appsmith.store.resourceRow.resource_id] : [] ))(Resource_MS.options, Resource_MS.serverSideFiltering) }}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"

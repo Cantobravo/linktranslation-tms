@@ -1,0 +1,14 @@
+INSERT INTO price_list_items
+  (price_list_id, service_id, unit_id, source_language_id, target_language_id, sell_rate, cost_rate, is_active, notes)
+VALUES
+  (
+    {{ this.params.price_list_id }},
+    {{ this.params.service_id }},
+    {{ this.params.unit_id }},
+    {{ this.params.source_language_id }},
+    {{ this.params.target_language_id }},
+    {{ this.params.sell_rate }},
+    {{ this.params.cost_rate }},
+    {{ this.params.is_active }},
+    {{ this.params.notes }}
+  )

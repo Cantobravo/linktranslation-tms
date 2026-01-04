@@ -1,8 +1,8 @@
 {
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "animateLoading": true,
-  "borderColor": "#93c5fd",
-  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "borderColor": "#e0dede",
+  "borderRadius": "0px",
   "borderWidth": "1",
   "bottomRow": 55,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
@@ -36,7 +36,6 @@
     "project_id",
     "project_name",
     "resource_id",
-    "resource_name",
     "resource_email",
     "service_id",
     "service_name",
@@ -51,9 +50,10 @@
     "total",
     "date",
     "due_date",
-    "note"
+    "note",
+    "resource_name"
   ],
-  "columnUpdatedAt": 1757083570029,
+  "columnUpdatedAt": 1767362127144,
   "columnWidthMap": {
     "project_name": 218,
     "purchase_order_id": 91,
@@ -74,9 +74,6 @@
       "key": "accentColor"
     },
     {
-      "key": "borderRadius"
-    },
-    {
       "key": "boxShadow"
     },
     {
@@ -93,9 +90,6 @@
     },
     {
       "key": "primaryColumns.resource_id.computedValue"
-    },
-    {
-      "key": "primaryColumns.resource_name.computedValue"
     },
     {
       "key": "primaryColumns.resource_email.computedValue"
@@ -141,6 +135,9 @@
     },
     {
       "key": "primaryColumns.note.computedValue"
+    },
+    {
+      "key": "primaryColumns.resource_name.computedValue"
     }
   ],
   "dynamicPropertyPathList": [
@@ -157,7 +154,7 @@
   "isLoading": false,
   "isSortable": true,
   "isVisible": true,
-  "isVisibleDownload": true,
+  "isVisibleDownload": false,
   "isVisibleFilters": false,
   "isVisiblePagination": true,
   "isVisibleSearch": true,
@@ -457,15 +454,17 @@
       "alias": "resource_name",
       "allowCellWrapping": false,
       "allowSameOptionsInNewRow": true,
+      "cellBackground": "",
       "columnType": "text",
       "computedValue": "{{(() => { const tableData = po_preview_table.processedTableData || []; return tableData.length > 0 ? tableData.map((currentRow, currentIndex) => (currentRow[\"resource_name\"])) : resource_name })()}}",
       "currencyCode": "USD",
       "decimals": 0,
       "enableFilter": true,
       "enableSort": true,
+      "fontStyle": "",
       "horizontalAlignment": "LEFT",
       "id": "resource_name",
-      "index": 4,
+      "index": 19,
       "isCellEditable": false,
       "isCellVisible": true,
       "isDerived": false,
@@ -474,10 +473,11 @@
       "isEditable": false,
       "isSaveVisible": true,
       "isVisible": true,
-      "label": "Resource",
+      "label": "resource_name",
       "notation": "standard",
       "originalId": "resource_name",
       "sticky": "",
+      "textColor": "",
       "textSize": "0.875rem",
       "thousandSeparator": true,
       "validation": {},

@@ -1,0 +1,12 @@
+SELECT
+  t.template_id AS value,
+  t.template_name AS label,
+  t.subject_field,
+  t.body_field,
+  t.to_field,
+  t.cc_field,
+  t.bcc_field
+FROM templates t
+WHERE t.template_type = 'Resources'
+  AND t.is_active = 1
+ORDER BY t.template_name

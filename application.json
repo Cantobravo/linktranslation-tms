@@ -65,36 +65,12 @@
       "isDefault": false
     },
     {
-      "id": "Customer Credentials",
-      "isDefault": false
-    },
-    {
-      "id": "Customer Portals",
-      "isDefault": false
-    },
-    {
-      "id": "Customer Quotes",
-      "isDefault": false
-    },
-    {
-      "id": "Customer Services",
-      "isDefault": false
-    },
-    {
       "id": "Projects",
       "isDefault": false
     },
     {
       "id": "Resource Bills",
       "isDefault": false
-    },
-    {
-      "id": "Messages",
-      "isDefault": false
-    },
-    {
-      "id": "Home",
-      "isDefault": true
     },
     {
       "id": "Resource Banking",
@@ -105,27 +81,11 @@
       "isDefault": false
     },
     {
-      "id": "Login Page",
-      "isDefault": false
-    },
-    {
       "id": "Roles and Permissions",
       "isDefault": false
     },
     {
-      "id": "Price List",
-      "isDefault": false
-    },
-    {
-      "id": "Price List Items",
-      "isDefault": false
-    },
-    {
       "id": "Services",
-      "isDefault": false
-    },
-    {
-      "id": "Templates",
       "isDefault": false
     },
     {
@@ -141,10 +101,6 @@
       "isDefault": false
     },
     {
-      "id": "Sales Pipeline",
-      "isDefault": false
-    },
-    {
       "id": "Company Documentation",
       "isDefault": false
     },
@@ -153,16 +109,24 @@
       "isDefault": false
     },
     {
-      "id": "Resources Original",
+      "id": "Customer Portals",
       "isDefault": false
     },
     {
-      "id": "Resources WT",
+      "id": "Templates",
       "isDefault": false
     },
     {
-      "id": "Work Teams tmp",
+      "id": "Sales Pipeline",
       "isDefault": false
+    },
+    {
+      "id": "Price List",
+      "isDefault": false
+    },
+    {
+      "id": "Home",
+      "isDefault": true
     }
   ],
   "unpublishedAppLayout": {

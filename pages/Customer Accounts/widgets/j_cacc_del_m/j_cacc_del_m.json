@@ -1,6 +1,6 @@
 {
   "animateLoading": true,
-  "borderRadius": "1.5rem",
+  "borderRadius": "0px",
   "bottomRow": 278,
   "boxShadow": "none",
   "canEscapeKeyClose": true,
@@ -53,7 +53,16 @@
   "detachFromLayout": true,
   "dynamicBindingPathList": [],
   "dynamicHeight": "AUTO_HEIGHT",
-  "dynamicTriggerPathList": [],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onClose"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClose"
+    }
+  ],
   "height": 260,
   "isCanvas": true,
   "isLoading": false,
@@ -67,6 +76,7 @@
   "mobileRightColumn": 44,
   "mobileTopRow": 18,
   "needsErrorInfo": false,
+  "onClose": "{{ storeValue('caccRow', null) }}\n",
   "parentColumnSpace": 18.5712890625,
   "parentId": "0",
   "parentRowSpace": 10,

@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 28,
+  "bottomRow": 23,
   "dynamicBindingPathList": [
     {
       "key": "truncateButtonColor"
@@ -30,8 +30,8 @@
   "mobileRightColumn": 15,
   "mobileTopRow": 28,
   "needsErrorInfo": false,
-  "originalBottomRow": 28,
-  "originalTopRow": 24,
+  "originalBottomRow": 23,
+  "originalTopRow": 19,
   "overflow": "NONE",
   "parentColumnSpace": 25.875,
   "parentId": "0",
@@ -43,7 +43,7 @@
   "text": "Bills",
   "textAlign": "LEFT",
   "textColor": "#231F20",
-  "topRow": 24,
+  "topRow": 19,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,

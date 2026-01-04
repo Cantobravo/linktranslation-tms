@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT COUNT(*) AS cnt\nFROM customers\nWHERE LOWER(TRIM(customer_name)) = LOWER(TRIM({{ j_customer_update_json.formData.customer_name }}))\nAND customer_id <> {{ j_customer_update_json.formData.customer_id || -1 }};\n",
+      "body": "SELECT COUNT(*) AS cnt\nFROM customers\nWHERE LOWER(TRIM(customer_name)) = LOWER(TRIM({{ j_customer_update_json.formData.customer_name }}))\nAND customer_id <> COALESCE({{ appsmith.store.customerRow?.customer_id }}, -1);\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

@@ -1,3 +1,0 @@
-UPDATE resources
-SET role_id = (SELECT role_id FROM roles WHERE role_name = 'Admin' LIMIT 1)
-WHERE resource_username = 'caue';

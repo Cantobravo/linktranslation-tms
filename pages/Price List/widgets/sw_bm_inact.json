@@ -1,0 +1,52 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "alignWidget": "LEFT",
+  "animateLoading": true,
+  "bottomRow": 35,
+  "boxShadow": "none",
+  "defaultSwitchState": false,
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [
+    {
+      "key": "onChange"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onChange"
+    }
+  ],
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "wzbt906i8l",
+  "label": "Show Benchmark Inactive",
+  "labelPosition": "Left",
+  "leftColumn": 56,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "mobileBottomRow": 27,
+  "mobileLeftColumn": 35,
+  "mobileRightColumn": 47,
+  "mobileTopRow": 23,
+  "needsErrorInfo": false,
+  "onChange": "{{ \n  dd_bm_cur.selectedOptionValue \n    ? get_pl_items_bm.run() \n    : \"\" \n}}\n",
+  "originalBottomRow": 35,
+  "originalTopRow": 31,
+  "parentColumnSpace": 34.890625,
+  "parentId": "0",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 64,
+  "topRow": 31,
+  "type": "SWITCH_WIDGET",
+  "version": 1,
+  "widgetId": "7oewlypx2u",
+  "widgetName": "sw_bm_inact"
+}

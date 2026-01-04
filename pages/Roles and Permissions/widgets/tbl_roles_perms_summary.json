@@ -2,9 +2,9 @@
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "animateLoading": true,
   "borderColor": "{{appsmith.theme.colors.primaryColor}}",
-  "borderRadius": "1.5rem",
+  "borderRadius": "0px",
   "borderWidth": "1",
-  "bottomRow": 116,
+  "bottomRow": 63,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "cachedTableData": {},
   "canFreezeColumn": true,
@@ -33,12 +33,13 @@
   },
   "columnOrder": [
     "customColumn1",
+    "customColumn2",
     "role_id",
     "role_name",
     "perm_count",
     "perm_list"
   ],
-  "columnUpdatedAt": 1755546303734,
+  "columnUpdatedAt": 1767478001195,
   "columnWidthMap": {
     "perm_list": 636
   },
@@ -77,6 +78,15 @@
     },
     {
       "key": "borderColor"
+    },
+    {
+      "key": "primaryColumns.customColumn2.buttonColor"
+    },
+    {
+      "key": "primaryColumns.customColumn2.borderRadius"
+    },
+    {
+      "key": "primaryColumns.customColumn2.boxShadow"
     }
   ],
   "dynamicPropertyPathList": [
@@ -85,14 +95,20 @@
     },
     {
       "key": "primaryColumns.customColumn1.onClick"
+    },
+    {
+      "key": "primaryColumns.customColumn2.onClick"
     }
   ],
   "dynamicTriggerPathList": [
     {
       "key": "primaryColumns.customColumn1.onClick"
+    },
+    {
+      "key": "primaryColumns.customColumn2.onClick"
     }
   ],
-  "enableClientSideSearch": true,
+  "enableClientSideSearch": false,
   "endOfData": false,
   "flexVerticalAlignment": "start",
   "horizontalAlignment": "LEFT",
@@ -100,21 +116,21 @@
   "isLoading": false,
   "isSortable": true,
   "isVisible": true,
-  "isVisibleDownload": true,
+  "isVisibleDownload": false,
   "isVisibleFilters": false,
   "isVisiblePagination": true,
   "isVisibleSearch": true,
   "key": "xogg6rv122",
   "label": "Data",
-  "leftColumn": 1,
+  "leftColumn": 34,
   "minWidth": 450,
   "mobileBottomRow": 80,
   "mobileLeftColumn": 0,
   "mobileRightColumn": 9,
   "mobileTopRow": 52,
   "needsErrorInfo": false,
-  "originalBottomRow": 116,
-  "originalTopRow": 74,
+  "originalBottomRow": 63,
+  "originalTopRow": 26,
   "parentColumnSpace": 19.8125,
   "parentId": "0",
   "parentRowSpace": 10,
@@ -152,6 +168,46 @@
       "notation": "standard",
       "onClick": "{{\n  storeValue('roleRow', tbl_roles_perms_summary.triggeredRow);\n  showModal('j_role_perms_view_modal');\n}}\n",
       "originalId": "customColumn1",
+      "sticky": "",
+      "textSize": "0.875rem",
+      "thousandSeparator": true,
+      "validation": {},
+      "verticalAlignment": "CENTER",
+      "width": 150
+    },
+    "customColumn2": {
+      "alias": "Edit",
+      "allowCellWrapping": false,
+      "allowSameOptionsInNewRow": true,
+      "borderRadius": "{{tbl_roles_perms_summary.processedTableData.map((currentRow, currentIndex) => ( (appsmith.theme.borderRadius.appBorderRadius)))}}",
+      "boxShadow": "{{tbl_roles_perms_summary.processedTableData.map((currentRow, currentIndex) => ( \"none\"))}}",
+      "buttonColor": "{{tbl_roles_perms_summary.processedTableData.map((currentRow, currentIndex) => ( (appsmith.theme.colors.primaryColor)))}}",
+      "buttonLabel": "Edit",
+      "buttonStyle": "rgb(3, 179, 101)",
+      "buttonVariant": "SECONDARY",
+      "columnType": "button",
+      "computedValue": "",
+      "currencyCode": "USD",
+      "customAlias": "",
+      "decimals": 0,
+      "enableFilter": true,
+      "enableSort": true,
+      "horizontalAlignment": "LEFT",
+      "id": "customColumn2",
+      "index": 5,
+      "isCellEditable": false,
+      "isCellVisible": true,
+      "isDerived": true,
+      "isDisabled": false,
+      "isDiscardVisible": true,
+      "isEditable": false,
+      "isSaveVisible": true,
+      "isVisible": true,
+      "label": "Edit",
+      "labelColor": "#FFFFFF",
+      "notation": "standard",
+      "onClick": "{{\n  (async () => {\n    await storeValue('roleRow', tbl_roles_perms_summary.triggeredRow || tbl_roles_perms_summary.selectedRow);\n    await get_role_perms.run();\n    showModal('j_role_permissions_modal');\n  })()\n}}\n",
+      "originalId": "customColumn2",
       "sticky": "",
       "textSize": "0.875rem",
       "thousandSeparator": true,
@@ -290,7 +346,7 @@
   "searchKey": "",
   "tableData": "{{ get_roles_perms_summary.data }}\n",
   "textSize": "0.875rem",
-  "topRow": 74,
+  "topRow": 26,
   "totalRecordsCount": 0,
   "type": "TABLE_WIDGET_V2",
   "variant": "VARIANT2",

@@ -1,0 +1,14 @@
+SELECT
+  t.template_id,
+  t.template_name,
+  t.template_type,
+  t.template_description,
+  t.to_field,
+  t.subject_field,
+  t.cc_field,
+  t.bcc_field,
+  t.body_field,
+  t.is_active
+FROM templates t
+WHERE
+  t.template_id = COALESCE({{ dd_tpl_wt.selectedOptionValue }}, NULL);

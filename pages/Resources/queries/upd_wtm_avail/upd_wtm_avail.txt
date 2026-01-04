@@ -1,13 +1,11 @@
-UPDATE work_team_members w
-JOIN (
-  SELECT wtm.work_team_member_id
-  FROM work_team_members wtm
-  WHERE wtm.resource_id  = {{ tbl_resources.selectedRow.resource_id }}
-    AND wtm.work_team_id = {{ i_wt_pick.selectedOptionValue }}
-    AND COALESCE(wtm.is_active, 1) = 1
-  ORDER BY wtm.updated_at DESC, wtm.work_team_member_id DESC
-  LIMIT 1
-) t ON t.work_team_member_id = w.work_team_member_id
+UPDATE work_team_members
 SET
-  w.is_available = {{ j_avail_inline.formData.is_available || null }},
-  w.updated_at   = NOW()
+  is_available = {{ j_avail_inline2.formData.is_available || NULL }},
+  updated_at = NOW()
+WHERE work_team_member_id = {{
+  appsmith.store.availObj?.work_team_member_id
+  || appsmith.store.wtmPrevRow?.work_team_member_id
+  || tbl_work_team_preview.selectedRow?.work_team_member_id
+  || 0
+}}
+LIMIT 1

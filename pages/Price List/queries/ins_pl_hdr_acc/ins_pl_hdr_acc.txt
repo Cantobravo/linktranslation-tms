@@ -1,0 +1,12 @@
+INSERT INTO price_lists
+  (price_list_scope, customer_id, customer_account_id, currency_id, is_active, notes)
+SELECT
+  'ACCOUNT',
+  ca.customer_id,
+  ca.customer_account_id,
+  NULL,
+  1,
+  'Account price list'
+FROM customer_accounts ca
+WHERE ca.customer_account_id = COALESCE({{dd_pl_acc.selectedOptionValue}}, NULL)
+LIMIT 1

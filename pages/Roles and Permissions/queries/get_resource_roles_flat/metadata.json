@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT\n  r.resource_id,\n  r.resource_full_name,\n  ro.role_id,\n  ro.role_name,\n  p.permission_id,\n  p.permission_key,\n  p.permission_name\nFROM resources r\nJOIN roles ro            ON ro.role_id = r.role_id\nJOIN role_permissions rp ON rp.role_id = ro.role_id\nJOIN permissions p       ON p.permission_id = rp.permission_id\nWHERE COALESCE(r.resource_is_active, 1) = 1\nORDER BY r.resource_full_name, p.permission_name;\n",
+      "body": "SELECT\n  r.resource_id,\n  r.resource_full_name,\n  ro.role_id,\n  ro.role_name,\n  p.permission_id,\n  p.permission_key,\n  p.permission_name\nFROM resources r\nLEFT JOIN roles ro\n  ON ro.role_id = r.role_id\nLEFT JOIN role_permissions rp\n  ON rp.role_id = ro.role_id\nLEFT JOIN permissions p\n  ON p.permission_id = rp.permission_id\nWHERE COALESCE(r.resource_is_active, 1) = 1\n  AND r.resource_status = 'Staff'\nORDER BY r.resource_full_name, p.permission_name;\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

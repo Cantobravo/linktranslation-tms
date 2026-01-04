@@ -1,2 +1,0 @@
-DELETE FROM customer_accounts
-WHERE customer_account_id = {{ customer_account_id }};

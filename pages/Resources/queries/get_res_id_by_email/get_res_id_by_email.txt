@@ -1,5 +1,5 @@
 SELECT resource_id
 FROM resources
-WHERE resource_email = {{ j_res_ins_form.formData.resource_email }}
+WHERE LOWER(TRIM(resource_email)) = LOWER(TRIM({{ j_res_ins_form.formData.resource_email }}))
 ORDER BY resource_id DESC
 LIMIT 1;

@@ -1,0 +1,20 @@
+UPDATE customer_portals
+SET
+  customer_portal_name = {{ jf_port_upd.formData.customer_portal_name ?? null }},
+  customer_id = {{ jf_port_upd.formData.customer_id ?? null }},
+  customer_contact_id = {{ jf_port_upd.formData.customer_contact_id ?? null }},
+  customer_portal_credentials = {{ jf_port_upd.formData.customer_portal_credentials ?? null }},
+  customer_portal_website = {{ jf_port_upd.formData.customer_portal_website ?? null }},
+  customer_portal_notes = {{ jf_port_upd.formData.customer_portal_notes ?? null }},
+  customer_portal_status = COALESCE(NULLIF({{ jf_port_upd.formData.customer_portal_status }}, ''), 'Active'),
+  portal_scope = COALESCE(NULLIF({{ jf_port_upd.formData.portal_scope }}, ''), 'Projects'),
+  customer_portal_first_update = {{ jf_port_upd.formData.customer_portal_first_update ?? null }},
+  customer_portal_last_update = {{ jf_port_upd.formData.customer_portal_last_update ?? null }},
+  customer_portal_next_update = {{ jf_port_upd.formData.customer_portal_next_update ?? null }},
+  updated_at = CURRENT_TIMESTAMP
+WHERE customer_portal_id = COALESCE(
+  {{ appsmith.store.sel_port_row?.customer_portal_id }},
+  {{ tbl_portals.selectedRow?.customer_portal_id }},
+  -1
+)
+AND portal_scope IN ('Projects','Both');

@@ -18,14 +18,15 @@ SELECT
   COALESCE(po.resource_bill_id,0) AS resource_bill_id,
   CASE
     WHEN COALESCE(po.is_billed,'No')='Yes' THEN 'In Bill'
-    WHEN EXISTS (
-      SELECT 1
-      FROM resource_bill_po_link l
-      WHERE l.purchase_order_id = po.purchase_order_id
-    ) THEN 'Linked in Bill'
+    WHEN COALESCE(l.has_link,0)=1 THEN 'Linked in Bill'
     ELSE ''
   END AS delete_block_reason
 FROM resource_purchase_orders po
 LEFT JOIN projects  p ON p.project_id  = po.project_id
 LEFT JOIN resources r ON r.resource_id = po.resource_id
+LEFT JOIN (
+  SELECT purchase_order_id, 1 AS has_link
+  FROM resource_bill_po_link
+  GROUP BY purchase_order_id
+) l ON l.purchase_order_id = po.purchase_order_id
 ORDER BY po.updated_at DESC, po.purchase_order_id DESC;

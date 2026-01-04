@@ -1,7 +1,0 @@
-UPDATE linktranslation.notes
-SET
-  note_date = {{ e_note_date.selectedDate ? moment(e_note_date.selectedDate).format('YYYY-MM-DD') : null }},
-  note_text = {{ TextUtils.toPlain(e_note_text.text) }},
-  priority  = {{ NotesSanitizer.getPriority(e_priority.selectedOptionValue) }},
-  status    = {{ NotesSanitizer.getStatus(e_status.selectedOptionValue) }}
-WHERE note_id = {{ notes_table.selectedRow.note_id }};

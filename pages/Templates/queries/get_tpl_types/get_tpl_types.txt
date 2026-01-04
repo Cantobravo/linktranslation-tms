@@ -1,0 +1,6 @@
+SELECT
+  ami.label AS label,
+  ami.label AS value
+FROM app_menu_items ami
+WHERE ami.is_active = 1
+ORDER BY ami.sort_order, ami.label;

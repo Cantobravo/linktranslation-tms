@@ -1,21 +1,41 @@
 INSERT INTO customer_contacts (
-  customer_id,
   customer_contact_name,
   contact_position,
   customer_contact_email,
+  customer_id,
+  customer_contact_industry,
+  customer_contact_website,
+  customer_contact_linkedin,
   customer_contact_first_contact,
   customer_contact_last_contact,
   customer_contact_next_contact,
-  customer_contact_status,
-  customer_contact_notes
-) VALUES (
-  {{ i_ct_customer_id.selectedOptionValue || null }},
-  {{ i_ct_full_name.text }},
-  {{ i_ct_role.text || null }},
-  {{ i_ct_email.text || null }},
-  {{ i_ct_initial_date.selectedDate ? moment(i_ct_initial_date.selectedDate).format('YYYY-MM-DD') : null }},
-  {{ i_ct_last_date.selectedDate ? moment(i_ct_last_date.selectedDate).format('YYYY-MM-DD') : null }},
-  {{ i_ct_next_date.selectedDate ? moment(i_ct_next_date.selectedDate).format('YYYY-MM-DD') : null }},
-  {{ i_ct_active.isSwitchedOn ? 'Active' : 'Inactive' }},
-  {{ i_ct_notes.text || null }}
-);
+  customer_contact_contact_method,
+  customer_contact_test,
+  customer_contact_notes,
+  contact_is_active
+)
+VALUES (
+  COALESCE(NULLIF({{ jf_ct_ins.formData.customer_contact_name || '' }}, ''), NULL),
+  COALESCE(NULLIF({{ jf_ct_ins.formData.contact_position || '' }}, ''), NULL),
+  COALESCE(NULLIF({{ jf_ct_ins.formData.customer_contact_email || '' }}, ''), NULL),
+
+  COALESCE(
+    NULLIF({{ jf_ct_ins.formData.customer_id || '' }}, ''),
+    {{ appsmith.store.sel_cust_id || null }},
+    -1
+  ),
+
+  COALESCE(NULLIF({{ jf_ct_ins.formData.customer_contact_industry || '' }}, ''), NULL),
+  COALESCE(NULLIF({{ jf_ct_ins.formData.customer_contact_website || '' }}, ''), NULL),
+  COALESCE(NULLIF({{ jf_ct_ins.formData.customer_contact_linkedin || '' }}, ''), NULL),
+
+  COALESCE(NULLIF({{ jf_ct_ins.formData.customer_contact_first_contact || '' }}, ''), NULL),
+  COALESCE(NULLIF({{ jf_ct_ins.formData.customer_contact_last_contact || '' }}, ''), NULL),
+  COALESCE(NULLIF({{ jf_ct_ins.formData.customer_contact_next_contact || '' }}, ''), NULL),
+
+  COALESCE(NULLIF({{ jf_ct_ins.formData.customer_contact_contact_method || '' }}, ''), NULL),
+  COALESCE(NULLIF({{ jf_ct_ins.formData.customer_contact_test || '' }}, ''), NULL),
+  COALESCE(NULLIF({{ jf_ct_ins.formData.customer_contact_notes || '' }}, ''), NULL),
+
+  1
+)

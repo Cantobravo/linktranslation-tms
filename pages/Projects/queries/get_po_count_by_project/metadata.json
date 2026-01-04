@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "-- get_po_count_by_project\nSELECT COUNT(*) AS cnt\nFROM resource_purchase_orders\nWHERE project_id = {{ appsmith.store.selectedProjectData.project_id }};\n",
+      "body": "SELECT COUNT(*) AS cnt\nFROM resource_purchase_orders\nWHERE project_id = {{\n  appsmith.store.selectedProjectData?.project_id\n  || Projects_Table.triggeredRow?.project_id\n  || Projects_Table.selectedRow?.project_id\n  || null\n}};\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -29,7 +29,7 @@
     ],
     "name": "get_po_count_by_project",
     "pageId": "Projects",
-    "runBehaviour": "AUTOMATIC",
-    "userSetOnLoad": false
+    "runBehaviour": "MANUAL",
+    "userSetOnLoad": true
   }
 }

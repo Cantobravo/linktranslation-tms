@@ -1,19 +1,25 @@
 UPDATE projects
 SET
-  project_name              = {{ u_project_name.text || null }},
-  customer_id               = {{ u_customer_id.selectedOptionValue || null }},
-  currency_id               = {{ u_currency_id.selectedOptionValue || null }},
-  customer_account_id       = {{ u_customer_account_id.selectedOptionValue || null }},
-  service_id                = {{ u_service_id.selectedOptionValue || null }},
-  unit_id                   = {{ u_unit_id.selectedOptionValue || null }},
-  source_language_id        = {{ u_source_language_id.selectedOptionValue || null }},
-  target_language_id        = {{ u_target_language_id.selectedOptionValue || null }},
-  pricing_mode              = {{ u_pricing_mode.selectedOptionValue || 'PER_UNIT' }},
-  project_volume            = {{ u_project_volume.text ? u_project_volume.text : null }},
-  project_rate              = {{ u_project_rate.text ? u_project_rate.text : null }},
-  project_total             = {{ u_project_total.text ? u_project_total.text : null }},
-  project_start_date        = {{ u_project_start_date.selectedDate ? moment(u_project_start_date.selectedDate).format('YYYY-MM-DD') : null }},
-  project_end_date          = {{ u_project_end_date.selectedDate ? moment(u_project_end_date.selectedDate).format('YYYY-MM-DD') : null }},
-  customer_reference_number = {{ u_customer_reference_number.text ? u_customer_reference_number.text : null }},
-  project_comments          = {{ u_project_comments.text || null }}
-WHERE project_id = {{ appsmith.store.proj_id || u_project_id.text || null }};
+  project_name = COALESCE(NULLIF({{ u_project_name.text }}, ''), NULL),
+  customer_id = COALESCE({{ u_customer_id.selectedOptionValue }}, NULL),
+  currency_id = COALESCE({{ u_currency_id.selectedOptionValue }}, NULL),
+  customer_account_id = COALESCE({{ u_customer_account_id.selectedOptionValue }}, NULL),
+  project_status = COALESCE(NULLIF({{ u_project_status.selectedOptionValue }}, ''), NULL),
+  service_id = COALESCE({{ u_service_id.selectedOptionValue }}, NULL),
+  unit_id = COALESCE({{ u_unit_id.selectedOptionValue }}, NULL),
+  source_language_id = COALESCE({{ u_source_language_id.selectedOptionValue }}, NULL),
+  target_language_id = COALESCE({{ u_target_language_id.selectedOptionValue }}, NULL),
+  pricing_mode = COALESCE(NULLIF({{ u_pricing_mode.selectedOptionValue }}, ''), 'PER_UNIT'),
+  project_volume = COALESCE(NULLIF({{ u_project_volume.text }}, ''), NULL),
+  project_rate = COALESCE(NULLIF({{ u_project_rate.text }}, ''), NULL),
+  project_total = COALESCE(NULLIF({{ u_project_total.text }}, ''), NULL),
+  project_start_date = {{ u_project_start_date.selectedDate ? moment(u_project_start_date.selectedDate).format('YYYY-MM-DD') : null }},
+  project_end_date = {{ u_project_end_date.selectedDate ? moment(u_project_end_date.selectedDate).format('YYYY-MM-DD') : null }},
+  customer_reference_number = COALESCE(NULLIF({{ u_customer_reference_number.text }}, ''), NULL),
+  project_comments = COALESCE(NULLIF({{ u_project_comments.text }}, ''), NULL)
+WHERE project_id = COALESCE(
+  {{ appsmith.store.proj_id }},
+  {{ appsmith.store.selectedProjectData?.project_id }},
+  {{ Projects_Table.selectedRow?.project_id }},
+  0
+)

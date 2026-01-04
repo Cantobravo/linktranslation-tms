@@ -1,9 +1,0 @@
-SELECT
-  c.customer_id,
-  c.customer_name,
-  c.customer_status,
-  c.created_at,
-  c.updated_at
-FROM customers c
-ORDER BY c.updated_at DESC, c.customer_name;
-	

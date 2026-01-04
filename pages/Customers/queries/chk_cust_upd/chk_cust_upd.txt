@@ -1,4 +1,4 @@
 SELECT COUNT(*) AS cnt
 FROM customers
 WHERE LOWER(TRIM(customer_name)) = LOWER(TRIM({{ j_customer_update_json.formData.customer_name }}))
-AND customer_id <> {{ j_customer_update_json.formData.customer_id || -1 }};
+AND customer_id <> COALESCE({{ appsmith.store.customerRow?.customer_id }}, -1);

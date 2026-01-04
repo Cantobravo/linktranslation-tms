@@ -1,9 +1,0 @@
-UPDATE customer_credentials
-SET
-  customer_id                 = COALESCE({{ j_ccred_upd_jsn.formData.customer_id }},                 customer_id),
-  customer_credential_name    = COALESCE({{ j_ccred_upd_jsn.formData.customer_credential_name }},    customer_credential_name),
-  customer_credential_website = COALESCE({{ j_ccred_upd_jsn.formData.customer_credential_website }}, customer_credential_website),
-  customer_credential_notes   = COALESCE({{ j_ccred_upd_jsn.formData.customer_credential_notes }},   customer_credential_notes),
-  customer_credential_status  = COALESCE({{ j_ccred_upd_jsn.formData.customer_credential_status }},  customer_credential_status),
-  updated_at                  = NOW()
-WHERE customer_credential_id   = {{ appsmith.store.ccredRow?.customer_credential_id }};

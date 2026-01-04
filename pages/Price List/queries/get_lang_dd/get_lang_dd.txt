@@ -1,0 +1,6 @@
+SELECT
+  l.language_id AS value,
+  l.language_name AS label
+FROM languages l
+WHERE l.language_is_active = 1
+ORDER BY l.language_name

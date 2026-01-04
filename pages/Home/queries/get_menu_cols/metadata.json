@@ -1,5 +1,5 @@
 {
-  "gitSyncId": "6840b6d2ece888096e42342a_b1a4dc2d-2897-4f06-afc7-cbbdf417fe27",
+  "gitSyncId": "6840b6d2ece888096e42342a_85ddabe1-432c-4882-aced-c2cb77e369e7",
   "id": "Home_get_menu_cols",
   "pluginId": "mysql-plugin",
   "pluginType": "DB",
@@ -25,7 +25,7 @@
     "dynamicBindingPathList": [],
     "name": "get_menu_cols",
     "pageId": "Home",
-    "runBehaviour": "ON_PAGE_LOAD",
-    "userSetOnLoad": true
+    "runBehaviour": "AUTOMATIC",
+    "userSetOnLoad": false
   }
 }

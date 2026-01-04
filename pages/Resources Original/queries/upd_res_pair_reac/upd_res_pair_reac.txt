@@ -1,6 +1,0 @@
-UPDATE resource_language_pairs
-SET is_active = 1, updated_at = NOW()
-WHERE resource_id = {{ this.params.resource_id }}
-  AND source_language_id = {{ this.params.source_language_id }}
-  AND target_language_id = {{ this.params.target_language_id }}
-  AND COALESCE(is_active,1) = 0;

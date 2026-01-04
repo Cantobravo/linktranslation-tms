@@ -1,19 +1,24 @@
 UPDATE customers
 SET
-  customer_name                 = COALESCE({{ j_customer_update_json.formData.customer_name }},                 customer_name),
-  customer_type                 = COALESCE({{ j_customer_update_json.formData.customer_type }},                 customer_type),
-  customer_address              = COALESCE({{ j_customer_update_json.formData.customer_address }},              customer_address),
-  customer_country              = COALESCE({{ j_customer_update_json.formData.customer_country }},              customer_country),
-  customer_phone                = COALESCE({{ j_customer_update_json.formData.customer_phone }},                customer_phone),
-  customer_industry             = COALESCE({{ j_customer_update_json.formData.customer_industry }},             customer_industry),
-  customer_note                 = COALESCE({{ j_customer_update_json.formData.customer_note }},                 customer_note),
-  customer_invoice_procedure    = COALESCE({{ j_customer_update_json.formData.customer_invoice_procedure }},    customer_invoice_procedure),
-  customer_payment_term         = COALESCE({{ j_customer_update_json.formData.customer_payment_term }},         customer_payment_term),
-  customer_tax_vat_number       = COALESCE({{ j_customer_update_json.formData.customer_tax_vat_number }},       customer_tax_vat_number),
-  currency_id                   = COALESCE({{ j_customer_update_json.formData.currency_id }},                   currency_id),
-  customer_receivable_bank_name = COALESCE({{ j_customer_update_json.formData.customer_receivable_bank_name }}, customer_receivable_bank_name),
-  customer_linkedIn             = COALESCE({{ j_customer_update_json.formData.customer_linkedIn }},             customer_linkedIn),
-  customer_bank_fee             = COALESCE({{ j_customer_update_json.formData.customer_bank_fee }},             customer_bank_fee),
-  customer_status               = COALESCE({{ j_customer_update_json.formData.customer_status }},               customer_status),
-  customer_documentation        = COALESCE({{ j_customer_update_json.formData.customer_documentation }},        customer_documentation)
-WHERE customer_id = {{ appsmith.store.customerRow?.customer_id }};
+  customer_name = {{ j_customer_update_json.formData.customer_name }},
+  customer_type = {{ j_customer_update_json.formData.customer_type ?? null }},
+  customer_address = {{ j_customer_update_json.formData.customer_address ?? null }},
+  customer_country = {{ j_customer_update_json.formData.customer_country ?? null }},
+  customer_phone = {{ j_customer_update_json.formData.customer_phone ?? null }},
+  customer_industry = {{ j_customer_update_json.formData.customer_industry ?? null }},
+  customer_note = {{ j_customer_update_json.formData.customer_note ?? null }},
+  customer_invoice_procedure = {{ j_customer_update_json.formData.customer_invoice_procedure ?? null }},
+  customer_payment_term = {{ j_customer_update_json.formData.customer_payment_term ?? null }},
+  customer_tax_vat_number = {{ j_customer_update_json.formData.customer_tax_vat_number ?? null }},
+  currency_id = {{ j_customer_update_json.formData.currency_id ?? null }},
+  customer_receivable_bank_name = {{ j_customer_update_json.formData.customer_receivable_bank_name ?? null }},
+  customer_linkedIn = {{ j_customer_update_json.formData.customer_linkedIn ?? null }},
+  customer_bank_fee = {{ j_customer_update_json.formData.customer_bank_fee ?? null }},
+  customer_status = {{ j_customer_update_json.formData.customer_status ?? null }},
+  customer_documentation = {{ j_customer_update_json.formData.customer_documentation ?? null }},
+  is_customer = {{ j_customer_update_json.formData.is_customer ?? 'yes' }},
+  updated_at = NOW()
+WHERE customer_id = {{
+  appsmith.store.customerRow?.customer_id
+  || j_customer_update_json.formData.customer_id
+}};

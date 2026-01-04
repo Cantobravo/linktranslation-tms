@@ -1,0 +1,7 @@
+SELECT
+  status_label,
+  status_value
+FROM customer_statuses
+WHERE is_active = 1
+GROUP BY status_value, status_label
+ORDER BY MIN(sort_order), status_label

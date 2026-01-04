@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT\n  cp.customer_portal_id,\n  cp.customer_portal_name,\n  cp.customer_portal_website,\n  cp.customer_portal_credentials,\n  cp.customer_portal_first_update,\n  cp.customer_portal_last_update,\n  cp.customer_portal_next_update\nFROM customer_portals cp\nWHERE cp.customer_id = COALESCE({{ tbl_ccont.triggeredRow ? tbl_ccont.triggeredRow.customer_id : null }}, cp.customer_id)\nORDER BY cp.customer_portal_name;\n",
+      "body": "SELECT\n  cp.customer_portal_id,\n  cp.customer_portal_name,\n  cp.customer_portal_website,\n  cp.customer_portal_credentials,\n  cp.customer_portal_first_update,\n  cp.customer_portal_last_update,\n  cp.customer_portal_next_update\nFROM customer_portals cp\nWHERE cp.customer_id = COALESCE(\n  {{ appsmith.store.ccontRow?.customer_id }},\n  {{ tbl_ccont.triggeredRow?.customer_id }},\n  -1\n)\nORDER BY cp.customer_portal_name;\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -29,7 +29,7 @@
     ],
     "name": "get_customer_portals_for_selec",
     "pageId": "Customer Contacts",
-    "runBehaviour": "AUTOMATIC",
-    "userSetOnLoad": false
+    "runBehaviour": "MANUAL",
+    "userSetOnLoad": true
   }
 }

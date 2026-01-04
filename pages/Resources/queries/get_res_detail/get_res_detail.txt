@@ -1,13 +1,23 @@
 SELECT
   resource_id,
+  resource_username,
+  resource_is_active,
+  resource_status,
+  resource_native_language,
   resource_first_name,
   resource_last_name,
   resource_full_name,
   resource_email,
+  currency_id,
+  resource_payment_term,
+  resource_address,
   resource_country,
-  resource_status,
   resource_phone,
-  resource_documentation
+  resource_documentation,
+  resource_feedback_notes,
+  role_id,
+  created_at,
+  updated_at
 FROM resources
 WHERE resource_id = {{
   appsmith.store.resRow?.resource_id

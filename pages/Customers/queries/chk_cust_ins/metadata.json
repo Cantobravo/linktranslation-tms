@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT COUNT(*) AS cnt\nFROM customers\nWHERE LOWER(TRIM(customer_name)) = LOWER(TRIM({{ j_customer_insert_json.formData.customer_name }}));\n",
+      "body": "SELECT COUNT(*) AS cnt\nFROM customers\nWHERE LOWER(TRIM(customer_name)) = LOWER(TRIM({{ j_cust_ins_jsn2.formData.customer_name }}));\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

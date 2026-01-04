@@ -1,5 +1,0 @@
-SELECT
-  language_id AS value,
-  CONCAT(language_name, ' (', COALESCE(language_acronym, ''), ')') AS label
-FROM languages
-ORDER BY language_name;

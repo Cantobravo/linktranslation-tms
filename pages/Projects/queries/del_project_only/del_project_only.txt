@@ -1,3 +1,2 @@
--- params: project_id
 DELETE FROM projects
 WHERE project_id = {{ this.params.project_id }};

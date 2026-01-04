@@ -1,9 +1,0 @@
-SELECT
-  pl.price_list_id   AS value,
-  CONCAT(pl.price_list_type, ' - ', pl.price_list_name) AS label,
-  pl.price_list_type,
-  pl.price_list_name,
-  pl.currency_id
-FROM price_lists pl
-WHERE COALESCE(pl.is_active, 1) = 1
-ORDER BY pl.updated_at DESC, pl.price_list_name;

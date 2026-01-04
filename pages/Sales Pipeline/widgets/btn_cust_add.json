@@ -1,0 +1,59 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 24,
+  "boxShadow": "none",
+  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "buttonVariant": "SECONDARY",
+  "disabledWhenInvalid": true,
+  "dynamicBindingPathList": [
+    {
+      "key": "buttonColor"
+    },
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "iconAlign": "left",
+  "iconName": "add",
+  "isDefaultClickDisabled": true,
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "m1qqulucj2",
+  "leftColumn": 1,
+  "minWidth": 120,
+  "mobileBottomRow": 21,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 11,
+  "mobileTopRow": 17,
+  "needsErrorInfo": false,
+  "onClick": "{{\n  (async () => {\n    try {\n      // Ensure dropdown data is loaded only if missing\n      if (!Array.isArray(get_customers.data)) {\n        await get_customers.run();\n      }\n\n      // Clean insert form (guaranteed fresh state)\n      resetWidget('jf_cust_ins', true);\n\n      // Optional: clear selected customer context to avoid side effects\n      await storeValue('sel_cust_row', null);\n\n      // Open insert modal\n      showModal('m_cust_ins');\n\n    } catch (e) {\n      showAlert(e?.message || 'Failed to open Add Customer modal.', 'error');\n    }\n  })()\n}}\n",
+  "originalBottomRow": 24,
+  "originalTopRow": 13,
+  "parentColumnSpace": 18.59375,
+  "parentId": "0",
+  "parentRowSpace": 10,
+  "placement": "CENTER",
+  "recaptchaType": "V3",
+  "renderMode": "CANVAS",
+  "resetFormOnClick": true,
+  "responsiveBehavior": "hug",
+  "rightColumn": 12,
+  "text": "Add New Lead",
+  "topRow": 13,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "k1arbsgunz",
+  "widgetName": "btn_cust_add"
+}

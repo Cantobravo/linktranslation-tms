@@ -1,3 +1,0 @@
-SELECT *
-FROM customer_quotes
-WHERE customer_quote_id = {{ appsmith.store.cquoteRow?.customer_quote_id }};

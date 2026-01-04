@@ -37,7 +37,7 @@
   "mobileRightColumn": 63,
   "mobileTopRow": 18,
   "needsErrorInfo": false,
-  "onClick": "{{\n  (async () => {\n    const teamId = appsmith.store.wtRow?.work_team_id;\n    if (!teamId) { showAlert('Missing team context.', 'warning'); return; }\n\n    try {\n      await del_wt_links_by_team.run();\n      await del_wt_creds_by_team.run();\n      await del_wt_members_by_team.run();\n      await del_work_team.run();\n\n      // refresh the dataset currently shown\n      if (toggle_show_archived_wt.isSwitchedOn) {\n        await get_work_teams_all.run();\n      } else {\n        await get_work_teams_nonarchived.run();\n      }\n\n      closeModal('j_wt_del_m');\n      showAlert('Team deleted.', 'success');\n      await storeValue('wtRow', null);\n    } catch (e) {\n      showAlert('Error deleting team: ' + (e?.message || e), 'error');\n    }\n  })()\n}}\n",
+  "onClick": "{{\n  (async () => {\n    const teamId = appsmith.store.wtRow?.work_team_id;\n    if (!teamId) { showAlert('Missing team context.', 'warning'); return; }\n\n    try {\n      await del_wt_links_by_team.run();\n      await del_wt_creds_by_team.run();\n      await del_wt_members_by_team.run();\n      await del_work_team.run();\n\n      await get_work_teams_list.run();\n\n      closeModal('j_wt_del_m');\n      showAlert('Team deleted.', 'success');\n\n      await storeValue('wtRow', null);\n      resetWidget('tbl_work_teams', true);\n    } catch (e) {\n      showAlert('Error deleting team: ' + (e?.message || e), 'error');\n    }\n  })()\n}}\n",
   "parentId": "rj9frtjff7",
   "placement": "CENTER",
   "recaptchaType": "V3",

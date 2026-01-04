@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "DELETE FROM work_team_member_credentials\nWHERE work_team_member_id IN (\n  SELECT work_team_member_id\n  FROM work_team_members\n  WHERE work_team_id = {{ appsmith.store.wtRow.work_team_id }}\n);\n",
+      "body": "DELETE FROM work_team_member_credentials\nWHERE work_team_member_id IN (\n  SELECT work_team_member_id\n  FROM work_team_members\n  WHERE work_team_id = {{ appsmith.store.wtRow?.work_team_id || 0 }}\n);\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

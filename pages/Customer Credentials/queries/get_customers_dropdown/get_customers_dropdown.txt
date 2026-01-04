@@ -1,6 +1,0 @@
-SELECT
-  customer_id   AS value,
-  customer_name AS label
-FROM customers
-WHERE COALESCE(customer_status,'Active')='10. Active Client'
-ORDER BY customer_name;

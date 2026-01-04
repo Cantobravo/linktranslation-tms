@@ -7,9 +7,15 @@ export default {
       return;
     }
 
+    const resFullName =
+      row.resource_full_name ||
+      row.resource_name ||
+      "";
+
     const replacements = {
       "{{purchase_order_id}}": row.purchase_order_id || "",
-      "{{resource_name}}": row.resource_name || "",
+      "{{resource_full_name}}": resFullName,
+      "{{resource_name}}": resFullName,
       "{{resource_email}}": row.resource_email || "",
       "{{project_name}}": row.project_name || "",
       "{{currency_name}}": row.currency_name || "",
@@ -25,20 +31,19 @@ export default {
       "{{note}}": row.note || ""
     };
 
-    let subject = template.template_email_subject;
-    let bodyHtml = template.template_email_body_html;
+    let subject = template.template_email_subject || "";
+    let bodyHtml = template.template_email_body_html || "";
 
     for (const key in replacements) {
       subject = subject.replaceAll(key, replacements[key]);
       bodyHtml = bodyHtml.replaceAll(key, replacements[key]);
     }
 
-    // 🔧 Strip tags and convert HTML to plain text
     const plainTextBody = bodyHtml
-      .replace(/<\/p>/gi, "\n\n")         // Paragraphs to double line breaks
-      .replace(/<br\s*\/?>/gi, "\n")      // BRs to line break
-      .replace(/&nbsp;/gi, " ")           // Replace non-breaking space
-      .replace(/<\/?[^>]+(>|$)/g, "")     // Strip any remaining HTML tags
+      .replace(/<\/p>/gi, "\n\n")
+      .replace(/<br\s*\/?>/gi, "\n")
+      .replace(/&nbsp;/gi, " ")
+      .replace(/<\/?[^>]+(>|$)/g, "");
 
     const mailtoLink = `mailto:${row.resource_email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(plainTextBody)}`;
 

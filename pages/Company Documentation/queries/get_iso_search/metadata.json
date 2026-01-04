@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT\n  snippet_id,\n  snippet_title,\n  tags\nFROM iso_texts\nWHERE\n  CASE\n    WHEN {{(i_iso_query.text || '') === ''}} THEN 1=0\n    ELSE MATCH(snippet_title, tags, full_text) AGAINST({{ i_iso_query.text }} IN BOOLEAN MODE)\n  END\nORDER BY snippet_id DESC\nLIMIT 200;\n",
+      "body": "SELECT\n  t.snippet_id,\n  t.snippet_title,\n  t.tags\nFROM iso_texts t\nWHERE\n  CASE\n    WHEN {{ ((this.params.q || '') === '') && ((this.params.tag_re || '') === '') }} THEN 1=0\n    ELSE\n      (\n        {{ (this.params.q || '') === '' }}\n        OR MATCH(t.snippet_title, t.tags, t.full_text) AGAINST({{ this.params.q }} IN BOOLEAN MODE)\n      )\n      AND\n      (\n        {{ (this.params.tag_re || '') === '' }}\n        OR LOWER(COALESCE(t.tags, '')) REGEXP {{ this.params.tag_re }}\n      )\n  END\nORDER BY t.snippet_id DESC\nLIMIT 200;\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

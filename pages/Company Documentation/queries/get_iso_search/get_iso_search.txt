@@ -1,12 +1,21 @@
 SELECT
-  snippet_id,
-  snippet_title,
-  tags
-FROM iso_texts
+  t.snippet_id,
+  t.snippet_title,
+  t.tags
+FROM iso_texts t
 WHERE
   CASE
-    WHEN {{(i_iso_query.text || '') === ''}} THEN 1=0
-    ELSE MATCH(snippet_title, tags, full_text) AGAINST({{ i_iso_query.text }} IN BOOLEAN MODE)
+    WHEN {{ ((this.params.q || '') === '') && ((this.params.tag_re || '') === '') }} THEN 1=0
+    ELSE
+      (
+        {{ (this.params.q || '') === '' }}
+        OR MATCH(t.snippet_title, t.tags, t.full_text) AGAINST({{ this.params.q }} IN BOOLEAN MODE)
+      )
+      AND
+      (
+        {{ (this.params.tag_re || '') === '' }}
+        OR LOWER(COALESCE(t.tags, '')) REGEXP {{ this.params.tag_re }}
+      )
   END
-ORDER BY snippet_id DESC
+ORDER BY t.snippet_id DESC
 LIMIT 200;

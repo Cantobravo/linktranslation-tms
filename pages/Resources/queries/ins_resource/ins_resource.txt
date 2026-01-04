@@ -1,23 +1,46 @@
 INSERT INTO resources (
+  resource_is_active,
+  resource_status,
+  resource_native_language,
   resource_first_name,
   resource_last_name,
   resource_full_name,
+  resource_username,
   resource_email,
+  currency_id,
+  resource_payment_term,
+  resource_address,
   resource_country,
-  resource_status,
   resource_phone,
-  resource_documentation
+  resource_documentation,
+  resource_feedback_notes,
+  role_id,
+  created_at,
+  updated_at
 )
 VALUES (
+  COALESCE({{ j_res_ins_form.formData.resource_is_active }}, 1),
+  NULLIF({{ j_res_ins_form.formData.resource_status }}, ''),
+  NULLIF({{ j_res_ins_form.formData.resource_native_language }}, ''),
   NULLIF({{ j_res_ins_form.formData.resource_first_name }}, ''),
   NULLIF({{ j_res_ins_form.formData.resource_last_name }}, ''),
   TRIM(CONCAT(
-    COALESCE({{ j_res_ins_form.formData.resource_first_name }}, ''), ' ',
-    COALESCE({{ j_res_ins_form.formData.resource_last_name }}, '')
+    COALESCE(NULLIF({{ j_res_ins_form.formData.resource_first_name }}, ''), ''),
+    ' ',
+    COALESCE(NULLIF({{ j_res_ins_form.formData.resource_last_name }}, ''), '')
   )),
+  NULLIF({{ j_res_ins_form.formData.resource_username }}, ''),
   NULLIF({{ j_res_ins_form.formData.resource_email }}, ''),
+  COALESCE({{ j_res_ins_form.formData.currency_id }}, NULL),
+  COALESCE({{ j_res_ins_form.formData.resource_payment_term }}, NULL),
+  NULLIF({{ j_res_ins_form.formData.resource_address }}, ''),
   NULLIF({{ j_res_ins_form.formData.resource_country }}, ''),
-  NULLIF({{ j_res_ins_form.formData.resource_status }}, ''),
   NULLIF({{ j_res_ins_form.formData.resource_phone }}, ''),
-  NULLIF({{ j_res_ins_form.formData.resource_documentation }}, '')
+  NULLIF({{ j_res_ins_form.formData.resource_documentation }}, ''),
+  NULLIF({{ j_res_ins_form.formData.resource_feedback_notes }}, ''),
+  COALESCE({{ j_res_ins_form.formData.role_id }}, NULL),
+  NOW(),
+  NOW()
 );
+
+SELECT LAST_INSERT_ID() AS new_id;

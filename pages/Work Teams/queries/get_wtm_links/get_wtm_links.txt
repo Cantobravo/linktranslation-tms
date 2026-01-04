@@ -13,11 +13,11 @@ WHERE wtmf.work_team_member_id = COALESCE(
   (
     SELECT w2.work_team_member_id
     FROM work_team_members w2
-    WHERE COALESCE(w2.is_active,1)=1
+    WHERE COALESCE(w2.is_active,1) = 1
       AND w2.work_team_id = {{ appsmith.store.wtRow?.work_team_id || 0 }}
-    ORDER BY w2.work_team_member_id
+    ORDER BY w2.work_team_member_id ASC
     LIMIT 1
   )
 )
-AND COALESCE(wtmf.is_active,1)=1
+AND COALESCE(wtmf.is_active,1) = 1
 ORDER BY wtmf.wtm_link_id DESC;

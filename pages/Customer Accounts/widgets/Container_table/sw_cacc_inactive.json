@@ -1,0 +1,52 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "alignWidget": "LEFT",
+  "animateLoading": true,
+  "bottomRow": 24,
+  "boxShadow": "none",
+  "defaultSwitchState": false,
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [
+    {
+      "key": "onChange"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onChange"
+    }
+  ],
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "5axqf932gn",
+  "label": "Show Inactive",
+  "labelPosition": "Left",
+  "leftColumn": 50,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "mobileBottomRow": 29,
+  "mobileLeftColumn": 50,
+  "mobileRightColumn": 62,
+  "mobileTopRow": 25,
+  "needsErrorInfo": false,
+  "onChange": "{{\n  (() => {\n    storeValue('caccRow', null);\n    get_cacc_list.run();\n  })()\n}}\n",
+  "originalBottomRow": 24,
+  "originalTopRow": 20,
+  "parentColumnSpace": 32.942626953125,
+  "parentId": "59rw5mx0bq",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 62,
+  "topRow": 20,
+  "type": "SWITCH_WIDGET",
+  "version": 1,
+  "widgetId": "ax8j30hn8j",
+  "widgetName": "sw_cacc_inactive"
+}

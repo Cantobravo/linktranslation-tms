@@ -3,14 +3,14 @@
   "animateLoading": true,
   "backgroundColor": "#FFFFFF",
   "borderColor": "#E0DEDE",
-  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "borderRadius": "0px",
   "borderWidth": 1,
-  "bottomRow": 95,
+  "bottomRow": 92,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "children": [
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 910,
+      "bottomRow": 880,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": true,
       "detachFromLayout": true,
@@ -56,7 +56,7 @@
     },
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 910,
+      "bottomRow": 890,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": true,
       "detachFromLayout": true,
@@ -102,7 +102,7 @@
     },
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 910,
+      "bottomRow": 880,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": false,
       "containerStyle": "none",
@@ -152,9 +152,6 @@
       "key": "accentColor"
     },
     {
-      "key": "borderRadius"
-    },
-    {
       "key": "boxShadow"
     },
     {
@@ -186,8 +183,8 @@
   "mobileRightColumn": 24,
   "mobileTopRow": 9,
   "needsErrorInfo": false,
-  "onTabSelected": "{{\n(async () => {\n  await storeValue('u_wtm_tab', u_wtm_tabs.selectedTab);\n  if (u_wtm_tabs.selectedTab === 'Credentials') { await get_wtm_credentials.run(); }\n  if (u_wtm_tabs.selectedTab === 'Links')        { await get_wtm_links.run(); }\n})()\n}}\n",
-  "originalBottomRow": 95,
+  "onTabSelected": "{{\n(async () => {\n  await storeValue('u_wtm_tab', u_wtm_tabs.selectedTab);\n\n  const mid = appsmith.store.wtmRow?.work_team_member_id;\n  if (!mid) return;\n\n  if (u_wtm_tabs.selectedTab === 'Credentials') { await get_wtm_credentials.run(); }\n  if (u_wtm_tabs.selectedTab === 'Links')       { await get_wtm_links.run(); }\n})()\n}}\n\n",
+  "originalBottomRow": 92,
   "originalTopRow": 0,
   "parentColumnSpace": 18.2060546875,
   "parentId": "hn9tkse8ih",

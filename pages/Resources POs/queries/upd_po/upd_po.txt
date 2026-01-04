@@ -1,16 +1,16 @@
 UPDATE resource_purchase_orders
 SET
-  project_id          = {{ j_po_upd_form.formData.project_id }},
-  resource_id         = {{ j_po_upd_form.formData.resource_id }},
-  service_id          = {{ j_po_upd_form.formData.service_id }},
-  unit_id             = {{ j_po_upd_form.formData.unit_id }},
-  source_language_id  = {{ j_po_upd_form.formData.source_language_id }},
-  target_language_id  = {{ j_po_upd_form.formData.target_language_id }},
-  currency_id         = 1,  -- force USD
-  volume              = {{ Number(j_po_upd_form.formData.volume ?? 0).toFixed(2) }},
-  rate                = {{ Number(j_po_upd_form.formData.rate   ?? 0).toFixed(2) }},
-  total               = {{ Number(j_po_upd_form.formData.total  ?? 0).toFixed(2) }},
-  date                = {{ j_po_upd_form.formData.date ? moment(j_po_upd_form.formData.date).format('YYYY-MM-DD') : null }},
-  due_date            = {{ j_po_upd_form.formData.due_date ? moment(j_po_upd_form.formData.due_date).format('YYYY-MM-DD') : null }},
-  note                = {{ j_po_upd_form.formData.note ?? null }}
+  project_id         = {{ j_po_upd_form.formData.project_id ?? null }},
+  resource_id        = {{ j_po_upd_form.formData.resource_id ?? null }},
+  service_id         = {{ j_po_upd_form.formData.service_id ?? null }},
+  unit_id            = {{ j_po_upd_form.formData.unit_id ?? null }},
+  source_language_id = {{ j_po_upd_form.formData.source_language_id ?? null }},
+  target_language_id = {{ j_po_upd_form.formData.target_language_id ?? null }},
+  currency_id        = 1,
+  volume             = {{ (j_po_upd_form.formData.volume === '' || j_po_upd_form.formData.volume == null) ? null : Number(Number(j_po_upd_form.formData.volume).toFixed(2)) }},
+  rate               = {{ (j_po_upd_form.formData.rate === ''   || j_po_upd_form.formData.rate   == null) ? null : Number(Number(j_po_upd_form.formData.rate).toFixed(2)) }},
+  total              = {{ (j_po_upd_form.formData.total === ''  || j_po_upd_form.formData.total  == null) ? null : Number(Number(j_po_upd_form.formData.total).toFixed(2)) }},
+  date               = {{ j_po_upd_form.formData.date ? moment(j_po_upd_form.formData.date).format('YYYY-MM-DD') : null }},
+  due_date           = {{ j_po_upd_form.formData.due_date ? moment(j_po_upd_form.formData.due_date).format('YYYY-MM-DD') : null }},
+  note               = {{ j_po_upd_form.formData.note ?? null }}
 WHERE purchase_order_id = {{ appsmith.store.poId }};

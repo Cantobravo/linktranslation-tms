@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT\n  r.resource_id,\n  r.resource_full_name,\n  r.resource_email,\n  ro.role_id,\n  ro.role_name,\n  COUNT(p.permission_id)                                   AS perm_count,\n  GROUP_CONCAT(p.permission_name ORDER BY p.permission_name SEPARATOR ', ') AS perm_list\nFROM resources r\nJOIN roles ro              ON ro.role_id = r.role_id                 -- only resources with a role\nJOIN role_permissions rp   ON rp.role_id = ro.role_id                -- only roles that have permissions\nJOIN permissions p         ON p.permission_id = rp.permission_id\nWHERE COALESCE(r.resource_is_active, 1) = 1\nGROUP BY r.resource_id, r.resource_full_name, r.resource_email, ro.role_id, ro.role_name\nHAVING perm_count > 0\nORDER BY r.resource_full_name;\n",
+      "body": "SELECT\n  r.resource_id,\n  r.resource_full_name,\n  r.resource_email,\n  ro.role_id,\n  ro.role_name,\n  COUNT(DISTINCT p.permission_id) AS perm_count,\n  GROUP_CONCAT(DISTINCT p.permission_name ORDER BY p.permission_name SEPARATOR ', ') AS perm_list\nFROM resources r\nLEFT JOIN roles ro\n  ON ro.role_id = r.role_id\nLEFT JOIN role_permissions rp\n  ON rp.role_id = ro.role_id\nLEFT JOIN permissions p\n  ON p.permission_id = rp.permission_id\nWHERE COALESCE(r.resource_is_active, 1) = 1\n  AND r.resource_status = 'Staff'\nGROUP BY\n  r.resource_id,\n  r.resource_full_name,\n  r.resource_email,\n  ro.role_id,\n  ro.role_name\nORDER BY r.resource_full_name;\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

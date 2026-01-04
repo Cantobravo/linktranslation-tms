@@ -1,0 +1,7 @@
+SELECT
+  ca.customer_account_id AS value,
+  ca.customer_account_name AS label
+FROM customer_accounts ca
+WHERE ca.customer_id = COALESCE({{ dd_pl_cust.selectedOptionValue }}, NULL)
+  AND ca.customer_account_is_active = 1
+ORDER BY ca.customer_account_name

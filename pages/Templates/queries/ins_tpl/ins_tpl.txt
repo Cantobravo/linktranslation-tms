@@ -1,0 +1,22 @@
+INSERT INTO templates (
+  template_name,
+  template_type,
+  template_description,
+  to_field,
+  subject_field,
+  cc_field,
+  bcc_field,
+  body_field,
+  is_active
+)
+VALUES (
+  {{ jf_tpl_ins.formData.template_name }},
+  {{ jf_tpl_ins.formData.template_type }},
+  {{ jf_tpl_ins.formData.template_description }},
+  {{ jf_tpl_ins.formData.to_field }},
+  {{ jf_tpl_ins.formData.subject_field }},
+  {{ jf_tpl_ins.formData.cc_field }},
+  {{ jf_tpl_ins.formData.bcc_field }},
+  {{ jf_tpl_ins.formData.body_field }},
+  COALESCE({{ jf_tpl_ins.formData.is_active }}, 1)
+);

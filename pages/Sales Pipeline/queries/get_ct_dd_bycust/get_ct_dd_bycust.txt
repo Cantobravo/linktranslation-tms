@@ -1,0 +1,14 @@
+SELECT
+  cc.customer_contact_id AS value,
+  cc.customer_contact_name AS label
+FROM customer_contacts cc
+WHERE cc.customer_id = COALESCE(
+  {{ jf_port_upd.formData.customer_id ?? null }},
+  {{ jf_port_ins.formData.customer_id ?? null }},
+  {{ appsmith.store.sel_port_row.customer_id ?? null }},
+  {{ appsmith.store.sel_cust_id ?? null }},
+  -1
+)
+  AND cc.contact_is_active = 1
+ORDER BY cc.customer_contact_name
+	

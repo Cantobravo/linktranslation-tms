@@ -25,7 +25,7 @@
     "dynamicBindingPathList": [],
     "name": "get_templates_dropdown",
     "pageId": "Projects",
-    "runBehaviour": "ON_PAGE_LOAD",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

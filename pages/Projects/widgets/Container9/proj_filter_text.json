@@ -44,7 +44,7 @@
   "mobileRightColumn": 57,
   "mobileTopRow": 8,
   "needsErrorInfo": false,
-  "onTextChanged": "{{\n  (() => {\n    const t = (proj_filter_text.text || '').trim();\n    const like = \"'\" + \"%\" + t + \"%\" + \"'\";   // yields e.g. '%term%' (with quotes)\n    return Promise.all([\n      storeValue('f_text', t),\n      storeValue('f_like', like)\n    ]).then(() => get_projects.run());\n  })()\n}}\n\n\n",
+  "onTextChanged": "{{\n(() => {\n  const t = (proj_filter_text.text || '').trim();\n\n  // clear previous timer\n  if (appsmith.store.projTxtTimer) {\n    clearTimeout(appsmith.store.projTxtTimer);\n  }\n\n  const timer = setTimeout(() => {\n    Promise.all([\n      storeValue('f_text', t),\n      storeValue('f_like', \"'\" + \"%\" + t + \"%\" + \"'\")\n    ]).then(() => {\n      // if you keep COUNT tied to filters later, you can reset the one-time flag here\n      storeValue('projCntDone', false).then(() => get_projects.run());\n    });\n  }, 450);\n\n  storeValue('projTxtTimer', timer);\n})()\n}}\n\n\n",
   "originalBottomRow": 34,
   "originalTopRow": 27,
   "parentColumnSpace": 22.125,

@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT\n  c.customer_id,\n  c.customer_name,\n  c.customer_type,\n  c.customer_address,\n  c.customer_country,\n  c.customer_phone,\n  c.customer_industry,\n  c.customer_note,\n  c.customer_invoice_procedure,\n  c.customer_payment_term,\n  c.customer_tax_vat_number,\n  c.currency_id,\n  cur.currency_name AS currency_name,\n  c.customer_receivable_bank_name,\n  c.customer_linkedIn,\n  c.customer_bank_fee,\n  c.customer_status,\n  c.customer_documentation,\n  c.created_at,\n  c.updated_at\nFROM customers c\nLEFT JOIN currencies cur ON cur.currency_id = c.currency_id\nWHERE {{\n  toggle_show_inactive_customers.isSwitchedOn\n  ? '1=1'\n  : \"c.customer_status = 'Active'\"\n}}\nORDER BY c.customer_id DESC;\n",
+      "body": "SELECT\n  c.customer_id,\n  c.customer_name,\n  c.customer_type,\n  c.customer_country,\n  cur.currency_name AS currency_name,\n  c.customer_status,\n  c.updated_at\nFROM customers c\nLEFT JOIN currencies cur\n  ON cur.currency_id = c.currency_id\nWHERE\n  (\n    {{ toggle_show_inactive_customers.isSwitchedOn ? 1 : 0 }} = 0\n    AND c.customer_status = '10. Active Client'\n  )\n  OR\n  (\n    {{ toggle_show_inactive_customers.isSwitchedOn ? 1 : 0 }} = 1\n    AND c.customer_status <> '10. Active Client'\n  )\nORDER BY c.customer_id DESC;\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

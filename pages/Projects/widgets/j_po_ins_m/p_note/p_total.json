@@ -3,9 +3,9 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "0.375rem",
-  "bottomRow": 49,
+  "bottomRow": 52,
   "boxShadow": "none",
-  "defaultText": "{{ '' }}\n",
+  "defaultText": "{{\n  (\n    (Number(p_volume.text || 0) * Number(p_rate.text || 0)) || 0\n  ).toFixed(2)\n}}\n\n",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
@@ -25,7 +25,7 @@
   ],
   "dynamicTriggerPathList": [],
   "iconAlign": "left",
-  "inputType": "TEXT",
+  "inputType": "NUMBER",
   "isDisabled": "{{ p_pricing_mode.selectedOptionValue === 'PER_UNIT' }}\n",
   "isLoading": false,
   "isRequired": false,
@@ -53,8 +53,9 @@
   "resetOnSubmit": true,
   "responsiveBehavior": "fill",
   "rightColumn": 35,
+  "shouldAllowAutofill": false,
   "showStepArrows": false,
-  "topRow": 42,
+  "topRow": 45,
   "type": "INPUT_WIDGET_V2",
   "version": 2,
   "widgetId": "sg7mj0fs63",

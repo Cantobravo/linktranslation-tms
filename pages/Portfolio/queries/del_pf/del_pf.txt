@@ -1,0 +1,2 @@
+DELETE FROM portfolio
+WHERE portfolio_id = {{ this.params.portfolio_id }};

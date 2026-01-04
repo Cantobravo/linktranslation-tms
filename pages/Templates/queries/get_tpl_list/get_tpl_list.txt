@@ -1,0 +1,15 @@
+SELECT
+  t.template_id,
+  t.template_name,
+  t.template_type,
+  t.template_description,
+  t.to_field,
+  t.subject_field,
+  t.cc_field,
+  t.bcc_field,
+  t.body_field,
+  t.is_active
+FROM templates t
+WHERE
+  ({{ sw_tpl_inactive.isSwitchedOn ? 1 : 0 }} = 1 OR t.is_active = 1)
+ORDER BY t.template_name;

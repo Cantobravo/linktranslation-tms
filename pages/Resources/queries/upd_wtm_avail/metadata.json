@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "UPDATE work_team_members w\nJOIN (\n  SELECT wtm.work_team_member_id\n  FROM work_team_members wtm\n  WHERE wtm.resource_id  = {{ tbl_resources.selectedRow.resource_id }}\n    AND wtm.work_team_id = {{ i_wt_pick.selectedOptionValue }}\n    AND COALESCE(wtm.is_active, 1) = 1\n  ORDER BY wtm.updated_at DESC, wtm.work_team_member_id DESC\n  LIMIT 1\n) t ON t.work_team_member_id = w.work_team_member_id\nSET\n  w.is_available = {{ j_avail_inline.formData.is_available || null }},\n  w.updated_at   = NOW()\n",
+      "body": "UPDATE work_team_members\nSET\n  is_available = {{ j_avail_inline2.formData.is_available || NULL }},\n  updated_at = NOW()\nWHERE work_team_member_id = {{\n  appsmith.store.availObj?.work_team_member_id\n  || appsmith.store.wtmPrevRow?.work_team_member_id\n  || tbl_work_team_preview.selectedRow?.work_team_member_id\n  || 0\n}}\nLIMIT 1",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

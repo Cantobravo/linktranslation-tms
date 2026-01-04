@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT\n  resource_id,\n  resource_first_name,\n  resource_last_name,\n  resource_full_name,\n  resource_email,\n  resource_country,\n  resource_status,\n  resource_phone,\n  resource_documentation\nFROM resources\nWHERE resource_id = {{\n  appsmith.store.resRow?.resource_id\n  || tbl_resources.selectedRow?.resource_id\n  || 0\n}}\nLIMIT 1;\n",
+      "body": "SELECT\n  resource_id,\n  resource_username,\n  resource_is_active,\n  resource_status,\n  resource_native_language,\n  resource_first_name,\n  resource_last_name,\n  resource_full_name,\n  resource_email,\n  currency_id,\n  resource_payment_term,\n  resource_address,\n  resource_country,\n  resource_phone,\n  resource_documentation,\n  resource_feedback_notes,\n  role_id,\n  created_at,\n  updated_at\nFROM resources\nWHERE resource_id = {{\n  appsmith.store.resRow?.resource_id\n  || tbl_resources.selectedRow?.resource_id\n  || 0\n}}\nLIMIT 1;\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -29,7 +29,7 @@
     ],
     "name": "get_res_detail",
     "pageId": "Resources",
-    "runBehaviour": "MANUAL",
+    "runBehaviour": "AUTOMATIC",
     "userSetOnLoad": false
   }
 }

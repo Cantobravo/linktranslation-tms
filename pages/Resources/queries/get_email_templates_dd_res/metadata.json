@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT\n  template_id   AS value,\n  CONCAT(template_name, ' (', template_type, ')') AS label\nFROM templates\nWHERE template_is_active = 1\n  AND template_type IN ('Projects','HR')\nORDER BY template_name;\n",
+      "body": "SELECT\n  t.template_id AS value,\n  t.template_name AS label,\n  t.to_field,\n  t.cc_field,\n  t.bcc_field,\n  t.subject_field,\n  t.body_field\nFROM templates t\nWHERE LOWER(t.template_type) = 'resources'\n  AND t.is_active = 1\nORDER BY t.template_name;\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

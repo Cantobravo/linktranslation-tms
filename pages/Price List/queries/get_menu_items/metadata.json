@@ -1,5 +1,5 @@
 {
-  "gitSyncId": "6840b6d2ece888096e42342a_5e412943-ab74-4a68-8000-91ff5c459178",
+  "gitSyncId": "6840b6d2ece888096e42342a_16de5ce2-55f4-4c2a-b5d7-da96c75f5c66",
   "id": "Price List_get_menu_items",
   "pluginId": "mysql-plugin",
   "pluginType": "DB",
@@ -25,7 +25,7 @@
     "dynamicBindingPathList": [],
     "name": "get_menu_items",
     "pageId": "Price List",
-    "runBehaviour": "ON_PAGE_LOAD",
-    "userSetOnLoad": true
+    "runBehaviour": "AUTOMATIC",
+    "userSetOnLoad": false
   }
 }

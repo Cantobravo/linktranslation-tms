@@ -1,6 +1,6 @@
 {
   "animateLoading": true,
-  "borderRadius": "1.5rem",
+  "borderRadius": "0px",
   "bottomRow": 346,
   "boxShadow": "none",
   "canEscapeKeyClose": true,
@@ -29,7 +29,7 @@
       "leftColumn": 0,
       "maxDynamicHeight": 9000,
       "minDynamicHeight": 4,
-      "minHeight": 240,
+      "minHeight": 320,
       "minWidth": 450,
       "mobileBottomRow": 240,
       "mobileLeftColumn": 0,
@@ -77,5 +77,5 @@
   "version": 2,
   "widgetId": "cp4yic8ztj",
   "widgetName": "j_assign_role_modal",
-  "width": 456
+  "width": 906
 }

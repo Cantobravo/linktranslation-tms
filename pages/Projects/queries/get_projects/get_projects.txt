@@ -1,8 +1,8 @@
--- get_projects (paginated, excludes SOFT_DELETED)
 SELECT
   p.project_id,
   p.project_name,
   p.project_status,
+
   DATE(p.project_start_date) AS project_start_date,
   DATE(p.project_end_date)   AS project_end_date,
 
@@ -24,12 +24,53 @@ SELECT
   p.project_total_usd,
   p.project_net_total_usd,
   p.project_margin_usd,
+
   p.created_at,
   p.updated_at
 FROM projects p
-LEFT JOIN customers         c  ON c.customer_id          = p.customer_id
-LEFT JOIN customer_accounts ca ON ca.customer_account_id = p.customer_account_id
-WHERE COALESCE(p.project_status, '') <> 'SOFT_DELETED'
+LEFT JOIN customers c
+  ON c.customer_id = p.customer_id
+LEFT JOIN customer_accounts ca
+  ON ca.customer_account_id = p.customer_account_id
+WHERE
+  (
+    COALESCE({{ proj_filter_wt_id.selectedOptionValue }}, 0) = 0
+    OR EXISTS (
+      SELECT 1
+      FROM work_teams wt
+      WHERE wt.work_team_id = {{ proj_filter_wt_id.selectedOptionValue }}
+        AND (
+          COALESCE(wt.customer_id, -1) = COALESCE(p.customer_id, -1)
+          OR COALESCE(wt.customer_account_id, -1) = COALESCE(p.customer_account_id, -1)
+        )
+    )
+  )
+  AND
+  (
+    COALESCE({{ proj_filter_lang_id.selectedOptionValue }}, 0) = 0
+    OR COALESCE(p.source_language_id, 0) = COALESCE({{ proj_filter_lang_id.selectedOptionValue }}, 0)
+    OR COALESCE(p.target_language_id, 0) = COALESCE({{ proj_filter_lang_id.selectedOptionValue }}, 0)
+  )
+  AND
+  (
+    COALESCE({{ appsmith.store.f_text }}, '') = ''
+    OR (
+      COALESCE({{ appsmith.store.f_field }}, '') = 'project_id'
+      AND CAST(p.project_id AS CHAR) LIKE {{ appsmith.store.f_like }}
+    )
+    OR (
+      COALESCE({{ appsmith.store.f_field }}, '') = 'project_name'
+      AND COALESCE(p.project_name,'') LIKE {{ appsmith.store.f_like }}
+    )
+    OR (
+      COALESCE({{ appsmith.store.f_field }}, '') = 'customer_name'
+      AND COALESCE(c.customer_name,'') LIKE {{ appsmith.store.f_like }}
+    )
+    OR (
+      COALESCE({{ appsmith.store.f_field }}, '') = 'customer_account_name'
+      AND COALESCE(ca.customer_account_name,'') LIKE {{ appsmith.store.f_like }}
+    )
+  )
 ORDER BY p.project_id DESC
 LIMIT  {{ Projects_Table.pageSize || 25 }}
-OFFSET {{ ((Projects_Table.pageNo || 1) - 1) * (Projects_Table.pageSize || 25) }};
+OFFSET {{ ((Projects_Table.pageNo || 1) - 1) * (Projects_Table.pageSize || 25) }}

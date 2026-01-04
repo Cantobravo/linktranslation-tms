@@ -1,3 +1,0 @@
-SELECT language_id AS value, language_name AS label
-FROM languages
-ORDER BY language_name;

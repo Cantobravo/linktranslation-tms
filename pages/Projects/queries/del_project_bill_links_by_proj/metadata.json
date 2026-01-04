@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "-- params: project_id\nDELETE l\nFROM resource_bill_po_link l\nJOIN resource_purchase_orders rpo\n  ON rpo.purchase_order_id = l.purchase_order_id\nWHERE rpo.project_id = {{ this.params.project_id }};\n",
+      "body": "DELETE l\nFROM resource_bill_po_link l\nJOIN resource_purchase_orders rpo\n  ON rpo.purchase_order_id = l.purchase_order_id\nWHERE rpo.project_id = {{ this.params.project_id }};\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

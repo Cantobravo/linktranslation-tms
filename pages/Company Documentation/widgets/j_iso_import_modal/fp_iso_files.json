@@ -2,13 +2,10 @@
   "allowedFileTypes": "{{[.txt, .md, .csv, .html]}}",
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 11,
+  "bottomRow": 17,
   "boxShadow": "none",
-  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "buttonColor": "#93c5fd",
   "dynamicBindingPathList": [
-    {
-      "key": "buttonColor"
-    },
     {
       "key": "borderRadius"
     },
@@ -46,9 +43,9 @@
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "hug",
-  "rightColumn": 17,
+  "rightColumn": 16,
   "selectedFiles": [],
-  "topRow": 7,
+  "topRow": 10,
   "type": "FILE_PICKER_WIDGET_V2",
   "version": 1,
   "widgetId": "6i9wc5muuc",

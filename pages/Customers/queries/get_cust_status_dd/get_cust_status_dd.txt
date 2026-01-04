@@ -1,0 +1,6 @@
+SELECT
+  status_label AS label,
+  status_value AS value
+FROM customer_statuses
+WHERE COALESCE(is_active, 1) = 1
+ORDER BY sort_order, status_label;

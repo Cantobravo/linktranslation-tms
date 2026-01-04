@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "-- count only visible projects\nSELECT COUNT(*) AS total\nFROM projects\nWHERE COALESCE(project_status, '') <> 'SOFT_DELETED';\n",
+      "body": "SELECT\n  COUNT(DISTINCT p.project_id) AS total\nFROM projects p\nLEFT JOIN customers c\n  ON c.customer_id = p.customer_id\nLEFT JOIN customer_accounts ca\n  ON ca.customer_account_id = p.customer_account_id\nWHERE\n  COALESCE(p.project_status, '') <> 'SOFT_DELETED'\n  AND (\n    COALESCE({{ proj_filter_lang_id.selectedOptionValue }}, NULL) = NULL\n    OR p.source_language_id = {{ COALESCE(proj_filter_lang_id.selectedOptionValue, NULL) }}\n    OR p.target_language_id = {{ COALESCE(proj_filter_lang_id.selectedOptionValue, NULL) }}\n  )\n  AND (\n    COALESCE({{ proj_filter_wt_id.selectedOptionValue }}, NULL) = NULL\n    OR EXISTS (\n      SELECT 1\n      FROM resource_purchase_orders rpo\n      JOIN work_team_members wtm\n        ON wtm.resource_id = rpo.resource_id\n      WHERE\n        rpo.project_id = p.project_id\n        AND wtm.work_team_id = {{ COALESCE(proj_filter_wt_id.selectedOptionValue, NULL) }}\n        AND COALESCE(wtm.is_active, 1) = 1\n    )\n  )\n  AND (\n    COALESCE({{ appsmith.store.f_text }}, '') = ''\n    OR (\n      COALESCE({{ appsmith.store.f_field }}, '') = 'project_id'\n      AND CAST(p.project_id AS CHAR) LIKE {{ appsmith.store.f_like }}\n    )\n    OR (\n      COALESCE({{ appsmith.store.f_field }}, '') = 'project_name'\n      AND COALESCE(p.project_name,'') LIKE {{ appsmith.store.f_like }}\n    )\n    OR (\n      COALESCE({{ appsmith.store.f_field }}, '') = 'customer_name'\n      AND COALESCE(c.customer_name,'') LIKE {{ appsmith.store.f_like }}\n    )\n    OR (\n      COALESCE({{ appsmith.store.f_field }}, '') = 'customer_account_name'\n      AND COALESCE(ca.customer_account_name,'') LIKE {{ appsmith.store.f_like }}\n    )\n    OR (\n      COALESCE({{ appsmith.store.f_field }}, '') = 'resource_name'\n      AND EXISTS (\n        SELECT 1\n        FROM resource_purchase_orders rpo2\n        JOIN resources r2\n          ON r2.resource_id = rpo2.resource_id\n        WHERE\n          rpo2.project_id = p.project_id\n          AND COALESCE(\n                NULLIF(TRIM(r2.resource_full_name), ''),\n                NULLIF(TRIM(CONCAT_WS(' ', r2.resource_first_name, r2.resource_last_name)), ''),\n                CONCAT('Resource #', r2.resource_id)\n              ) LIKE {{ appsmith.store.f_like }}\n      )\n    )\n  );\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -22,7 +22,11 @@
       "name": "linktranslation",
       "pluginId": "mysql-plugin"
     },
-    "dynamicBindingPathList": [],
+    "dynamicBindingPathList": [
+      {
+        "key": "body"
+      }
+    ],
     "name": "get_proj_count",
     "pageId": "Projects",
     "runBehaviour": "AUTOMATIC",

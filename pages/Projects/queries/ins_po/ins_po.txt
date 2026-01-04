@@ -17,7 +17,7 @@ INSERT INTO resource_purchase_orders
 VALUES
 (
   {{ p_resource_id.selectedOptionValue || null }},
-  1,  -- USD fixed for POs
+  1,
   {{ p_project_id.selectedOptionValue || p_project_id.text || appsmith.store.proj_id || null }},
   {{ p_service_id.selectedOptionValue || null }},
   {{ p_source_language_id.selectedOptionValue || null }},

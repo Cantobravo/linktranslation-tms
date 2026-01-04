@@ -4,7 +4,7 @@
   "bottomRow": 16,
   "boxShadow": "none",
   "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
-  "buttonVariant": "PRIMARY",
+  "buttonVariant": "SECONDARY",
   "disabledWhenInvalid": false,
   "dynamicBindingPathList": [
     {
@@ -42,9 +42,9 @@
   "mobileRightColumn": 49,
   "mobileTopRow": 55,
   "needsErrorInfo": false,
-  "onClick": "{{ ISOTextSearch.next() }}",
-  "originalBottomRow": 71,
-  "originalTopRow": 67,
+  "onClick": "{{ ISOTextSearch.next(); }}\n",
+  "originalBottomRow": 16,
+  "originalTopRow": 12,
   "parentColumnSpace": 25.5,
   "parentId": "v7yg41zko3",
   "parentRowSpace": 10,

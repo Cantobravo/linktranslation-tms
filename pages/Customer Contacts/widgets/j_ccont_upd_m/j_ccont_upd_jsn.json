@@ -3,9 +3,9 @@
   "autoGenerateForm": true,
   "backgroundColor": "#fff",
   "borderColor": "{{appsmith.theme.colors.primaryColor}}",
-  "borderRadius": "1.5rem",
+  "borderRadius": "0px",
   "borderWidth": "1",
-  "bottomRow": 132,
+  "bottomRow": 142,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "childStylesheet": {
     "ARRAY": {
@@ -138,15 +138,6 @@
       "key": "schema.__root_schema__.children.customer_contact_email.borderRadius"
     },
     {
-      "key": "schema.__root_schema__.children.customer_contact_status.defaultValue"
-    },
-    {
-      "key": "schema.__root_schema__.children.customer_contact_status.accentColor"
-    },
-    {
-      "key": "schema.__root_schema__.children.customer_contact_status.borderRadius"
-    },
-    {
       "key": "schema.__root_schema__.children.customer_contact_industry.defaultValue"
     },
     {
@@ -252,9 +243,6 @@
       "key": "schema.__root_schema__.children.updated_at.borderRadius"
     },
     {
-      "key": "schema.__root_schema__.children.customer_contact_status.options"
-    },
-    {
       "key": "schema.__root_schema__.children.customer_contact_contact_method.options"
     },
     {
@@ -292,6 +280,15 @@
     },
     {
       "key": "schema.__root_schema__.children.Position.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_status.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_status.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_status.borderRadius"
     }
   ],
   "dynamicHeight": "AUTO_HEIGHT",
@@ -317,7 +314,7 @@
   "isLoading": false,
   "isVisible": true,
   "key": "sxaxq5vhp1",
-  "leftColumn": 0,
+  "leftColumn": 1,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "minWidth": 450,
@@ -326,9 +323,9 @@
   "mobileRightColumn": 39,
   "mobileTopRow": 9,
   "needsErrorInfo": false,
-  "onSubmit": "{{\n  upd_ccont.run(\n    () => {\n      get_ccont_active.run();\n      get_ccont_all.run();\n      resetWidget('j_ccont_upd_jsn', true);\n      closeModal('j_ccont_upd_m');\n      showAlert('Contact updated', 'success');\n    },\n    (e) => showAlert('Update failed: ' + (e?.message || 'Unknown error'), 'error')\n  )\n}}\n",
-  "originalBottomRow": 132,
-  "originalTopRow": 0,
+  "onSubmit": "{{\n(async () => {\n  try {\n    const id = Number(j_ccont_upd_jsn.formData?.customer_contact_id || 0);\n    if (!id) {\n      showAlert('Missing customer_contact_id. Please reopen the edit modal from the row.', 'warning');\n      return;\n    }\n\n    const emailNewRaw = (j_ccont_upd_jsn.formData?.customer_contact_email || '').trim();\n    const emailNew = emailNewRaw.toLowerCase();\n\n    const emailOldRaw =\n      (appsmith.store.ccontRow?.customer_contact_email || '').trim();\n    const emailOld = emailOldRaw.toLowerCase();\n\n    // Only check duplicates if email actually changed\n    if (emailNew && emailNew !== emailOld) {\n      const r = await chk_ccont_email_dupe.run({ email: emailNewRaw, exclude_id: id });\n      const cnt = Number(r?.[0]?.cnt || 0);\n\n      if (cnt > 0) {\n        showAlert('This email is already used by another contact. Please use a different email.', 'warning');\n        return;\n      }\n    }\n\n    await upd_ccont.run();\n\n    // ✅ Refresh the table source actually used by the page\n    await get_ccont_list.run();\n\n    showAlert('Contact updated successfully.', 'success');\n    closeModal('j_ccont_upd_m');\n\n  } catch (e) {\n    showAlert(\n      `Update failed: ${e?.message || e?.data?.message || 'Unknown error'}`,\n      'error'\n    );\n  }\n})()\n}}\n",
+  "originalBottomRow": 142,
+  "originalTopRow": 10,
   "parentColumnSpace": 13.375,
   "parentId": "enskf9zbqx",
   "parentRowSpace": 10,
@@ -341,7 +338,7 @@
     "buttonVariant": "SECONDARY"
   },
   "responsiveBehavior": "fill",
-  "rightColumn": 60,
+  "rightColumn": 62,
   "schema": {
     "__root_schema__": {
       "accessor": "__root_schema__",
@@ -369,7 +366,7 @@
           "label": "Position",
           "labelTextSize": "0.875rem",
           "originalIdentifier": "Position",
-          "position": 18,
+          "position": 4,
           "sourceData": ""
         },
         "contact_position": {
@@ -387,11 +384,11 @@
           "isDisabled": false,
           "isRequired": false,
           "isSpellCheck": false,
-          "isVisible": true,
+          "isVisible": false,
           "label": "Contact Position",
           "labelTextSize": "0.875rem",
           "originalIdentifier": "contact_position",
-          "position": 18,
+          "position": 16,
           "sourceData": "eee"
         },
         "created_at": {
@@ -413,7 +410,7 @@
           "label": "Created At",
           "labelTextSize": "0.875rem",
           "originalIdentifier": "created_at",
-          "position": 15,
+          "position": 13,
           "sourceData": "2025-08-19T19:17:10Z"
         },
         "customer_contact_contact_method": {
@@ -435,7 +432,7 @@
           "labelTextSize": "0.875rem",
           "options": "{{ [\n  { label: 'Email',   value: 'Email' },\n  { label: 'Phone',   value: 'Phone' },\n  { label: 'LinkedIn',value: 'LinkedIn' },\n  { label: 'Portal',  value: 'Portal' },\n  { label: 'Other',   value: 'Other' }\n] }}\n",
           "originalIdentifier": "customer_contact_contact_method",
-          "position": 10,
+          "position": 11,
           "serverSideFiltering": false,
           "sourceData": ""
         },
@@ -458,7 +455,7 @@
           "label": "Contact Email",
           "labelTextSize": "0.875rem",
           "originalIdentifier": "customer_contact_email",
-          "position": 2,
+          "position": 3,
           "shouldAllowAutofill": true,
           "sourceData": ""
         },
@@ -484,7 +481,7 @@
           "maxDate": "2121-12-31T18:29:00.000Z",
           "minDate": "1920-12-31T18:30:00.000Z",
           "originalIdentifier": "customer_contact_first_contact",
-          "position": 7,
+          "position": 8,
           "shortcuts": false,
           "timePrecision": "minute"
         },
@@ -500,14 +497,14 @@
           "iconAlign": "left",
           "identifier": "customer_contact_id",
           "isCustomField": false,
-          "isDisabled": false,
+          "isDisabled": true,
           "isRequired": false,
           "isSpellCheck": false,
-          "isVisible": false,
+          "isVisible": true,
           "label": "Customer Contact Id",
           "labelTextSize": "0.875rem",
           "originalIdentifier": "customer_contact_id",
-          "position": 13,
+          "position": 0,
           "sourceData": 4
         },
         "customer_contact_industry": {
@@ -529,7 +526,7 @@
           "labelTextSize": "0.875rem",
           "options": "[\n  {\n    \"label\": \"LSP\",\n    \"value\": \"LSP\"\n  },\n  {\n    \"label\": \"Direct Client\",\n    \"value\": \"Direct Client\"\n  },\n  {\n    \"label\": \"AI\",\n    \"value\": \"AI\"\n  }\n]",
           "originalIdentifier": "customer_contact_industry",
-          "position": 4,
+          "position": 5,
           "serverSideFiltering": false,
           "sourceData": ""
         },
@@ -555,7 +552,7 @@
           "maxDate": "2121-12-31T18:29:00.000Z",
           "minDate": "1920-12-31T18:30:00.000Z",
           "originalIdentifier": "customer_contact_last_contact",
-          "position": 8,
+          "position": 9,
           "shortcuts": false,
           "timePrecision": "minute"
         },
@@ -578,7 +575,7 @@
           "label": "Linkedin",
           "labelTextSize": "0.875rem",
           "originalIdentifier": "customer_contact_linkedin",
-          "position": 6,
+          "position": 7,
           "sourceData": ""
         },
         "customer_contact_name": {
@@ -600,7 +597,7 @@
           "label": "Contact Name",
           "labelTextSize": "0.875rem",
           "originalIdentifier": "customer_contact_name",
-          "position": 1,
+          "position": 2,
           "sourceData": ""
         },
         "customer_contact_next_contact": {
@@ -625,7 +622,7 @@
           "maxDate": "2121-12-31T18:29:00.000Z",
           "minDate": "1920-12-31T18:30:00.000Z",
           "originalIdentifier": "customer_contact_next_contact",
-          "position": 9,
+          "position": 10,
           "shortcuts": false,
           "timePrecision": "minute"
         },
@@ -651,29 +648,6 @@
           "position": 12,
           "sourceData": ""
         },
-        "customer_contact_status": {
-          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_ccont_upd_jsn.sourceData, j_ccont_upd_jsn.formData, j_ccont_upd_jsn.fieldState)}}",
-          "accessor": "customer_contact_status",
-          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_ccont_upd_jsn.sourceData, j_ccont_upd_jsn.formData, j_ccont_upd_jsn.fieldState)}}",
-          "boxShadow": "none",
-          "children": {},
-          "dataType": "string",
-          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.customer_contact_status))(j_ccont_upd_jsn.sourceData, j_ccont_upd_jsn.formData, j_ccont_upd_jsn.fieldState)}}",
-          "fieldType": "Select",
-          "identifier": "customer_contact_status",
-          "isCustomField": false,
-          "isDisabled": false,
-          "isFilterable": false,
-          "isRequired": false,
-          "isVisible": true,
-          "label": "Status",
-          "labelTextSize": "0.875rem",
-          "options": "{{[\n{ label: '1. Lead Identified',   value: '1. Lead Identified' },\n{ label: '2. First Contact Sent',   value: '2. First Contact Sent' },\n{ label: '3. Response Received',   value: '3. Response Received' },\n{ label: '4. Vendor Onboarding',   value: '4. Vendor Onboarding' },\n{ label: '5. Sample Test Requested,',   value: '5. Sample Test Requested,' },\n{ label: '6. Awaiting Approval',   value: '6. Awaiting Approval' },\n{ label: '7. Approved Vendor',   value: '7. Approved Vendor' },\n{ label: '8. Quote Requested',   value: '8. Quote Requested' },\n{ label: '9. First Project Request',   value: '9. First Project Request' },\n{ label: '10. Active Client',   value: '10. Active Client' },\n{ label: '11. Dormant Client',   value: '11. Dormant Client' },\n{ label: '12. Lost Opportunity',   value: '12. Lost Opportunity' },\n{ label: '13. Other',   value: '13. Other' },\n{ label: '14. Inactive',   value: '14. Inactive' },\n]}}",
-          "originalIdentifier": "customer_contact_status",
-          "position": 3,
-          "serverSideFiltering": false,
-          "sourceData": "Active"
-        },
         "customer_contact_test": {
           "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_ccont_upd_jsn.sourceData, j_ccont_upd_jsn.formData, j_ccont_upd_jsn.fieldState)}}",
           "accessor": "customer_contact_test",
@@ -691,7 +665,7 @@
           "label": "Test",
           "labelTextSize": "0.875rem",
           "originalIdentifier": "customer_contact_test",
-          "position": 11,
+          "position": 17,
           "sourceData": false
         },
         "customer_contact_website": {
@@ -713,7 +687,7 @@
           "label": "Website",
           "labelTextSize": "0.875rem",
           "originalIdentifier": "customer_contact_website",
-          "position": 5,
+          "position": 6,
           "sourceData": ""
         },
         "customer_id": {
@@ -735,7 +709,7 @@
           "labelTextSize": "0.875rem",
           "options": "{{ get_cust_dd.data }}",
           "originalIdentifier": "customer_id",
-          "position": 0,
+          "position": 1,
           "serverSideFiltering": false
         },
         "customer_name": {
@@ -757,8 +731,30 @@
           "label": "Customer Name",
           "labelTextSize": "0.875rem",
           "originalIdentifier": "customer_name",
-          "position": 17,
+          "position": 15,
           "sourceData": "Centific"
+        },
+        "customer_status": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_ccont_upd_jsn.sourceData, j_ccont_upd_jsn.formData, j_ccont_upd_jsn.fieldState)}}",
+          "accessor": "customer_status",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(j_ccont_upd_jsn.sourceData, j_ccont_upd_jsn.formData, j_ccont_upd_jsn.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.customer_status))(j_ccont_upd_jsn.sourceData, j_ccont_upd_jsn.formData, j_ccont_upd_jsn.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "customer_status",
+          "isCustomField": false,
+          "isDisabled": true,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": true,
+          "label": "Customer Status",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "customer_status",
+          "position": 18,
+          "sourceData": "10. Active Client"
         },
         "updated_at": {
           "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_ccont_upd_jsn.sourceData, j_ccont_upd_jsn.formData, j_ccont_upd_jsn.fieldState)}}",
@@ -779,7 +775,7 @@
           "label": "Updated At",
           "labelTextSize": "0.875rem",
           "originalIdentifier": "updated_at",
-          "position": 16,
+          "position": 14,
           "sourceData": "2025-08-19T19:17:10Z"
         }
       },
@@ -824,8 +820,8 @@
     "iconName": "add",
     "placement": "START"
   },
-  "title": "Update Customer Contact",
-  "topRow": 0,
+  "title": "Edit Customer Contact",
+  "topRow": 10,
   "type": "JSON_FORM_WIDGET",
   "useSourceData": false,
   "version": 1,

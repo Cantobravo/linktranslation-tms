@@ -2,15 +2,18 @@
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "animateLoading": true,
   "borderRadius": "0.375rem",
-  "bottomRow": 33,
+  "bottomRow": 38,
   "boxShadow": "none",
-  "defaultOptionValue": "PER_UNIT",
+  "defaultOptionValue": "{{ ((options, serverSideFiltering) => (  appsmith.store.poInsPrefill?.pricing_mode ))(p_pricing_mode.options, p_pricing_mode.serverSideFiltering) }}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
     },
     {
       "key": "sourceData"
+    },
+    {
+      "key": "defaultOptionValue"
     }
   ],
   "dynamicHeight": "FIXED",
@@ -59,7 +62,7 @@
   "rightColumn": 49,
   "serverSideFiltering": false,
   "sourceData": "{{ [ { label: 'PER_UNIT', value: 'PER_UNIT' }, { label: 'FLAT', value: 'FLAT' } ] }}",
-  "topRow": 26,
+  "topRow": 31,
   "type": "SELECT_WIDGET",
   "version": 1,
   "widgetId": "cub45baetq",

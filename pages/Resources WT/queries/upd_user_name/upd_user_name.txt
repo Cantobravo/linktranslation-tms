@@ -1,4 +1,0 @@
-UPDATE resources
-SET
-  resource_username = {{ this.params.username }}
-WHERE resource_id = {{ this.params.resource_id }};

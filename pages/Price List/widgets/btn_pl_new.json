@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
-  "borderRadius": "0.375rem",
-  "bottomRow": 27,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 35,
   "boxShadow": "none",
   "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
   "buttonVariant": "SECONDARY",
@@ -9,6 +9,9 @@
   "dynamicBindingPathList": [
     {
       "key": "buttonColor"
+    },
+    {
+      "key": "borderRadius"
     }
   ],
   "dynamicPropertyPathList": [
@@ -25,18 +28,18 @@
   "isDisabled": false,
   "isLoading": false,
   "isVisible": true,
-  "key": "ifghatj90s",
-  "leftColumn": 0,
+  "key": "bzzeuas1vs",
+  "leftColumn": 9,
   "minWidth": 120,
-  "mobileBottomRow": 10,
-  "mobileLeftColumn": 0,
-  "mobileRightColumn": 16,
-  "mobileTopRow": 6,
+  "mobileBottomRow": 45,
+  "mobileLeftColumn": 1,
+  "mobileRightColumn": 17,
+  "mobileTopRow": 41,
   "needsErrorInfo": false,
-  "onClick": "{{\n  resetWidget('j_pl_ins_form', true);\n  showModal('j_pl_ins_modal');\n}}\n\n",
-  "originalBottomRow": 27,
-  "originalTopRow": 23,
-  "parentColumnSpace": 19.8125,
+  "onClick": "{{\n(async () => {\n  const accId = dd_pl_acc.selectedOptionValue;\n  if (!accId) {\n    showAlert(\"Select a Customer Account first.\", \"warning\");\n    return;\n  }\n\n  let plId = get_pl_hdr_acc.data?.[0]?.price_list_id;\n\n  if (!plId) {\n    await ins_pl_hdr_acc.run();\n    await get_pl_hdr_acc.run();\n    plId = get_pl_hdr_acc.data?.[0]?.price_list_id;\n  }\n\n  if (!plId) {\n    showAlert(\"Could not create/find the Account price list.\", \"error\");\n    return;\n  }\n\n  await storeValue(\"plCtx\", { scope: \"ACCOUNT\", price_list_id: plId });\n  resetWidget(\"jf_pl_item_i\");\n  showModal(\"j_pl_item_i\");\n})()\n}}\n",
+  "originalBottomRow": 35,
+  "originalTopRow": 25,
+  "parentColumnSpace": 34.890625,
   "parentId": "0",
   "parentRowSpace": 10,
   "placement": "CENTER",
@@ -44,11 +47,11 @@
   "renderMode": "CANVAS",
   "resetFormOnClick": false,
   "responsiveBehavior": "hug",
-  "rightColumn": 13,
-  "text": "New Price List",
-  "topRow": 23,
+  "rightColumn": 18,
+  "text": "New Customer Price List",
+  "topRow": 25,
   "type": "BUTTON_WIDGET",
   "version": 1,
-  "widgetId": "9fm63m7bp3",
+  "widgetId": "3id08cilz0",
   "widgetName": "btn_pl_new"
 }

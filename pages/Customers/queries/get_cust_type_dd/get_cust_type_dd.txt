@@ -1,0 +1,6 @@
+SELECT
+  type_label AS label,
+  type_value AS value
+FROM customer_types
+WHERE COALESCE(is_active, 1) = 1
+ORDER BY sort_order, type_label;

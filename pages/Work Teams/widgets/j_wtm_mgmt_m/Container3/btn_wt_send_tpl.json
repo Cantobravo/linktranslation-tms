@@ -1,0 +1,55 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 14,
+  "boxShadow": "none",
+  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "buttonVariant": "PRIMARY",
+  "disabledWhenInvalid": false,
+  "dynamicBindingPathList": [
+    {
+      "key": "buttonColor"
+    },
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "isDefaultClickDisabled": true,
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "glc3f2gbeg",
+  "leftColumn": 18,
+  "minWidth": 120,
+  "mobileBottomRow": 14,
+  "mobileLeftColumn": 18,
+  "mobileRightColumn": 34,
+  "mobileTopRow": 10,
+  "needsErrorInfo": false,
+  "onClick": "{{\n  (() => {\n    const rows = tbl_team_members.selectedRows || [];\n    if (!rows.length) { showAlert(\"Select at least one team member.\", \"warning\"); return; }\n\n    const t = (get_tpl_by_id_wt.data && get_tpl_by_id_wt.data[0]) ? get_tpl_by_id_wt.data[0] : null;\n    if (!t) { showAlert(\"Select a template (and wait for it to load).\", \"warning\"); return; }\n\n    // Work Team context (placeholders come from the team, not the resources)\n    const wt = appsmith.store.wtRow || {};\n\n    // Simple renderer for {{key}} using Work Team ctx only\n    const renderWT = (s) => {\n      return String(s || \"\").replace(/{{\\s*(\\w+)\\s*}}/g, (m, k) => {\n        return (k in wt) ? String(wt[k] ?? \"\") : \"\";\n      });\n    };\n\n    // Build email list from selected members (resource_email column exists on tbl_team_members)\n    const emails = [...new Set(\n      rows.map(r => String(r.resource_email || \"\").trim()).filter(Boolean)\n    )];\n\n    if (!emails.length) { showAlert(\"No resource emails found in selected rows.\", \"warning\"); return; }\n\n    // If multiple selected -> put them in BCC (as requested)\n    const emailsBcc = emails.join(\";\");\n\n    // Template fields (Work Team placeholders only)\n    let toTpl = (renderWT(t.to_field) || \"\").trim();\n    let cc = (renderWT(t.cc_field) || \"\").trim();\n    let bccTpl = (renderWT(t.bcc_field) || \"\").trim();\n    let subject = (renderWT(t.subject_field) || \"\").trim();\n    let body = (renderWT(t.body_field) || \"\").toString();\n\n    // If template bcc_field contains {{resource_email}}, replace it with the BCC list (multi-safe)\n    bccTpl = bccTpl.replace(/{{\\s*resource_email\\s*}}/g, emailsBcc);\n\n    // Final addressing rules:\n    // - if 1 selected: put that email in To (clean)\n    // - if >1: keep To = template To (if provided), otherwise empty, and put all emails into BCC\n    let to = \"\";\n    let bcc = \"\";\n\n    if (emails.length === 1) {\n      to = emails[0];\n      bcc = bccTpl; // keep any static/template bcc\n    } else {\n      to = toTpl; // may be empty; OK\n      bcc = [bccTpl, emailsBcc].filter(Boolean).join(\";\");\n    }\n\n    // If To is still empty and BCC exists, Outlook still opens; keep as-is.\n    // Build mailto manually (NO URLSearchParams; BODY LAST)\n    const params = [];\n\n    if (cc) params.push(\"cc=\" + encodeURIComponent(cc));\n    if (bcc) params.push(\"bcc=\" + encodeURIComponent(bcc));\n    if (subject) params.push(\"subject=\" + encodeURIComponent(subject));\n\n    // Ensure body not empty, and keep BODY LAST (Outlook-safe)\n    params.push(\"body=\" + encodeURIComponent(body || \"\\n\"));\n\n    const url = \"mailto:\" + (to ? encodeURIComponent(to) : \"\") + \"?\" + params.join(\"&\");\n    navigateTo(url, {}, \"NEW_WINDOW\");\n  })()\n}}\n",
+  "parentColumnSpace": 3.2627685546875,
+  "parentId": "hb2g9ttn8k",
+  "parentRowSpace": 10,
+  "placement": "CENTER",
+  "recaptchaType": "V3",
+  "renderMode": "CANVAS",
+  "resetFormOnClick": false,
+  "responsiveBehavior": "hug",
+  "rightColumn": 48,
+  "text": "Submit",
+  "topRow": 10,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "tmysm1m00b",
+  "widgetName": "btn_wt_send_tpl"
+}

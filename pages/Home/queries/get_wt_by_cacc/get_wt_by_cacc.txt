@@ -1,7 +1,0 @@
-SELECT
-  work_team_id,
-  work_team_name
-FROM work_teams
-WHERE customer_account_id = {{ tbl_home_cacc.selectedRow.customer_account_id || null }}
-  AND work_team_status = 'Active'
-ORDER BY work_team_name;

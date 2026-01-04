@@ -1,0 +1,10 @@
+SELECT
+  p.portfolio_id,
+  p.customer_name,
+  p.customer_description,
+  p.projects_details,
+  p.project_area,
+  p.project_size,
+  p.portfolio_tags
+FROM portfolio p
+WHERE p.portfolio_id = {{ this.params.portfolio_id }};

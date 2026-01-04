@@ -1,0 +1,20 @@
+SELECT
+  p.portfolio_id,
+  p.customer_name,
+  p.customer_description,
+  p.projects_details,
+  p.project_area,
+  p.project_size,
+  p.portfolio_tags
+FROM portfolio p
+WHERE
+  (
+    {{ (this.params.area_list || []).length === 0 }}
+    OR p.project_area IN ({{ this.params.area_list }})
+  )
+  AND
+  (
+    {{ (this.params.tag_re || '') === '' }}
+    OR LOWER(COALESCE(p.portfolio_tags, '')) REGEXP {{ this.params.tag_re }}
+  )
+ORDER BY p.portfolio_id DESC;

@@ -1,0 +1,18 @@
+SELECT
+  cp.customer_portal_id,
+  cp.customer_portal_name,
+  cp.customer_id,
+  c.customer_name,
+  cp.customer_contact_id,
+  cp.customer_portal_website,
+  cp.customer_portal_credentials,
+  cp.customer_portal_notes,
+  cp.customer_portal_status,
+  cp.portal_scope
+FROM customer_portals cp
+LEFT JOIN customers c
+  ON c.customer_id = cp.customer_id
+WHERE cp.portal_scope IN ('Projects','Both')
+ORDER BY
+  cp.customer_portal_name,
+  cp.customer_portal_id;

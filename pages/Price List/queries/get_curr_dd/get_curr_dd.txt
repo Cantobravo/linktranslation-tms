@@ -1,3 +1,0 @@
-SELECT currency_id AS value, currency_name AS label
-FROM currencies
-ORDER BY currency_name;

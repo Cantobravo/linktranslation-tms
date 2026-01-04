@@ -3,7 +3,6 @@ INSERT INTO customer_contacts (
   contact_position,
   customer_contact_email,
   customer_id,
-  customer_contact_status,
   customer_contact_industry,
   customer_contact_website,
   customer_contact_linkedin,
@@ -12,13 +11,13 @@ INSERT INTO customer_contacts (
   customer_contact_next_contact,
   customer_contact_contact_method,
   customer_contact_test,
-  customer_contact_notes
+  customer_contact_notes,
+  contact_is_active
 ) VALUES (
-  {{ j_ccont_ins_jsn.formData.customer_contact_name }},
-  {{ j_ccont_ins_jsn.formData.contact_position ?? j_ccont_ins_jsn.formData.Position }},
-  {{ j_ccont_ins_jsn.formData.customer_contact_email }},
+  {{ j_ccont_ins_jsn.formData.customer_contact_name ?? null }},
+  {{ j_ccont_ins_jsn.formData.contact_position ?? j_ccont_ins_jsn.formData.Position ?? null }},
+  {{ j_ccont_ins_jsn.formData.customer_contact_email ?? null }},
   {{ j_ccont_ins_jsn.formData.customer_id || null }},
-  {{ j_ccont_ins_jsn.formData.customer_contact_status || null }},
   {{ j_ccont_ins_jsn.formData.customer_contact_industry || null }},
   {{ j_ccont_ins_jsn.formData.customer_contact_website || null }},
   {{ j_ccont_ins_jsn.formData.customer_contact_linkedin || null }},
@@ -27,5 +26,6 @@ INSERT INTO customer_contacts (
   {{ j_ccont_ins_jsn.formData.customer_contact_next_contact ? moment(j_ccont_ins_jsn.formData.customer_contact_next_contact).format('YYYY-MM-DD') : null }},
   {{ j_ccont_ins_jsn.formData.customer_contact_contact_method || null }},
   {{ j_ccont_ins_jsn.formData.customer_contact_test || null }},
-  {{ j_ccont_ins_jsn.formData.customer_contact_notes || null }}
+  {{ j_ccont_ins_jsn.formData.customer_contact_notes || null }},
+  1
 );

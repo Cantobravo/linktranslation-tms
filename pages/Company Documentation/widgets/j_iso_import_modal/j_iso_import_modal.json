@@ -8,7 +8,7 @@
   "children": [
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 250,
+      "bottomRow": 360,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": true,
       "detachFromLayout": true,
@@ -29,7 +29,7 @@
       "leftColumn": 0,
       "maxDynamicHeight": 9000,
       "minDynamicHeight": 4,
-      "minHeight": 240,
+      "minHeight": 368,
       "minWidth": 450,
       "mobileBottomRow": 240,
       "mobileLeftColumn": 0,
@@ -56,8 +56,9 @@
       "key": "borderRadius"
     }
   ],
-  "dynamicHeight": "AUTO_HEIGHT",
-  "height": 250,
+  "dynamicHeight": "FIXED",
+  "dynamicTriggerPathList": [],
+  "height": 368,
   "isCanvas": true,
   "isLoading": false,
   "key": "01gucsvd03",
@@ -80,5 +81,5 @@
   "version": 2,
   "widgetId": "0zq6i65hgq",
   "widgetName": "j_iso_import_modal",
-  "width": 456
+  "width": 1818
 }

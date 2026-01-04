@@ -1,0 +1,9 @@
+SELECT
+  cc.customer_contact_id,
+  cc.customer_contact_name
+FROM customer_contacts cc
+WHERE cc.customer_id = COALESCE(
+  {{ jf_port_ins.formData.customer_id ?? null }},
+  -1
+)
+ORDER BY cc.customer_contact_name

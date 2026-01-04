@@ -1,11 +1,11 @@
 {
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
-  "allowAddNewRow": true,
+  "allowAddNewRow": false,
   "animateLoading": true,
   "borderColor": "{{appsmith.theme.colors.primaryColor}}",
-  "borderRadius": "1.5rem",
+  "borderRadius": "0px",
   "borderWidth": "1",
-  "bottomRow": 51,
+  "bottomRow": 49,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "cachedTableData": {},
   "canFreezeColumn": true,
@@ -129,6 +129,12 @@
     },
     {
       "key": "primaryColumns.customColumn1.onClick"
+    },
+    {
+      "key": "onSearchTextChanged"
+    },
+    {
+      "key": "onSort"
     }
   ],
   "dynamicTriggerPathList": [
@@ -157,12 +163,12 @@
   "horizontalAlignment": "LEFT",
   "inlineEditingSaveOption": "ROW_LEVEL",
   "isLoading": false,
-  "isSortable": true,
+  "isSortable": false,
   "isVisible": true,
   "isVisibleDownload": false,
   "isVisibleFilters": false,
-  "isVisiblePagination": true,
-  "isVisibleSearch": true,
+  "isVisiblePagination": false,
+  "isVisibleSearch": false,
   "key": "cm239a1lad",
   "label": "Data",
   "leftColumn": 0,
@@ -174,10 +180,10 @@
   "needsErrorInfo": false,
   "onAddNewRowSave": "{{Insert_currencies1.run(() => {\n            showAlert(\"Successfully created!\");\n            Select_currencies1.run()\n          }, () => {\n            showAlert(\"Unable to create!\");\n          })}}",
   "onPageChange": "{{\n            Select_currencies1.run();\n            Total_record_currencies1.run()\n          }}",
-  "onSearchTextChanged": "{{\n            Select_currencies1.run();\n            Total_record_currencies1.run()\n          }}",
-  "onSort": "{{\n            Select_currencies1.run();\n            Total_record_currencies1.run()\n          }}",
-  "originalBottomRow": 51,
-  "originalTopRow": 23,
+  "onSearchTextChanged": "{{ null }}\n",
+  "onSort": "{{ null }}\n",
+  "originalBottomRow": 49,
+  "originalTopRow": 21,
   "parentColumnSpace": 17.9375,
   "parentId": "0",
   "parentRowSpace": 10,
@@ -489,11 +495,11 @@
   "responsiveBehavior": "fill",
   "rightColumn": 64,
   "searchKey": "",
-  "serverSidePaginationEnabled": true,
+  "serverSidePaginationEnabled": false,
   "showInlineEditingOptionDropdown": true,
   "tableData": "{{get_currencies.data}}",
   "textSize": "0.875rem",
-  "topRow": 23,
+  "topRow": 21,
   "totalRecordsCount": "{{Total_record_currencies1.data[0].count}}",
   "type": "TABLE_WIDGET_V2",
   "variant": "VARIANT2",

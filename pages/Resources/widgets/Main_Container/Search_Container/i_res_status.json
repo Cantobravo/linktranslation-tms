@@ -1,0 +1,74 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "allowSelectAll": true,
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 17,
+  "boxShadow": "none",
+  "defaultOptionValue": "",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "sourceData"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "sourceData"
+    },
+    {
+      "key": "onOptionChange"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onOptionChange"
+    }
+  ],
+  "isDisabled": false,
+  "isFilterable": true,
+  "isLoading": false,
+  "isRequired": true,
+  "isVisible": true,
+  "key": "d1lhe9tkz4",
+  "labelAlignment": "left",
+  "labelPosition": "Top",
+  "labelStyle": "BOLD",
+  "labelText": "Status",
+  "labelTextSize": "1.25rem",
+  "labelWidth": 5,
+  "leftColumn": 0,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 22,
+  "mobileLeftColumn": 34,
+  "mobileRightColumn": 54,
+  "mobileTopRow": 15,
+  "needsErrorInfo": false,
+  "onOptionChange": "{{\n  (async () => {\n    const raw = i_res_status.selectedOptionValues || [];\n    const norm = raw.map(x => (x || '').toLowerCase().trim());\n    const hasEmpty = norm.includes('');\n    const cleaned = norm.filter(x => x !== '');\n    await storeValue('resStatusHasEmpty', hasEmpty);\n    await storeValue('resStatusCsv', cleaned.join(','));\n    await get_resources_list.run();\n  })()\n}}\n\n",
+  "optionLabel": "label",
+  "optionValue": "value",
+  "originalBottomRow": 22,
+  "originalTopRow": 15,
+  "parentColumnSpace": 25.5625,
+  "parentId": "istz0oyupw",
+  "parentRowSpace": 10,
+  "placeholderText": "Select option(s)",
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 61,
+  "serverSideFiltering": true,
+  "sourceData": "{{[\n  { \"label\": \"— ALL —\",        \"value\": \"\" },\n  { \"label\": \"Main Team\",      \"value\": \"Main Team\" },\n  { \"label\": \"Approved\",       \"value\": \"Approved\" },\n  { \"label\": \"Pre-Approved\",   \"value\": \"Pre-Approved\" },\n  { \"label\": \"Not Approved\",   \"value\": \"Not Approved\" },\n\t{ \"label\": \"Staff\",   \"value\": \"Staff\" },\n  { \"label\": \"Empty\",          \"value\": \"Empty\" }\n]\n}}",
+  "topRow": 10,
+  "type": "MULTI_SELECT_WIDGET_V2",
+  "version": 1,
+  "widgetId": "490dyp1b0u",
+  "widgetName": "i_res_status"
+}

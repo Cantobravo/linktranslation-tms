@@ -1,11 +1,11 @@
 {
-  "gitSyncId": "6840b6d2ece888096e42342a_0802caa0-8a29-4eeb-9eb5-bc89e8c0269e",
+  "gitSyncId": "6840b6d2ece888096e42342a_d2f8cc6a-8804-464c-9134-fa50a1efca0f",
   "id": "Sales Pipeline_ins_customer",
   "pluginId": "mysql-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "INSERT INTO customers (\n  customer_name,\n  customer_status\n)\nSELECT\n  {{ i_customer_name.text }},\n  {{ i_customer_status.selectedOptionValue || null }}\nFROM DUAL\nWHERE NOT EXISTS (\n  SELECT 1\n  FROM customers x\n  WHERE LOWER(x.customer_name) = LOWER({{ i_customer_name.text }})\n);\n",
+      "body": "INSERT INTO customers (\n  customer_name,\n  customer_type,\n  customer_address,\n  customer_country,\n  customer_phone,\n  customer_industry,\n  customer_note,\n  customer_invoice_procedure,\n  customer_payment_term,\n  customer_tax_vat_number,\n  currency_id,\n  customer_receivable_bank_name,\n  customer_linkedIn,\n  customer_bank_fee,\n  customer_status,\n  customer_documentation,\n  is_customer\n) VALUES (\n  COALESCE(NULLIF({{ jf_cust_ins.formData.customer_name || '' }}, ''), NULL),\n  COALESCE(NULLIF({{ jf_cust_ins.formData.customer_type || '' }}, ''), NULL),\n  COALESCE(NULLIF({{ jf_cust_ins.formData.customer_address || '' }}, ''), NULL),\n  COALESCE(NULLIF({{ jf_cust_ins.formData.customer_country || '' }}, ''), NULL),\n  COALESCE(NULLIF({{ jf_cust_ins.formData.customer_phone || '' }}, ''), NULL),\n  COALESCE(NULLIF({{ jf_cust_ins.formData.customer_industry || '' }}, ''), NULL),\n  COALESCE(NULLIF({{ jf_cust_ins.formData.customer_note || '' }}, ''), NULL),\n  COALESCE(NULLIF({{ jf_cust_ins.formData.customer_invoice_procedure || '' }}, ''), NULL),\n  COALESCE(NULLIF({{ jf_cust_ins.formData.customer_payment_term || '' }}, ''), NULL),\n  COALESCE(NULLIF({{ jf_cust_ins.formData.customer_tax_vat_number || '' }}, ''), NULL),\n  COALESCE(NULLIF({{ jf_cust_ins.formData.currency_id || '' }}, ''), NULL),\n  COALESCE(NULLIF({{ jf_cust_ins.formData.customer_receivable_bank_name || '' }}, ''), NULL),\n  COALESCE(NULLIF({{ jf_cust_ins.formData.customer_linkedIn || '' }}, ''), NULL),\n  COALESCE(NULLIF({{ jf_cust_ins.formData.customer_bank_fee || '' }}, ''), NULL),\n  COALESCE(NULLIF({{ jf_cust_ins.formData.customer_status || '' }}, ''), '10. Active'),\n  COALESCE(NULLIF({{ jf_cust_ins.formData.customer_documentation || '' }}, ''), NULL),\n  COALESCE(NULLIF({{ jf_cust_ins.formData.is_customer || '' }}, ''), 'Yes')\n);\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

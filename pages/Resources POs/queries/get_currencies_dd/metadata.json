@@ -25,7 +25,7 @@
     "dynamicBindingPathList": [],
     "name": "get_currencies_dd",
     "pageId": "Resources POs",
-    "runBehaviour": "AUTOMATIC",
-    "userSetOnLoad": false
+    "runBehaviour": "MANUAL",
+    "userSetOnLoad": true
   }
 }

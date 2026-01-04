@@ -4,4 +4,9 @@ SET
   assigned_to_work_team_member_id = NULL,
   assigned_at = NULL,
   updated_at = NOW()
-WHERE wtu_cred_id = {{ (appsmith.store.wtmCredRow?.origin_uncred_id || tbl_wtm_creds.triggeredRow.origin_uncred_id || 0) }};
+WHERE wtu_cred_id = {{
+  (appsmith.store.wtmCredRow && appsmith.store.wtmCredRow.origin_uncred_id)
+  || (tbl_wtm_creds_i.triggeredRow && tbl_wtm_creds_i.triggeredRow.origin_uncred_id)
+  || (tbl_wtm_creds_i.selectedRow && tbl_wtm_creds_i.selectedRow.origin_uncred_id)
+  || 0
+}};

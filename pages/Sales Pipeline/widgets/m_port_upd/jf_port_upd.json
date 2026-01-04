@@ -1,0 +1,695 @@
+{
+  "animateLoading": true,
+  "autoGenerateForm": true,
+  "backgroundColor": "#fff",
+  "borderColor": "#E0DEDE",
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "borderWidth": "1",
+  "bottomRow": 126,
+  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+  "childStylesheet": {
+    "ARRAY": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none",
+      "cellBorderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "cellBoxShadow": "none"
+    },
+    "CHECKBOX": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}"
+    },
+    "CURRENCY_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "DATEPICKER": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "EMAIL_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "MULTILINE_TEXT_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "MULTISELECT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "NUMBER_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "OBJECT": {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none",
+      "cellBorderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "cellBoxShadow": "none"
+    },
+    "PASSWORD_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "PHONE_NUMBER_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "RADIO_GROUP": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "boxShadow": "none"
+    },
+    "SELECT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "SWITCH": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "boxShadow": "none"
+    },
+    "TEXT_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    }
+  },
+  "disabledWhenInvalid": true,
+  "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "boxShadow"
+    },
+    {
+      "key": "submitButtonStyles.buttonColor"
+    },
+    {
+      "key": "submitButtonStyles.borderRadius"
+    },
+    {
+      "key": "resetButtonStyles.buttonColor"
+    },
+    {
+      "key": "resetButtonStyles.borderRadius"
+    },
+    {
+      "key": "sourceData"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_portal_id.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_portal_id.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_portal_id.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_portal_name.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_portal_name.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_portal_name.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_id.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_id.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_id.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_contact_id.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_contact_id.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_portal_credentials.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_portal_credentials.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_portal_credentials.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_portal_website.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_portal_website.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_portal_website.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_portal_notes.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_portal_notes.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_portal_notes.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_portal_status.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_portal_status.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_portal_status.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.portal_scope.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.portal_scope.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_portal_first_update.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_portal_first_update.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_portal_first_update.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_portal_last_update.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_portal_last_update.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_portal_last_update.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_portal_next_update.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_portal_next_update.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_portal_next_update.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.created_at.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.created_at.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.created_at.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.updated_at.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.updated_at.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.updated_at.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.cellBorderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_id.options"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_contact_id.options"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_contact_id.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.portal_scope.defaultValue"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [
+    {
+      "key": "sourceData"
+    },
+    {
+      "key": "sourceData"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_portal_first_update.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_portal_last_update.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_portal_next_update.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_id.onOptionChange"
+    },
+    {
+      "key": "onSubmit"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onSubmit"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_id.onOptionChange"
+    }
+  ],
+  "fieldLimitExceeded": false,
+  "fixedFooter": true,
+  "flexVerticalAlignment": "start",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "2yzio9see5",
+  "leftColumn": 1,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 60,
+  "mobileLeftColumn": 1,
+  "mobileRightColumn": 26,
+  "mobileTopRow": 19,
+  "needsErrorInfo": false,
+  "onSubmit": "{{\n  (async () => {\n    await upd_portal.run();\n    await get_ports_bycust.run();\n\n    closeModal('m_port_upd');\n    resetWidget('jf_port_upd', true);\n\n    // reset flag for next open\n    await storeValue('port_upd_cust_changed', false);\n  })();\n}}\n",
+  "originalBottomRow": 126,
+  "originalTopRow": 19,
+  "parentColumnSpace": 10.5625,
+  "parentId": "3jxgyvj4ab",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "resetButtonLabel": "Reset",
+  "resetButtonStyles": {
+    "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+    "boxShadow": "none",
+    "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+    "buttonVariant": "SECONDARY"
+  },
+  "responsiveBehavior": "fill",
+  "rightColumn": 63,
+  "schema": {
+    "__root_schema__": {
+      "accessor": "__root_schema__",
+      "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(jf_port_upd.sourceData, jf_port_upd.formData, jf_port_upd.fieldState)}}",
+      "boxShadow": "none",
+      "cellBorderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(jf_port_upd.sourceData, jf_port_upd.formData, jf_port_upd.fieldState)}}",
+      "cellBoxShadow": "none",
+      "children": {
+        "created_at": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(jf_port_upd.sourceData, jf_port_upd.formData, jf_port_upd.fieldState)}}",
+          "accessor": "created_at",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(jf_port_upd.sourceData, jf_port_upd.formData, jf_port_upd.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.created_at))(jf_port_upd.sourceData, jf_port_upd.formData, jf_port_upd.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "created_at",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": false,
+          "label": "Created At",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "created_at",
+          "position": 12,
+          "sourceData": "2025-12-18T19:56:59Z"
+        },
+        "customer_contact_id": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(jf_port_upd.sourceData, jf_port_upd.formData, jf_port_upd.fieldState)}}",
+          "accessor": "customer_contact_id",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(jf_port_upd.sourceData, jf_port_upd.formData, jf_port_upd.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "null",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (\n  (appsmith.store.port_upd_cust_changed === true)\n    ? null\n    : (appsmith.store.sel_port_row || {}).customer_contact_id\n))(jf_port_upd.sourceData, jf_port_upd.formData, jf_port_upd.fieldState)}}",
+          "fieldType": "Select",
+          "identifier": "customer_contact_id",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isFilterable": false,
+          "isRequired": false,
+          "isVisible": true,
+          "label": "Customer Contact",
+          "labelTextSize": "0.875rem",
+          "options": "{{ get_ct_dd_bycust.data || [] }}\n",
+          "originalIdentifier": "customer_contact_id",
+          "position": 3,
+          "serverSideFiltering": false
+        },
+        "customer_id": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(jf_port_upd.sourceData, jf_port_upd.formData, jf_port_upd.fieldState)}}",
+          "accessor": "customer_id",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(jf_port_upd.sourceData, jf_port_upd.formData, jf_port_upd.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "number",
+          "defaultValue": "{{((sourceData, formData, fieldState) => ( (appsmith.store.sel_port_row || {}).customer_id ))(jf_port_upd.sourceData, jf_port_upd.formData, jf_port_upd.fieldState)}}",
+          "fieldType": "Select",
+          "identifier": "customer_id",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isFilterable": false,
+          "isRequired": false,
+          "isVisible": true,
+          "label": "Customer",
+          "labelTextSize": "0.875rem",
+          "onOptionChange": "{{\n  (async () => {\n    await storeValue('port_upd_cust_changed', true);\n    await get_ct_dd_bycust.run();\n  })();\n}}\n",
+          "options": "{{ (get_customers.data || []).map(r => ({ label: r.customer_name, value: r.customer_id })) }}\n",
+          "originalIdentifier": "customer_id",
+          "position": 2,
+          "serverSideFiltering": false,
+          "sourceData": 7
+        },
+        "customer_portal_credentials": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(jf_port_upd.sourceData, jf_port_upd.formData, jf_port_upd.fieldState)}}",
+          "accessor": "customer_portal_credentials",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(jf_port_upd.sourceData, jf_port_upd.formData, jf_port_upd.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.customer_portal_credentials))(jf_port_upd.sourceData, jf_port_upd.formData, jf_port_upd.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "customer_portal_credentials",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": true,
+          "label": "Credentials",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "customer_portal_credentials",
+          "position": 4,
+          "sourceData": "Username: linktransl\t\nCase-Sensitive password: 23FD355"
+        },
+        "customer_portal_first_update": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(jf_port_upd.sourceData, jf_port_upd.formData, jf_port_upd.fieldState)}}",
+          "accessor": "customer_portal_first_update",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(jf_port_upd.sourceData, jf_port_upd.formData, jf_port_upd.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "closeOnSelection": false,
+          "convertToISO": false,
+          "dataType": "string",
+          "dateFormat": "YYYY-MM-DD",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (moment(sourceData.customer_portal_first_update, \"YYYY-MM-DD\").format(\"YYYY-MM-DDTHH:mm:ss.sssZ\")))(jf_port_upd.sourceData, jf_port_upd.formData, jf_port_upd.fieldState)}}",
+          "fieldType": "Datepicker",
+          "identifier": "customer_portal_first_update",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isVisible": true,
+          "label": "First Update",
+          "labelTextSize": "0.875rem",
+          "maxDate": "2121-12-31T18:29:00.000Z",
+          "minDate": "1920-12-31T18:30:00.000Z",
+          "originalIdentifier": "customer_portal_first_update",
+          "position": 9,
+          "shortcuts": false,
+          "sourceData": "2025-12-01",
+          "timePrecision": "minute"
+        },
+        "customer_portal_id": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(jf_port_upd.sourceData, jf_port_upd.formData, jf_port_upd.fieldState)}}",
+          "accessor": "customer_portal_id",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(jf_port_upd.sourceData, jf_port_upd.formData, jf_port_upd.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "number",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.customer_portal_id))(jf_port_upd.sourceData, jf_port_upd.formData, jf_port_upd.fieldState)}}",
+          "fieldType": "Number Input",
+          "iconAlign": "left",
+          "identifier": "customer_portal_id",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": false,
+          "label": "Customer Portal Id",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "customer_portal_id",
+          "position": 0,
+          "sourceData": 14
+        },
+        "customer_portal_last_update": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(jf_port_upd.sourceData, jf_port_upd.formData, jf_port_upd.fieldState)}}",
+          "accessor": "customer_portal_last_update",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(jf_port_upd.sourceData, jf_port_upd.formData, jf_port_upd.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "closeOnSelection": false,
+          "convertToISO": false,
+          "dataType": "string",
+          "dateFormat": "YYYY-MM-DD",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (moment(sourceData.customer_portal_last_update, \"YYYY-MM-DD\").format(\"YYYY-MM-DDTHH:mm:ss.sssZ\")))(jf_port_upd.sourceData, jf_port_upd.formData, jf_port_upd.fieldState)}}",
+          "fieldType": "Datepicker",
+          "identifier": "customer_portal_last_update",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isVisible": true,
+          "label": "Last Update",
+          "labelTextSize": "0.875rem",
+          "maxDate": "2121-12-31T18:29:00.000Z",
+          "minDate": "1920-12-31T18:30:00.000Z",
+          "originalIdentifier": "customer_portal_last_update",
+          "position": 10,
+          "shortcuts": false,
+          "sourceData": "2025-12-24",
+          "timePrecision": "minute"
+        },
+        "customer_portal_name": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(jf_port_upd.sourceData, jf_port_upd.formData, jf_port_upd.fieldState)}}",
+          "accessor": "customer_portal_name",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(jf_port_upd.sourceData, jf_port_upd.formData, jf_port_upd.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.customer_portal_name))(jf_port_upd.sourceData, jf_port_upd.formData, jf_port_upd.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "customer_portal_name",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": true,
+          "label": "Portal Name",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "customer_portal_name",
+          "position": 1,
+          "sourceData": "SuppliersNet"
+        },
+        "customer_portal_next_update": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(jf_port_upd.sourceData, jf_port_upd.formData, jf_port_upd.fieldState)}}",
+          "accessor": "customer_portal_next_update",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(jf_port_upd.sourceData, jf_port_upd.formData, jf_port_upd.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "closeOnSelection": false,
+          "convertToISO": false,
+          "dataType": "string",
+          "dateFormat": "YYYY-MM-DD",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (moment(sourceData.customer_portal_next_update, \"YYYY-MM-DD\").format(\"YYYY-MM-DDTHH:mm:ss.sssZ\")))(jf_port_upd.sourceData, jf_port_upd.formData, jf_port_upd.fieldState)}}",
+          "fieldType": "Datepicker",
+          "identifier": "customer_portal_next_update",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isVisible": true,
+          "label": " Next Update",
+          "labelTextSize": "0.875rem",
+          "maxDate": "2121-12-31T18:29:00.000Z",
+          "minDate": "1920-12-31T18:30:00.000Z",
+          "originalIdentifier": "customer_portal_next_update",
+          "position": 11,
+          "shortcuts": false,
+          "sourceData": "2026-01-15",
+          "timePrecision": "minute"
+        },
+        "customer_portal_notes": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(jf_port_upd.sourceData, jf_port_upd.formData, jf_port_upd.fieldState)}}",
+          "accessor": "customer_portal_notes",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(jf_port_upd.sourceData, jf_port_upd.formData, jf_port_upd.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "null",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.customer_portal_notes))(jf_port_upd.sourceData, jf_port_upd.formData, jf_port_upd.fieldState)}}",
+          "fieldType": "Multiline Text Input",
+          "iconAlign": "left",
+          "identifier": "customer_portal_notes",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": true,
+          "label": "Notes",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "customer_portal_notes",
+          "position": 6
+        },
+        "customer_portal_status": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(jf_port_upd.sourceData, jf_port_upd.formData, jf_port_upd.fieldState)}}",
+          "accessor": "customer_portal_status",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(jf_port_upd.sourceData, jf_port_upd.formData, jf_port_upd.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "{{((sourceData, formData, fieldState) => ( \n  ((sourceData, formData, fieldState) => (\n    sourceData?.customer_portal_status ?? null\n  ))(jf_port_upd.sourceData, jf_port_upd.formData, jf_port_upd.fieldState) \n))(jf_port_upd.sourceData, jf_port_upd.formData, jf_port_upd.fieldState)}}",
+          "fieldType": "Select",
+          "identifier": "customer_portal_status",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isFilterable": false,
+          "isRequired": false,
+          "isVisible": true,
+          "label": "Status",
+          "labelTextSize": "0.875rem",
+          "options": "[\n  { \"label\": \"Active\", \"value\": \"Active\" },\n  { \"label\": \"Inactive\", \"value\": \"Inactive\" },\n  { \"label\": \"Completed\", \"value\": \"Completed\" },\n  { \"label\": \"Incomplete\", \"value\": \"Incomplete\" }\n]\n",
+          "originalIdentifier": "customer_portal_status",
+          "position": 7,
+          "serverSideFiltering": false,
+          "sourceData": "Active"
+        },
+        "customer_portal_website": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(jf_port_upd.sourceData, jf_port_upd.formData, jf_port_upd.fieldState)}}",
+          "accessor": "customer_portal_website",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(jf_port_upd.sourceData, jf_port_upd.formData, jf_port_upd.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.customer_portal_website))(jf_port_upd.sourceData, jf_port_upd.formData, jf_port_upd.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "customer_portal_website",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": true,
+          "label": "URL",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "customer_portal_website",
+          "position": 5,
+          "sourceData": "https://suppliersnet.yamagata-europe.com"
+        },
+        "portal_scope": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(jf_port_upd.sourceData, jf_port_upd.formData, jf_port_upd.fieldState)}}",
+          "accessor": "portal_scope",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(jf_port_upd.sourceData, jf_port_upd.formData, jf_port_upd.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "{{((sourceData, formData, fieldState) => ( \n  ((sourceData, formData, fieldState) => (\n    sourceData?.portal_scope ?? null\n  ))(jf_port_upd.sourceData, jf_port_upd.formData, jf_port_upd.fieldState) \n))(jf_port_upd.sourceData, jf_port_upd.formData, jf_port_upd.fieldState)}}",
+          "fieldType": "Select",
+          "identifier": "portal_scope",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isFilterable": false,
+          "isRequired": false,
+          "isVisible": true,
+          "label": "Portal Scope",
+          "labelTextSize": "0.875rem",
+          "options": "[\n  { \"label\": \"Profile\", \"value\": \"Profile\" },\n  { \"label\": \"Both\", \"value\": \"Both\" }\n]",
+          "originalIdentifier": "portal_scope",
+          "position": 8,
+          "serverSideFiltering": false,
+          "sourceData": "Both"
+        },
+        "updated_at": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(jf_port_upd.sourceData, jf_port_upd.formData, jf_port_upd.fieldState)}}",
+          "accessor": "updated_at",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(jf_port_upd.sourceData, jf_port_upd.formData, jf_port_upd.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.updated_at))(jf_port_upd.sourceData, jf_port_upd.formData, jf_port_upd.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "updated_at",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": false,
+          "label": "Updated At",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "updated_at",
+          "position": 13,
+          "sourceData": "2025-12-18T20:21:11Z"
+        }
+      },
+      "dataType": "object",
+      "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData))(jf_port_upd.sourceData, jf_port_upd.formData, jf_port_upd.fieldState)}}",
+      "fieldType": "Object",
+      "identifier": "__root_schema__",
+      "isCustomField": false,
+      "isDisabled": false,
+      "isRequired": false,
+      "isVisible": true,
+      "label": "",
+      "labelTextSize": "0.875rem",
+      "originalIdentifier": "__root_schema__",
+      "position": -1,
+      "sourceData": {
+        "created_at": "2025-12-18T19:56:59Z",
+        "customer_id": 7,
+        "customer_portal_credentials": "Username: linktransl\t\nCase-Sensitive password: 23FD355",
+        "customer_portal_first_update": "2025-12-01",
+        "customer_portal_id": 14,
+        "customer_portal_last_update": "2025-12-24",
+        "customer_portal_name": "SuppliersNet",
+        "customer_portal_next_update": "2026-01-15",
+        "customer_portal_status": "Active",
+        "customer_portal_website": "https://suppliersnet.yamagata-europe.com",
+        "portal_scope": "Both",
+        "updated_at": "2025-12-18T20:21:11Z"
+      }
+    }
+  },
+  "scrollContents": true,
+  "showReset": true,
+  "sourceData": "{{ appsmith.store.sel_port_row || {} }}\n\n",
+  "submitButtonLabel": "Submit",
+  "submitButtonStyles": {
+    "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+    "boxShadow": "none",
+    "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+    "buttonVariant": "PRIMARY"
+  },
+  "title": "Edit Portal",
+  "topRow": 19,
+  "type": "JSON_FORM_WIDGET",
+  "useSourceData": false,
+  "version": 1,
+  "widgetId": "h6h3u7gt0q",
+  "widgetName": "jf_port_upd"
+}

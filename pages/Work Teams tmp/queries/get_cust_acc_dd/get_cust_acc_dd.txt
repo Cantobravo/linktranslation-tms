@@ -1,6 +1,0 @@
-SELECT
-  customer_account_id AS value,
-  customer_account_name AS label
-FROM customer_accounts
-WHERE customer_id = {{ appsmith.store._wt_cid || j_wt_ins_form.formData?.customer_id || 0 }}
-ORDER BY customer_account_name;

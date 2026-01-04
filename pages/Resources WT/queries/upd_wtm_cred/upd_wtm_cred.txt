@@ -1,8 +1,0 @@
-UPDATE work_team_member_credentials
-SET
-  username      = {{ j_cred_view.formData.username || null }},
-  alias_email   = {{ j_cred_view.formData.alias_email || null }},
-  password_text = {{ j_cred_view.formData.password_text || null }},
-  updated_at    = NOW()
-WHERE
-  wtm_cred_id   = {{ j_cred_view.formData.wtm_cred_id }};

@@ -1,0 +1,49 @@
+{
+  "accentColor": "#93c5fd",
+  "alignWidget": "LEFT",
+  "animateLoading": true,
+  "bottomRow": 37,
+  "boxShadow": "none",
+  "defaultSwitchState": false,
+  "dynamicBindingPathList": [],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [
+    {
+      "key": "onChange"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onChange"
+    }
+  ],
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "44kwsb0v57",
+  "label": "Show Inactive Resources",
+  "labelPosition": "Left",
+  "labelTextSize": "1rem",
+  "leftColumn": 0,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "mobileBottomRow": 24,
+  "mobileLeftColumn": 17,
+  "mobileRightColumn": 29,
+  "mobileTopRow": 20,
+  "needsErrorInfo": false,
+  "onChange": "{{ get_resources_list.run() }}\n",
+  "originalBottomRow": 36,
+  "originalTopRow": 30,
+  "parentColumnSpace": 21.8125,
+  "parentId": "istz0oyupw",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 33,
+  "topRow": 33,
+  "type": "SWITCH_WIDGET",
+  "version": 1,
+  "widgetId": "jskjdchytx",
+  "widgetName": "toggle_show_inactive_res"
+}

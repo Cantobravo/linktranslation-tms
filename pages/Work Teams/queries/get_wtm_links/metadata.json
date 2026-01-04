@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT\n  wtmf.wtm_link_id,\n  wtmf.link_url,\n  wtmf.link_label,\n  wtmf.wordcount,\n  wtmf.hours,\n  wtmf.note,\n  COALESCE(wtmf.is_active,1) AS is_active,\n  DATE_FORMAT(wtmf.created_at, '%Y-%m-%d %H:%i') AS created_at\nFROM work_team_member_links wtmf\nWHERE wtmf.work_team_member_id = COALESCE(\n  {{ appsmith.store.wtmRow?.work_team_member_id || 0 }},\n  (\n    SELECT w2.work_team_member_id\n    FROM work_team_members w2\n    WHERE COALESCE(w2.is_active,1)=1\n      AND w2.work_team_id = {{ appsmith.store.wtRow?.work_team_id || 0 }}\n    ORDER BY w2.work_team_member_id\n    LIMIT 1\n  )\n)\nAND COALESCE(wtmf.is_active,1)=1\nORDER BY wtmf.wtm_link_id DESC;\n",
+      "body": "SELECT\n  wtmf.wtm_link_id,\n  wtmf.link_url,\n  wtmf.link_label,\n  wtmf.wordcount,\n  wtmf.hours,\n  wtmf.note,\n  COALESCE(wtmf.is_active,1) AS is_active,\n  DATE_FORMAT(wtmf.created_at, '%Y-%m-%d %H:%i') AS created_at\nFROM work_team_member_links wtmf\nWHERE wtmf.work_team_member_id = COALESCE(\n  {{ appsmith.store.wtmRow?.work_team_member_id || 0 }},\n  (\n    SELECT w2.work_team_member_id\n    FROM work_team_members w2\n    WHERE COALESCE(w2.is_active,1) = 1\n      AND w2.work_team_id = {{ appsmith.store.wtRow?.work_team_id || 0 }}\n    ORDER BY w2.work_team_member_id ASC\n    LIMIT 1\n  )\n)\nAND COALESCE(wtmf.is_active,1) = 1\nORDER BY wtmf.wtm_link_id DESC;\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

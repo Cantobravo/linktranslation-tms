@@ -1,0 +1,899 @@
+{
+  "animateLoading": true,
+  "autoGenerateForm": true,
+  "backgroundColor": "#fff",
+  "borderColor": "#E0DEDE",
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "borderWidth": "1",
+  "bottomRow": 160,
+  "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+  "childStylesheet": {
+    "ARRAY": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none",
+      "cellBorderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "cellBoxShadow": "none"
+    },
+    "CHECKBOX": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}"
+    },
+    "CURRENCY_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "DATEPICKER": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "EMAIL_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "MULTILINE_TEXT_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "MULTISELECT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "NUMBER_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "OBJECT": {
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none",
+      "cellBorderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "cellBoxShadow": "none"
+    },
+    "PASSWORD_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "PHONE_NUMBER_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "RADIO_GROUP": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "boxShadow": "none"
+    },
+    "SELECT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    },
+    "SWITCH": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "boxShadow": "none"
+    },
+    "TEXT_INPUT": {
+      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+      "boxShadow": "none"
+    }
+  },
+  "disabledWhenInvalid": true,
+  "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "boxShadow"
+    },
+    {
+      "key": "submitButtonStyles.buttonColor"
+    },
+    {
+      "key": "submitButtonStyles.borderRadius"
+    },
+    {
+      "key": "resetButtonStyles.buttonColor"
+    },
+    {
+      "key": "resetButtonStyles.borderRadius"
+    },
+    {
+      "key": "sourceData"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_id.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_id.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_id.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_name.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_name.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_name.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_type.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_type.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_address.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_address.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_address.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_country.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_country.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_country.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_phone.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_phone.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_phone.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_industry.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_industry.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_industry.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_note.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_note.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_note.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_invoice_procedure.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_invoice_procedure.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_invoice_procedure.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_payment_term.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_payment_term.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_payment_term.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_tax_vat_number.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_tax_vat_number.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_tax_vat_number.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.currency_id.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.currency_id.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.currency_id.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.currency_acronym.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.currency_acronym.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.currency_acronym.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.currency_name.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.currency_name.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.currency_name.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_receivable_bank_name.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_receivable_bank_name.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_receivable_bank_name.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_linkedIn.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_linkedIn.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_linkedIn.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_bank_fee.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_bank_fee.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_bank_fee.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_status.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_status.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_status.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_documentation.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_documentation.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_documentation.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.created_at.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.created_at.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.created_at.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.updated_at.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.children.updated_at.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.updated_at.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.is_customer.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.is_customer.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.defaultValue"
+    },
+    {
+      "key": "schema.__root_schema__.borderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.cellBorderRadius"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_status.options"
+    },
+    {
+      "key": "schema.__root_schema__.children.currency_id.options"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_type.accentColor"
+    },
+    {
+      "key": "schema.__root_schema__.children.customer_type.options"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [
+    {
+      "key": "sourceData"
+    },
+    {
+      "key": "onSubmit"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onSubmit"
+    }
+  ],
+  "fieldLimitExceeded": false,
+  "fixedFooter": true,
+  "flexVerticalAlignment": "start",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "nn3h4hlh30",
+  "leftColumn": 0,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 50,
+  "mobileLeftColumn": 34,
+  "mobileRightColumn": 59,
+  "mobileTopRow": 9,
+  "needsErrorInfo": false,
+  "onSubmit": "{{\n  (async () => {\n    await ins_customer.run();\n    await get_customers.run();\n    closeModal('m_cust_ins');\n    resetWidget('jf_cust_ins', true);\n  })();\n}}\n",
+  "originalBottomRow": 160,
+  "originalTopRow": 10,
+  "parentColumnSpace": 6.9375,
+  "parentId": "n7atd8s482",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "resetButtonLabel": "Reset",
+  "resetButtonStyles": {
+    "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+    "boxShadow": "none",
+    "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+    "buttonVariant": "SECONDARY"
+  },
+  "responsiveBehavior": "fill",
+  "rightColumn": 61,
+  "schema": {
+    "__root_schema__": {
+      "accessor": "__root_schema__",
+      "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(jf_cust_ins.sourceData, jf_cust_ins.formData, jf_cust_ins.fieldState)}}",
+      "boxShadow": "none",
+      "cellBorderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(jf_cust_ins.sourceData, jf_cust_ins.formData, jf_cust_ins.fieldState)}}",
+      "cellBoxShadow": "none",
+      "children": {
+        "created_at": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(jf_cust_ins.sourceData, jf_cust_ins.formData, jf_cust_ins.fieldState)}}",
+          "accessor": "created_at",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(jf_cust_ins.sourceData, jf_cust_ins.formData, jf_cust_ins.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.created_at))(jf_cust_ins.sourceData, jf_cust_ins.formData, jf_cust_ins.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "created_at",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": false,
+          "label": "Created At",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "created_at",
+          "position": 19,
+          "sourceData": "2025-09-20T10:38:09Z"
+        },
+        "currency_acronym": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(jf_cust_ins.sourceData, jf_cust_ins.formData, jf_cust_ins.fieldState)}}",
+          "accessor": "currency_acronym",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(jf_cust_ins.sourceData, jf_cust_ins.formData, jf_cust_ins.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.currency_acronym))(jf_cust_ins.sourceData, jf_cust_ins.formData, jf_cust_ins.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "currency_acronym",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": false,
+          "label": "Currency Acronym",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "currency_acronym",
+          "position": 13,
+          "sourceData": "USD"
+        },
+        "currency_id": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(jf_cust_ins.sourceData, jf_cust_ins.formData, jf_cust_ins.fieldState)}}",
+          "accessor": "currency_id",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(jf_cust_ins.sourceData, jf_cust_ins.formData, jf_cust_ins.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "number",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.currency_id))(jf_cust_ins.sourceData, jf_cust_ins.formData, jf_cust_ins.fieldState)}}",
+          "fieldType": "Select",
+          "identifier": "currency_id",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isFilterable": false,
+          "isRequired": false,
+          "isVisible": true,
+          "label": "Currency",
+          "labelTextSize": "0.875rem",
+          "options": "{{\n  (get_currencies.data || []).map(r => ({\n    label: r.currency_label,\n    value: r.currency_id\n  }))\n}}",
+          "originalIdentifier": "currency_id",
+          "position": 12,
+          "serverSideFiltering": false,
+          "sourceData": 1
+        },
+        "currency_name": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(jf_cust_ins.sourceData, jf_cust_ins.formData, jf_cust_ins.fieldState)}}",
+          "accessor": "currency_name",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(jf_cust_ins.sourceData, jf_cust_ins.formData, jf_cust_ins.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.currency_name))(jf_cust_ins.sourceData, jf_cust_ins.formData, jf_cust_ins.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "currency_name",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": false,
+          "label": "Currency Name",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "currency_name",
+          "position": 14,
+          "sourceData": "US Dollar"
+        },
+        "customer_address": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(jf_cust_ins.sourceData, jf_cust_ins.formData, jf_cust_ins.fieldState)}}",
+          "accessor": "customer_address",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(jf_cust_ins.sourceData, jf_cust_ins.formData, jf_cust_ins.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "null",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.customer_address))(jf_cust_ins.sourceData, jf_cust_ins.formData, jf_cust_ins.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "customer_address",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": true,
+          "label": "Address",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "customer_address",
+          "position": 4
+        },
+        "customer_bank_fee": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(jf_cust_ins.sourceData, jf_cust_ins.formData, jf_cust_ins.fieldState)}}",
+          "accessor": "customer_bank_fee",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(jf_cust_ins.sourceData, jf_cust_ins.formData, jf_cust_ins.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "null",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.customer_bank_fee))(jf_cust_ins.sourceData, jf_cust_ins.formData, jf_cust_ins.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "customer_bank_fee",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": true,
+          "label": "Bank Fee",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "customer_bank_fee",
+          "position": 17
+        },
+        "customer_country": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(jf_cust_ins.sourceData, jf_cust_ins.formData, jf_cust_ins.fieldState)}}",
+          "accessor": "customer_country",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(jf_cust_ins.sourceData, jf_cust_ins.formData, jf_cust_ins.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.customer_country))(jf_cust_ins.sourceData, jf_cust_ins.formData, jf_cust_ins.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "customer_country",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": true,
+          "label": "Country",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "customer_country",
+          "position": 5,
+          "sourceData": "Ireland"
+        },
+        "customer_documentation": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(jf_cust_ins.sourceData, jf_cust_ins.formData, jf_cust_ins.fieldState)}}",
+          "accessor": "customer_documentation",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(jf_cust_ins.sourceData, jf_cust_ins.formData, jf_cust_ins.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "null",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.customer_documentation))(jf_cust_ins.sourceData, jf_cust_ins.formData, jf_cust_ins.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "customer_documentation",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": true,
+          "label": "Documentation",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "customer_documentation",
+          "position": 18
+        },
+        "customer_id": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(jf_cust_ins.sourceData, jf_cust_ins.formData, jf_cust_ins.fieldState)}}",
+          "accessor": "customer_id",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(jf_cust_ins.sourceData, jf_cust_ins.formData, jf_cust_ins.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "number",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.customer_id))(jf_cust_ins.sourceData, jf_cust_ins.formData, jf_cust_ins.fieldState)}}",
+          "fieldType": "Number Input",
+          "iconAlign": "left",
+          "identifier": "customer_id",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": false,
+          "label": "Customer Id",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "customer_id",
+          "position": 0,
+          "sourceData": 8
+        },
+        "customer_industry": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(jf_cust_ins.sourceData, jf_cust_ins.formData, jf_cust_ins.fieldState)}}",
+          "accessor": "customer_industry",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(jf_cust_ins.sourceData, jf_cust_ins.formData, jf_cust_ins.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "null",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.customer_industry))(jf_cust_ins.sourceData, jf_cust_ins.formData, jf_cust_ins.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "customer_industry",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": true,
+          "label": "Industry",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "customer_industry",
+          "position": 7
+        },
+        "customer_invoice_procedure": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(jf_cust_ins.sourceData, jf_cust_ins.formData, jf_cust_ins.fieldState)}}",
+          "accessor": "customer_invoice_procedure",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(jf_cust_ins.sourceData, jf_cust_ins.formData, jf_cust_ins.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "null",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.customer_invoice_procedure))(jf_cust_ins.sourceData, jf_cust_ins.formData, jf_cust_ins.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "customer_invoice_procedure",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": true,
+          "label": "Invoice Procedure",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "customer_invoice_procedure",
+          "position": 9
+        },
+        "customer_linkedIn": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(jf_cust_ins.sourceData, jf_cust_ins.formData, jf_cust_ins.fieldState)}}",
+          "accessor": "customer_linkedIn",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(jf_cust_ins.sourceData, jf_cust_ins.formData, jf_cust_ins.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "null",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.customer_linkedIn))(jf_cust_ins.sourceData, jf_cust_ins.formData, jf_cust_ins.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "customer_linkedIn",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": true,
+          "label": "Linked In",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "customer_linkedIn",
+          "position": 16
+        },
+        "customer_name": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(jf_cust_ins.sourceData, jf_cust_ins.formData, jf_cust_ins.fieldState)}}",
+          "accessor": "customer_name",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(jf_cust_ins.sourceData, jf_cust_ins.formData, jf_cust_ins.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.customer_name))(jf_cust_ins.sourceData, jf_cust_ins.formData, jf_cust_ins.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "customer_name",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": true,
+          "label": "Customer Name",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "customer_name",
+          "position": 1,
+          "sourceData": "Acolad Ireland"
+        },
+        "customer_note": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(jf_cust_ins.sourceData, jf_cust_ins.formData, jf_cust_ins.fieldState)}}",
+          "accessor": "customer_note",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(jf_cust_ins.sourceData, jf_cust_ins.formData, jf_cust_ins.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "null",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.customer_note))(jf_cust_ins.sourceData, jf_cust_ins.formData, jf_cust_ins.fieldState)}}",
+          "fieldType": "Multiline Text Input",
+          "iconAlign": "left",
+          "identifier": "customer_note",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": true,
+          "label": "Note",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "customer_note",
+          "position": 8
+        },
+        "customer_payment_term": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(jf_cust_ins.sourceData, jf_cust_ins.formData, jf_cust_ins.fieldState)}}",
+          "accessor": "customer_payment_term",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(jf_cust_ins.sourceData, jf_cust_ins.formData, jf_cust_ins.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "null",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.customer_payment_term))(jf_cust_ins.sourceData, jf_cust_ins.formData, jf_cust_ins.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "customer_payment_term",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": true,
+          "label": "Payment Term",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "customer_payment_term",
+          "position": 10
+        },
+        "customer_phone": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(jf_cust_ins.sourceData, jf_cust_ins.formData, jf_cust_ins.fieldState)}}",
+          "accessor": "customer_phone",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(jf_cust_ins.sourceData, jf_cust_ins.formData, jf_cust_ins.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "null",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.customer_phone))(jf_cust_ins.sourceData, jf_cust_ins.formData, jf_cust_ins.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "customer_phone",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": true,
+          "label": "Phone",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "customer_phone",
+          "position": 6
+        },
+        "customer_receivable_bank_name": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(jf_cust_ins.sourceData, jf_cust_ins.formData, jf_cust_ins.fieldState)}}",
+          "accessor": "customer_receivable_bank_name",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(jf_cust_ins.sourceData, jf_cust_ins.formData, jf_cust_ins.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "null",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.customer_receivable_bank_name))(jf_cust_ins.sourceData, jf_cust_ins.formData, jf_cust_ins.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "customer_receivable_bank_name",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": true,
+          "label": "Receivable Bank Name",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "customer_receivable_bank_name",
+          "position": 15
+        },
+        "customer_status": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(jf_cust_ins.sourceData, jf_cust_ins.formData, jf_cust_ins.fieldState)}}",
+          "accessor": "customer_status",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(jf_cust_ins.sourceData, jf_cust_ins.formData, jf_cust_ins.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.customer_status))(jf_cust_ins.sourceData, jf_cust_ins.formData, jf_cust_ins.fieldState)}}",
+          "fieldType": "Select",
+          "identifier": "customer_status",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isFilterable": false,
+          "isRequired": false,
+          "isVisible": true,
+          "label": "Status",
+          "labelTextSize": "0.875rem",
+          "options": "{{\n  (get_cust_statuses.data || []).map(r => ({\n    label: r.status_label,\n    value: r.status_value\n  }))\n}}",
+          "originalIdentifier": "customer_status",
+          "position": 3,
+          "serverSideFiltering": false,
+          "sourceData": "10. Active Client"
+        },
+        "customer_tax_vat_number": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(jf_cust_ins.sourceData, jf_cust_ins.formData, jf_cust_ins.fieldState)}}",
+          "accessor": "customer_tax_vat_number",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(jf_cust_ins.sourceData, jf_cust_ins.formData, jf_cust_ins.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "null",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.customer_tax_vat_number))(jf_cust_ins.sourceData, jf_cust_ins.formData, jf_cust_ins.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "customer_tax_vat_number",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": true,
+          "label": "Tax Vat Number",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "customer_tax_vat_number",
+          "position": 11
+        },
+        "customer_type": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(jf_cust_ins.sourceData, jf_cust_ins.formData, jf_cust_ins.fieldState)}}",
+          "accessor": "customer_type",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(jf_cust_ins.sourceData, jf_cust_ins.formData, jf_cust_ins.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.customer_type))(jf_cust_ins.sourceData, jf_cust_ins.formData, jf_cust_ins.fieldState)}}",
+          "fieldType": "Select",
+          "identifier": "customer_type",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isFilterable": false,
+          "isRequired": false,
+          "isVisible": true,
+          "label": "Customer Type",
+          "labelTextSize": "0.875rem",
+          "options": "{{\n  (get_cust_types.data || []).map(r => ({\n    label: r.type_label,\n    value: r.type_value\n  }))\n}}",
+          "originalIdentifier": "customer_type",
+          "position": 2,
+          "serverSideFiltering": false,
+          "sourceData": "LSP"
+        },
+        "is_customer": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(jf_cust_ins.sourceData, jf_cust_ins.formData, jf_cust_ins.fieldState)}}",
+          "accessor": "is_customer",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(jf_cust_ins.sourceData, jf_cust_ins.formData, jf_cust_ins.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "Yes",
+          "fieldType": "Select",
+          "identifier": "is_customer",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isFilterable": false,
+          "isRequired": false,
+          "isVisible": true,
+          "label": "Is Customer",
+          "labelTextSize": "0.875rem",
+          "options": "[\n  {\n    \"label\": \"Yes\",\n    \"value\": \"Yes\"\n  },\n  {\n    \"label\": \"No\",\n    \"value\": \"No\"\n  }\n]",
+          "originalIdentifier": "is_customer",
+          "position": 21,
+          "serverSideFiltering": false,
+          "sourceData": "Yes"
+        },
+        "updated_at": {
+          "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(jf_cust_ins.sourceData, jf_cust_ins.formData, jf_cust_ins.fieldState)}}",
+          "accessor": "updated_at",
+          "borderRadius": "{{((sourceData, formData, fieldState) => ((appsmith.theme.borderRadius.appBorderRadius)))(jf_cust_ins.sourceData, jf_cust_ins.formData, jf_cust_ins.fieldState)}}",
+          "boxShadow": "none",
+          "children": {},
+          "dataType": "string",
+          "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData.updated_at))(jf_cust_ins.sourceData, jf_cust_ins.formData, jf_cust_ins.fieldState)}}",
+          "fieldType": "Text Input",
+          "iconAlign": "left",
+          "identifier": "updated_at",
+          "isCustomField": false,
+          "isDisabled": false,
+          "isRequired": false,
+          "isSpellCheck": false,
+          "isVisible": false,
+          "label": "Updated At",
+          "labelTextSize": "0.875rem",
+          "originalIdentifier": "updated_at",
+          "position": 20,
+          "sourceData": "2025-12-18T18:17:14Z"
+        }
+      },
+      "dataType": "object",
+      "defaultValue": "{{((sourceData, formData, fieldState) => (sourceData))(jf_cust_ins.sourceData, jf_cust_ins.formData, jf_cust_ins.fieldState)}}",
+      "fieldType": "Object",
+      "identifier": "__root_schema__",
+      "isCustomField": false,
+      "isDisabled": false,
+      "isRequired": false,
+      "isVisible": true,
+      "label": "",
+      "labelTextSize": "0.875rem",
+      "originalIdentifier": "__root_schema__",
+      "position": -1,
+      "sourceData": {
+        "created_at": "2025-09-20T10:38:09Z",
+        "currency_acronym": "USD",
+        "currency_id": 1,
+        "currency_name": "US Dollar",
+        "customer_country": "Ireland",
+        "customer_id": 8,
+        "customer_name": "Acolad Ireland",
+        "customer_status": "10. Active Client",
+        "customer_type": "LSP",
+        "is_customer": "Yes",
+        "updated_at": "2025-12-18T18:17:14Z"
+      }
+    }
+  },
+  "scrollContents": true,
+  "showReset": false,
+  "sourceData": "{{ {} }}",
+  "submitButtonLabel": "Submit",
+  "submitButtonStyles": {
+    "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+    "boxShadow": "none",
+    "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+    "buttonVariant": "PRIMARY"
+  },
+  "title": "Add New Lead",
+  "topRow": 10,
+  "type": "JSON_FORM_WIDGET",
+  "useSourceData": false,
+  "version": 1,
+  "widgetId": "kl8cc37mry",
+  "widgetName": "jf_cust_ins"
+}

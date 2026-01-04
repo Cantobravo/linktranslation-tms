@@ -1,0 +1,5 @@
+SELECT
+  p.portfolio_tags
+FROM portfolio p
+WHERE
+  COALESCE(p.portfolio_tags, '') <> '';

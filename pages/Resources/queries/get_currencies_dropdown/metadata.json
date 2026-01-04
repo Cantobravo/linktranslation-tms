@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT currency_id AS value, currency_acronym AS label FROM currencies ORDER BY currency_acronym;",
+      "body": "SELECT\n  currency_id AS value,\n  currency_name AS label\nFROM currencies\nORDER BY currency_name\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -25,7 +25,7 @@
     "dynamicBindingPathList": [],
     "name": "get_currencies_dropdown",
     "pageId": "Resources",
-    "runBehaviour": "MANUAL",
+    "runBehaviour": "AUTOMATIC",
     "userSetOnLoad": false
   }
 }

@@ -1,14 +1,14 @@
 {
   "animateLoading": true,
-  "borderRadius": "1.5rem",
-  "bottomRow": 1341,
+  "borderRadius": "0px",
+  "bottomRow": 1431,
   "boxShadow": "none",
   "canEscapeKeyClose": true,
   "canOutsideClickClose": true,
   "children": [
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 1310,
+      "bottomRow": 1400,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": true,
       "detachFromLayout": true,
@@ -29,7 +29,7 @@
       "leftColumn": 0,
       "maxDynamicHeight": 9000,
       "minDynamicHeight": 4,
-      "minHeight": 1470,
+      "minHeight": 1370,
       "minWidth": 450,
       "mobileBottomRow": 240,
       "mobileLeftColumn": 0,
@@ -54,14 +54,14 @@
   "dynamicBindingPathList": [],
   "dynamicHeight": "AUTO_HEIGHT",
   "dynamicTriggerPathList": [],
-  "height": 1310,
+  "height": 1400,
   "isCanvas": true,
   "isLoading": false,
   "key": "i9d6y4zgpz",
   "leftColumn": 17,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 24,
-  "minHeight": 1310,
+  "minHeight": 1400,
   "mobileBottomRow": 55,
   "mobileLeftColumn": 17,
   "mobileRightColumn": 41,
@@ -78,5 +78,5 @@
   "version": 2,
   "widgetId": "xvo1cgmpk3",
   "widgetName": "j_po_upd_m",
-  "width": 870
+  "width": 1032
 }

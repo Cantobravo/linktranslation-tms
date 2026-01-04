@@ -1,6 +1,0 @@
-SELECT
-  service_id   AS value,
-  service_name AS label
-FROM services
-WHERE COALESCE(service_is_active, 1) = 1
-ORDER BY service_name;

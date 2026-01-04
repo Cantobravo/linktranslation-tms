@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT\n  snippet_id,\n  snippet_title,\n  full_text\nFROM iso_texts\nWHERE snippet_id = {{ appsmith.store.isoSearch?.ids?.[appsmith.store.isoSearch?.idx || 0] || null }};\n",
+      "body": "SELECT\n  snippet_id,\n  snippet_title,\n  tags,\n  full_text\nFROM iso_texts\nWHERE snippet_id = {{ appsmith.store.isoSearch?.ids?.[appsmith.store.isoSearch?.idx || 0] || null }};\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

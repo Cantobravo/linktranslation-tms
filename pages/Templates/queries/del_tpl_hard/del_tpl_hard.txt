@@ -1,0 +1,2 @@
+DELETE FROM templates
+WHERE template_id = COALESCE({{ this.params.template_id }}, 0);

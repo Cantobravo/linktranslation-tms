@@ -1,14 +1,14 @@
 {
   "animateLoading": true,
   "borderRadius": "1.5rem",
-  "bottomRow": 134,
+  "bottomRow": 1459,
   "boxShadow": "none",
   "canEscapeKeyClose": true,
   "canOutsideClickClose": true,
   "children": [
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 1340,
+      "bottomRow": 1440,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": true,
       "detachFromLayout": true,
@@ -29,7 +29,7 @@
       "leftColumn": 0,
       "maxDynamicHeight": 9000,
       "minDynamicHeight": 4,
-      "minHeight": 1200,
+      "minHeight": 1510,
       "minWidth": 450,
       "mobileBottomRow": 240,
       "mobileLeftColumn": 0,
@@ -54,14 +54,14 @@
   "dynamicBindingPathList": [],
   "dynamicHeight": "AUTO_HEIGHT",
   "dynamicTriggerPathList": [],
-  "height": 1340,
+  "height": 1440,
   "isCanvas": true,
   "isLoading": false,
   "key": "guvz6lq737",
   "leftColumn": 16,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 24,
-  "minHeight": 1340,
+  "minHeight": 1440,
   "mobileBottomRow": 43,
   "mobileLeftColumn": 16,
   "mobileRightColumn": 40,
@@ -78,5 +78,5 @@
   "version": 2,
   "widgetId": "mp8sx6anlg",
   "widgetName": "j_ccont_upd_m",
-  "width": 810
+  "width": 944
 }

@@ -1,6 +1,0 @@
-SELECT
-  customer_id,
-  customer_name
-FROM customers
-WHERE customer_status = '10. Active Client'
-ORDER BY customer_name;

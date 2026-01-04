@@ -1,0 +1,16 @@
+UPDATE templates
+SET
+  template_name = COALESCE(NULLIF({{ jf_tpl_upd.formData.template_name }}, ''), NULL),
+  template_type = COALESCE(NULLIF({{ jf_tpl_upd.formData.template_type }}, ''), NULL),
+  template_description = COALESCE(NULLIF({{ jf_tpl_upd.formData.template_description }}, ''), NULL),
+  to_field = COALESCE(NULLIF({{ jf_tpl_upd.formData.to_field }}, ''), NULL),
+  subject_field = COALESCE(NULLIF({{ jf_tpl_upd.formData.subject_field }}, ''), NULL),
+  cc_field = COALESCE(NULLIF({{ jf_tpl_upd.formData.cc_field }}, ''), NULL),
+  bcc_field = COALESCE(NULLIF({{ jf_tpl_upd.formData.bcc_field }}, ''), NULL),
+  body_field = COALESCE(NULLIF({{ jf_tpl_upd.formData.body_field }}, ''), NULL),
+  is_active = COALESCE({{ jf_tpl_upd.formData.is_active }}, 1)
+WHERE template_id = COALESCE(
+  {{ jf_tpl_upd.formData.template_id }},
+  {{ appsmith.store.tplRow?.template_id }},
+  0
+);

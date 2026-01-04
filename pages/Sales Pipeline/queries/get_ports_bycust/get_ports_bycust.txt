@@ -1,0 +1,20 @@
+SELECT
+  customer_portal_id,
+  customer_portal_name,
+  customer_id,
+  customer_contact_id,
+  customer_portal_credentials,
+  customer_portal_website,
+  customer_portal_notes,
+  customer_portal_status,
+  portal_scope,
+  customer_portal_first_update,
+  customer_portal_last_update,
+  customer_portal_next_update,
+  created_at,
+  updated_at
+FROM customer_portals
+WHERE
+  customer_id = COALESCE({{ appsmith.store.sel_cust_id }}, -1)
+  AND portal_scope IN ('Profile','Both')
+ORDER BY customer_portal_name

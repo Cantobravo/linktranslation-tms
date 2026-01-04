@@ -1,7 +1,0 @@
-UPDATE work_team_un_credentials
-SET
-  is_assigned = 0,
-  assigned_to_work_team_member_id = NULL,
-  assigned_at = NULL,
-  updated_at = NOW()
-WHERE wtu_cred_id = {{ (appsmith.store.wtmCredRow?.origin_uncred_id || tbl_wtm_creds.triggeredRow.origin_uncred_id || 0) }};

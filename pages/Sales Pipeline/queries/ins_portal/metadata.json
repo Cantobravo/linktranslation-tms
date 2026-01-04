@@ -1,11 +1,11 @@
 {
-  "gitSyncId": "6840b6d2ece888096e42342a_d7ca4997-b112-43ec-b94e-39acb1f7cb6a",
+  "gitSyncId": "6840b6d2ece888096e42342a_1f336ce6-126e-47d7-85f9-d34e5afeb2c2",
   "id": "Sales Pipeline_ins_portal",
   "pluginId": "mysql-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "INSERT INTO customer_portals (\n  customer_id,\n  customer_contact_id,\n  customer_portal_name,\n  customer_portal_website,\n  customer_portal_credentials,\n  customer_portal_notes,\n  customer_portal_status,\n  customer_portal_first_update,\n  customer_portal_last_update,\n  customer_portal_next_update\n) VALUES (\n  {{ i_pt_customer_id.selectedOptionValue || null }},\n  {{ i_pt_contact_id.selectedOptionValue || null }},\n  {{ i_pt_name.text }},\n  {{ i_pt_website.text || null }},\n  {{ i_pt_creds.text || null }},\n  {{ i_pt_notes.text || null }},\n  {{ i_pt_status.selectedOptionValue || null }},\n  {{ i_pt_first_upd.selectedDate ? moment(i_pt_first_upd.selectedDate).format('YYYY-MM-DD') : null }},\n  {{ i_pt_last_upd.selectedDate ? moment(i_pt_last_upd.selectedDate).format('YYYY-MM-DD') : null }},\n  {{ i_pt_next_upd.selectedDate ? moment(i_pt_next_upd.selectedDate).format('YYYY-MM-DD') : null }}\n);\n",
+      "body": "INSERT INTO customer_portals (\n  customer_portal_name,\n  customer_id,\n  customer_contact_id,\n  customer_portal_credentials,\n  customer_portal_website,\n  customer_portal_notes,\n  customer_portal_status,\n  portal_scope,\n  customer_portal_first_update,\n  customer_portal_last_update,\n  customer_portal_next_update\n) VALUES (\n  COALESCE(NULLIF({{ jf_port_ins.formData.customer_portal_name || '' }}, ''), NULL),\n  COALESCE(NULLIF({{ jf_port_ins.formData.customer_id || '' }}, ''), NULL),\n  COALESCE(NULLIF({{ jf_port_ins.formData.customer_contact_id || '' }}, ''), NULL),\n  COALESCE(NULLIF({{ jf_port_ins.formData.customer_portal_credentials || '' }}, ''), NULL),\n  COALESCE(NULLIF({{ jf_port_ins.formData.customer_portal_website || '' }}, ''), NULL),\n  COALESCE(NULLIF({{ jf_port_ins.formData.customer_portal_notes || '' }}, ''), NULL),\n  COALESCE(NULLIF({{ jf_port_ins.formData.customer_portal_status || '' }}, ''), 'Active'),\n  COALESCE(NULLIF({{ jf_port_ins.formData.portal_scope || '' }}, ''), 'Profile'),\n  COALESCE(NULLIF({{ jf_port_ins.formData.customer_portal_first_update || '' }}, ''), NULL),\n  COALESCE(NULLIF({{ jf_port_ins.formData.customer_portal_last_update || '' }}, ''), NULL),\n  COALESCE(NULLIF({{ jf_port_ins.formData.customer_portal_next_update || '' }}, ''), NULL)\n);\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

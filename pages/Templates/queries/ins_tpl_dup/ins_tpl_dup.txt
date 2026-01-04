@@ -1,0 +1,23 @@
+INSERT INTO templates (
+  template_name,
+  template_type,
+  template_description,
+  to_field,
+  subject_field,
+  cc_field,
+  bcc_field,
+  body_field,
+  is_active
+)
+SELECT
+  CONCAT(template_name, ' (Copy)'),
+  template_type,
+  template_description,
+  to_field,
+  subject_field,
+  cc_field,
+  bcc_field,
+  body_field,
+  1
+FROM templates
+WHERE template_id = COALESCE({{ appsmith.store.tplDupId }}, 0);

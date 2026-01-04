@@ -1,11 +1,11 @@
 {
-  "gitSyncId": "6840b6d2ece888096e42342a_c61b8a6b-23df-4bfd-aac3-7d2cec2167a1",
+  "gitSyncId": "6840b6d2ece888096e42342a_f7353c98-955d-439f-a232-712d0671a320",
   "id": "Customer Contacts_get_ccont_list",
   "pluginId": "mysql-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT\n  cc.customer_contact_id,\n  cc.customer_id,\n  c.customer_name,\n  cc.customer_contact_name,\n  cc.customer_contact_email,\n  cc.customer_contact_status,\n  cc.customer_contact_industry,\n  cc.customer_contact_website,\n  cc.customer_contact_linkedin,\n  cc.customer_contact_first_contact,\n  cc.customer_contact_last_contact,\n  cc.customer_contact_next_contact,\n  cc.customer_contact_contact_method,\n  cc.customer_contact_test,\n  cc.customer_contact_notes,\n  cc.created_at,\n  cc.updated_at\nFROM customer_contacts cc\nJOIN customers c ON c.customer_id = cc.customer_id\nORDER BY cc.customer_contact_id DESC;\n",
+      "body": "SELECT\n  cc.customer_contact_id,\n  cc.customer_contact_name,\n  cc.contact_position,\n  cc.customer_contact_email,\n  cc.customer_id,\n  c.customer_name,\n  c.customer_status,\n  cc.updated_at\nFROM customer_contacts cc\nJOIN customers c\n  ON c.customer_id = cc.customer_id\nWHERE\n  cc.contact_is_active = 1\n  AND\n  (\n    (\n      {{ toggle_show_inactive_ccont.isSwitchedOn ? 1 : 0 }} = 0\n      AND c.customer_status = '10. Active Client'\n    )\n    OR\n    (\n      {{ toggle_show_inactive_ccont.isSwitchedOn ? 1 : 0 }} = 1\n      AND c.customer_status <> '10. Active Client'\n    )\n  )\n  AND\n  (\n    COALESCE({{ tbl_ccont.searchText }}, '') = ''\n    OR cc.customer_contact_name LIKE CONCAT('%', {{ tbl_ccont.searchText }}, '%')\n    OR c.customer_name LIKE CONCAT('%', {{ tbl_ccont.searchText }}, '%')\n    OR cc.customer_contact_email LIKE CONCAT('%', {{ tbl_ccont.searchText }}, '%')\n  )\nORDER BY cc.updated_at DESC;\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -22,10 +22,14 @@
       "name": "linktranslation",
       "pluginId": "mysql-plugin"
     },
-    "dynamicBindingPathList": [],
+    "dynamicBindingPathList": [
+      {
+        "key": "body"
+      }
+    ],
     "name": "get_ccont_list",
     "pageId": "Customer Contacts",
-    "runBehaviour": "MANUAL",
+    "runBehaviour": "AUTOMATIC",
     "userSetOnLoad": false
   }
 }

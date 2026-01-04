@@ -1,6 +1,0 @@
-UPDATE templates
-SET template_vars = JSON_REMOVE(
-  COALESCE(template_vars,'{}'),
-  CONCAT('$.', {{ tbl_tpl_vars.triggeredRow.var_key || null }})
-)
-WHERE template_id = {{ tbl_templates.triggeredRow ? tbl_templates.triggeredRow.template_id : tbl_templates.selectedRow?.template_id || null }};

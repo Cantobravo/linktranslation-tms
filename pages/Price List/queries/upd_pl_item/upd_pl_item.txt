@@ -1,0 +1,11 @@
+UPDATE price_list_items
+SET
+  service_id = {{ this.params.service_id }},
+  unit_id = {{ this.params.unit_id }},
+  source_language_id = {{ this.params.source_language_id }},
+  target_language_id = {{ this.params.target_language_id }},
+  sell_rate = {{ this.params.sell_rate }},
+  cost_rate = {{ this.params.cost_rate }},
+  is_active = {{ this.params.is_active }},
+  notes = {{ this.params.notes }}
+WHERE price_list_item_id = {{ this.params.price_list_item_id }}

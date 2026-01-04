@@ -1,0 +1,25 @@
+INSERT INTO customer_portals (
+  customer_portal_name,
+  customer_id,
+  customer_contact_id,
+  customer_portal_credentials,
+  customer_portal_website,
+  customer_portal_notes,
+  customer_portal_status,
+  portal_scope,
+  customer_portal_first_update,
+  customer_portal_last_update,
+  customer_portal_next_update
+) VALUES (
+  {{ jf_port_ins.formData.customer_portal_name ?? null }},
+  {{ jf_port_ins.formData.customer_id ?? null }},
+  {{ jf_port_ins.formData.customer_contact_id ?? null }},
+  {{ jf_port_ins.formData.customer_portal_credentials ?? null }},
+  {{ jf_port_ins.formData.customer_portal_website ?? null }},
+  {{ jf_port_ins.formData.customer_portal_notes ?? null }},
+  COALESCE(NULLIF({{ jf_port_ins.formData.customer_portal_status }}, ''), 'Active'),
+  COALESCE(NULLIF({{ jf_port_ins.formData.portal_scope }}, ''), 'Projects'),
+  {{ jf_port_ins.formData.customer_portal_first_update ?? null }},
+  {{ jf_port_ins.formData.customer_portal_last_update ?? null }},
+  {{ jf_port_ins.formData.customer_portal_next_update ?? null }}
+);

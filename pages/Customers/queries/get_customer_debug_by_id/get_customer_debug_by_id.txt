@@ -1,7 +1,0 @@
-SELECT
-  c.customer_id,
-  c.customer_name,
-  c.customer_status,
-  c.updated_at
-FROM customers c
-WHERE c.customer_id = {{ customer_id }};

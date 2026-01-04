@@ -4,7 +4,7 @@
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
   "bottomRow": 14,
   "boxShadow": "none",
-  "defaultOptionValue": "{{ ((options, serverSideFiltering) => (  (get_role_perms.data || []).map(rp => rp.permission_id) ))(ms_role_perms.options, ms_role_perms.serverSideFiltering) }}",
+  "defaultOptionValue": "{{ ((options, serverSideFiltering) => (  (get_role_perms.data || []).map(x => x.permission_id) ))(ms_role_perms.options, ms_role_perms.serverSideFiltering) }}",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"

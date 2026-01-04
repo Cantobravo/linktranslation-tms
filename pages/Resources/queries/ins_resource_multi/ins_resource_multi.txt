@@ -7,6 +7,11 @@ INSERT INTO resources (
   resource_status,
   resource_phone,
   resource_documentation,
+  resource_native_language,
+  currency_id,
+  resource_payment_term,
+  resource_address,
+  resource_feedback_notes,
   created_at
 )
 VALUES (
@@ -21,6 +26,11 @@ VALUES (
   NULLIF({{ j_res_ins_form.formData.resource_status }}, ''),
   NULLIF({{ j_res_ins_form.formData.resource_phone }}, ''),
   NULLIF({{ j_res_ins_form.formData.resource_documentation }}, ''),
+  NULLIF({{ j_res_ins_form.formData.resource_native_language }}, ''),
+  COALESCE(NULLIF({{ j_res_ins_form.formData.currency_id }}, ''), NULL),
+  NULLIF({{ j_res_ins_form.formData.resource_payment_term }}, ''),
+  NULLIF({{ j_res_ins_form.formData.resource_address }}, ''),
+  NULLIF({{ j_res_ins_form.formData.resource_feedback_notes }}, ''),
   NOW()
 );
 

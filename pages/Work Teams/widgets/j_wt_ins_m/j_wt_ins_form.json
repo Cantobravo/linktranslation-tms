@@ -3,9 +3,9 @@
   "autoGenerateForm": true,
   "backgroundColor": "#fff",
   "borderColor": "{{appsmith.theme.colors.primaryColor}}",
-  "borderRadius": "1.5rem",
+  "borderRadius": "0px",
   "borderWidth": "1",
-  "bottomRow": 94,
+  "bottomRow": 120,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "childStylesheet": {
     "ARRAY": {
@@ -228,7 +228,7 @@
       "key": "schema.__root_schema__.children.customer_id.defaultValue"
     }
   ],
-  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicHeight": "FIXED",
   "dynamicPropertyPathList": [
     {
       "key": "sourceData"
@@ -278,7 +278,7 @@
   "isLoading": false,
   "isVisible": true,
   "key": "1nwyhb51be",
-  "leftColumn": 1,
+  "leftColumn": 0,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "minWidth": 450,
@@ -287,9 +287,7 @@
   "mobileRightColumn": 26,
   "mobileTopRow": 8,
   "needsErrorInfo": false,
-  "onSubmit": "{{\n  (async () => {\n    try {\n      await ins_work_team.run();\n\n      if (toggle_show_archived_wt.isSwitchedOn) {\n        await (get_work_teams_all?.run?.() || get_work_teams_list.run());\n      } else {\n        await (get_work_teams_nonarchived?.run?.() || get_work_teams_list.run());\n      }\n\n      resetWidget('tbl_work_teams', true);\n      resetWidget('j_wt_ins_form', true);\n      closeModal('j_wt_ins_m');\n      showAlert('Work team created.', 'success');\n    } catch (e) {\n      showAlert('Insert failed: ' + (e?.message || e), 'error');\n    }\n  })()\n}}\n",
-  "originalBottomRow": 108,
-  "originalTopRow": 1,
+  "onSubmit": "{{\n  (async () => {\n    try {\n      await ins_work_team.run();\n\n      await get_work_teams_list.run();\n\n      resetWidget('tbl_work_teams', true);\n      resetWidget('j_wt_ins_form', true);\n      closeModal('j_wt_ins_m');\n\n      showAlert('Work team created.', 'success');\n    } catch (e) {\n      showAlert('Insert failed: ' + (e?.message || e), 'error');\n    }\n  })()\n}}\n",
   "parentColumnSpace": 6.9375,
   "parentId": "e1t18llo0k",
   "parentRowSpace": 10,
@@ -302,7 +300,7 @@
     "buttonVariant": "SECONDARY"
   },
   "responsiveBehavior": "fill",
-  "rightColumn": 57,
+  "rightColumn": 62,
   "schema": {
     "__root_schema__": {
       "accessor": "__root_schema__",
@@ -330,7 +328,7 @@
           "label": "Certification Names",
           "labelTextSize": "0.875rem",
           "originalIdentifier": "certification_names",
-          "position": 12,
+          "position": 10,
           "sourceData": ""
         },
         "currency_id": {
@@ -344,7 +342,7 @@
           "fieldType": "Select",
           "identifier": "currency_id",
           "isCustomField": false,
-          "isDisabled": true,
+          "isDisabled": false,
           "isFilterable": false,
           "isRequired": false,
           "isVisible": true,
@@ -352,7 +350,7 @@
           "labelTextSize": "0.875rem",
           "options": "{{ get_currencies_dd.data }}",
           "originalIdentifier": "currency_id",
-          "position": 6,
+          "position": 9,
           "serverSideFiltering": false
         },
         "customer_account_id": {
@@ -511,7 +509,7 @@
           "label": "Webapp Name",
           "labelTextSize": "0.875rem",
           "originalIdentifier": "webapp_name",
-          "position": 13
+          "position": 12
         },
         "work_team_status": {
           "accentColor": "{{((sourceData, formData, fieldState) => ((appsmith.theme.colors.primaryColor)))(j_wt_ins_form.sourceData, j_wt_ins_form.formData, j_wt_ins_form.fieldState)}}",
@@ -532,7 +530,7 @@
           "labelTextSize": "0.875rem",
           "options": "{{[\n  { \"label\": \"Active\", \"value\": \"Active\" },\n  { \"label\": \"Paused\", \"value\": \"Paused\" },\n  { \"label\": \"Archived\", \"value\": \"Archived\" }\n]\n}}",
           "originalIdentifier": "work_team_status",
-          "position": 7,
+          "position": 6,
           "serverSideFiltering": false,
           "sourceData": "Active"
         }
@@ -569,7 +567,7 @@
     "placement": "START"
   },
   "title": "New Work Team",
-  "topRow": 1,
+  "topRow": 12,
   "type": "JSON_FORM_WIDGET",
   "useSourceData": false,
   "version": 1,

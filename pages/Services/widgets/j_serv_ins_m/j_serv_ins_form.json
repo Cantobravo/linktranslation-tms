@@ -3,9 +3,9 @@
   "autoGenerateForm": true,
   "backgroundColor": "#fff",
   "borderColor": "{{appsmith.theme.colors.primaryColor}}",
-  "borderRadius": "1.5rem",
+  "borderRadius": "0px",
   "borderWidth": "1",
-  "bottomRow": 37,
+  "bottomRow": 35,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "childStylesheet": {
     "ARRAY": {
@@ -158,7 +158,7 @@
   "isLoading": false,
   "isVisible": true,
   "key": "8mivzeesu5",
-  "leftColumn": 3,
+  "leftColumn": 2,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "minWidth": 450,
@@ -168,8 +168,8 @@
   "mobileTopRow": 3,
   "needsErrorInfo": false,
   "onSubmit": "{{\n  (async () => {\n    const name = (j_serv_ins_form.formData?.service_name || '').trim();\n    if (!name) { showAlert('Service name is required', 'warning'); return; }\n\n    await ins_service.run();\n\n    if (toggle_show_inactive_services?.isSwitchedOn) {\n      await get_services_all.run();\n    } else {\n      await get_services_active.run();\n    }\n\n    resetWidget('j_serv_ins_form', true);\n    closeModal('j_serv_ins_m');\n    showAlert('Service created', 'success');\n  })()\n}}\n",
-  "originalBottomRow": 37,
-  "originalTopRow": 3,
+  "originalBottomRow": 35,
+  "originalTopRow": 1,
   "parentColumnSpace": 6.9375,
   "parentId": "d4adxz50im",
   "parentRowSpace": 10,
@@ -182,7 +182,7 @@
     "buttonVariant": "SECONDARY"
   },
   "responsiveBehavior": "fill",
-  "rightColumn": 58,
+  "rightColumn": 55,
   "schema": {
     "__root_schema__": {
       "accessor": "__root_schema__",
@@ -289,7 +289,7 @@
     "placement": "START"
   },
   "title": "Add Service",
-  "topRow": 3,
+  "topRow": 1,
   "type": "JSON_FORM_WIDGET",
   "useSourceData": false,
   "version": 1,

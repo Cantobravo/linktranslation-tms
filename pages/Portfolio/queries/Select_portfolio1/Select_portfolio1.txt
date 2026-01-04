@@ -1,0 +1,10 @@
+SELECT
+  *
+FROM
+  portfolio
+ORDER BY
+  {{Table1.sortOrder.column || 'portfolio_id'}} {{Table1.sortOrder.order !== "desc" ? "" : "DESC"}}
+LIMIT
+  {{Table1.pageSize}}
+OFFSET
+  {{Table1.pageOffset}}

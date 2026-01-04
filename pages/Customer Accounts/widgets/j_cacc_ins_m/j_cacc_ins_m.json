@@ -1,14 +1,14 @@
 {
   "animateLoading": true,
-  "borderRadius": "1.5rem",
-  "bottomRow": 541,
+  "borderRadius": "0px",
+  "bottomRow": 681,
   "boxShadow": "none",
   "canEscapeKeyClose": true,
   "canOutsideClickClose": true,
   "children": [
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 520,
+      "bottomRow": 590,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": true,
       "detachFromLayout": true,
@@ -29,7 +29,7 @@
       "leftColumn": 0,
       "maxDynamicHeight": 9000,
       "minDynamicHeight": 4,
-      "minHeight": 520,
+      "minHeight": 592,
       "minWidth": 450,
       "mobileBottomRow": 240,
       "mobileLeftColumn": 0,
@@ -52,21 +52,31 @@
   ],
   "detachFromLayout": true,
   "dynamicBindingPathList": [],
-  "dynamicHeight": "AUTO_HEIGHT",
-  "dynamicTriggerPathList": [],
-  "height": 520,
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [
+    {
+      "key": "onClose"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClose"
+    }
+  ],
+  "height": 592,
   "isCanvas": true,
   "isLoading": false,
   "key": "guvz6lq737",
   "leftColumn": 20,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 24,
-  "minHeight": 520,
+  "minHeight": 660,
   "mobileBottomRow": 45,
   "mobileLeftColumn": 20,
   "mobileRightColumn": 44,
   "mobileTopRow": 21,
   "needsErrorInfo": false,
+  "onClose": "{{\n  storeValue('caccInsObj', {})\n}}\n",
   "parentColumnSpace": 18.5712890625,
   "parentId": "0",
   "parentRowSpace": 10,
@@ -78,5 +88,5 @@
   "version": 2,
   "widgetId": "t6893ug2bl",
   "widgetName": "j_cacc_ins_m",
-  "width": 922
+  "width": 602
 }

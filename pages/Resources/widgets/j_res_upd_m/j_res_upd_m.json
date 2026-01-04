@@ -1,14 +1,14 @@
 {
   "animateLoading": true,
-  "borderRadius": "1.5rem",
-  "bottomRow": 746,
+  "borderRadius": "0px",
+  "bottomRow": 1276,
   "boxShadow": "none",
   "canEscapeKeyClose": true,
   "canOutsideClickClose": true,
   "children": [
     {
       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-      "bottomRow": 720,
+      "bottomRow": 1250,
       "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
       "canExtend": true,
       "detachFromLayout": true,
@@ -29,7 +29,7 @@
       "leftColumn": 0,
       "maxDynamicHeight": 9000,
       "minDynamicHeight": 4,
-      "minHeight": 650,
+      "minHeight": 1250,
       "minWidth": 450,
       "mobileBottomRow": 240,
       "mobileLeftColumn": 0,
@@ -54,7 +54,7 @@
   "dynamicBindingPathList": [],
   "dynamicHeight": "AUTO_HEIGHT",
   "dynamicTriggerPathList": [],
-  "height": 720,
+  "height": 1250,
   "isCanvas": true,
   "isLoading": false,
   "key": "wdu4p8c2zm",
@@ -80,5 +80,5 @@
   "version": 2,
   "widgetId": "em1kvl3u44",
   "widgetName": "j_res_upd_m",
-  "width": 1356.6
+  "width": 1141.8999999999999
 }

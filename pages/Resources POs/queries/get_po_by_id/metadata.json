@@ -29,7 +29,7 @@
     ],
     "name": "get_po_by_id",
     "pageId": "Resources POs",
-    "runBehaviour": "AUTOMATIC",
-    "userSetOnLoad": false
+    "runBehaviour": "MANUAL",
+    "userSetOnLoad": true
   }
 }

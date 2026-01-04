@@ -1,21 +1,34 @@
 SELECT
   cc.customer_contact_id,
+  cc.customer_contact_name,
+  cc.contact_position,
+  cc.customer_contact_email,
   cc.customer_id,
   c.customer_name,
-  cc.customer_contact_name,
-  cc.customer_contact_email,
-  cc.customer_contact_status,
-  cc.customer_contact_industry,
-  cc.customer_contact_website,
-  cc.customer_contact_linkedin,
-  cc.customer_contact_first_contact,
-  cc.customer_contact_last_contact,
-  cc.customer_contact_next_contact,
-  cc.customer_contact_contact_method,
-  cc.customer_contact_test,
-  cc.customer_contact_notes,
-  cc.created_at,
+  c.customer_status,
   cc.updated_at
 FROM customer_contacts cc
-JOIN customers c ON c.customer_id = cc.customer_id
-ORDER BY cc.customer_contact_id DESC;
+JOIN customers c
+  ON c.customer_id = cc.customer_id
+WHERE
+  cc.contact_is_active = 1
+  AND
+  (
+    (
+      {{ toggle_show_inactive_ccont.isSwitchedOn ? 1 : 0 }} = 0
+      AND c.customer_status = '10. Active Client'
+    )
+    OR
+    (
+      {{ toggle_show_inactive_ccont.isSwitchedOn ? 1 : 0 }} = 1
+      AND c.customer_status <> '10. Active Client'
+    )
+  )
+  AND
+  (
+    COALESCE({{ tbl_ccont.searchText }}, '') = ''
+    OR cc.customer_contact_name LIKE CONCAT('%', {{ tbl_ccont.searchText }}, '%')
+    OR c.customer_name LIKE CONCAT('%', {{ tbl_ccont.searchText }}, '%')
+    OR cc.customer_contact_email LIKE CONCAT('%', {{ tbl_ccont.searchText }}, '%')
+  )
+ORDER BY cc.updated_at DESC;

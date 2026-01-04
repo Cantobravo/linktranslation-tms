@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT\n  r.resource_id,\n  r.resource_full_name,\n  r.resource_username,\n  r.resource_email,\n  r.resource_status,\n  r.resource_native_language,\n  CASE\n    WHEN COALESCE(lp.language_pairs, '') <> '' THEN lp.language_pairs\n    ELSE TRIM(BOTH '-' FROM CONCAT(COALESCE(ls1.language_name, ''), '-', COALESCE(lt1.language_name, '')))\n  END AS language_pairs,\n  r.created_at,\n  r.updated_at\nFROM resources r\nLEFT JOIN languages ls1 ON ls1.language_id = r.source_language_id\nLEFT JOIN languages lt1 ON lt1.language_id = r.target_language_id\nLEFT JOIN (\n  SELECT\n    rlp.resource_id,\n    GROUP_CONCAT(\n      DISTINCT CONCAT(ls.language_name, '-', lt.language_name)\n      ORDER BY ls.language_name, lt.language_name\n      SEPARATOR ' | '\n    ) AS language_pairs\n  FROM resource_language_pairs rlp\n  JOIN languages ls ON ls.language_id = rlp.source_language_id\n  JOIN languages lt ON lt.language_id = rlp.target_language_id\n  WHERE COALESCE(rlp.is_active, 1) = 1\n  GROUP BY rlp.resource_id\n) lp ON lp.resource_id = r.resource_id\nORDER BY r.resource_full_name\n",
+      "body": "SELECT\n  r.resource_id,\n  r.resource_first_name,\n  r.resource_last_name,\n  r.resource_full_name,\n  r.resource_username,\n  r.resource_email,\n  r.resource_country,\n  r.resource_status,\n  r.resource_phone,\n  r.resource_documentation,\n  r.resource_native_language,\n  ln.language_name AS resource_native_language_name,\n  r.currency_id,\n  cur.currency_name AS currency_name,\n  r.resource_payment_term,\n  r.resource_address,\n  r.resource_feedback_notes,\n  r.resource_is_active,\n  r.role_id,\n  ro.role_name AS role_name,\n  COALESCE(lp.language_pairs, '') AS language_pairs,\n  r.created_at,\n  r.updated_at\nFROM resources r\nLEFT JOIN currencies cur\n  ON cur.currency_id = r.currency_id\nLEFT JOIN roles ro\n  ON ro.role_id = r.role_id\nLEFT JOIN languages ln\n  ON ln.language_id = CAST(r.resource_native_language AS UNSIGNED)\nLEFT JOIN (\n  SELECT\n    rlp.resource_id,\n    GROUP_CONCAT(\n      DISTINCT CONCAT(ls.language_name, ' > ', lt.language_name)\n      ORDER BY ls.language_name, lt.language_name\n      SEPARATOR ' | '\n    ) AS language_pairs\n  FROM resource_language_pairs rlp\n  JOIN languages ls ON ls.language_id = rlp.source_language_id\n  JOIN languages lt ON lt.language_id = rlp.target_language_id\n  WHERE COALESCE(rlp.is_active, 1) = 1\n  GROUP BY rlp.resource_id\n) lp ON lp.resource_id = r.resource_id\nWHERE\n  (\n    {{ appsmith.store.wtPick ? 0 : 1 }} = 1\n    OR (\n      {{ (appsmith.store.wtMode || 'members') === 'members' ? 1 : 0 }} = 1\n      AND EXISTS (\n        SELECT 1\n        FROM work_team_members wtm\n        WHERE wtm.resource_id = r.resource_id\n          AND COALESCE(wtm.is_active, 1) = 1\n          AND wtm.work_team_id = {{ appsmith.store.wtPick || null }}\n      )\n    )\n    OR (\n      {{ (appsmith.store.wtMode || 'members') === 'nonmembers' ? 1 : 0 }} = 1\n      AND NOT EXISTS (\n        SELECT 1\n        FROM work_team_members wtm\n        WHERE wtm.resource_id = r.resource_id\n          AND COALESCE(wtm.is_active, 1) = 1\n          AND wtm.work_team_id = {{ appsmith.store.wtPick || null }}\n      )\n    )\n  )\n  AND (\n    {{ (appsmith.store.resStatusCsv || '').length ? 0 : 1 }} = 1\n    OR FIND_IN_SET(\n      LOWER(COALESCE(r.resource_status, '')),\n      '{{ appsmith.store.resStatusCsv || \"\" }}'\n    ) > 0\n    OR (\n      {{ appsmith.store.resStatusHasEmpty ? 1 : 0 }} = 1\n      AND (r.resource_status <=> NULL OR r.resource_status = '')\n    )\n  )\nORDER BY r.resource_full_name\nLIMIT {{ tbl_resources.pageSize }}\nOFFSET {{ tbl_resources.pageOffset }};\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -22,10 +22,14 @@
       "name": "linktranslation",
       "pluginId": "mysql-plugin"
     },
-    "dynamicBindingPathList": [],
+    "dynamicBindingPathList": [
+      {
+        "key": "body"
+      }
+    ],
     "name": "get_resources_all",
     "pageId": "Resources",
-    "runBehaviour": "AUTOMATIC",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": true
   }
 }

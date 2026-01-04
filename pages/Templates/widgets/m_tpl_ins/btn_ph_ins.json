@@ -1,0 +1,55 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 15,
+  "boxShadow": "none",
+  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "buttonVariant": "SECONDARY",
+  "disabledWhenInvalid": true,
+  "dynamicBindingPathList": [
+    {
+      "key": "buttonColor"
+    },
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "isDefaultClickDisabled": true,
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "rgsntq8pu3",
+  "leftColumn": 33,
+  "minWidth": 120,
+  "mobileBottomRow": 15,
+  "mobileLeftColumn": 23,
+  "mobileRightColumn": 39,
+  "mobileTopRow": 11,
+  "needsErrorInfo": false,
+  "onClick": "{{\n  (() => {\n    const key = appsmith.store.tplFocusKey;\n    const ph = dd_ph_ins.selectedOptionValue;\n\n    if (!key || !ph) return;\n\n    const obj = { ...appsmith.store.tplInsObj };\n    obj[key] = (obj[key] ?? \"\") + ph;\n\n    storeValue(\"tplInsObj\", obj);\n  })()\n}}\n",
+  "parentColumnSpace": 12.15625,
+  "parentId": "foqemxvqd9",
+  "parentRowSpace": 10,
+  "placement": "CENTER",
+  "recaptchaType": "V3",
+  "renderMode": "CANVAS",
+  "resetFormOnClick": true,
+  "responsiveBehavior": "hug",
+  "rightColumn": 49,
+  "text": "Insert Placeholder",
+  "topRow": 10,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "io84yl026b",
+  "widgetName": "btn_ph_ins"
+}

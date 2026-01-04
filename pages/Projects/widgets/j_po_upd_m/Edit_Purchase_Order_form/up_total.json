@@ -5,7 +5,7 @@
   "borderRadius": "0.375rem",
   "bottomRow": 49,
   "boxShadow": "none",
-  "defaultText": "{{ \n  Number(up_volume.text) && Number(up_rate.text)\n    ? Number(up_volume.text) * Number(up_rate.text)\n    : appsmith.store.selectedProjectData.project_total\n}}",
+  "defaultText": "{{\n  (\n    (Number(up_volume.text || 0) * Number(up_rate.text || 0)) || 0\n  ).toFixed(2)\n}}\n",
   "dynamicBindingPathList": [
     {
       "key": "accentColor"
@@ -17,7 +17,7 @@
   "dynamicHeight": "FIXED",
   "dynamicTriggerPathList": [],
   "iconAlign": "left",
-  "inputType": "TEXT",
+  "inputType": "NUMBER",
   "isDisabled": true,
   "isLoading": false,
   "isRequired": false,
@@ -45,6 +45,7 @@
   "resetOnSubmit": true,
   "responsiveBehavior": "fill",
   "rightColumn": 37,
+  "shouldAllowAutofill": false,
   "showStepArrows": false,
   "topRow": 42,
   "type": "INPUT_WIDGET_V2",

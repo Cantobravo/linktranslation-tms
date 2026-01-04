@@ -1,0 +1,7 @@
+SELECT DISTINCT
+  p.project_area AS label,
+  p.project_area AS value
+FROM portfolio p
+WHERE
+  COALESCE(p.project_area, '') <> ''
+ORDER BY p.project_area;

@@ -2,10 +2,10 @@
   "accentColor": "{{appsmith.theme.colors.primaryColor}}",
   "allowAddNewRow": false,
   "animateLoading": true,
-  "borderColor": "{{appsmith.theme.colors.primaryColor}}",
-  "borderRadius": "1.5rem",
-  "borderWidth": "3",
-  "bottomRow": 142,
+  "borderColor": "#dbeafe",
+  "borderRadius": "0px",
+  "borderWidth": "1",
+  "bottomRow": 138,
   "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
   "cachedTableData": {},
   "canFreezeColumn": true,
@@ -62,7 +62,7 @@
     "resource_full_name": 164
   },
   "compactMode": "DEFAULT",
-  "customIsLoading": false,
+  "customIsLoading": true,
   "customIsLoadingValue": "",
   "defaultPageSize": 0,
   "defaultSelectedRowIndex": 0,
@@ -125,9 +125,6 @@
     },
     {
       "key": "primaryColumns.customColumn3.boxShadow"
-    },
-    {
-      "key": "borderColor"
     }
   ],
   "dynamicPropertyPathList": [
@@ -159,14 +156,15 @@
   "endOfData": false,
   "flexVerticalAlignment": "start",
   "horizontalAlignment": "CENTER",
+  "infiniteScrollEnabled": true,
   "inlineEditingSaveOption": "ROW_LEVEL",
   "isLoading": false,
-  "isSortable": true,
+  "isSortable": false,
   "isVisible": true,
   "isVisibleDownload": true,
   "isVisibleFilters": false,
   "isVisiblePagination": true,
-  "isVisibleSearch": true,
+  "isVisibleSearch": false,
   "key": "68uum8i8vi",
   "label": "Data",
   "leftColumn": 0,
@@ -177,7 +175,7 @@
   "mobileTopRow": 18,
   "multiRowSelection": true,
   "needsErrorInfo": false,
-  "onRowSelected": "{{\n(async () => {\n  const row = tbl_team_members.selectedRow;\n  if (!row) return;\n\n  // 1) Remember which member is active\n  await storeValue('wtmRow', row);\n\n  // 2) Load child data\n  await get_wtm_detail.run();\n  await get_wtm_credentials.run();\n  await get_wtm_links.run();\n\n  // 3) Default/fallback tab\n  await storeValue('u_wtm_tab', appsmith.store.u_wtm_tab || 'Basic');\n})();\n}}\n\n",
+  "onRowSelected": "{{\n(async () => {\n  const row = tbl_team_members.selectedRow;\n  if (!row) return;\n\n  // 1) Remember which member is active\n  await storeValue('wtmRow', row);\n\n  // 2) Always load only the Basic detail on selection\n  await get_wtm_detail.run();\n\n  // 3) Keep current tab (or default to Basic) but DO NOT preload other tabs here\n  const tab = appsmith.store.u_wtm_tab || 'Basic';\n  await storeValue('u_wtm_tab', tab);\n\n  // Optional: if you want the selected tab to immediately load its dataset\n  if (tab === 'Credentials') { await get_wtm_credentials.run(); }\n  if (tab === 'Links')       { await get_wtm_links.run(); }\n})();\n}}\n",
   "originalBottomRow": 88,
   "originalTopRow": 55,
   "parentColumnSpace": 6.9375,
@@ -185,6 +183,14 @@
   "parentRowSpace": 10,
   "primaryColumnId": "work_team_member_id",
   "primaryColumns": {
+    "Edit": {
+      "isCellEditable": false,
+      "isEditable": false
+    },
+    "Remove": {
+      "isCellEditable": false,
+      "isEditable": false
+    },
     "alias_email": {
       "alias": "alias_email",
       "allowCellWrapping": false,
@@ -424,7 +430,7 @@
       "isEditable": false,
       "isSaveVisible": true,
       "isVisible": true,
-      "label": "is_available",
+      "label": "Availability",
       "notation": "standard",
       "originalId": "is_available",
       "sticky": "",
@@ -746,6 +752,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 38,
   "searchKey": "",
+  "serverSidePaginationEnabled": true,
   "tableData": "{{ get_team_members.data }}\n",
   "textSize": "0.875rem",
   "topRow": 45,

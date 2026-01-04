@@ -1,1 +1,5 @@
-SELECT language_id AS value, language_name AS label FROM languages ORDER BY language_name;
+SELECT
+  CAST(l.language_id AS CHAR) AS value,
+  l.language_name AS label
+FROM languages l
+ORDER BY l.language_name;

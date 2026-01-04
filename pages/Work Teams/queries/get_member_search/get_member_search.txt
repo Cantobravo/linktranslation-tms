@@ -4,43 +4,47 @@ SELECT
   wtm.resource_id,
   r.resource_full_name,
   r.resource_email,
-  wtm.`is_available`,
+  r.resource_country,
+  wtm.is_available,
   wtm.certification_status,
   wtm.daily_capacity_words,
   wtm.po_status,
   wtm.rates_text,
   wtm.note,
-  COALESCE(wtmc.alias_email, '') AS alias_email,
-  COALESCE(wtmc.username, '')    AS username,
-  COALESCE(NULLIF(wtmc.alias_email,''), r.resource_email) AS email_to
+  COALESCE(wtm.is_active,1) AS is_active,
+  wtm.updated_at,
+  c0.system_code AS system_code,
+  c0.username AS username,
+  c0.alias_email AS alias_email,
+  c0.cat_profile AS cat_profile
 FROM work_team_members wtm
-JOIN resources r ON r.resource_id = wtm.resource_id
-LEFT JOIN work_team_member_credentials wtmc
-  ON wtmc.work_team_member_id = wtm.work_team_member_id
- AND COALESCE(wtmc.is_active,1) = 1
- AND wtmc.wtm_cred_id = (
-    SELECT MIN(wtmc2.wtm_cred_id)
-    FROM work_team_member_credentials wtmc2
-    WHERE wtmc2.work_team_member_id = wtm.work_team_member_id
-      AND COALESCE(wtmc2.is_active,1) = 1
- )
-WHERE
-  COALESCE(wtm.is_active,1) = 1
-  AND wtm.work_team_id = {{ appsmith.store.wtRow?.work_team_id || 0 }}
-
-  AND ( {{ member_cert.selectedOptionValue || '' }} = ''
-        OR wtm.certification_status = {{ member_cert.selectedOptionValue }} )
-
-  AND ( {{ member_avail.selectedOptionValue || '' }} = ''
-        OR wtm.`is_available` = {{ member_avail.selectedOptionValue }} )
-
+JOIN resources r
+  ON r.resource_id = wtm.resource_id
+LEFT JOIN (
+  SELECT
+    work_team_member_id,
+    MIN(wtm_cred_id) AS min_cred_id
+  FROM work_team_member_credentials
+  WHERE COALESCE(is_active,1) = 1
+  GROUP BY work_team_member_id
+) mc
+  ON mc.work_team_member_id = wtm.work_team_member_id
+LEFT JOIN work_team_member_credentials c0
+  ON c0.wtm_cred_id = mc.min_cred_id
+WHERE wtm.work_team_id = {{ appsmith.store.wtRow?.work_team_id || 0 }}
+  AND COALESCE(wtm.is_active,1) = 1
   AND (
-        {{ member_q.text && member_q.text !== '' ? 1 : 0 }} = 0
-        OR (
-             r.resource_full_name LIKE CONCAT('%', {{ member_q.text }}, '%')
-          OR r.resource_email      LIKE CONCAT('%', {{ member_q.text }}, '%')
-          OR COALESCE(wtmc.alias_email,'') LIKE CONCAT('%', {{ member_q.text }}, '%')
-          OR COALESCE(wtmc.username,'')    LIKE CONCAT('%', {{ member_q.text }}, '%')
-        )
-      )
-ORDER BY r.resource_full_name;
+    COALESCE(NULLIF({{ member_q.text }}, ''), '') = ''
+    OR r.resource_full_name LIKE CONCAT('%', {{ member_q.text }}, '%')
+    OR r.resource_email LIKE CONCAT('%', {{ member_q.text }}, '%')
+    OR r.resource_country LIKE CONCAT('%', {{ member_q.text }}, '%')
+  )
+  AND (
+    COALESCE(NULLIF({{ member_cert.selectedOptionValue }}, ''), '') = ''
+    OR wtm.certification_status = {{ member_cert.selectedOptionValue }}
+  )
+  AND (
+    COALESCE(NULLIF({{ member_avail.selectedOptionValue }}, ''), '') = ''
+    OR wtm.is_available = {{ member_avail.selectedOptionValue }}
+  )
+ORDER BY wtm.work_team_member_id DESC;

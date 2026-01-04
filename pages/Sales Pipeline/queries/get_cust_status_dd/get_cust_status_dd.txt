@@ -1,5 +1,0 @@
-SELECT
-  DISTINCT COALESCE(c.customer_status,'Unknown') AS label,
-  COALESCE(c.customer_status,'Unknown') AS value
-FROM customers c
-ORDER BY 1;

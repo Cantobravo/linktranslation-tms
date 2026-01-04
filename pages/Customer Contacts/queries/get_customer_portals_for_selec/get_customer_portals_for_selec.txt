@@ -7,5 +7,9 @@ SELECT
   cp.customer_portal_last_update,
   cp.customer_portal_next_update
 FROM customer_portals cp
-WHERE cp.customer_id = COALESCE({{ tbl_ccont.triggeredRow ? tbl_ccont.triggeredRow.customer_id : null }}, cp.customer_id)
+WHERE cp.customer_id = COALESCE(
+  {{ appsmith.store.ccontRow?.customer_id }},
+  {{ tbl_ccont.triggeredRow?.customer_id }},
+  -1
+)
 ORDER BY cp.customer_portal_name;

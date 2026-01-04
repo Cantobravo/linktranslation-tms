@@ -1,4 +1,8 @@
--- get_po_count_by_project
 SELECT COUNT(*) AS cnt
 FROM resource_purchase_orders
-WHERE project_id = {{ appsmith.store.selectedProjectData.project_id }};
+WHERE project_id = {{
+  appsmith.store.selectedProjectData?.project_id
+  || Projects_Table.triggeredRow?.project_id
+  || Projects_Table.selectedRow?.project_id
+  || null
+}};

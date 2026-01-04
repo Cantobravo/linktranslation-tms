@@ -3,7 +3,7 @@
   "animateLoading": true,
   "autoFocus": false,
   "borderRadius": "0.375rem",
-  "bottomRow": 17,
+  "bottomRow": 24,
   "boxShadow": "none",
   "defaultText": "{{ appsmith.store.insertedPurchaseOrderId || 'Will be generated on save' }}",
   "dynamicBindingPathList": [
@@ -46,7 +46,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 39,
   "showStepArrows": false,
-  "topRow": 10,
+  "topRow": 17,
   "type": "INPUT_WIDGET_V2",
   "version": 2,
   "widgetId": "075k97znys",

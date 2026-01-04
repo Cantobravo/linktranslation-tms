@@ -1,3 +1,0 @@
-DELETE FROM work_teams
-WHERE work_team_id = {{ appsmith.store.wtRow.work_team_id }}
-LIMIT 1;

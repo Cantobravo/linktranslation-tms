@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 81,
+  "bottomRow": 76,
   "dynamicBindingPathList": [
     {
       "key": "truncateButtonColor"
@@ -30,8 +30,8 @@
   "mobileRightColumn": 16,
   "mobileTopRow": 50,
   "needsErrorInfo": false,
-  "originalBottomRow": 81,
-  "originalTopRow": 77,
+  "originalBottomRow": 76,
+  "originalTopRow": 72,
   "overflow": "NONE",
   "parentColumnSpace": 22.125,
   "parentId": "0",
@@ -43,7 +43,7 @@
   "text": "Unbilled Purchased Orders",
   "textAlign": "LEFT",
   "textColor": "#231F20",
-  "topRow": 77,
+  "topRow": 72,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,

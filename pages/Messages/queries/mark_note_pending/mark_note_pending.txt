@@ -1,3 +1,0 @@
-UPDATE linktranslation.notes
-SET status = 'Pending'
-WHERE note_id = {{ notes_table.selectedRow.note_id }};

@@ -1,4 +1,0 @@
-SELECT resource_id AS value, resource_full_name AS label
-FROM resources
-WHERE COALESCE(resource_is_active,1)=1
-ORDER BY resource_full_name;

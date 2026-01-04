@@ -1,0 +1,7 @@
+SELECT
+  resource_status AS value,
+  resource_status AS label
+FROM resources
+WHERE COALESCE(resource_status,'') <> ''
+GROUP BY resource_status
+ORDER BY resource_status

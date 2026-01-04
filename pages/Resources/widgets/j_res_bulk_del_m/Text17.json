@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 10,
+  "bottomRow": 16,
   "dynamicBindingPathList": [
     {
       "key": "truncateButtonColor"
@@ -33,8 +33,8 @@
   "mobileRightColumn": 41,
   "mobileTopRow": 1,
   "needsErrorInfo": false,
-  "originalBottomRow": 5,
-  "originalTopRow": 1,
+  "originalBottomRow": 14,
+  "originalTopRow": 10,
   "overflow": "NONE",
   "parentId": "edeo0vobjl",
   "renderMode": "CANVAS",
@@ -44,7 +44,7 @@
   "text": "{{\n(() => {\n  const rows = appsmith.store.resBulkSel || [];\n  const toDel = rows.filter(r => String(r.resource_is_active ?? 1) !== '0');\n  const preview = toDel.slice(0, 8).map(r =>\n    `${r.resource_full_name || '—'} <${r.resource_email || '—'}>`\n  ).join('\\n');\n  const more = toDel.length > 8 ? `\\n… and ${toDel.length - 8} more` : '';\n  return `You are about to archive ${toDel.length} resource(s):\\n${preview}${more}`;\n})()\n}}\n",
   "textAlign": "LEFT",
   "textColor": "#231F20",
-  "topRow": 6,
+  "topRow": 10,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,

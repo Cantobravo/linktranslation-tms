@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "UPDATE work_team_un_credentials\nSET\n  is_assigned = 0,\n  assigned_to_work_team_member_id = NULL,\n  assigned_at = NULL,\n  updated_at = NOW()\nWHERE wtu_cred_id = {{ (appsmith.store.wtmCredRow?.origin_uncred_id || tbl_wtm_creds.triggeredRow.origin_uncred_id || 0) }};\n",
+      "body": "UPDATE work_team_un_credentials\nSET\n  is_assigned = 0,\n  assigned_to_work_team_member_id = NULL,\n  assigned_at = NULL,\n  updated_at = NOW()\nWHERE wtu_cred_id = {{\n  (appsmith.store.wtmCredRow && appsmith.store.wtmCredRow.origin_uncred_id)\n  || (tbl_wtm_creds_i.triggeredRow && tbl_wtm_creds_i.triggeredRow.origin_uncred_id)\n  || (tbl_wtm_creds_i.selectedRow && tbl_wtm_creds_i.selectedRow.origin_uncred_id)\n  || 0\n}};\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

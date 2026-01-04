@@ -1,0 +1,5 @@
+SELECT
+  cur.currency_id AS value,
+  CONCAT(cur.currency_acronym, ' - ', cur.currency_name) AS label
+FROM currencies cur
+ORDER BY cur.currency_acronym, cur.currency_name

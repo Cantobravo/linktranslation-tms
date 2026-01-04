@@ -29,7 +29,7 @@
     ],
     "name": "get_wt_member_ids",
     "pageId": "Resources",
-    "runBehaviour": "AUTOMATIC",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

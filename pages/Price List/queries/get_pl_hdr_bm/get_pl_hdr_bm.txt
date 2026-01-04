@@ -1,0 +1,8 @@
+SELECT
+  pl.price_list_id,
+  pl.price_list_scope,
+  pl.currency_id
+FROM price_lists pl
+WHERE pl.price_list_scope = 'BENCHMARK'
+  AND pl.currency_id = COALESCE({{dd_bm_cur.selectedOptionValue}}, -1)
+LIMIT 1

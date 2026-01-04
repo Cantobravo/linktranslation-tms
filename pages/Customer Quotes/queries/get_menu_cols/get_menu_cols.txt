@@ -1,4 +1,0 @@
-SELECT col_id, col_label
-FROM app_menu_cols
-WHERE is_active = 1
-ORDER BY sort_order, col_label;

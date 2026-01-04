@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "UPDATE work_team_member_credentials w\nJOIN work_team_un_credentials u\n  ON u.wtu_cred_id = {{ i_uncred_pick_upd.selectedOptionValue }}\nSET\n  w.system_code      = u.system_code,\n  w.username         = u.username,\n  w.alias_email      = u.alias_email,\n  w.password_text    = u.password_text,\n  w.cat_profile      = u.cat_profile,\n  w.origin_uncred_id = u.wtu_cred_id,\n  w.updated_at       = NOW()\nWHERE w.wtm_cred_id = {{ tbl_wtm_creds.triggeredRow.wtm_cred_id }};\n",
+      "body": "UPDATE work_team_member_credentials w\nJOIN work_team_un_credentials u\n  ON u.wtu_cred_id = {{ i_uncred_pick_upd.selectedOptionValue }}\nSET\n  w.system_code      = u.system_code,\n  w.username         = u.username,\n  w.alias_email      = u.alias_email,\n  w.password_text    = u.password_text,\n  w.cat_profile      = u.cat_profile,\n  w.origin_uncred_id = u.wtu_cred_id,\n  w.updated_at       = NOW()\nWHERE w.wtm_cred_id = {{\n  (appsmith.store.wtmCredRow && appsmith.store.wtmCredRow.wtm_cred_id)\n  || (tbl_wtm_creds_i.triggeredRow && tbl_wtm_creds_i.triggeredRow.wtm_cred_id)\n  || (tbl_wtm_creds_i.selectedRow && tbl_wtm_creds_i.selectedRow.wtm_cred_id)\n  || (j_wtm_cred_upd_form.formData && j_wtm_cred_upd_form.formData.wtm_cred_id)\n  || 0\n}};\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [

@@ -1,3 +1,2 @@
--- params: project_id
 DELETE FROM resource_purchase_orders
 WHERE project_id = {{ this.params.project_id }};

@@ -1,9 +1,11 @@
 SELECT
-  template_id,
-  template_name,
-  template_email_subject,
-  template_email_body_html,
-  template_email_bcc_field
-FROM templates
-WHERE template_id = {{ i_email_template_res.selectedOptionValue || null }}
+  t.template_id,
+  t.template_name,
+  t.to_field,
+  t.cc_field,
+  t.bcc_field,
+  t.subject_field,
+  t.body_field
+FROM templates t
+WHERE t.template_id = COALESCE({{ i_email_template_res.selectedOptionValue }}, NULL)
 LIMIT 1;
