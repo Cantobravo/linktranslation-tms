@@ -1,6 +1,6 @@
 {
-  "gitSyncId": "6840b6d2ece888096e42342a_76711597-4521-4d9f-8530-c8c7cf2784c2",
-  "id": "Home_Perms.canMenu",
+  "gitSyncId": "6840b6d2ece888096e42342a_36d1696c-df7a-4bac-ae3f-ccad9f25fd1e",
+  "id": "Home_Perms.canAccessPage",
   "pluginId": "js-plugin",
   "pluginType": "JS",
   "unpublishedAction": {
@@ -8,7 +8,7 @@
       "encodeParamsToggle": true,
       "jsArguments": [
         {
-          "name": "menuLabel"
+          "name": "pageName"
         }
       ],
       "paginationType": "NONE",
@@ -26,8 +26,8 @@
         "key": "body"
       }
     ],
-    "fullyQualifiedName": "Perms.canMenu",
-    "name": "canMenu",
+    "fullyQualifiedName": "Perms.canAccessPage",
+    "name": "canAccessPage",
     "pageId": "Home",
     "runBehaviour": "MANUAL",
     "userSetOnLoad": false

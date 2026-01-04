@@ -43,7 +43,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 2,
   "shouldTruncate": false,
-  "text": "{{\n  Perms.canPage(appsmith.pageName)\n    ? ''\n    : navigateTo('Home')\n}}\n",
+  "text": "{{\n  Perms.canAccessPage(appsmith.pageName)\n    ? ''\n    : navigateTo('Home')\n}}\n\n",
   "textAlign": "LEFT",
   "textColor": "#231F20",
   "topRow": 24,

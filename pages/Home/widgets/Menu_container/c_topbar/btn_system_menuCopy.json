@@ -23,9 +23,6 @@
     },
     {
       "key": "configureMenuItems.config.label"
-    },
-    {
-      "key": "isDisabled"
     }
   ],
   "dynamicPropertyPathList": [
@@ -44,7 +41,7 @@
   "iconAlign": "left",
   "iconName": "geosearch",
   "isCompact": false,
-  "isDisabled": "{{ appsmith.store.myPerms?.inited ? !Perms.canMenu('Sales Menu') : false }}",
+  "isDisabled": "",
   "isLoading": false,
   "isVisible": true,
   "key": "hc8a5fp8c9",

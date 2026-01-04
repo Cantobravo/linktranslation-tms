@@ -23,9 +23,6 @@
     },
     {
       "key": "configureMenuItems.config.label"
-    },
-    {
-      "key": "isDisabled"
     }
   ],
   "dynamicPropertyPathList": [
@@ -44,7 +41,7 @@
   "iconAlign": "left",
   "iconName": "projects",
   "isCompact": false,
-  "isDisabled": "{{ appsmith.store.myPerms?.inited ? !Perms.canMenu('PM Menu') : false }}\n\n",
+  "isDisabled": "\n\n",
   "isLoading": false,
   "isVisible": true,
   "key": "hud9jc9s3k",
