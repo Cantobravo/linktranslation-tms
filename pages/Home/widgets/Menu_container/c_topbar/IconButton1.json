@@ -35,7 +35,7 @@
   "mobileRightColumn": 64,
   "mobileTopRow": 2,
   "needsErrorInfo": false,
-  "onClick": "{{ logout() }}",
+  "onClick": "{{ logoutUser() }}\n",
   "parentColumnSpace": 25.1904296875,
   "parentId": "nde46juglf",
   "parentRowSpace": 10,
