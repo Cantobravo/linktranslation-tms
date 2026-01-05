@@ -9,7 +9,7 @@
       "isDisabled": false,
       "isVisible": true,
       "label": "{{btn_customers_menu.sourceData.map((currentItem, currentIndex) => ( currentItem))}}",
-      "onClick": "{{\n  (async () => {\n    await Perms.go(currentItem);\n  })()\n}}\n"
+      "onClick": "{{\n  (async () => {\n    await Perms.go(currentItem);\n  })()\n}}"
     },
     "id": "config",
     "label": "Configure menu items"

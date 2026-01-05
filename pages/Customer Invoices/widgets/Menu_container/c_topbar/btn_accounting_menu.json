@@ -84,7 +84,7 @@
   "originalBottomRow": 10,
   "originalTopRow": 6,
   "parentColumnSpace": 4.500000476837158,
-  "parentId": "sghddm6k9r",
+  "parentId": "hp8ucyxbpo",
   "parentRowSpace": 10,
   "placement": "CENTER",
   "renderMode": "CANVAS",
@@ -93,6 +93,6 @@
   "topRow": 1,
   "type": "MENU_BUTTON_WIDGET",
   "version": 1,
-  "widgetId": "g8fptiz6zl",
+  "widgetId": "zj4970xruo",
   "widgetName": "btn_accounting_menu"
 }

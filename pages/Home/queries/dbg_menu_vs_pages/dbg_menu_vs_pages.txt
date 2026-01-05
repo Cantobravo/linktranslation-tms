@@ -1,0 +1,5 @@
+SELECT
+  ami.page_value
+FROM app_menu_items ami
+WHERE COALESCE(ami.is_active, 1) = 1
+ORDER BY ami.page_value;

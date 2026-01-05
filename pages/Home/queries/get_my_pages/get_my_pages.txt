@@ -1,6 +1,20 @@
 SELECT DISTINCT
   ami.page_value
 FROM resources r
+JOIN roles ro
+  ON ro.role_id = r.role_id
+JOIN app_menu_items ami
+  ON COALESCE(ami.is_active, 1) = 1
+WHERE (r.resource_email COLLATE utf8mb4_unicode_ci)
+      =
+      (COALESCE(NULLIF({{ appsmith.user.email }}, ''), NULL) COLLATE utf8mb4_unicode_ci)
+  AND LOWER(ro.role_name) = 'admin'
+
+UNION
+
+SELECT DISTINCT
+  ami.page_value
+FROM resources r
 JOIN role_permissions rp
   ON rp.role_id = r.role_id
 JOIN permissions p
@@ -15,4 +29,5 @@ WHERE (r.resource_email COLLATE utf8mb4_unicode_ci)
       =
       (COALESCE(NULLIF({{ appsmith.user.email }}, ''), NULL) COLLATE utf8mb4_unicode_ci)
   AND COALESCE(ami.is_active, 1) = 1
-ORDER BY ami.page_value;
+
+ORDER BY page_value;

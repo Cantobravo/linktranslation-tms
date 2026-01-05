@@ -37,7 +37,7 @@
   "needsErrorInfo": false,
   "onClick": "{{ logoutUser() }}\n",
   "parentColumnSpace": 25.1904296875,
-  "parentId": "sghddm6k9r",
+  "parentId": "hp8ucyxbpo",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "hug",
@@ -45,6 +45,6 @@
   "topRow": 2,
   "type": "ICON_BUTTON_WIDGET",
   "version": 1,
-  "widgetId": "j0riu4za6o",
+  "widgetId": "hmx0exa45w",
   "widgetName": "btn_logout"
 }

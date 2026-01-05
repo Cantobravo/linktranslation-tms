@@ -1,6 +1,6 @@
 {
-  "gitSyncId": "6840b6d2ece888096e42342a_7d8fb457-1e4b-4a7d-94dc-e14497807b3b",
-  "id": "Home_Perms.norm",
+  "gitSyncId": "6840b6d2ece888096e42342a_1912c497-af4f-432b-88b1-3f2eaa5c1036",
+  "id": "Home_Perms.has",
   "pluginId": "js-plugin",
   "pluginType": "JS",
   "unpublishedAction": {
@@ -8,7 +8,7 @@
       "encodeParamsToggle": true,
       "jsArguments": [
         {
-          "name": "v"
+          "name": "permKey"
         }
       ],
       "paginationType": "NONE",
@@ -26,8 +26,8 @@
         "key": "body"
       }
     ],
-    "fullyQualifiedName": "Perms.norm",
-    "name": "norm",
+    "fullyQualifiedName": "Perms.has",
+    "name": "has",
     "pageId": "Home",
     "runBehaviour": "MANUAL",
     "userSetOnLoad": false

@@ -1,7 +1,7 @@
 {
   "animateLoading": true,
   "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-  "bottomRow": 126,
+  "bottomRow": 128,
   "dynamicBindingPathList": [
     {
       "key": "truncateButtonColor"
@@ -22,9 +22,9 @@
   "fontSize": "1rem",
   "fontStyle": "BOLD",
   "isLoading": false,
-  "isVisible": true,
+  "isVisible": false,
   "key": "d24hxovpf3",
-  "leftColumn": 0,
+  "leftColumn": 1,
   "maxDynamicHeight": 9000,
   "minDynamicHeight": 4,
   "minWidth": 450,
@@ -33,23 +33,23 @@
   "mobileRightColumn": 11,
   "mobileTopRow": 29,
   "needsErrorInfo": false,
-  "originalBottomRow": 126,
-  "originalTopRow": 29,
+  "originalBottomRow": 128,
+  "originalTopRow": 124,
   "overflow": "NONE",
   "parentColumnSpace": 27.703125,
   "parentId": "0",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "responsiveBehavior": "fill",
-  "rightColumn": 19,
+  "rightColumn": 4,
   "shouldTruncate": false,
-  "text": "{{ \n  JSON.stringify(\n    {\n      clicked: appsmith.store.noAccessFrom,\n      clickedNorm: appsmith.store.lastClickNorm,\n      allowedRaw: appsmith.store.pagePermsRaw,\n      allowedNorm: appsmith.store.pagePermsNorm\n    },\n    null,\n    2\n  )\n}}",
+  "text": "{{ Perms.init() }}\n",
   "textAlign": "LEFT",
   "textColor": "#231F20",
-  "topRow": 29,
+  "topRow": 124,
   "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
   "type": "TEXT_WIDGET",
   "version": 1,
-  "widgetId": "tu76evz4jk",
-  "widgetName": "tenmp_text_1"
+  "widgetId": "gzwtx1q5fw",
+  "widgetName": "txt_perm_init"
 }
