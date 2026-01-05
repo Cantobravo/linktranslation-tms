@@ -43,7 +43,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 11,
   "shouldTruncate": false,
-  "text": "{{ JSON.stringify(appsmith.store.permDbg, null, 2) }}\n",
+  "text": "{{ appsmith.store.permDbg ? JSON.stringify(appsmith.store.permDbg, null, 2) : 'permDbg is missing' }}\n\n",
   "textAlign": "LEFT",
   "textColor": "#231F20",
   "topRow": 66,
