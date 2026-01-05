@@ -1,0 +1,4 @@
+SELECT resource_full_name
+FROM resources
+WHERE resource_email = COALESCE(NULLIF({{ appsmith.user.email }}, ''), NULL)
+LIMIT 1;

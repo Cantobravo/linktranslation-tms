@@ -1,7 +1,0 @@
-SELECT p.permission_key
-FROM resources r
-JOIN role_permissions rp ON rp.role_id = r.role_id
-JOIN permissions p ON p.permission_id = rp.permission_id
-WHERE r.resource_email = COALESCE(NULLIF({{ appsmith.user.email }}, ''), NULL)
-  AND p.permission_key LIKE 'VIEW_%'
-ORDER BY p.permission_key;
