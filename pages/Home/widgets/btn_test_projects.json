@@ -1,0 +1,57 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 23,
+  "boxShadow": "none",
+  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "buttonVariant": "PRIMARY",
+  "disabledWhenInvalid": false,
+  "dynamicBindingPathList": [
+    {
+      "key": "buttonColor"
+    },
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "isDefaultClickDisabled": true,
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "5lj7ljnc1g",
+  "leftColumn": 19,
+  "minWidth": 120,
+  "mobileBottomRow": 23,
+  "mobileLeftColumn": 19,
+  "mobileRightColumn": 35,
+  "mobileTopRow": 19,
+  "needsErrorInfo": false,
+  "onClick": "{{ Perms.go('Projects') }}\n",
+  "originalBottomRow": 23,
+  "originalTopRow": 19,
+  "parentColumnSpace": 27.703125,
+  "parentId": "0",
+  "parentRowSpace": 10,
+  "placement": "CENTER",
+  "recaptchaType": "V3",
+  "renderMode": "CANVAS",
+  "resetFormOnClick": false,
+  "responsiveBehavior": "hug",
+  "rightColumn": 35,
+  "text": "Test Projects",
+  "topRow": 19,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "ouyh4wrv5y",
+  "widgetName": "btn_test_projects"
+}
