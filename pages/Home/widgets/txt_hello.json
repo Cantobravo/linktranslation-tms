@@ -43,7 +43,7 @@
   "responsiveBehavior": "fill",
   "rightColumn": 21,
   "shouldTruncate": false,
-  "text": "{{ \"Hello \" + (get_my_resource_name.data?.[0]?.resource_full_name || appsmith.user.name) }}",
+  "text": "{{ \n  \"Hello \" + \n  (\n    get_my_resource_name.data?.[0]?.resource_full_name \n    || appsmith.user.name \n    || appsmith.user.email\n  )\n}}\n",
   "textAlign": "LEFT",
   "textColor": "#231F20",
   "topRow": 17,
