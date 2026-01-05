@@ -6,6 +6,11 @@
     "pageId": "Sales Pipeline",
     "pluginId": "js-plugin",
     "pluginType": "JS",
-    "variables": []
+    "variables": [
+      {
+        "name": "pagePermMap",
+        "value": "{\n  \"Home\": \"VIEW_HOME\",\n  \"Absences\": \"VIEW_ABSENCES\",\n  \"Currencies\": \"VIEW_CURRENCIES\",\n  \"Services\": \"VIEW_SERVICES\",\n  \"Units\": \"VIEW_UNITS\",\n  \"Languages\": \"VIEW_LANGUAGES\",\n  \"Customers\": \"VIEW_CUSTOMERS\",\n  \"Resources\": \"VIEW_RESOURCES\",\n  \"Customer Accounts\": \"VIEW_CUSTOMER_ACCOUNTS\",\n  \"Customer Contacts\": \"VIEW_CUSTOMER_CONTACTS\",\n  \"Customer Portals\": \"VIEW_CUSTOMER_PORTALS\",\n  \"Work Teams\": \"VIEW_WORK_TEAMS\",\n  \"Projects\": \"VIEW_PROJECTS\",\n  \"Customer Invoices\": \"VIEW_CUSTOMERS_INVOICES\",\n  \"Templates\": \"VIEW_TEMPLATES\",\n  \"Resource Bills\": \"VIEW_RESOURCE_BILLS\",\n  \"Resources POs\": \"VIEW_RESOURCE_POs\",\n  \"Resource Banking\": \"VIEW_RESOURCE_BANKING\",\n  \"Company\": \"VIEW_COMPANY\",\n  \"Roles and Permissions\": \"VIEW_RBAC\",\n  \"Sales Pipeline\": \"VIEW_SALES_PIPELINE\",\n  \"Company Documentation\": \"VIEW_COMPANY_DOCUMENTATION\",\n  \"Portfolio\": \"VIEW_PORTFOLIO\",\n  \"Price List\": \"VIEW_PRICE_LIST\"\n}"
+      }
+    ]
   }
 }

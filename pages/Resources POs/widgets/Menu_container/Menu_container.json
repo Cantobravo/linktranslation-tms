@@ -16,7 +16,7 @@
       "leftColumn": 0,
       "minHeight": 49.5,
       "parentColumnSpace": 1,
-      "parentId": "ysswf1adrx",
+      "parentId": "csk3kml0sq",
       "parentRowSpace": 1,
       "props": {
         "canExtend": false,
@@ -29,7 +29,7 @@
       "topRow": 0,
       "type": "CANVAS_WIDGET",
       "version": 1,
-      "widgetId": "7sseaoglfq",
+      "widgetId": "mqb94rjwwg",
       "widgetName": "Canvas19Copy"
     }
   ],
@@ -84,6 +84,6 @@
   "topRow": 0,
   "type": "CONTAINER_WIDGET",
   "version": 1,
-  "widgetId": "ysswf1adrx",
+  "widgetId": "csk3kml0sq",
   "widgetName": "Menu_container"
 }

@@ -1,49 +1,68 @@
 export default {
-  // normalize strings for safe comparison
-  norm: (v) => String(v || '').trim().toLowerCase(),
-
-  // load & cache allowed pages for the logged-in user
-  loadPages: async () => {
-    const email = Perms.norm(appsmith.user.email);
-
-    // reuse cache for same user
-    if (
-      appsmith.store.pagePermsEmail === email &&
-      Array.isArray(appsmith.store.pagePerms)
-    ) {
-      return;
-    }
-
-    // fetch allowed pages
-    await get_my_pages.run();
-
-    const pages = (get_my_pages.data || [])
-      .map(r => r.page_value)
-      .filter(Boolean)
-      .map(Perms.norm);
-
-    await storeValue('pagePerms', pages);
-    await storeValue('pagePermsEmail', email);
+  // 1) MAP: Appsmith Page Name -> VIEW Permission Key
+  // IMPORTANT: page names must match Appsmith pageName EXACTLY
+  pagePermMap: {
+    "Home": "VIEW_HOME",
+    "Absences": "VIEW_ABSENCES",
+    "Currencies": "VIEW_CURRENCIES",
+    "Services": "VIEW_SERVICES",
+    "Units": "VIEW_UNITS",
+    "Languages": "VIEW_LANGUAGES",
+    "Customers": "VIEW_CUSTOMERS",
+    "Resources": "VIEW_RESOURCES",
+    "Customer Accounts": "VIEW_CUSTOMER_ACCOUNTS",
+    "Customer Contacts": "VIEW_CUSTOMER_CONTACTS",
+    "Customer Portals": "VIEW_CUSTOMER_PORTALS",
+    "Work Teams": "VIEW_WORK_TEAMS",
+    "Projects": "VIEW_PROJECTS",
+    "Customer Invoices": "VIEW_CUSTOMERS_INVOICES",
+    "Templates": "VIEW_TEMPLATES",
+    "Resource Bills": "VIEW_RESOURCE_BILLS",
+    "Resources POs": "VIEW_RESOURCE_POs",
+    "Resource Banking": "VIEW_RESOURCE_BANKING",
+    "Company": "VIEW_COMPANY",
+    "Roles and Permissions": "VIEW_RBAC",
+    "Sales Pipeline": "VIEW_SALES_PIPELINE",
+    "Company Documentation": "VIEW_COMPANY_DOCUMENTATION",
+    "Portfolio": "VIEW_PORTFOLIO",
+    "Price List": "VIEW_PRICE_LIST"
   },
 
-  // check if a page is allowed
+  init: async () => {
+    const email = String(appsmith.user.email || '').trim().toLowerCase();
+
+    if (appsmith.store.myViewPermsEmail === email && Array.isArray(appsmith.store.myViewPerms)) return;
+
+    await get_my_view_perms.run();
+
+    const perms = (get_my_view_perms.data || [])
+      .map(x => x.permission_key)
+      .filter(Boolean);
+
+    await storeValue('myViewPerms', perms);
+    await storeValue('myViewPermsEmail', email);
+  },
+
+  has: (permKey) => {
+    return (appsmith.store.myViewPerms || []).includes(permKey);
+  },
+
+  // check by Appsmith page name (exact)
   canPage: (pageName) => {
-    const pages = appsmith.store.pagePerms || [];
-    return pages.includes(Perms.norm(pageName));
+    const perm = Perms.pagePermMap[pageName];
+    // if page not mapped, deny
+    if (!perm) return false;
+    return Perms.has(perm);
   },
 
-  // guarded navigation (USE THIS FROM MENU CLICKS)
+  // menu click guard
   go: async (pageName) => {
-    await Perms.loadPages();
+    await Perms.init();
 
-    const allowed = Perms.canPage(pageName);
-
-    if (allowed) {
-      return navigateTo(pageName);
-    }
-
-    // optional: remember blocked page
     await storeValue('noAccessFrom', pageName);
+
+    if (Perms.canPage(pageName)) return navigateTo(pageName);
+
     return navigateTo('NoAccess');
   }
 };

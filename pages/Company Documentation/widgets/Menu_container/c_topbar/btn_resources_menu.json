@@ -9,7 +9,7 @@
       "isDisabled": false,
       "isVisible": true,
       "label": "{{btn_resources_menu.sourceData.map((currentItem, currentIndex) => ( currentItem))}}",
-      "onClick": "{{\n  (async () => {\n    const page = currentItem?.value || currentItem;\n    await Perms.go(page);\n  })()\n}}"
+      "onClick": "{{\n  (async () => {\n    await Perms.go(currentItem);\n  })()\n}}\n"
     },
     "id": "config",
     "label": "Configure menu items"
@@ -76,7 +76,7 @@
   "originalBottomRow": 10,
   "originalTopRow": 6,
   "parentColumnSpace": 4.500000476837158,
-  "parentId": "dmmr3olrnk",
+  "parentId": "hwuvyx2jcy",
   "parentRowSpace": 10,
   "placement": "CENTER",
   "renderMode": "CANVAS",
@@ -85,6 +85,6 @@
   "topRow": 1,
   "type": "MENU_BUTTON_WIDGET",
   "version": 1,
-  "widgetId": "ixu6nv6roz",
+  "widgetId": "1c50vozfbo",
   "widgetName": "btn_resources_menu"
 }

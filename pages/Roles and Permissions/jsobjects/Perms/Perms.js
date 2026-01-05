@@ -1,29 +1,68 @@
 export default {
-  async load() {
-    const res = await get_my_permissions.run();
-    const row0 = (res || [])[0] || {};
-    const keys = (res || []).map(x => x.permission_key).filter(Boolean);
-    const permSet = keys.reduce((acc, k) => { acc[k] = true; return acc; }, {});
-    await storeValue('myResId', row0.resource_id || null);
-    await storeValue('myRoleId', row0.role_id || null);
-    await storeValue('myRoleName', row0.role_name || null);
-    await storeValue('myPerms', permSet);
-    await storeValue('myPermKeys', keys);
-    return permSet;
+  // 1) MAP: Appsmith Page Name -> VIEW Permission Key
+  // IMPORTANT: page names must match Appsmith pageName EXACTLY
+  pagePermMap: {
+    "Home": "VIEW_HOME",
+    "Absences": "VIEW_ABSENCES",
+    "Currencies": "VIEW_CURRENCIES",
+    "Services": "VIEW_SERVICES",
+    "Units": "VIEW_UNITS",
+    "Languages": "VIEW_LANGUAGES",
+    "Customers": "VIEW_CUSTOMERS",
+    "Resources": "VIEW_RESOURCES",
+    "Customer Accounts": "VIEW_CUSTOMER_ACCOUNTS",
+    "Customer Contacts": "VIEW_CUSTOMER_CONTACTS",
+    "Customer Portals": "VIEW_CUSTOMER_PORTALS",
+    "Work Teams": "VIEW_WORK_TEAMS",
+    "Projects": "VIEW_PROJECTS",
+    "Customer Invoices": "VIEW_CUSTOMERS_INVOICES",
+    "Templates": "VIEW_TEMPLATES",
+    "Resource Bills": "VIEW_RESOURCE_BILLS",
+    "Resources POs": "VIEW_RESOURCE_POs",
+    "Resource Banking": "VIEW_RESOURCE_BANKING",
+    "Company": "VIEW_COMPANY",
+    "Roles and Permissions": "VIEW_RBAC",
+    "Sales Pipeline": "VIEW_SALES_PIPELINE",
+    "Company Documentation": "VIEW_COMPANY_DOCUMENTATION",
+    "Portfolio": "VIEW_PORTFOLIO",
+    "Price List": "VIEW_PRICE_LIST"
   },
 
-  has(key) {
-    const perms = appsmith.store.myPerms || {};
-    return !!perms[key];
+  init: async () => {
+    const email = String(appsmith.user.email || '').trim().toLowerCase();
+
+    if (appsmith.store.myViewPermsEmail === email && Array.isArray(appsmith.store.myViewPerms)) return;
+
+    await get_my_view_perms.run();
+
+    const perms = (get_my_view_perms.data || [])
+      .map(x => x.permission_key)
+      .filter(Boolean);
+
+    await storeValue('myViewPerms', perms);
+    await storeValue('myViewPermsEmail', email);
   },
 
-  any(keys) {
-    const perms = appsmith.store.myPerms || {};
-    return (keys || []).some(k => !!perms[k]);
+  has: (permKey) => {
+    return (appsmith.store.myViewPerms || []).includes(permKey);
   },
 
-  all(keys) {
-    const perms = appsmith.store.myPerms || {};
-    return (keys || []).every(k => !!perms[k]);
+  // check by Appsmith page name (exact)
+  canPage: (pageName) => {
+    const perm = Perms.pagePermMap[pageName];
+    // if page not mapped, deny
+    if (!perm) return false;
+    return Perms.has(perm);
+  },
+
+  // menu click guard
+  go: async (pageName) => {
+    await Perms.init();
+
+    await storeValue('noAccessFrom', pageName);
+
+    if (Perms.canPage(pageName)) return navigateTo(pageName);
+
+    return navigateTo('NoAccess');
   }
-}
+};

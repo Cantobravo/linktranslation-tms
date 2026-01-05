@@ -8,7 +8,7 @@
       "encodeParamsToggle": true,
       "jsArguments": [
         {
-          "name": "key"
+          "name": "permKey"
         }
       ],
       "paginationType": "NONE",

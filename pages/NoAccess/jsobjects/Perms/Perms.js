@@ -1,38 +1,65 @@
 export default {
-  norm: (v) =>
-    String(v || '')
-      .trim()
-      .toLowerCase()
-      .replace(/\s+/g, '')
-      .replace(/_/g, ''),
+  // 1) MAP: Appsmith Page Name -> VIEW Permission Key
+  // IMPORTANT: page names must match Appsmith pageName EXACTLY
+  pagePermMap: {
+    "Home": "VIEW_HOME",
+    "Absences": "VIEW_ABSENCES",
+    "Currencies": "VIEW_CURRENCIES",
+    "Services": "VIEW_SERVICES",
+    "Units": "VIEW_UNITS",
+    "Languages": "VIEW_LANGUAGES",
+    "Customers": "VIEW_CUSTOMERS",
+    "Resources": "VIEW_RESOURCES",
+    "Customer Accounts": "VIEW_CUSTOMER_ACCOUNTS",
+    "Customer Contacts": "VIEW_CUSTOMER_CONTACTS",
+    "Customer Portals": "VIEW_CUSTOMER_PORTALS",
+    "Work Teams": "VIEW_WORK_TEAMS",
+    "Projects": "VIEW_PROJECTS",
+    "Customer Invoices": "VIEW_CUSTOMERS_INVOICES",
+    "Templates": "VIEW_TEMPLATES",
+    "Resource Bills": "VIEW_RESOURCE_BILLS",
+    "Resources POs": "VIEW_RESOURCE_POs",
+    "Resource Banking": "VIEW_RESOURCE_BANKING",
+    "Company": "VIEW_COMPANY",
+    "Roles and Permissions": "VIEW_RBAC",
+    "Sales Pipeline": "VIEW_SALES_PIPELINE",
+    "Company Documentation": "VIEW_COMPANY_DOCUMENTATION",
+    "Portfolio": "VIEW_PORTFOLIO",
+    "Price List": "VIEW_PRICE_LIST"
+  },
 
-  loadPages: async () => {
+  init: async () => {
     const email = String(appsmith.user.email || '').trim().toLowerCase();
 
-    if (appsmith.store.pagePermsEmail === email && Array.isArray(appsmith.store.pagePermsNorm)) return;
+    if (appsmith.store.myViewPermsEmail === email && Array.isArray(appsmith.store.myViewPerms)) return;
 
-    await get_my_pages.run();
+    await get_my_view_perms.run();
 
-    const raw = (get_my_pages.data || [])
-      .map(x => x.page_value)
+    const perms = (get_my_view_perms.data || [])
+      .map(x => x.permission_key)
       .filter(Boolean);
 
-    await storeValue('pagePermsRaw', raw);
-    await storeValue('pagePermsNorm', raw.map(Perms.norm));
-    await storeValue('pagePermsEmail', email);
+    await storeValue('myViewPerms', perms);
+    await storeValue('myViewPermsEmail', email);
   },
 
+  has: (permKey) => {
+    return (appsmith.store.myViewPerms || []).includes(permKey);
+  },
+
+  // check by Appsmith page name (exact)
   canPage: (pageName) => {
-    const allowed = appsmith.store.pagePermsNorm || [];
-    return allowed.includes(Perms.norm(pageName));
+    const perm = Perms.pagePermMap[pageName];
+    // if page not mapped, deny
+    if (!perm) return false;
+    return Perms.has(perm);
   },
 
+  // menu click guard
   go: async (pageName) => {
-    await Perms.loadPages();
+    await Perms.init();
 
-    // DEBUG (will show the real clicked value)
     await storeValue('noAccessFrom', pageName);
-    await storeValue('lastClickNorm', Perms.norm(pageName));
 
     if (Perms.canPage(pageName)) return navigateTo(pageName);
 
