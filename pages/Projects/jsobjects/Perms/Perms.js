@@ -57,20 +57,12 @@ export default {
 
   // menu click guard
   go: async (pageName) => {
-  await Perms.init();
+    await Perms.init();
 
-  const need = Perms.pagePermMap[pageName] || null;
-  const have = (appsmith.store.myViewPerms || []).includes(need);
+    await storeValue('noAccessFrom', pageName);
 
-  await storeValue('permDbg', {
-    clicked: pageName,
-    need,
-    have,
-    myRole: appsmith.store.myRoleName || null,
-    myPerms: appsmith.store.myViewPerms || []
-  });
+    if (Perms.canPage(pageName)) return navigateTo(pageName);
 
-  if (need && have) return navigateTo(pageName);
-
-  return navigateTo('NoAccess');
-}
+    return navigateTo('NoAccess');
+  }
+};

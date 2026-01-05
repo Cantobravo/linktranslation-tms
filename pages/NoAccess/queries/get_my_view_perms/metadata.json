@@ -29,7 +29,7 @@
     ],
     "name": "get_my_view_perms",
     "pageId": "NoAccess",
-    "runBehaviour": "AUTOMATIC",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

@@ -9,7 +9,7 @@
       "isDisabled": false,
       "isVisible": true,
       "label": "{{btn_pm_menu.sourceData.map((currentItem, currentIndex) => ( currentItem))}}",
-      "onClick": "{{\n  (async () => {\n    await storeValue('permDbg', {\n      step: 'beforePermsGo',\n      clicked: currentItem,\n      at: new Date().toISOString()\n    });\n\n    await Perms.go(currentItem);\n\n    await storeValue('permDbg', {\n      step: 'afterPermsGo',\n      clicked: currentItem,\n      at: new Date().toISOString()\n    });\n  })()\n}}\n\n\n"
+      "onClick": "{{\n  (async () => {\n    await Perms.go(currentItem);\n  })()\n}}\n"
     },
     "id": "config",
     "label": "Configure menu items"
@@ -41,7 +41,7 @@
   "iconAlign": "left",
   "iconName": "projects",
   "isCompact": false,
-  "isDisabled": "\n\n",
+  "isDisabled": "",
   "isLoading": false,
   "isVisible": true,
   "key": "hud9jc9s3k",
