@@ -56,18 +56,20 @@ export default {
   },
 
   // menu click guard
- go: async (pageName) => {
+go: async (pageName) => {
   await Perms.init();
 
   const need = Perms.pagePermMap[pageName] || null;
-  const have = need ? (appsmith.store.myViewPerms || []).includes(need) : false;
+  const perms = appsmith.store.myViewPerms || [];
+  const have = need ? perms.includes(need) : false;
 
   await storeValue('permDbg', {
-    from: 'Perms.go',
+    step: 'insidePermsGo',
     clicked: pageName,
     need,
     have,
-    perms: appsmith.store.myViewPerms || [],
+    role: appsmith.store.myRoleName || null,
+    perms,
     at: new Date().toISOString()
   });
 
